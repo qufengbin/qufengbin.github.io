@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>ARTS第一周 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ARTS是什么？Algorithm：每周至少做一个leetcode的算法题；Review：阅读并点评至少一篇英文技术文章；Tip/Techni：学习至少一个技术技巧；Share：分享一篇有观点和思考的技术文章。 Algorithm题目：Given an array of integers, return indices of the two numbers such that they add u">
+<meta name="keywords" content="ARTS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARTS第一周">
+<meta property="og:url" content="http://yoursite.com/2019/03/24/ARTS第一周/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ARTS是什么？Algorithm：每周至少做一个leetcode的算法题；Review：阅读并点评至少一篇英文技术文章；Tip/Techni：学习至少一个技术技巧；Share：分享一篇有观点和思考的技术文章。 Algorithm题目：Given an array of integers, return indices of the two numbers such that they add u">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-30T09:38:52.735Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ARTS第一周">
+<meta name="twitter:description" content="ARTS是什么？Algorithm：每周至少做一个leetcode的算法题；Review：阅读并点评至少一篇英文技术文章；Tip/Techni：学习至少一个技术技巧；Share：分享一篇有观点和思考的技术文章。 Algorithm题目：Given an array of integers, return indices of the two numbers such that they add u">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ARTS第一周" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/24/ARTS第一周/" class="article-date">
+  <time datetime="2019-03-24T09:19:54.000Z" itemprop="datePublished">2019-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ARTS第一周
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ARTS是什么？"><a href="#ARTS是什么？" class="headerlink" title="ARTS是什么？"></a>ARTS是什么？</h2><p><strong>Algorithm：每周至少做一个leetcode的算法题；<br>Review：阅读并点评至少一篇英文技术文章；<br>Tip/Techni：学习至少一个技术技巧；<br>Share：分享一篇有观点和思考的技术文章。</strong></p>
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p>题目：<br>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>You may assume that each input would have exactly one solution, and you may not use the same element twice.<br>Example:<br>Given nums = [2, 7, 11, 15], target = 9,<br>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].<br>分析：<br>给定一个整数数组，和一个整数，返回两个数字的索引，使它们相加等于这个整数。<br>假设每个输入只有一个解决方案，不会两次使用相同的元素。<br>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">        int [] end=&#123;0,0&#125;;</span><br><span class="line">        for(int i=0;i&lt;nums.length;i++)&#123;</span><br><span class="line">            for( int j=i+1;j&lt;nums.length;j++)&#123;</span><br><span class="line">                if(nums[i]+nums[j] == target)&#123;</span><br><span class="line">                    end[0]=i;</span><br><span class="line">                    end[1]=j;</span><br><span class="line">                    return end;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return end;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>总结：<br>好久没有写程序了，只想到了简单粗暴的遍历两次数组，还语法错误了好几次。。。接下来要看一下Java基础了。</p>
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p>因为工作关系，本周通过<a href="http://hadoop.apache.org/docs/r2.6.5/hadoop-yarn/hadoop-yarn-site/ResourceManagerHA.html#ResourceManager_High_Availability" target="_blank" rel="noopener">Hadoop官网</a>详细了解了一下关于Hadoop-2.6.5的RM HA机制，文章是<a href="https://app.yinxiang.com/shard/s59/nl/20503510/fb43505e-eebc-445d-b44e-74999871b0a4" target="_blank" rel="noopener">HA机制</a>（日后可以研究一下这块儿的源码）。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>这周一大半时间用在搭建梯子和博客上了，这里我想分享两篇在搭建过程中对我帮助相当大的本章关于<a href="https://blog.51cto.com/zero01/2064660" target="_blank" rel="noopener">搭建shadowsocks</a>和<a href="https://juejin.im/post/5bebfe51e51d45332a456de0" target="_blank" rel="noopener">搭建hexo博客</a>的文章。<br>搭建shadowsocks是基于CentOS7.4系统，使用python版本的shadowsocks。安转配置shadowsocks的过程比较简单，前提是有一台服务器。</p>
+<h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><p>分享一篇自己总结的<a href="https://app.yinxiang.com/shard/s59/nl/20503510/a9a2c1f3-4cdc-4e87-9556-f07d09af69ff" target="_blank" rel="noopener">vim编辑器操作</a>和一篇最近看到的关于vim编辑器的文章<a href="http://mp.weixin.qq.com/s?__biz=MzA3OTgyMDcwNg==&amp;mid=2650636684&amp;idx=1&amp;sn=acac5431fff542eaa64281f58be9e190&amp;chksm=87a48341b0d30a57fd810d24a010e88089df63648c7fb43415daab3bd50e9f283e2d2183e68e&amp;mpshare=1&amp;scene=24&amp;srcid=#rd" target="_blank" rel="noopener">138 条 Vim 命令、操作、快捷键全集</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/24/ARTS第一周/" data-id="cju3y6wik00002wxig04i19st" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARTS/">ARTS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/03/30/面试/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          面试
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/05/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/05/ARTS第三周/">ARTS第三周</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/31/ARTS第二周/">ARTS第二周</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/30/面试/">面试</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/24/ARTS第一周/">ARTS第一周</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
