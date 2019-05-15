@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ip网络配置工具 补充说明ip命令 用来显示或操纵Linux主机的路由、网络设备、策略路由和隧道，是Linux下较新的功能强大的网络配置工具。 语法123ip(选项)(参数)Usage: ip [ OPTIONS ] OBJECT &amp;#123; COMMAND | help &amp;#125;       ip [ -force ] -batch filename 选项1234567891011OBJE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/ip/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ip网络配置工具 补充说明ip命令 用来显示或操纵Linux主机的路由、网络设备、策略路由和隧道，是Linux下较新的功能强大的网络配置工具。 语法123ip(选项)(参数)Usage: ip [ OPTIONS ] OBJECT &amp;#123; COMMAND | help &amp;#125;       ip [ -force ] -batch filename 选项1234567891011OBJE">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="ip网络配置工具 补充说明ip命令 用来显示或操纵Linux主机的路由、网络设备、策略路由和隧道，是Linux下较新的功能强大的网络配置工具。 语法123ip(选项)(参数)Usage: ip [ OPTIONS ] OBJECT &amp;#123; COMMAND | help &amp;#125;       ip [ -force ] -batch filename 选项1234567891011OBJE">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/ip" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/ip/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.701Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ip"><a href="#ip" class="headerlink" title="ip"></a>ip</h1><p>网络配置工具</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>ip命令</strong> 用来显示或操纵Linux主机的路由、网络设备、策略路由和隧道，是Linux下较新的功能强大的网络配置工具。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ip(选项)(参数)</span><br><span class="line">Usage: ip [ OPTIONS ] OBJECT &#123; COMMAND | help &#125;</span><br><span class="line">       ip [ -force ] -batch filename</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">OBJECT := &#123; link | address | addrlabel | route | rule | neigh | ntable |</span><br><span class="line">       tunnel | tuntap | maddress | mroute | mrule | monitor | xfrm |</span><br><span class="line">       netns | l2tp | macsec | tcp_metrics | token &#125;</span><br><span class="line">       </span><br><span class="line">-V：显示指令版本信息；</span><br><span class="line">-s：输出更详细的信息；</span><br><span class="line">-f：强制使用指定的协议族；</span><br><span class="line">-4：指定使用的网络层协议是IPv4协议；</span><br><span class="line">-6：指定使用的网络层协议是IPv6协议；</span><br><span class="line">-0：输出信息每条记录输出一行，即使内容较多也不换行显示；</span><br><span class="line">-r：显示主机时，不使用IP地址，而使用主机的域名。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">OPTIONS := &#123; -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |</span><br><span class="line">        -h[uman-readable] | -iec |</span><br><span class="line">        -f[amily] &#123; inet | inet6 | ipx | dnet | bridge | link &#125; |</span><br><span class="line">        -4 | -6 | -I | -D | -B | -0 |</span><br><span class="line">        -l[oops] &#123; maximum-addr-flush-attempts &#125; |</span><br><span class="line">        -o[neline] | -t[imestamp] | -ts[hort] | -b[atch] [filename] |</span><br><span class="line">        -rc[vbuf] [size] | -n[etns] name | -a[ll] &#125;</span><br><span class="line">        </span><br><span class="line">网络对象：指定要管理的网络对象；</span><br><span class="line">具体操作：对指定的网络对象完成具体操作；</span><br><span class="line">help：显示网络对象支持的操作命令的帮助信息。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ip link show                     <span class="comment"># 显示网络接口信息</span></span><br><span class="line">ip link <span class="built_in">set</span> eth0 up             <span class="comment"># 开启网卡</span></span><br><span class="line">ip link <span class="built_in">set</span> eth0 down            <span class="comment"># 关闭网卡</span></span><br><span class="line">ip link <span class="built_in">set</span> eth0 promisc on      <span class="comment"># 开启网卡的混合模式</span></span><br><span class="line">ip link <span class="built_in">set</span> eth0 promisc offi    <span class="comment"># 关闭网卡的混个模式</span></span><br><span class="line">ip link <span class="built_in">set</span> eth0 txqueuelen 1200 <span class="comment"># 设置网卡队列长度</span></span><br><span class="line">ip link <span class="built_in">set</span> eth0 mtu 1400        <span class="comment"># 设置网卡最大传输单元</span></span><br><span class="line">ip addr show     <span class="comment"># 显示网卡IP信息</span></span><br><span class="line">ip addr add 192.168.0.1/24 dev eth0 <span class="comment"># 设置eth0网卡IP地址192.168.0.1</span></span><br><span class="line">ip addr del 192.168.0.1/24 dev eth0 <span class="comment"># 删除eth0网卡IP地址</span></span><br><span class="line"></span><br><span class="line">ip route show <span class="comment"># 显示系统路由</span></span><br><span class="line">ip route add default via 192.168.1.254   <span class="comment"># 设置系统默认路由</span></span><br><span class="line">ip route list                 <span class="comment"># 查看路由信息</span></span><br><span class="line">ip route add 192.168.4.0/24  via  192.168.0.254 dev eth0 <span class="comment"># 设置192.168.4.0网段的网关为192.168.0.254,数据走eth0接口</span></span><br><span class="line">ip route add default via  192.168.0.254  dev eth0        <span class="comment"># 设置默认网关为192.168.0.254</span></span><br><span class="line">ip route del 192.168.4.0/24   <span class="comment"># 删除192.168.4.0网段的网关</span></span><br><span class="line">ip route del default          <span class="comment"># 删除默认路由</span></span><br><span class="line">ip route delete 192.168.1.0/24 dev eth0 <span class="comment"># 删除路由</span></span><br></pre></td></tr></table></figure>
+<p><strong>用ip命令显示网络设备的运行状态</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# ip link list</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue</span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast qlen 1000</span><br><span class="line">    link/ether 00:16:3e:00:1e:51 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">3: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast qlen 1000</span><br><span class="line">    link/ether 00:16:3e:00:1e:52 brd ff:ff:ff:ff:ff:ff</span><br></pre></td></tr></table></figure>
+<p><strong>显示更加详细的设备信息</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# ip -s link list</span><br><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 16436 qdisc noqueue</span><br><span class="line">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    RX: bytes  packets  errors  dropped overrun mcast   </span><br><span class="line">    5082831    56145    0       0       0       0      </span><br><span class="line">    TX: bytes  packets  errors  dropped carrier collsns</span><br><span class="line">    5082831    56145    0       0       0       0      </span><br><span class="line">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast qlen 1000</span><br><span class="line">    link/ether 00:16:3e:00:1e:51 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    RX: bytes  packets  errors  dropped overrun mcast   </span><br><span class="line">    3641655380 62027099 0       0       0       0      </span><br><span class="line">    TX: bytes  packets  errors  dropped carrier collsns</span><br><span class="line">    6155236    89160    0       0       0       0      </span><br><span class="line">3: eth1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast qlen 1000</span><br><span class="line">    link/ether 00:16:3e:00:1e:52 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    RX: bytes  packets  errors  dropped overrun mcast   </span><br><span class="line">    2562136822 488237847 0       0       0       0      </span><br><span class="line">    TX: bytes  packets  errors  dropped carrier collsns</span><br><span class="line">    3486617396 9691081  0       0       0       0</span><br></pre></td></tr></table></figure>
+<p><strong>显示核心路由表</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# ip route list </span><br><span class="line">112.124.12.0/22 dev eth1  proto kernel  scope link  src 112.124.15.130</span><br><span class="line">10.160.0.0/20 dev eth0  proto kernel  scope link  src 10.160.7.81</span><br><span class="line">192.168.0.0/16 via 10.160.15.247 dev eth0</span><br><span class="line">172.16.0.0/12 via 10.160.15.247 dev eth0</span><br><span class="line">10.0.0.0/8 via 10.160.15.247 dev eth0</span><br><span class="line">default via 112.124.15.247 dev eth1</span><br></pre></td></tr></table></figure>
+<p><strong>显示邻居表</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# ip neigh list</span><br><span class="line">112.124.15.247 dev eth1 lladdr 00:00:0c:9f:f3:88 REACHABLE</span><br><span class="line">10.160.15.247 dev eth0 lladdr 00:00:0c:9f:f2:c0 STALE</span><br></pre></td></tr></table></figure>
+<p><strong>获取主机所有网络接口</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip link | grep ^[0-9] | awk -F: &apos;&#123;print $2&#125;&apos;</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ip/" data-id="cjvp9c5sj005xj0xi1859g0n8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/ip6tables-restore/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/iotop/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

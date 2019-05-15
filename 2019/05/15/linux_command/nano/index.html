@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="nano字符终端文本编辑器 补充说明nano 是一个字符终端的文本编辑器，有点像DOS下的editor程序。它比vi/vim要简单得多，比较适合Linux初学者使用。某些Linux发行版的默认编辑器就是nano。 nano命令可以打开指定文件进行编辑，默认情况下它会自动断行，即在一行中输入过长的内容时自动拆分成几行，但用这种方式来处理某些文件可能会带来问题，比如Linux系统的配置文件，自动断行就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/nano/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="nano字符终端文本编辑器 补充说明nano 是一个字符终端的文本编辑器，有点像DOS下的editor程序。它比vi/vim要简单得多，比较适合Linux初学者使用。某些Linux发行版的默认编辑器就是nano。 nano命令可以打开指定文件进行编辑，默认情况下它会自动断行，即在一行中输入过长的内容时自动拆分成几行，但用这种方式来处理某些文件可能会带来问题，比如Linux系统的配置文件，自动断行就">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="nano字符终端文本编辑器 补充说明nano 是一个字符终端的文本编辑器，有点像DOS下的editor程序。它比vi/vim要简单得多，比较适合Linux初学者使用。某些Linux发行版的默认编辑器就是nano。 nano命令可以打开指定文件进行编辑，默认情况下它会自动断行，即在一行中输入过长的内容时自动拆分成几行，但用这种方式来处理某些文件可能会带来问题，比如Linux系统的配置文件，自动断行就">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/nano" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/nano/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.942Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="nano"><a href="#nano" class="headerlink" title="nano"></a>nano</h1><p>字符终端文本编辑器</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>nano</strong> 是一个字符终端的文本编辑器，有点像DOS下的editor程序。它比vi/vim要简单得多，比较适合Linux初学者使用。某些Linux发行版的默认编辑器就是nano。</p>
+<p>nano命令可以打开指定文件进行编辑，默认情况下它会自动断行，即在一行中输入过长的内容时自动拆分成几行，但用这种方式来处理某些文件可能会带来问题，比如Linux系统的配置文件，自动断行就会使本来只能写在一行上的内容折断成多行了，有可能造成系统不灵了。因此，如果你想避免这种情况出现，就加上<code>-w</code>选项吧。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano [选项] [[+行,列] 文件名]...</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">-h, -?         --help                  显示此信息</span><br><span class="line">+行,列                                 从所指列数与行数开始</span><br><span class="line">-A             --smarthome             启用智能 HOME 键</span><br><span class="line">-B             --backup                储存既有文件的备份</span><br><span class="line">-C &lt;目录&gt;      --backupdir=&lt;目录&gt;      用以储存独一备份文件的目录</span><br><span class="line">-D             --boldtext              用粗体替代颜色反转</span><br><span class="line">-E             --tabstospaces          将已输入的制表符转换为空白</span><br><span class="line">-F             --multibuffer           启用多重文件缓冲区功能</span><br><span class="line">-H             --historylog            记录与读取搜索/替换的历史字符串</span><br><span class="line">-I             --ignorercfiles         不要参考nanorc 文件</span><br><span class="line">-K             --rebindkeypad          修正数字键区按键混淆问题</span><br><span class="line">-L             --nonewlines            不要将换行加到文件末端</span><br><span class="line">-N             --noconvert             不要从 DOS/Mac 格式转换</span><br><span class="line">-O             --morespace             编辑时多使用一行</span><br><span class="line">-Q &lt;字符串&gt;    --quotestr=&lt;字符串&gt;     引用代表字符串</span><br><span class="line">-R             --restricted            限制模式</span><br><span class="line">-S             --smooth                按行滚动而不是半屏</span><br><span class="line">-T &lt;#列数&gt;     --tabsize=&lt;#列数&gt;       设定制表符宽度为 #列数</span><br><span class="line">-U             --quickblank            状态行快速闪动</span><br><span class="line">-V             --version               显示版本资讯并离开</span><br><span class="line">-W             --wordbounds            更正确地侦测单字边界</span><br><span class="line">-Y &lt;字符串&gt;    --syntax=&lt;字符串&gt;       用于加亮的语法定义</span><br><span class="line">-c             --const                 持续显示游标位置</span><br><span class="line">-d             --rebinddelete          修正退格键/删除键混淆问题</span><br><span class="line">-i             --autoindent            自动缩进新行</span><br><span class="line">-k             --cut                   从游标剪切至行尾</span><br><span class="line">-l             --nofollow              不要依照符号连结，而是覆盖</span><br><span class="line">-m             --mouse                 启用鼠标功能</span><br><span class="line">-o &lt;目录&gt;      --operatingdir=&lt;目录&gt;   设定操作目录</span><br><span class="line">-p             --preserve              保留XON (^Q) 和XOFF (^S) 按键</span><br><span class="line">-q             --quiet                 沉默忽略启动问题, 比如rc 文件错误</span><br><span class="line">-r &lt;#列数&gt;     --fill=&lt;#列数&gt;          设定折行宽度为 #列数</span><br><span class="line">-s &lt;程序&gt;      --speller=&lt;程序&gt;        启用替代的拼写检查程序</span><br><span class="line">-t             --tempfile              离开时自动储存，不要提示</span><br><span class="line">-u             --undo                  允许通用撤销[试验性特性]</span><br><span class="line">-v             --view                  查看(只读)模式</span><br><span class="line">-w             --nowrap                不要自动换行</span><br><span class="line">-x             --nohelp                不要显示辅助区</span><br><span class="line">-z             --suspend               启用暂停功能</span><br><span class="line">-$             --softwrap              启用软换行</span><br><span class="line">-a, -b, -e,</span><br><span class="line">-f, -g, -j                             (忽略，为与pico 相容)</span><br></pre></td></tr></table></figure>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p> <strong>光标控制</strong> </p>
+<ul>
+<li>移动光标：使用用方向键移动。</li>
+<li><p>选择文字：按住鼠标左键拖到。</p>
+<p><strong>复制、剪贴和粘贴</strong> </p>
+</li>
+<li><p>复制一整行：Alt+6</p>
+</li>
+<li><p>剪贴一整行：Ctrl+K</p>
+<p><strong>粘贴：Ctrl+U</strong> </p>
+</li>
+</ul>
+<p>如果需要复制／剪贴多行或者一行中的一部分，先将光标移动到需要复制／剪贴的文本的开头，按Ctrl+6（或者Alt+A）做标记，然后移动光标到 待复制／剪贴的文本末尾。这时选定的文本会反白，用Alt+6来复制，Ctrl+K来剪贴。若在选择文本过程中要取消，只需要再按一次Ctrl+6。</p>
+<p> <strong>搜索</strong> </p>
+<p>按Ctrl+W，然后输入你要搜索的关键字，回车确定。这将会定位到第一个匹配的文本，接着可以用Alt+W来定位到下一个匹配的文本。</p>
+<p> <strong>翻页</strong> </p>
+<ul>
+<li>Ctrl+Y到上一页</li>
+<li><p>Ctrl+V到下一页</p>
+<p><strong>保存</strong> </p>
+</li>
+</ul>
+<p>使用Ctrl+O来保存所做的修改</p>
+<p> <strong>退出</strong> </p>
+<p>按Ctrl+X</p>
+<p>如果你修改了文件，下面会询问你是否需要保存修改。输入Y确认保存，输入N不保存，按Ctrl+C取消返回。如果输入了Y，下一步会让你输入想要保存的文件名。如果不需要修改文件名直接回车就行；若想要保存成别的名字（也就是另存为）则输入新名称然后确 定。这个时候也可用Ctrl+C来取消返回。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/nano/" data-id="cjvp9c5un008lj0xi2w7gtbgb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/nc/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/named-checkzone/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

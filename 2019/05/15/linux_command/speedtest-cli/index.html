@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="speedtest-cli命令行下测试服务器外网速度 补充说明speedtest-cli 是一个使用python编写的命令行脚本，通过调用speedtest.net测试上下行的接口来完成速度测试，最后我会测试运维生存时间所在服务器的外网速度。项目地址：https://github.com/sivel/speedtest-cli 安装speedtest－clispeedtest-cli需要在pyth">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/speedtest-cli/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="speedtest-cli命令行下测试服务器外网速度 补充说明speedtest-cli 是一个使用python编写的命令行脚本，通过调用speedtest.net测试上下行的接口来完成速度测试，最后我会测试运维生存时间所在服务器的外网速度。项目地址：https://github.com/sivel/speedtest-cli 安装speedtest－clispeedtest-cli需要在pyth">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="speedtest-cli命令行下测试服务器外网速度 补充说明speedtest-cli 是一个使用python编写的命令行脚本，通过调用speedtest.net测试上下行的接口来完成速度测试，最后我会测试运维生存时间所在服务器的外网速度。项目地址：https://github.com/sivel/speedtest-cli 安装speedtest－clispeedtest-cli需要在pyth">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/speedtest-cli" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/speedtest-cli/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.246Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="speedtest-cli"><a href="#speedtest-cli" class="headerlink" title="speedtest-cli"></a>speedtest-cli</h1><p>命令行下测试服务器外网速度</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>speedtest-cli</strong> 是一个使用python编写的命令行脚本，通过调用speedtest.net测试上下行的接口来完成速度测试，最后我会测试运维生存时间所在服务器的外网速度。项目地址：<a href="https://github.com/sivel/speedtest-cli" target="_blank" rel="noopener">https://github.com/sivel/speedtest-cli</a></p>
+<h3 id="安装speedtest－cli"><a href="#安装speedtest－cli" class="headerlink" title="安装speedtest－cli"></a>安装speedtest－cli</h3><p>speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，自己选择以下最适合你的一种。</p>
+<p> <strong>pip方式</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">＃ pip install speedtest－cli</span><br></pre></td></tr></table></figure>
+<p> <strong>easy_install方式</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">＃ easy_install speedtest-cli</span><br></pre></td></tr></table></figure>
+<p> <strong>github＋pip方式</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">＃ pip install git+https://github.com/sivel/speedtest-cli.git</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">＃ git clone https://github.com/sivel/speedtest-cli.git</span><br><span class="line">＃ python speedtest-cli/setup.py install</span><br></pre></td></tr></table></figure>
+<p> <strong>下载脚本方式</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">＃ wget -O speedtest-cli https://raw.github.com/sivel/spe ... er/speedtest_cli.py</span><br><span class="line">＃ chmod +x speedtest-cli</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">＃ curl -o speedtest-cli https://raw.github.com/sivel/spe ... er/speedtest_cli.py</span><br><span class="line">＃ chmod +x speedtest-cli</span><br></pre></td></tr></table></figure>
+<p>直接下载脚本，给予执行权限即可。</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-h, --help       show this help message and exit</span><br><span class="line">--share          分享你的网速，该命令会在speedtest网站上生成网速测试结果的图片。</span><br><span class="line">--simple         Suppress verbose output, only show basic information</span><br><span class="line">--list           根据距离显示speedtest.net的测试服务器列表。</span><br><span class="line">--server=SERVER  指定列表中id的服务器来做测试。</span><br><span class="line">--mini=MINI      URL of the Speedtest Mini server</span><br><span class="line">--source=SOURCE  Source ip address to bind to</span><br><span class="line">--version        Show the version number and exit</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>列出所有在中国的测试服务器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@li229-122 ~]# speedtest-cli --list | grep China</span><br><span class="line">1185) China Unicom (Changchun, China) [10534.35 km]</span><br><span class="line">3784) China Mobile (Urumqi, China) [10581.15 km]</span><br><span class="line">2667) Beijing Normal University (Beijing, China) [11117.03 km]</span><br><span class="line">2529) Beijing Normal University (Beijing, China) [11117.03 km]</span><br><span class="line">2816) Capital Online Data service (Beijing, China) [11117.03 km]</span><br><span class="line">4354) SXmobile (Taiyuan, China) [11383.17 km]</span><br><span class="line">3973) China Telecom (Lanzhou, China) [11615.43 km]</span><br><span class="line">3633) China Telecom (Shanghai, China) [11983.37 km]</span><br><span class="line">3927) China Mobile Jiangsu Co., Ltd. (Suzhou, China) [11989.27 km]</span><br><span class="line">2461) China Unicom (Chengdu, China) [12213.35 km]</span><br><span class="line">1028) Shepherd Software (Xiamen, China) [12785.57 km]</span><br><span class="line">1628) Xiamen Guangdian Xinxu (Xiamen, China) [12785.57 km]</span><br><span class="line">3891) GZinternet (Guangzhou, China) [13005.36 km]</span><br><span class="line">3871) SZWCDMA (Shenzhen, China) [13059.20 km]</span><br><span class="line">3819) SZU (Shenzhen, China) [13059.20 km]</span><br><span class="line">1536) STC (Hong Kong, China) [13088.37 km]</span><br><span class="line">1890) Telin (Hong Kong, China) [13088.37 km]</span><br></pre></td></tr></table></figure>
+<p> <strong>结果解释</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3633) China Telecom (Shanghai, China) [11983.37 km]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3633: 服务器id</span><br><span class="line">china telecom：isp，这里是中国电信</span><br><span class="line">shanghai,china ：服务器所在地址</span><br><span class="line">11983.37 km：两台服务器地理位置之间距离，我这台机器在美国，和上海相距11983.37公里，很远呐.</span><br></pre></td></tr></table></figure>
+<p> <strong>外网速度测试</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@li229-122 ~]# speedtest-cli --server=3633 --share</span><br><span class="line">Retrieving speedtest.net configuration...</span><br><span class="line">Retrieving speedtest.net server list...</span><br><span class="line">Testing from Linode (173.255.219.122)...</span><br><span class="line">Hosted by China Telecom (Shanghai) [11983.37 km]: 23.603 ms</span><br><span class="line">Testing download speed........................................</span><br><span class="line">Download: 24.84 Mbit/s</span><br><span class="line">Testing upload speed..................................................</span><br><span class="line">Upload: 4.57 Mbit/s</span><br><span class="line">Share results: http://www.speedtest.net/result/3240988007.png</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/speedtest-cli/" data-id="cjvp9c5x000btj0xibsiqhtuv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/spell/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/source/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

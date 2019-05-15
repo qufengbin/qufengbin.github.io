@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ethtool显示或修改以太网卡的配置信息 补充说明ethtool命令用于获取以太网卡的配置信息，或者修改这些配置。这个命令比较复杂，功能特别多。 语法1234567891011ethtool [ -a | -c | -g | -i | -d | -k | -r | -S |] ethXethtool [-A] ethX [autoneg on|off] [rx on|off] [tx on|of">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/ethtool/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ethtool显示或修改以太网卡的配置信息 补充说明ethtool命令用于获取以太网卡的配置信息，或者修改这些配置。这个命令比较复杂，功能特别多。 语法1234567891011ethtool [ -a | -c | -g | -i | -d | -k | -r | -S |] ethXethtool [-A] ethX [autoneg on|off] [rx on|off] [tx on|of">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="ethtool显示或修改以太网卡的配置信息 补充说明ethtool命令用于获取以太网卡的配置信息，或者修改这些配置。这个命令比较复杂，功能特别多。 语法1234567891011ethtool [ -a | -c | -g | -i | -d | -k | -r | -S |] ethXethtool [-A] ethX [autoneg on|off] [rx on|off] [tx on|of">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/ethtool" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/ethtool/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.467Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ethtool"><a href="#ethtool" class="headerlink" title="ethtool"></a>ethtool</h1><p>显示或修改以太网卡的配置信息</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p>ethtool命令用于获取以太网卡的配置信息，或者修改这些配置。这个命令比较复杂，功能特别多。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ethtool [ -a | -c | -g | -i | -d | -k | -r | -S |] ethX</span><br><span class="line">ethtool [-A] ethX [autoneg on|off] [rx on|off] [tx on|off]</span><br><span class="line">ethtool [-C] ethX [adaptive-rx on|off] [adaptive-tx on|off] [rx-usecs N] [rx-frames N] [rx-usecs-irq N] [rx-frames-irq N] [tx-usecs N] [tx-frames N] [tx-usecs-irq N] [tx-frames-irq N] [stats-block-usecs N][pkt-rate-low N][rx-usecs-low N] [rx-frames-low N] [tx-usecs-low N] [tx-frames-lowN] [pkt-rate-high N] [rx-usecs-high N] [rx-frames-high N] [tx-usecs-high N] [tx-frames-high N] [sample-interval N]</span><br><span class="line">ethtool [-G] ethX [rx N] [rx-mini N] [rx-jumbo N] [tx N]</span><br><span class="line">ethtool [-e] ethX [raw on|off] [offset N] [length N]</span><br><span class="line">ethtool [-E] ethX [magic N] [offset N] [value N]</span><br><span class="line">ethtool [-K] ethX [rx on|off] [tx on|off] [sg on|off] [tso on|off]</span><br><span class="line">ethtool [-p] ethX [N]</span><br><span class="line">ethtool [-t] ethX [offline|online]</span><br><span class="line">ethtool [-s] ethX [speed 10|100|1000] [duplex half|full] [autoneg on|off] [port tp|aui|bnc|mii] [phyad N] [xcvr internal|external]</span><br><span class="line">[wol p|u|m|b|a|g|s|d...] [sopass xx:yy:zz:aa:bb:cc] [msglvl N]</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-a 查看网卡中 接收模块RX、发送模块TX和Autonegotiate模块的状态：启动on 或 停用off。</span><br><span class="line">-A 修改网卡中 接收模块RX、发送模块TX和Autonegotiate模块的状态：启动on 或 停用off。</span><br><span class="line">-c display the Coalesce information of the specified ethernet card。</span><br><span class="line">-C Change the Coalesce setting of the specified ethernet card。</span><br><span class="line">-g Display the rx/tx ring parameter information of the specified ethernet card。</span><br><span class="line">-G change the rx/tx ring setting of the specified ethernet card。</span><br><span class="line">-i 显示网卡驱动的信息，如驱动的名称、版本等。</span><br><span class="line">-d 显示register dump信息, 部分网卡驱动不支持该选项。</span><br><span class="line">-e 显示EEPROM dump信息，部分网卡驱动不支持该选项。</span><br><span class="line">-E 修改网卡EEPROM byte。</span><br><span class="line">-k 显示网卡Offload参数的状态：on 或 off，包括rx-checksumming、tx-checksumming等。</span><br><span class="line">-K 修改网卡Offload参数的状态。</span><br><span class="line">-p 用于区别不同ethX对应网卡的物理位置，常用的方法是使网卡port上的led不断的闪；N指示了网卡闪的持续时间，以秒为单位。</span><br><span class="line">-r 如果auto-negotiation模块的状态为on，则restarts auto-negotiation。</span><br><span class="line">-S 显示NIC- and driver-specific 的统计参数，如网卡接收/发送的字节数、接收/发送的广播包个数等。</span><br><span class="line">-t 让网卡执行自我检测，有两种模式：offline or online。</span><br><span class="line">-s 修改网卡的部分配置，包括网卡速度、单工/全双工模式、mac地址等。</span><br></pre></td></tr></table></figure>
+<h3 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h3><p>Ethtool命令显示的信息来源于网卡驱动层，即TCP/ip协议的链路层。该命令在Linux内核中实现的逻辑层次为：</p>
+<p>最重要的结构体<code>struct ethtool_ops</code>，该结构体成员为用于显示或修改以太网卡配置的一系列函数指针，见下表中的第二列。</p>
+<p>网卡驱动负责实现（部分）这些函数，并将其封装入<code>ethtool_ops</code>结构体，为网络核心层提供统一的调用接口。因此，不同的网卡驱动会给应用层返回不同的信息。<code>Ethtool命令选项</code>、<code>struct ethtool_ops成员函数</code>、<code>Ethtool命令显示参数的来源</code>，三者间的对应关系如下表所示：</p>
+<table><br><br><tbody><br><br><tr><br><br><th style="width: 100px;">命令选项</th><br><br><th>struct ethtool_ops成员函数</th><br><br><th>Ethtool命令显示参数的来源（以网卡驱动BNX2为例）</th><br><br></tr><br><br><tr><br><br><td>无 -s</td><br><br><td>get_settingsget_wol get_msglevel get_link set_settings set_wol set_msglevel</td><br><br><td>从网卡寄存器中获得网卡速度等信息，可配置。</td><br><br></tr><br><br><tr><br><br><td>-a -A</td><br><br><td>get_pauseparam set_pauseparam</td><br><br><td>从网卡寄存器中获得Autonegotiate/RX/TX模块的状态：on oroff，可配置。</td><br><br></tr><br><br><tr><br><br><td>-c -C</td><br><br><td>get_coalesceset_coalesce</td><br><br><td>从网卡寄存器中获得coalescing参数：TX/RX一个数据包后，推迟发生TX/RX中断的时间(us)/数据包个数。—减小该值可以提高网卡的响应时间。 当rx-usecs&amp;rx-frames同时被设为0时，RX中断停止。 当tx-usecs&amp;tx-frames同时被设为0时，TX中断停止。</td><br><br></tr><br><br><tr><br><br><td>-g -G</td><br><br><td>get_ringparam set_ringparam</td><br><br><td>除当前TX/RX ring的值（从网卡寄存器中读取得到，可配置）外，其它为网卡bnx2自己固定的信息。</td><br><br></tr><br><br><tr><br><br><td>-k -K</td><br><br><td>get_rx_csumget_tx_csum get_sg get_tso set_rx_csum set_tx_csum set_sg set_tso</td><br><br><td>显示信息从保存该状态的变量中读取得到，没有对应的寄存器。因此，TX/RX校验等模块一直处于on状态，实际上是无法修改的。</td><br><br></tr><br><br><tr><br><br><td>-i</td><br><br><td>get_drvinfo[self_test_count, get_stats_coun,t get_regs_len, get_eeprom_len]</td><br><br><td>网卡bnx2自己固定的信息，如：<br>——————————————————–<br>driver: bnx2 version: 1.4.30 firmware-version: 1.8.0.5 bus-info: 0000:09:00.0<br>——————————————————–</td><br><br></tr><br><br><tr><br><br><td>-d</td><br><br><td>get_drvinfoget_regs</td><br><br><td>不支持，即bnx2中没有实现函数get_regs。</td><br><br></tr><br><br><tr><br><br><td>-e -E</td><br><br><td>get_eepromset_eeprom</td><br><br><td>不支持，即bnx2中没有实现函数get_eeprom。</td><br><br></tr><br><br><tr><br><br><td>-r</td><br><br><td>nway_reset</td><br><br><td>配置网卡MII_BMCR寄存器，重启Auto negotiation模块。</td><br><br></tr><br><br><tr><br><br><td>-p</td><br><br><td>phys_id</td><br><br><td>配置网卡BNX2_EMAC_LED寄存器，实现LED闪功能。</td><br><br></tr><br><br><tr><br><br><td>-t</td><br><br><td>self_test</td><br><br><td>通过配置网卡寄存器，逐一测试网卡的硬件模块：registers，memory，loopback，Link stat，interrupt。</td><br><br></tr><br><br><tr><br><br><td>-S</td><br><br><td>get_ethtool_stats</td><br><br><td>显示信息来源于网卡驱动中的结构体变量stats_blk。（网卡通过DMA方式，将寄存器BNX2_HC_STATISTICS _ADDR_L和BNX2_HC_STATISTICS_ADDR_H中的数据实时地读取到结构体变量struct statistics_block *stats_blk中。） —显示的数据都是从网卡寄存器中统计得到的，各项的含义需查询网卡（芯片）手册。</td><br><br></tr><br><br></tbody><br><br></table>
+
+<p>由上可见，ethtool命令用于显示/配置网卡硬件（寄存器）。  </p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>查看机器上网卡的速度：百兆还是千兆，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethool eth0</span><br></pre></td></tr></table></figure>
+<p>操作完毕后，输出信息中<code>Speed:</code>这一项就指示了网卡的速度。停止网卡的发送模块TX，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool -A tx off eth0</span><br></pre></td></tr></table></figure>
+<p>操作完毕后，可输入<code>ethtool -a eth0</code>，查看tx模块是否已被停止。查看网卡eth0采用了何种驱动，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool -i eth0</span><br></pre></td></tr></table></figure>
+<p>操作完毕后，显示 driver: bnx2；version: 1.4.30 等信息。关闭网卡对收到的数据包的校验功能，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool -K eth0 rx off</span><br></pre></td></tr></table></figure>
+<p>操作完毕后，可输入<code>ethtool –k eth0</code>，查看校验功能是否已被停止。如果机器上安装了两块网卡，那么eth0对应着哪块网卡呢？输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool -p eth0 10</span><br></pre></td></tr></table></figure>
+<p>操作完毕后，看哪块网卡的led灯在闪，eth0就对应着哪块网卡。查看网卡，在接收/发送数据时，有没有出错？请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool –S eth0</span><br></pre></td></tr></table></figure>
+<p>将千兆网卡的速度降为百兆，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool -s eth0 speed 100</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ethtool/" data-id="cjvp9c5qu003xj0xiemyu74h7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/ex/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/env/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

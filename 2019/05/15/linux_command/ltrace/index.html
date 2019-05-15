@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ltrace用来跟踪进程调用库函数的情况 补充说明ltrace命令 是用来跟踪进程调用库函数的情况。 语法1ltrace [option ...] [command [arg ...]] 选项123456789101112131415161718192021-a 对齐具体某个列的返回值。-c 计算时间和调用，并在程序退出时打印摘要。-C 解码低级别名称（内核级）为用户级名称。-d 打印调试信息。-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/ltrace/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ltrace用来跟踪进程调用库函数的情况 补充说明ltrace命令 是用来跟踪进程调用库函数的情况。 语法1ltrace [option ...] [command [arg ...]] 选项123456789101112131415161718192021-a 对齐具体某个列的返回值。-c 计算时间和调用，并在程序退出时打印摘要。-C 解码低级别名称（内核级）为用户级名称。-d 打印调试信息。-">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="ltrace用来跟踪进程调用库函数的情况 补充说明ltrace命令 是用来跟踪进程调用库函数的情况。 语法1ltrace [option ...] [command [arg ...]] 选项123456789101112131415161718192021-a 对齐具体某个列的返回值。-c 计算时间和调用，并在程序退出时打印摘要。-C 解码低级别名称（内核级）为用户级名称。-d 打印调试信息。-">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/ltrace" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/ltrace/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.868Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ltrace"><a href="#ltrace" class="headerlink" title="ltrace"></a>ltrace</h1><p>用来跟踪进程调用库函数的情况</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>ltrace命令</strong> 是用来跟踪进程调用库函数的情况。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ltrace [option ...] [command [arg ...]]</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">-a 对齐具体某个列的返回值。</span><br><span class="line">-c 计算时间和调用，并在程序退出时打印摘要。</span><br><span class="line">-C 解码低级别名称（内核级）为用户级名称。</span><br><span class="line">-d 打印调试信息。</span><br><span class="line">-e 改变跟踪的事件。</span><br><span class="line">-f 跟踪子进程。</span><br><span class="line">-h 打印帮助信息。</span><br><span class="line">-i 打印指令指针，当库调用时。</span><br><span class="line">-l 只打印某个库中的调用。</span><br><span class="line">-L 不打印库调用。</span><br><span class="line">-n, --indent=NR 对每个调用级别嵌套以NR个空格进行缩进输出。</span><br><span class="line">-o, --output=file 把输出定向到文件。</span><br><span class="line">-p PID 附着在值为PID的进程号上进行ltrace。</span><br><span class="line">-r 打印相对时间戳。</span><br><span class="line">-s STRLEN 设置打印的字符串最大长度。</span><br><span class="line">-S 显示系统调用。</span><br><span class="line">-t, -tt, -ttt 打印绝对时间戳。</span><br><span class="line">-T 输出每个调用过程的时间开销。</span><br><span class="line">-u USERNAME 使用某个用户id或组ID来运行命令。</span><br><span class="line">-V, --version 打印版本信息，然后退出。</span><br><span class="line">-x NAME treat the global NAME like a library subroutine.（求翻译）</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>最基本应用，不带任何参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[guest@localhost tmp]$ ltrace ./a.out</span><br><span class="line">__libc_start_main(0x80484aa, 1, 0xbfc07744, 0x8048550, 0x8048540 &lt;unfinished ...&gt;</span><br><span class="line">printf(&quot;no1:%d \t no2:%d \t diff:%d\n&quot;, 10, 6, 4no1:10 no2:6 diff:4 ) = 24</span><br><span class="line">printf(&quot;no1:%d \t no2:%d \t diff:%d\n&quot;, 9, 7, 2no1:9 no2:7 diff:2 ) = 23</span><br><span class="line">printf(&quot;no1:%d \t no2:%d \t diff:%d\n&quot;, 8, 8, 0no1:8 no2:8 diff:0 ) = 23</span><br><span class="line">--- SIGFPE (Floating point exception) ---</span><br><span class="line">+++ killed by SIGFPE +++</span><br></pre></td></tr></table></figure>
+<p>输出调用时间开销：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[guest@localhost tmp]$ ltrace -T ./a.out</span><br><span class="line">__libc_start_main(0x80484aa, 1, 0xbf81d394, 0x8048550, 0x8048540 &lt;unfinished ...&gt;</span><br><span class="line">printf(&quot;no1:%d \t no2:%d \t diff:%d\n&quot;, 10, 6, 4no1:10 no2:6 diff:4 ) = 24 &lt;0.000972&gt;</span><br><span class="line">printf(&quot;no1:%d \t no2:%d \t diff:%d\n&quot;, 9, 7, 2no1:9 no2:7 diff:2 ) = 23 &lt;0.000155&gt;</span><br><span class="line">printf(&quot;no1:%d \t no2:%d \t diff:%d\n&quot;, 8, 8, 0no1:8 no2:8 diff:0 ) = 23 &lt;0.000153&gt;</span><br><span class="line">--- SIGFPE (Floating point exception) ---</span><br><span class="line">+++ killed by SIGFPE +++</span><br></pre></td></tr></table></figure>
+<p>显示系统调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[guest@localhost tmp]$ ltrace -S ./a.out</span><br><span class="line">SYS_brk(NULL) = 0x9e20000</span><br><span class="line">SYS_access(0xa4710f, 4, 0xa4afc0, 0, 0xa4b644) = 0</span><br><span class="line">SYS_open(&quot;/etc/ld.so.preload&quot;, 0, 02) = 3</span><br><span class="line">SYS_fstat64(3, 0xbfbd7a94, 0xa4afc0, -1, 3) = 0</span><br><span class="line">SYS_mmap2(0, 17, 3, 2, 3) = 0xb7f2a000</span><br><span class="line">SYS_close(3) = 0</span><br><span class="line">SYS_open(&quot;/lib/libcwait.so&quot;, 0, 00) = 3</span><br><span class="line">SYS_read(3, &quot;\177ELF\001\001\001&quot;, 512) = 512</span><br><span class="line">SYS_fstat64(3, 0xbfbd76fc, 0xa4afc0, 4, 0xa4b658) = 0</span><br><span class="line">SYS_mmap2(0, 4096, 3, 34, -1) = 0xb7f29000</span><br><span class="line">SYS_mmap2(0, 5544, 5, 2050, 3) = 0x423000</span><br><span class="line">SYS_mmap2(0x424000, 4096, 3, 2066, 3) = 0x424000</span><br><span class="line">.............省去若干行</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ltrace/" data-id="cjvp9c5tw007jj0xip5a7mf4w" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/lvcreate/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/lsusb/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

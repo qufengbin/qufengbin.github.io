@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="dstat通用的系统资源统计工具 补充说明dstat命令 是一个用来替换vmstat、iostat、netstat、nfsstat和ifstat这些命令的工具，是一个全能系统信息统计工具。与sysstat相比，dstat拥有一个彩色的界面，在手动观察性能状况时，数据比较显眼容易观察；而且dstat支持即时刷新，譬如输入dstat 3即每三秒收集一次，但最新的数据都会每秒刷新显示。和sysstat相">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/dstat/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="dstat通用的系统资源统计工具 补充说明dstat命令 是一个用来替换vmstat、iostat、netstat、nfsstat和ifstat这些命令的工具，是一个全能系统信息统计工具。与sysstat相比，dstat拥有一个彩色的界面，在手动观察性能状况时，数据比较显眼容易观察；而且dstat支持即时刷新，譬如输入dstat 3即每三秒收集一次，但最新的数据都会每秒刷新显示。和sysstat相">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="dstat通用的系统资源统计工具 补充说明dstat命令 是一个用来替换vmstat、iostat、netstat、nfsstat和ifstat这些命令的工具，是一个全能系统信息统计工具。与sysstat相比，dstat拥有一个彩色的界面，在手动观察性能状况时，数据比较显眼容易观察；而且dstat支持即时刷新，譬如输入dstat 3即每三秒收集一次，但最新的数据都会每秒刷新显示。和sysstat相">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/dstat" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dstat/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.390Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dstat"><a href="#dstat" class="headerlink" title="dstat"></a>dstat</h1><p>通用的系统资源统计工具</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dstat命令</strong> 是一个用来替换vmstat、iostat、netstat、nfsstat和ifstat这些命令的工具，是一个全能系统信息统计工具。与sysstat相比，dstat拥有一个彩色的界面，在手动观察性能状况时，数据比较显眼容易观察；而且dstat支持即时刷新，譬如输入<code>dstat 3</code>即每三秒收集一次，但最新的数据都会每秒刷新显示。和sysstat相同的是，dstat也可以收集指定的性能资源，譬如<code>dstat -c</code>即显示CPU的使用情况。</p>
+<h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p> <strong>方法一</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y dstat</span><br></pre></td></tr></table></figure>
+<p> <strong>方法二</strong> </p>
+<p>官网下载地址：<a href="http://dag.wieers.com/rpm/packages/dstat" target="_blank" rel="noopener">http://dag.wieers.com/rpm/packages/dstat</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://dag.wieers.com/rpm/packages/dstat/dstat-0.6.7-1.rh7.rf.noarch.rpm</span><br><span class="line">rpm -ivh dstat-0.6.7-1.rh7.rf.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><p>安装完后就可以使用了，dstat非常强大，可以实时的监控cpu、磁盘、网络、IO、内存等使用情况。</p>
+<p>直接使用dstat，默认使用的是<code>-cdngy</code>参数，分别显示cpu、disk、net、page、system信息，默认是1s显示一条信息。可以在最后指定显示一条信息的时间间隔，如<code>dstat 5</code>是没5s显示一条，<code>dstat 5 10</code>表示没5s显示一条，一共显示10条。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@iZ23uulau1tZ ~]# dstat</span><br><span class="line">----total-cpu-usage---- -dsk/total- -net/total- ---paging-- ---system--</span><br><span class="line">usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw</span><br><span class="line">  0   0  99   0   0   0|7706B  164k|   0     0 |   0     0 | 189   225</span><br><span class="line">  0   0 100   0   0   0|   0     0 |4436B  826B|   0     0 | 195   248</span><br><span class="line">  1   0  99   0   0   0|   0     0 |4744B  346B|   0     0 | 203   242</span><br><span class="line">  0   0 100   0   0   0|   0     0 |5080B  346B|   0     0 | 206   242</span><br><span class="line">  0   1  99   0   0   0|   0     0 |5458B  444B|   0     0 | 214   244</span><br><span class="line">  1   0  99   0   0   0|   0     0 |5080B  346B|   0     0 | 208   242</span><br></pre></td></tr></table></figure>
+<p>下面对显示出来的部分信息作一些说明：</p>
+<ol>
+<li>cpu：hiq、siq分别为硬中断和软中断次数。</li>
+<li>system：int、csw分别为系统的中断次数（interrupt）和上下文切换（context switch）。</li>
+</ol>
+<p>其他的都很好理解。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dstat [-afv] [options..] [delay [count]]</span><br></pre></td></tr></table></figure>
+<h3 id="常用选项"><a href="#常用选项" class="headerlink" title="常用选项"></a>常用选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">-c：显示CPU系统占用，用户占用，空闲，等待，中断，软件中断等信息。</span><br><span class="line">-C：当有多个CPU时候，此参数可按需分别显示cpu状态，例：-C 0,1 是显示cpu0和cpu1的信息。</span><br><span class="line">-d：显示磁盘读写数据大小。</span><br><span class="line">-D hda,total：include hda and total。</span><br><span class="line">-n：显示网络状态。</span><br><span class="line">-N eth1,total：有多块网卡时，指定要显示的网卡。</span><br><span class="line">-l：显示系统负载情况。</span><br><span class="line">-m：显示内存使用情况。</span><br><span class="line">-g：显示页面使用情况。</span><br><span class="line">-p：显示进程状态。</span><br><span class="line">-s：显示交换分区使用情况。</span><br><span class="line">-S：类似D/N。</span><br><span class="line">-r：I/O请求情况。</span><br><span class="line">-y：系统状态。</span><br><span class="line">--ipc：显示ipc消息队列，信号等信息。</span><br><span class="line">--socket：用来显示tcp udp端口状态。</span><br><span class="line">-a：此为默认选项，等同于-cdngy。</span><br><span class="line">-v：等同于 -pmgdsc -D total。</span><br><span class="line">--output 文件：此选项也比较有用，可以把状态信息以csv的格式重定向到指定的文件中，以便日后查看。例：dstat --output /root/dstat.csv &amp; 此时让程序默默的在后台运行并把结果输出到/root/dstat.csv文件中。</span><br></pre></td></tr></table></figure>
+<p>当然dstat还有很多更高级的用法，常用的基本这些选项，更高级的用法可以结合man文档。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>如想监控swap，process，sockets，filesystem并显示监控的时间：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@iZ23uulau1tZ ~]# dstat -tsp --socket --fs</span><br><span class="line">----system---- ----swap--- ---procs--- ------sockets------ --filesystem-</span><br><span class="line">  date/time   | used  free|run blk new|tot tcp udp raw frg|files  inodes</span><br><span class="line">26-07 09:23:48|   0     0 |  0   0 0.0|104   8   5   0   0|  704   6488</span><br><span class="line">26-07 09:23:49|   0     0 |  0   0   0|104   8   5   0   0|  704   6488</span><br><span class="line">26-07 09:23:50|   0     0 |  0   0   0|104   8   5   0   0|  704   6489</span><br><span class="line">26-07 09:23:51|   0     0 |  0   0   0|104   8   5   0   0|  704   6489</span><br><span class="line">26-07 09:23:52|   0     0 |  0   0   0|104   8   5   0   0|  704   6489</span><br><span class="line">26-07 09:23:53|   0     0 |  0   0   0|104   8   5   0   0|  704   6489</span><br></pre></td></tr></table></figure>
+<p>若要将结果输出到文件可以加<code>--output filename</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@iZ23uulau1tZ ~]# dstat -tsp --socket --fs --output /tmp/ds.csv</span><br><span class="line">----system---- ----swap--- ---procs--- ------sockets------ --filesystem-</span><br><span class="line">  date/time   | used  free|run blk new|tot tcp udp raw frg|files  inodes</span><br><span class="line">26-07 09:25:31|   0     0 |  0   0 0.0|104   8   5   0   0|  736   6493</span><br><span class="line">26-07 09:25:32|   0     0 |  0   0   0|104   8   5   0   0|  736   6493</span><br><span class="line">26-07 09:25:33|   0     0 |  0   0   0|104   8   5   0   0|  736   6493</span><br><span class="line">26-07 09:25:34|   0     0 |  0   0   0|104   8   5   0   0|  736   6493</span><br><span class="line">26-07 09:25:35|   0     0 |  0   0   0|104   8   5   0   0|  736   6494</span><br><span class="line">26-07 09:25:36|   0     0 |  0   0   0|104   8   5   0   0|  736   6494</span><br></pre></td></tr></table></figure>
+<p>这样生成的csv文件可以用excel打开，然后生成图表。</p>
+<p>通过<code>dstat --list</code>可以查看dstat能使用的所有参数，其中上面internal是dstat本身自带的一些监控参数，下面<code>/usr/share/dstat</code>中是dstat的插件，这些插件可以扩展dstat的功能，如可以监控电源（battery）、mysql等。</p>
+<p>下面这些插件并不是都可以直接使用的，有的还依赖其他包，如想监控mysql，必须要装python连接mysql的一些包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@iZ23uulau1tZ ~]# dstat --list</span><br><span class="line">internal:</span><br><span class="line">        aio, cpu, cpu24, disk, disk24, disk24old, epoch, fs, int, int24, io, ipc, load, lock, mem, net, page, page24, proc, raw, socket, swap, swapold, sys, tcp, time, udp, unix, vm</span><br><span class="line">/usr/share/dstat:</span><br><span class="line">        battery, battery-remain, cpufreq, dbus, disk-util, fan, freespace, gpfs, gpfs-ops, helloworld, innodb-buffer, innodb-io, innodb-ops, lustre, memcache-hits, mysql-io, mysql-keys, mysql5-cmds, mysql5-conn, mysql5-io, mysql5-keys,</span><br><span class="line">        net-packets, nfs3, nfs3-ops, nfsd3, nfsd3-ops, ntp, postfix, power, proc-count, rpc, rpcd, sendmail, snooze, thermal, top-bio, top-cpu, top-cputime, top-cputime-avg, top-io, top-latency, top-latency-avg, top-mem, top-oom, utmp,</span><br><span class="line">        vm-memctl, vmk-hba, vmk-int, vmk-nic, vz-cpu, vz-io, vz-ubc, wifi</span><br></pre></td></tr></table></figure>
+<p>dstat命令的基本用法就说到这里，更多用法有待摸索，如果您需要补充内容请给我们发邮件，谢谢！</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dstat/" data-id="cjvp9c5qe003gj0xib6wbf6at" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/du/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/dris/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

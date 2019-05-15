@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="skill向选定的进程发送信号冻结进程 补充说明skill命令 用于向选定的进程发送信号，冻结进程。这个命令初学者并不常用，深入之后牵涉到系统服务优化之后可能会用到。 语法1skill(选项) 选项123456789-f：快速模式；-i：交互模式，每一步操作都需要确认；-v：冗余模式；-w：激活模式；-V：显示版本号；-t：指定开启进程的终端号；-u：指定开启进程的用户；-p：指定进程的id号；-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/skill/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="skill向选定的进程发送信号冻结进程 补充说明skill命令 用于向选定的进程发送信号，冻结进程。这个命令初学者并不常用，深入之后牵涉到系统服务优化之后可能会用到。 语法1skill(选项) 选项123456789-f：快速模式；-i：交互模式，每一步操作都需要确认；-v：冗余模式；-w：激活模式；-V：显示版本号；-t：指定开启进程的终端号；-u：指定开启进程的用户；-p：指定进程的id号；-">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="skill向选定的进程发送信号冻结进程 补充说明skill命令 用于向选定的进程发送信号，冻结进程。这个命令初学者并不常用，深入之后牵涉到系统服务优化之后可能会用到。 语法1skill(选项) 选项123456789-f：快速模式；-i：交互模式，每一步操作都需要确认；-v：冗余模式；-w：激活模式；-V：显示版本号；-t：指定开启进程的终端号；-u：指定开启进程的用户；-p：指定进程的id号；-">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/skill" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/skill/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.182Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="skill"><a href="#skill" class="headerlink" title="skill"></a>skill</h1><p>向选定的进程发送信号冻结进程</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>skill命令</strong> 用于向选定的进程发送信号，冻结进程。这个命令初学者并不常用，深入之后牵涉到系统服务优化之后可能会用到。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skill(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-f：快速模式；</span><br><span class="line">-i：交互模式，每一步操作都需要确认；</span><br><span class="line">-v：冗余模式；</span><br><span class="line">-w：激活模式；</span><br><span class="line">-V：显示版本号；</span><br><span class="line">-t：指定开启进程的终端号；</span><br><span class="line">-u：指定开启进程的用户；</span><br><span class="line">-p：指定进程的id号；</span><br><span class="line">-c：指定开启进程的指令名称。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>如果您发现了一个占用大量CPU和内存的进程，但又不想停止它，该怎么办？考虑下面的top命令输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">top -c -p 16514</span><br><span class="line">23:00:44  up 12 days,  2:04,  4 users,  load average: 0.47, 0.35, 0.31</span><br><span class="line">1 processes: 1 sleeping, 0 running, 0 zombie, 0 stopped</span><br><span class="line">CPU states:  cpu    user    nice  system    irq  softirq  iowait    idle</span><br><span class="line">           total    0.0%    0.6%    8.7%   2.2%     0.0%   88.3%    0.0%</span><br><span class="line">Mem:  1026912k av, 1010476k used,   16436k free,       0k shrd,   52128k buff</span><br><span class="line">                    766724k actv,  143128k in_d,   14264k in_c</span><br><span class="line">Swap: 2041192k av,   83160k used, 1958032k free                  799432k cached</span><br><span class="line"></span><br><span class="line">  PID USER     PRI  NI  SIZE  RSS SHARE stat %CPU %MEM   time CPU command</span><br><span class="line">16514 oracle    19   4 28796  26M 20252 D N   7.0  2.5   0:03   0 oraclePRODB2...</span><br></pre></td></tr></table></figure>
+<p>既然您确认进程16514占用了大量内存，您就可以使用skill命令“冻结”它，而不是停止它。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skill -STOP 1</span><br></pre></td></tr></table></figure>
+<p>之后，检查top输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">23:01:11  up 12 days,  2:05,  4 users,  load average: 1.20, 0.54, 0.38</span><br><span class="line">1 processes: 0 sleeping, 0 running, 0 zombie, 1 stopped</span><br><span class="line">CPU states:  cpu    user    nice  system    irq  softirq  iowait    idle</span><br><span class="line">           total    2.3%    0.0%    0.3%   0.0%     0.0%    2.3%   94.8%</span><br><span class="line">Mem:  1026912k av, 1008756k used,   18156k free,       0k shrd,    3976k buff</span><br><span class="line">                    770024k actv,  143496k in_d,   12876k in_c</span><br><span class="line">Swap: 2041192k av,   83152k used, 1958040k free                  851200k cached</span><br><span class="line"></span><br><span class="line">  PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME CPU COMMAND</span><br><span class="line">16514 oracle    19   4 28796  26M 20252 T N   0.0  2.5   0:04   0 oraclePRODB2...</span><br></pre></td></tr></table></figure>
+<p>现在，CPU 从 0% 空闲变为 94% 空闲。该进程被有效冻结。过一段时间之后，您可能希望唤醒该进程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skill -CONT 16514</span><br></pre></td></tr></table></figure>
+<p>如果希望暂时冻结进程以便为完成更重要的进程腾出空间，该方法非常有用。</p>
+<p>此命令用途很广。如果您要停止 “oracle” 用户的所有进程，只需要一个命令即可实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skill -STOP oracle</span><br></pre></td></tr></table></figure>
+<p>可以使用用户、PID、命令或终端 id 作为参数。以下命令可停止所有 rman 命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skill -STOP rman</span><br></pre></td></tr></table></figure>
+<p>如您所见，skill 决定您输入的参数（进程 ID、用户 ID 或命令）并进行相应操作。这可能会导致在某些情况下出现这样的问题：您可能具有同名的用户和命令。最好的示例是 “oracle” 进程，通常由用户 “oracle” 运行。因此，当您希望停止名为 “oracle” 的进程时，可执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skill -STOP oracle</span><br></pre></td></tr></table></figure>
+<p>用户 “oracle” 的所有进程都停止，包括您可能要使用的会话。要非常明确地执行命令，您可以选择使用一个新参数指定参数的类型。要停止一个名为 oracle 的命令，可执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skill -STOP -c oracle</span><br></pre></td></tr></table></figure>
+<p>snice命令的功能与skill类似。但它用于降低进程的优先级，而不是停止进程。首先，检查 top 输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME CPU COMMAND</span><br><span class="line">    3 root      15   0     0    0     0 RW    0.0  0.0   0:00   0 kapmd</span><br><span class="line">13680 oracle    15   0 11336  10M  8820 T     0.0  1.0   0:00   0 oracle</span><br><span class="line">13683 oracle    15   0  9972 9608  7788 T     0.0  0.9   0:00   0 oracle</span><br><span class="line">13686 oracle    15   0  9860 9496  7676 T     0.0  0.9   0:00   0 oracle</span><br><span class="line">13689 oracle    15   0 10004 9640  7820 T     0.0  0.9   0:00   0 oracle</span><br><span class="line">13695 oracle    15   0  9984 9620  7800 T     0.0  0.9   0:00   0 oracle</span><br><span class="line">13698 oracle    15   0 10064 9700  7884 T     0.0  0.9   0:00   0 oracle</span><br><span class="line">13701 oracle    15   0 22204  21M 16940 T     0.0  2.1   0:00   0 oracle</span><br></pre></td></tr></table></figure>
+<p>现在，将 “oracle” 进程的优先级降低四个点。注意，该值越高，优先级越低。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">snice +4 -u oracle</span><br><span class="line">  PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME CPU COMMAND</span><br><span class="line">16894 oracle    20   4 38904  32M 26248 D N   5.5  3.2   0:01   0 oracle</span><br></pre></td></tr></table></figure>
+<p>注意，NI 列（nice 值）现在是 4，优先级现在设置为 20，而不是 15。这对于降低优先级非常有帮助。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/skill/" data-id="cjvp9c5wu00bkj0xie95598pn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/slabtop/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/shutdown/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

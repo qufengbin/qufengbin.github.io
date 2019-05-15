@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="testshell环境中测试条件表达式工具 补充说明test命令 是shell环境中测试条件表达式的实用工具。 语法1test(选项) 选项12345678910111213141516-b&amp;lt;文件&amp;gt;：如果文件为一个块特殊文件，则为真；-c&amp;lt;文件&amp;gt;：如果文件为一个字符特殊文件，则为真；-d&amp;lt;文件&amp;gt;：如果文件为一个目录，则为真；-e&amp;lt;文件&amp;gt;：如果文件存在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/test/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="testshell环境中测试条件表达式工具 补充说明test命令 是shell环境中测试条件表达式的实用工具。 语法1test(选项) 选项12345678910111213141516-b&amp;lt;文件&amp;gt;：如果文件为一个块特殊文件，则为真；-c&amp;lt;文件&amp;gt;：如果文件为一个字符特殊文件，则为真；-d&amp;lt;文件&amp;gt;：如果文件为一个目录，则为真；-e&amp;lt;文件&amp;gt;：如果文件存在">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="testshell环境中测试条件表达式工具 补充说明test命令 是shell环境中测试条件表达式的实用工具。 语法1test(选项) 选项12345678910111213141516-b&amp;lt;文件&amp;gt;：如果文件为一个块特殊文件，则为真；-c&amp;lt;文件&amp;gt;：如果文件为一个字符特殊文件，则为真；-d&amp;lt;文件&amp;gt;：如果文件为一个目录，则为真；-e&amp;lt;文件&amp;gt;：如果文件存在">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/test/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.331Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="test"><a href="#test" class="headerlink" title="test"></a>test</h1><p>shell环境中测试条件表达式工具</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>test命令</strong> 是shell环境中测试条件表达式的实用工具。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-b&lt;文件&gt;：如果文件为一个块特殊文件，则为真；</span><br><span class="line">-c&lt;文件&gt;：如果文件为一个字符特殊文件，则为真；</span><br><span class="line">-d&lt;文件&gt;：如果文件为一个目录，则为真；</span><br><span class="line">-e&lt;文件&gt;：如果文件存在，则为真；</span><br><span class="line">-f&lt;文件&gt;：如果文件为一个普通文件，则为真；</span><br><span class="line">-g&lt;文件&gt;：如果设置了文件的SGID位，则为真；</span><br><span class="line">-G&lt;文件&gt;：如果文件存在且归该组所有，则为真；</span><br><span class="line">-k&lt;文件&gt;：如果设置了文件的粘着位，则为真；</span><br><span class="line">-O&lt;文件&gt;：如果文件存在并且归该用户所有，则为真；</span><br><span class="line">-p&lt;文件&gt;：如果文件为一个命名管道，则为真；</span><br><span class="line">-r&lt;文件&gt;：如果文件可读，则为真；</span><br><span class="line">-s&lt;文件&gt;：如果文件的长度不为零，则为真；</span><br><span class="line">-S&lt;文件&gt;：如果文件为一个套接字特殊文件，则为真；</span><br><span class="line">-u&lt;文件&gt;：如果设置了文件的SUID位，则为真；</span><br><span class="line">-w&lt;文件&gt;：如果文件可写，则为真；</span><br><span class="line">-x&lt;文件&gt;：如果文件可执行，则为真。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>linux中shell编程中的test常见用法：</p>
+<p> <strong>判断表达式</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if test     #表达式为真</span><br><span class="line">if test !   #表达式为假</span><br><span class="line">test 表达式1 –a 表达式2     #两个表达式都为真</span><br><span class="line">test 表达式1 –o 表达式2     #两个表达式有一个为真</span><br><span class="line">test 表达式1 ! 表达式2       #条件求反</span><br></pre></td></tr></table></figure>
+<p> <strong>判断字符串</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">test –n 字符串    #字符串的长度非零</span><br><span class="line">test –z 字符串    #字符串的长度是否为零</span><br><span class="line">test 字符串1＝字符串2       #字符串是否相等，若相等返回true</span><br><span class="line">test 字符串1!＝字符串2      #字符串是否不等，若不等反悔false</span><br></pre></td></tr></table></figure>
+<p> <strong>判断整数</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">test 整数1 -eq 整数2    #整数相等</span><br><span class="line">test 整数1 -ge 整数2    #整数1大于等于整数2</span><br><span class="line">test 整数1 -gt 整数2    #整数1大于整数2</span><br><span class="line">test 整数1 -le 整数2    #整数1小于等于整数2</span><br><span class="line">test 整数1 -lt 整数2    #整数1小于整数2</span><br><span class="line">test 整数1 -ne 整数2    #整数1不等于整数2</span><br></pre></td></tr></table></figure>
+<p> <strong>判断文件</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">test File1 –ef File2    两个文件是否为同一个文件，可用于硬连接。主要判断两个文件是否指向同一个inode。</span><br><span class="line">test File1 –nt File2    判断文件1是否比文件2新</span><br><span class="line">test File1 –ot File2    判断文件1比是否文件2旧</span><br><span class="line">test –b file   #文件是否块设备文件</span><br><span class="line">test –c File   #文件并且是字符设备文件</span><br><span class="line">test –d File   #文件并且是目录</span><br><span class="line">test –e File   #文件是否存在 （常用）</span><br><span class="line">test –f File   #文件是否为正规文件 （常用）</span><br><span class="line">test –g File   #文件是否是设置了组id</span><br><span class="line">test –G File   #文件属于的有效组ID</span><br><span class="line">test –h File   #文件是否是一个符号链接（同-L）</span><br><span class="line">test –k File   #文件是否设置了Sticky bit位</span><br><span class="line">test –b File   #文件存在并且是块设备文件</span><br><span class="line">test –L File   #文件是否是一个符号链接（同-h）</span><br><span class="line">test –o File   #文件的属于有效用户ID</span><br><span class="line">test –p File   #文件是一个命名管道</span><br><span class="line">test –r File   #文件是否可读</span><br><span class="line">test –s File   #文件是否是非空白文件</span><br><span class="line">test –t FD     #文件描述符是在一个终端打开的</span><br><span class="line">test –u File   #文件存在并且设置了它的set-user-id位</span><br><span class="line">test –w File   #文件是否存在并可写</span><br><span class="line">test –x File   #文件属否存在并可执行</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/test/" data-id="cjvp9c5yc00csj0xia3mp60jk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/tftp/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/tempfile/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

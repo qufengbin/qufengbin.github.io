@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="htpasswdapache服务器创建密码认证文件 补充说明htpasswd命令 是Apache的Web服务器内置工具，用于创建和更新储存用户名、域和用户基本认证的密码文件。 语法htpasswd(选项)(参数)选项12345678-c：创建一个加密文件；-n：不更新加密文件，只将加密后的用户名密码显示在屏幕上；-m：默认采用MD5算法对密码进行加密；-d：采用CRYPT算法对密码进行加密；-p：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/htpasswd/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="htpasswdapache服务器创建密码认证文件 补充说明htpasswd命令 是Apache的Web服务器内置工具，用于创建和更新储存用户名、域和用户基本认证的密码文件。 语法htpasswd(选项)(参数)选项12345678-c：创建一个加密文件；-n：不更新加密文件，只将加密后的用户名密码显示在屏幕上；-m：默认采用MD5算法对密码进行加密；-d：采用CRYPT算法对密码进行加密；-p：">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="htpasswdapache服务器创建密码认证文件 补充说明htpasswd命令 是Apache的Web服务器内置工具，用于创建和更新储存用户名、域和用户基本认证的密码文件。 语法htpasswd(选项)(参数)选项12345678-c：创建一个加密文件；-n：不更新加密文件，只将加密后的用户名密码显示在屏幕上；-m：默认采用MD5算法对密码进行加密；-d：采用CRYPT算法对密码进行加密；-p：">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/htpasswd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/htpasswd/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.651Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="htpasswd"><a href="#htpasswd" class="headerlink" title="htpasswd"></a>htpasswd</h1><p>apache服务器创建密码认证文件</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>htpasswd命令</strong> 是Apache的Web服务器内置工具，用于创建和更新储存用户名、域和用户基本认证的密码文件。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h3 id="htpasswd-选项-参数"><a href="#htpasswd-选项-参数" class="headerlink" title="htpasswd(选项)(参数)"></a>htpasswd(选项)(参数)</h3><h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-c：创建一个加密文件；</span><br><span class="line">-n：不更新加密文件，只将加密后的用户名密码显示在屏幕上；</span><br><span class="line">-m：默认采用MD5算法对密码进行加密；</span><br><span class="line">-d：采用CRYPT算法对密码进行加密；</span><br><span class="line">-p：不对密码进行进行加密，即明文密码；</span><br><span class="line">-s：采用SHA算法对密码进行加密；</span><br><span class="line">-b：在命令行中一并输入用户名和密码而不是根据提示输入密码；</span><br><span class="line">-D：删除指定的用户。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>用户：要创建或者更新密码的用户名；</li>
+<li>密码：用户的新密码。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>利用htpasswd命令添加用户</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -bc .passwd www.jsdig.com php</span><br></pre></td></tr></table></figure>
+<p>在bin目录下生成一个.passwd文件，用户名<a href="http://www.jsdig.com，密码：php，默认采用MD5加密方式。" target="_blank" rel="noopener">www.jsdig.com，密码：php，默认采用MD5加密方式。</a></p>
+<p> <strong>在原有密码文件中增加下一个用户</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -b .passwd Jack 123456</span><br></pre></td></tr></table></figure>
+<p>去掉<code>-c</code>选项，即可在第一个用户之后添加第二个用户，依此类推。</p>
+<p> <strong>不更新密码文件，只显示加密后的用户名和密码</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -nb Jack 123456</span><br></pre></td></tr></table></figure>
+<p>不更新.passwd文件，只在屏幕上输出用户名和经过加密后的密码。</p>
+<p> <strong>利用htpasswd命令删除用户名和密码</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -D .passwd Jack</span><br></pre></td></tr></table></figure>
+<p> <strong>利用htpasswd命令修改密码</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -D .passwd Jack</span><br><span class="line">htpasswd -b .passwd Jack 123456</span><br></pre></td></tr></table></figure>
+<p>即先使用htpasswd删除命令删除指定用户，再利用htpasswd添加用户命令创建用户即可实现修改密码的功能。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/htpasswd/" data-id="cjvp9c5s6005fj0xivikod11g" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/hwclock/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/htop/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

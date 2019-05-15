@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="indent格式化C语言的源文件 补充说明indent命令 可辨识C的原始代码文件，并加以格式化，以方便程序员阅读、修改等操作。 语法123indent(选项)(源文件)或indent（选项)(源文件)(-o 目标文件) 选项123456789101112131415161718192021222324252627282930313233343536373839404142434445464748">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/indent/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="indent格式化C语言的源文件 补充说明indent命令 可辨识C的原始代码文件，并加以格式化，以方便程序员阅读、修改等操作。 语法123indent(选项)(源文件)或indent（选项)(源文件)(-o 目标文件) 选项123456789101112131415161718192021222324252627282930313233343536373839404142434445464748">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="indent格式化C语言的源文件 补充说明indent命令 可辨识C的原始代码文件，并加以格式化，以方便程序员阅读、修改等操作。 语法123indent(选项)(源文件)或indent（选项)(源文件)(-o 目标文件) 选项123456789101112131415161718192021222324252627282930313233343536373839404142434445464748">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/indent" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/indent/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.684Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="indent"><a href="#indent" class="headerlink" title="indent"></a>indent</h1><p>格式化C语言的源文件</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>indent命令</strong> 可辨识C的原始代码文件，并加以格式化，以方便程序员阅读、修改等操作。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">indent(选项)(源文件)</span><br><span class="line">或</span><br><span class="line">indent（选项)(源文件)(-o 目标文件)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">-bad：在声明区加上空白行；</span><br><span class="line">-bap：添加空白行；</span><br><span class="line">-bbb：在注释后面添加空白行；</span><br><span class="line">-bc：在声明段中，如果出现逗号就换行；</span><br><span class="line">-bl：if（或是else、for等）与后面执行区段的“&#123;”不同行，且“&#125;”自成一行-bli&lt;缩排格数&gt;设置&#123;&#125;缩排的格数；</span><br><span class="line">-br：if（或是else、for等）与后面执行区段的“&#123;”同行，且“&#125;”自成一行；</span><br><span class="line">-bs：在sizeof之后空一格；</span><br><span class="line">-c&lt;栏数&gt;：将注释置于程序右侧指定的栏位；</span><br><span class="line">-cd&lt;栏数&gt;：将注释置于声明右侧指定的栏位；</span><br><span class="line">-cdb：注释符号自成一行；</span><br><span class="line">-ce：将else置于“&#125;”（if执行区段的结尾）之后；</span><br><span class="line">-ci：&lt;缩排格数&gt;：叙述过长而换行时，指定换行后缩排的格数；</span><br><span class="line">-cli&lt;缩排格数&gt;：使用case时，switch缩排的格数；</span><br><span class="line">-cp&lt;栏数&gt;：将注释置于else与elseif叙述右侧指定的栏位；</span><br><span class="line">-cs：在case之后空一格；</span><br><span class="line">-d&lt;缩排格数&gt;：针对不是放在程序码右侧的注释，设置其缩排格数；</span><br><span class="line">-di&lt;栏数&gt;：将声明区段的变量置于指定的栏位；</span><br><span class="line">-fc1：针对放在每行最前端的注释，设置其格式；</span><br><span class="line">-fca：设置所有注释的格式；</span><br><span class="line">-gnu：使用指定的GNU格式，该参数为默认值；</span><br><span class="line">-i&lt;格数&gt;：设置缩排的格数；</span><br><span class="line">-ip&lt;格数&gt;：设置参数的缩排格数；</span><br><span class="line">-kr：指定使用Kernighan&amp;Ritchie的格式；</span><br><span class="line">-lp：叙述过长而换行，且叙述中包含了括号时，将括号中的每行起始栏位内容垂直对其排列；</span><br><span class="line">-nbad：在声明区段后不要加上空白行；</span><br><span class="line">-nbap：在程序后面不添加空白行；</span><br><span class="line">-nbbb：在注释段后面不添加空白行；</span><br><span class="line">-nbc：在声明段中，即使出现逗号，也不换行；</span><br><span class="line">-ncdb：注释符号不自成一行；</span><br><span class="line">-nce：不将else置于“&#125;”后面；</span><br><span class="line">-ncs：不在case后面空一格；</span><br><span class="line">-nfc1：不要格式化放在每行最前端的注释；</span><br><span class="line">-nfca：不用格式化任何的注释；</span><br><span class="line">-nip：参数不要缩排；</span><br><span class="line">-nlp：叙述过长而换行，且叙述中包含了括号时，不用将括号中的每行起始栏位垂直对其排列；</span><br><span class="line">-npcs：在调用函数名之后，不要添加空格；</span><br><span class="line">-npro：不要读取indent的配置文件“.indent.pro”；</span><br><span class="line">-npsl：程序类型与程序名称放在同一行；</span><br><span class="line">-nsc：注释左侧不要添加星号；</span><br><span class="line">-nsob：不用处理多余的空白行；</span><br><span class="line">-nss：若for或while区段仅有一行时，在分号前不加空格；</span><br><span class="line">-nv：不显示详细的信息；</span><br><span class="line">-orig：使用berkeley格式；</span><br><span class="line">-pcs：在调用函数名与“&#123;”之间添加空格；</span><br><span class="line">-psl：程序类型置于程序名称的前一行；</span><br><span class="line">-sc：在每行注释左侧添加星号；</span><br><span class="line">-sob：删除多余的空白行；</span><br><span class="line">-ss：若for或swile区段仅有一行时，在分号前加上空格；</span><br><span class="line">-st：将结果显示在标准输出设备上；</span><br><span class="line">-T：数据类型名称缩排；</span><br><span class="line">-ts&lt;格数&gt;：设置tab的长度；</span><br><span class="line">-v：显示详细的执行过程；</span><br><span class="line">--version：显示版本信息。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用indent命令将C语言源文件”test.c”中所有的sizeof后面添加一个空格，输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">indent -bs /home/rootlocal/桌面/test.c</span><br></pre></td></tr></table></figure>
+<p>执行上面的命令后，用户可以打开指定的源文件查看在sizeof后面是否都添加了一个空格。由于该命令的参数非常多，所以用户可以根据实际需要选择适合的参数进行使用即可。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/indent/" data-id="cjvp9c5sd005oj0xi2g8p8mn2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/info/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/ifup/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

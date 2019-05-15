@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/46/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-linux_command/dpkg-divert" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dpkg-divert/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.372Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dpkg-divert"><a href="#dpkg-divert" class="headerlink" title="dpkg-divert"></a>dpkg-divert</h1><p>Debian Linux中创建并管理一个转向列表</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dpkg-divert命令</strong> 是Debian Linux中创建并管理一个转向（diversion）列表，其使得安装文件的默认位置失效的工具。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-divert(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--add：添加一个转移文件；</span><br><span class="line">--remove：删除一个转移文件；</span><br><span class="line">--list：列出匹配的转移；</span><br><span class="line">--truename：对应转移文件真实文件名；</span><br><span class="line">--quidet：安静模式。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定转移文件名。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>指定软件包wibble安装时，写入<code>/usr/bin/example.foo</code>，而不是<code>/usr/bin/example</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-divert --package wibble --divert /usr/bin/example.foo --rename /usr/bin/example</span><br></pre></td></tr></table></figure>
+<p>指定软件包wibble安装时，删除对<code>/usr/bin/example</code>的转移修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-divert --package wibble --rename --remove /usr/bin/example</span><br></pre></td></tr></table></figure>
+<p>删除对<code>/usr/bin/example</code>的转移修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-divert --rename --remove /usr/bin/example</span><br></pre></td></tr></table></figure>
+<p>添加一个软件包安装时，写入<code>/usr/bin/example.foo</code>，而不是<code>/usr/bin/example</code>的修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-divert --divert /usr/bin/example.foo --rename /usr/bin/example</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dpkg-divert/" data-id="cjvp9c5q00037j0xixquw11co" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/dpkg-deb" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dpkg-deb/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.370Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dpkg-deb"><a href="#dpkg-deb" class="headerlink" title="dpkg-deb"></a>dpkg-deb</h1><p>Debian Linux下的软件包管理工具</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dpkg-deb命令</strong> 是Debian Linux下的软件包管理工具，它可以对软件包执行打包和解包操作以及提供软件包信息。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-deb(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-c：显示软件包中的文件列表；</span><br><span class="line">-e：将主控信息解压；</span><br><span class="line">-f：把字段内容打印到标准输出；</span><br><span class="line">-x：将软件包中的文件释放到指定目录下；</span><br><span class="line">-X：将软件包中的文件释放到指定目录下，并显示释放文件的详细过程；</span><br><span class="line">-w：显示软件包的信息；</span><br><span class="line">-l：显示软件包的详细信息；</span><br><span class="line">-R：提取控制信息和存档的清单文件；</span><br><span class="line">-b：创建debian软件包。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定要操作的“.deb”软件包的全名或软件名。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>解压程序文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-deb -x drcom-pum_1.0-0ubuntu1~ppa1~jaunty1_i386.deb drcom</span><br></pre></td></tr></table></figure>
+<p>解压控制文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-deb -e drcom-pum_1.0-0ubuntu1~ppa1~jaunty1_i386.deb drcom/DEBIAN</span><br></pre></td></tr></table></figure>
+<p>打包生成deb文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-deb -b drcom drcom_1.4.8.2_i386.deb</span><br></pre></td></tr></table></figure>
+<p>查询deb包中的文件内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-deb -c demo.deb</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dpkg-deb/" data-id="cjvp9c5pz0036j0xiuxavyau4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/dos2unix" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dos2unix/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.369Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dos2unix"><a href="#dos2unix" class="headerlink" title="dos2unix"></a>dos2unix</h1><p>将DOS格式文本文件转换成Unix格式</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dos2unix命令</strong> 用来将DOS格式的文本文件转换成UNIX格式的（DOS/MAC to UNIX text file format converter）。DOS下的文本文件是以<code>\r\n</code>作为断行标志的，表示成十六进制就是0D 0A。而Unix下的文本文件是以\n作为断行标志的，表示成十六进制就是0A。DOS格式的文本文件在Linux底下，用较低版本的vi打开时行尾会显示<code>^M</code>，而且很多命令都无法很好的处理这种格式的文件，如果是个shell脚本，。而Unix格式的文本文件在Windows下用Notepad打开时会拼在一起显示。因此产生了两种格式文件相互转换的需求，对应的将UNIX格式文本文件转成成DOS格式的是unix2dos命令。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dos2unix [-hkqV] [-c convmode] [-o file ...] [-n infile outfile ...]</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-k：保持输出文件的日期不变</span><br><span class="line">-q：安静模式，不提示任何警告信息。</span><br><span class="line">-V：查看版本</span><br><span class="line">-c：转换模式，模式有：ASCII, 7bit, ISO, Mac, 默认是：ASCII。</span><br><span class="line">-o：写入到源文件</span><br><span class="line">-n：写入到新文件</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>参数：需要转换到文件。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>最简单的用法就是dos2unix直接跟上文件名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dos2unix file</span><br></pre></td></tr></table></figure>
+<p>如果一次转换多个文件，把这些文件名直接跟在dos2unix之后。（注：也可以加上<code>-o</code>参数，也可以不加，效果一样）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dos2unix file1 file2 file3</span><br><span class="line">dos2unix -o file1 file2 file3</span><br></pre></td></tr></table></figure>
+<p>上面在转换时，都会直接在原来的文件上修改，如果想把转换的结果保存在别的文件，而源文件不变，则可以使用<code>-n</code>参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dos2unix oldfile newfile</span><br></pre></td></tr></table></figure>
+<p>如果要保持文件时间戳不变，加上<code>-k</code>参数。所以上面几条命令都是可以加上<code>-k</code>参数来保持文件时间戳的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dos2unix -k file</span><br><span class="line">dos2unix -k file1 file2 file3</span><br><span class="line">dos2unix -k -o file1 file2 file3</span><br><span class="line">dos2unix -k -n oldfile newfile</span><br></pre></td></tr></table></figure>
+<p>转换当前目录下所有文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find -type f | xargs dos2unix</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dos2unix/" data-id="cjvp9c5qt003vj0xifx0va937" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/domainname" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/domainname/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.367Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="domainname"><a href="#domainname" class="headerlink" title="domainname"></a>domainname</h1><p>显示和设置系统的NIS域名</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>domainname命令</strong> 用于显示和设置系统的NIS域名。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">domainname(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-v：详细信息模式；</span><br><span class="line">-F：指定读取域名信息的文件。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>NIS域名：指定要设置的NIS域名。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@AY1307311912260196fcZ ~]# domainname -v</span><br><span class="line">getdomainname()=`(none)&apos;</span><br><span class="line">(none)</span><br><span class="line"> [root@AY1307311912260196fcZ ~]# domainname</span><br><span class="line">www.jsdig.com</span><br><span class="line"></span><br><span class="line">[root@AY1307311912260196fcZ ~]# domainname -v</span><br><span class="line">getdomainname()=`www.jsdig.com&apos;</span><br><span class="line">www.jsdig.com</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/domainname/" data-id="cjvp9c5py0035j0xiip5g7uj6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/dnsdomainname" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dnsdomainname/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.365Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dnsdomainname"><a href="#dnsdomainname" class="headerlink" title="dnsdomainname"></a>dnsdomainname</h1><p>定义DNS系统中FQDN名称的域名</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dnsdomainname命令</strong> 用于定义DNS系统中FQDN名称中的域名。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnsdomainname(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><p>-v：详细信息模式，输出指令执行的详细信息。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@AY1307311912260196fcZ ~]# dnsdomainname -v</span><br><span class="line">gethostname()=`AY1307311912260196fcZ&apos;</span><br><span class="line">Resolving `AY1307311912260196fcZ&apos; ...</span><br><span class="line">Result: h_name=`AY1307311912260196fcZ&apos;</span><br><span class="line">Result: h_addr_list=`10.160.7.81&apos;</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dnsdomainname/" data-id="cjvp9c5px0034j0xieon793wa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/dnf" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dnf/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.364Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dnf"><a href="#dnf" class="headerlink" title="dnf"></a>dnf</h1><p>新一代的RPM软件包管理器</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>DNF</strong> 是新一代的rpm软件包管理器。他首先出现在 Fedora 18 这个发行版中。而最近，它取代了yum，正式成为 Fedora 22 的包管理器。</p>
+<p>DNF包管理器克服了YUM包管理器的一些瓶颈，提升了包括用户体验，内存占用，依赖分析，运行速度等多方面的内容。DNF使用 RPM, libsolv 和 hawkey 库进行包管理操作。尽管它没有预装在 CentOS 和 RHEL 7 中，但你可以在使用 YUM 的同时使用 DNF 。你可以在这里获得关于 DNF 的更多知识：《 DNF 代替 YUM ，你所不知道的缘由》</p>
+<p>DNF 的最新稳定发行版版本号是 1.0，发行日期是2015年5月11日。 这一版本的额 DNF 包管理器（包括在他之前的所有版本） 都大部分采用 Python 编写，发行许可为GPL v2.</p>
+<h3 id="安装-DNF-包管理器"><a href="#安装-DNF-包管理器" class="headerlink" title="安装 DNF 包管理器"></a>安装 DNF 包管理器</h3><p>DNF 并未默认安装在 RHEL 或 CentOS 7系统中，但是 Fedora 22 已经默认使用 DNF .</p>
+<p>1、为了安装 DNF ，您必须先安装并启用 epel-release 依赖。</p>
+<p>在系统中执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install epel-release</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install epel-release -y</span><br></pre></td></tr></table></figure>
+<p>其实这里并没有强制使用”-y”的理由，相反的，在不使用”-y”的情况下，用户可以在安装过程中查看到底有哪些东西被安装进了系统。但对于没有这个需求的用户，您可以在 YUM 中使用”-y”参数来自动安装所有东西。</p>
+<p>2、使用 epel-release 依赖中的 YUM 命令来安装 DNF 包。在系统中执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install dnf</span><br></pre></td></tr></table></figure>
+<p>然后， DNF 包管理器就被成功的安装到你的系统中了。接下来，是时候开始我们的教程了！在这个教程中，您将会学到27个用于 DNF 包管理器的命令。使用这些命令，你可以方便有效的管理您系统中的 RPM 软件包。现在，让我们开始学习 DNF 包管理器的27条常用命令吧！</p>
+<p> <strong>查看 DNF 包管理器版本</strong> </p>
+<p>用处：该命令用于查看安装在您系统中的 DNF 包管理器的版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf –version</span><br></pre></td></tr></table></figure>
+<p>!Check-DNF-Version</p>
+<p> <strong>查看系统中可用的 DNF 软件库</strong> </p>
+<p>用处：该命令用于显示系统中可用的 DNF 软件库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf repolist</span><br></pre></td></tr></table></figure>
+<p>!Check-All-Enabled-Repositories</p>
+<p> <strong>查看系统中可用和不可用的所有的 DNF 软件库</strong> </p>
+<p>用处：该命令用于显示系统中可用和不可用的所有的 DNF 软件库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf repolist all</span><br></pre></td></tr></table></figure>
+<p>!3</p>
+<p> <strong>列出所有 RPM 包</strong> </p>
+<p>用处：该命令用于列出用户系统上的所有来自软件库的可用软件包和所有已经安装在系统上的软件包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf list</span><br></pre></td></tr></table></figure>
+<p>!4</p>
+<p> <strong>列出所有安装了的 RPM 包</strong> </p>
+<p>用处：该命令用于列出所有安装了的 RPM 包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf list installed</span><br></pre></td></tr></table></figure>
+<p>!5</p>
+<p> <strong>列出所有可供安装的 RPM 包</strong> </p>
+<p>用处：该命令用于列出来自所有可用软件库的可供安装的软件包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf list available</span><br></pre></td></tr></table></figure>
+<p>!6</p>
+<p> <strong>搜索软件库中的 RPM 包</strong> </p>
+<p>用处：当你不知道你想要安装的软件的准确名称时，你可以用该命令来搜索软件包。你需要在”search”参数后面键入软件的部分名称来搜索。（在本例中我们使用”nano”）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf search nano</span><br></pre></td></tr></table></figure>
+<p>!7</p>
+<p> <strong>查找某一文件的提供者</strong> </p>
+<p>用处：当你想要查看是哪个软件包提供了系统中的某一文件时，你可以使用这条命令。（在本例中，我们将查找”/bin/bash”这个文件的提供者）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf provides /bin/bash</span><br></pre></td></tr></table></figure>
+<p>!8</p>
+<p> <strong>查看软件包详情</strong> </p>
+<p>用处：当你想在安装某一个软件包之前查看它的详细信息时，这条命令可以帮到你。（在本例中，我们将查看”nano”这一软件包的详细信息）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf info nano</span><br></pre></td></tr></table></figure>
+<p>!9</p>
+<p> <strong>安装软件包</strong> </p>
+<p>用处：使用该命令，系统将会自动安装对应的软件及其所需的所有依赖（在本例中，我们将用该命令安装nano软件）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf install nano</span><br></pre></td></tr></table></figure>
+<p>!10</p>
+<p> <strong>升级软件包</strong> </p>
+<p>用处：该命令用于升级制定软件包（在本例中，我们将用命令升级”systemd”这一软件包）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf update systemd</span><br></pre></td></tr></table></figure>
+<p>!11</p>
+<p> <strong>检查系统软件包的更新</strong> </p>
+<p>用处：该命令用于检查系统中所有软件包的更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf check-update</span><br></pre></td></tr></table></figure>
+<p>!12</p>
+<p> <strong>升级所有系统软件包</strong> </p>
+<p>用处：该命令用于升级系统中所有有可用升级的软件包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf update 或 # dnf upgrade</span><br></pre></td></tr></table></figure>
+<p>!13</p>
+<p> <strong>删除软件包</strong> </p>
+<p>用处：删除系统中指定的软件包（在本例中我们将使用命令删除”nano”这一软件包）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf remove nano 或 # dnf erase nano</span><br></pre></td></tr></table></figure>
+<p>!14</p>
+<p> <strong>删除无用孤立的软件包</strong> </p>
+<p>用处：当没有软件再依赖它们时，某一些用于解决特定软件依赖的软件包将会变得没有存在的意义，该命令就是用来自动移除这些没用的孤立软件包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf autoremove</span><br></pre></td></tr></table></figure>
+<p>!15</p>
+<p> <strong>删除缓存的无用软件包</strong> </p>
+<p>用处：在使用 DNF 的过程中，会因为各种原因在系统中残留各种过时的文件和未完成的编译工程。我们可以使用该命令来删除这些没用的垃圾文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf clean all</span><br></pre></td></tr></table></figure>
+<p>!16</p>
+<p> <strong>获取有关某条命令的使用帮助</strong> </p>
+<p>用处：该命令用于获取有关某条命令的使用帮助（包括可用于该命令的参数和该命令的用途说明）（本例中我们将使用命令获取有关命令”clean”的使用帮助）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf help clean</span><br></pre></td></tr></table></figure>
+<p>!17</p>
+<p> <strong>查看所有的 DNF 命令及其用途</strong> </p>
+<p>用处：该命令用于列出所有的 DNF 命令及其用途</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf help</span><br></pre></td></tr></table></figure>
+<p>!18</p>
+<p> <strong>查看 DNF 命令的执行历史</strong> </p>
+<p>用处：您可以使用该命令来查看您系统上 DNF 命令的执行历史。通过这个手段您可以知道在自您使用 DNF 开始有什么软件被安装和卸载。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf history</span><br></pre></td></tr></table></figure>
+<p>!19</p>
+<p> <strong>查看所有的软件包组</strong> </p>
+<p>用处：该命令用于列出所有的软件包组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf grouplist</span><br></pre></td></tr></table></figure>
+<p>!20</p>
+<p> <strong>安装一个软件包组</strong> </p>
+<p>用处：该命令用于安装一个软件包组（本例中，我们将用命令安装”Educational Software”这个软件包组）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf groupinstall ‘Educational Software’</span><br></pre></td></tr></table></figure>
+<p>!21</p>
+<p> <strong>升级一个软件包组中的软件包</strong> </p>
+<p>用处：该命令用于升级一个软件包组中的软件包（本例中，我们将用命令升级”Educational Software”这个软件包组中的软件）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf groupupdate ‘Educational Software’</span><br></pre></td></tr></table></figure>
+<p>!22</p>
+<p> <strong>删除一个软件包组</strong> </p>
+<p>用处：该命令用于删除一个软件包组（本例中，我们将用命令删除”Educational Software”这个软件包组）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf groupremove ‘Educational Software’</span><br></pre></td></tr></table></figure>
+<p>!23</p>
+<p> <strong>从特定的软件包库安装特定的软件</strong> </p>
+<p>用处：该命令用于从特定的软件包库安装特定的软件（本例中我们将使用命令从软件包库 epel 中安装 phpmyadmin 软件包）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf –enablerepo=epel install phpmyadmin</span><br></pre></td></tr></table></figure>
+<p> <strong>更新软件包到最新的稳定发行版</strong> </p>
+<p>用处：该命令可以通过所有可用的软件源将已经安装的所有软件包更新到最新的稳定发行版</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf distro-sync</span><br></pre></td></tr></table></figure>
+<p> <strong>重新安装特定软件包</strong> </p>
+<p>用处：该命令用于重新安装特定软件包（本例中，我们将使用命令重新安装”nano”这个软件包）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf reinstall nano</span><br></pre></td></tr></table></figure>
+<p>!26</p>
+<p> <strong>回滚某个特定软件的版本</strong> </p>
+<p>用处：该命令用于降低特定软件包的版本（如果可能的话）（本例中，我们将使用命令降低”acpid”这个软件包的版本）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># dnf downgrade acpid</span><br></pre></td></tr></table></figure>
+<p>样例输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Using metadata from Wed May 20 12:44:59 2015</span><br><span class="line">No match for available package: acpid-2.0.19-5.el7.x86_64</span><br><span class="line">Error: Nothing to do.</span><br></pre></td></tr></table></figure>
+<p>原作者注：在执行这条命令的时候， DNF 并没有按照我期望的那样降级指定的软件（“acpid”）。该问题已经上报。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>DNF 包管理器作为 YUM 包管理器的升级替代品，它能自动完成更多的操作。但在我看来，正因如此，所以 DNF 包管理器不会太受那些经验老道的 Linux 系统管理者的欢迎。举例如下：</p>
+<ol>
+<li>在 DNF 中没有 –skip-broken 命令，并且没有替代命令供选择。</li>
+<li>在 DNF 中没有判断哪个包提供了指定依赖的 resolvedep 命令。</li>
+<li>在 DNF 中没有用来列出某个软件依赖包的 deplist 命令。</li>
+<li>当你在 DNF 中排除了某个软件库，那么该操作将会影响到你之后所有的操作，不像在 YUM 下那样，你的排除操作只会咋升级和安装软件时才起作用。</li>
+</ol>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dnf/" data-id="cjvp9c5zk00d3j0xixq6td1o1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/dmidecode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dmidecode/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.353Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dmidecode"><a href="#dmidecode" class="headerlink" title="dmidecode"></a>dmidecode</h1><p>在Linux系统下获取有关硬件方面的信息</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dmidecode命令</strong> 可以让你在Linux系统下获取有关硬件方面的信息。dmidecode的作用是将DMI数据库中的信息解码，以可读的文本方式显示。由于DMI信息可以人为修改，因此里面的信息不一定是系统准确的信息。dmidecode遵循SMBIOS/DMI标准，其输出的信息包括BIOS、系统、主板、处理器、内存、缓存等等。</p>
+<p>DMI（Desktop Management Interface,DMI）就是帮助收集电脑系统信息的管理系统，DMI信息的收集必须在严格遵照SMBIOS规范的前提下进行。SMBIOS（System Management BIOS）是主板或系统制造者以标准格式显示产品管理信息所需遵循的统一规范。SMBIOS和DMI是由行业指导机构Desktop Management Task Force(DMTF)起草的开放性的技术标准，其中DMI设计适用于任何的平台和操作系统。</p>
+<p>DMI充当了管理工具和系统层之间接口的角色。它建立了标准的可管理系统更加方便了电脑厂商和用户对系统的了解。DMI的主要组成部分是Management Information Format(MIF)数据库。这个数据库包括了所有有关电脑系统和配件的信息。通过DMI，用户可以获取序列号、电脑厂商、串口信息以及其它系统配件信息。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dmidecode [选项]</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-d：(default:/dev/mem)从设备文件读取信息，输出内容与不加参数标准输出相同。</span><br><span class="line">-h：显示帮助信息。</span><br><span class="line">-s：只显示指定DMI字符串的信息。(string)</span><br><span class="line">-t：只显示指定条目的信息。(type)</span><br><span class="line">-u：显示未解码的原始条目内容。</span><br><span class="line">--dump-bin file：将DMI数据转储到一个二进制文件中。</span><br><span class="line">--from-dump FILE：从一个二进制文件读取DMI数据。</span><br><span class="line">-V：显示版本信息。</span><br></pre></td></tr></table></figure>
+<p> <strong>dmidecode参数string及type列表：</strong> </p>
+<p>（1）Valid string keywords are：</p>
+<ul>
+<li>bios-vendor</li>
+<li>bios-version</li>
+<li>bios-release-date</li>
+<li>system-manufacturer</li>
+<li>system-product-name</li>
+<li>system-version</li>
+<li>system-serial-number</li>
+<li>system-uuid</li>
+<li>baseboard-manufacturer</li>
+<li>baseboard-product-name</li>
+<li>baseboard-version</li>
+<li>baseboard-serial-number</li>
+<li>baseboard-asset-tag</li>
+<li>chassis-manufacturer</li>
+<li>chassis-type</li>
+<li>chassis-version</li>
+<li>chassis-serial-number</li>
+<li>chassis-asset-tag</li>
+<li>processor-family</li>
+<li>processor-manufacturer</li>
+<li>processor-version</li>
+<li>processor-frequency</li>
+</ul>
+<p>（2）Valid type keywords are：</p>
+<ul>
+<li>bios</li>
+<li>system</li>
+<li>baseboard</li>
+<li>chassis</li>
+<li>processor</li>
+<li>memory</li>
+<li>Cache</li>
+<li>connector</li>
+<li>slot</li>
+</ul>
+<p>（3）type全部编码列表：</p>
+<ul>
+<li>BIOS</li>
+<li>System</li>
+<li>Base Board</li>
+<li>Chassis</li>
+<li>Processor</li>
+<li>Memory Controller</li>
+<li>Memory Module</li>
+<li>Cache</li>
+<li>Port Connector</li>
+<li>System Slots</li>
+<li>On Board Devices</li>
+<li>OEM Strings</li>
+<li>System Configuration Options</li>
+<li>BIOS Language</li>
+<li>Group Associations</li>
+<li>System Event Log</li>
+<li>Physical Memory Array</li>
+<li>Memory Device</li>
+<li>32-bit Memory Error</li>
+<li>Memory Array Mapped Address</li>
+<li>Memory Device Mapped Address</li>
+<li>Built-in Pointing Device</li>
+<li>Portable Battery</li>
+<li>System Reset</li>
+<li>Hardware Security</li>
+<li>System Power Controls</li>
+<li>Voltage Probe</li>
+<li>Cooling Device</li>
+<li>Temperature Probe</li>
+<li>Electrical Current Probe</li>
+<li>Out-of-band Remote Access</li>
+<li>Boot Integrity Services</li>
+<li>System Boot</li>
+<li>64-bit Memory Error</li>
+<li>Management Device</li>
+<li>Management Device Component</li>
+<li>Management Device Threshold Data</li>
+<li>Memory Channel</li>
+<li>IPMI Device</li>
+<li>Power Supply</li>
+<li>Additional Information</li>
+<li>Onboard Device</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">dmidecode -t 1  <span class="comment"># 查看服务器信息</span></span><br><span class="line">dmidecode | grep <span class="string">'Product Name'</span> <span class="comment"># 查看服务器型号 </span></span><br><span class="line">dmidecode |grep <span class="string">'Serial Number'</span> <span class="comment"># 查看主板的序列号 </span></span><br><span class="line">dmidecode -t 2  <span class="comment"># 查看主板信息</span></span><br><span class="line">dmidecode -s system-serial-number <span class="comment"># 查看系统序列号 </span></span><br><span class="line">dmidecode -t memory <span class="comment"># 查看内存信息 </span></span><br><span class="line">dmidecode -t 11 <span class="comment"># 查看OEM信息 </span></span><br><span class="line">dmidecode -t 17 <span class="comment"># 查看内存条数</span></span><br><span class="line">dmidecode -t 16 <span class="comment"># 查询内存信息</span></span><br><span class="line">dmidecode -t 4  <span class="comment"># 查看CPU信息</span></span><br><span class="line"></span><br><span class="line">cat /proc/scsi/scsi <span class="comment"># 查看服务器硬盘信息</span></span><br></pre></td></tr></table></figure>
+<p>不带选项执行dmidecode命令通常会输出所有的硬件信息。dmidecode命令有个很有用的选项-t，可以按指定类型输出相关信息，假如要获得处理器方面的信息，则可以执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# dmidecode -t processor</span><br><span class="line"># dmidecode 2.11</span><br><span class="line">SMBIOS 2.5 present.</span><br><span class="line"></span><br><span class="line">Handle 0x0001, DMI type 4, 40 bytes</span><br><span class="line">Processor Information</span><br><span class="line">        Socket Designation: Node 1 Socket 1</span><br><span class="line">        Type: Central Processor</span><br><span class="line">        Family: Xeon MP</span><br><span class="line">        Manufacturer: Intel(R) Corporation</span><br><span class="line">        id: C2 06 02 00 FF FB EB BF</span><br><span class="line">        Signature: Type 0, Family 6, Model 44, Stepping 2</span><br><span class="line">        Flags:</span><br><span class="line">                FPU (Floating-point unit on-chip)</span><br><span class="line">                VME (Virtual mode extension)</span><br><span class="line">                DE (Debugging extension)</span><br><span class="line">                PSE (Page size extension)</span><br><span class="line">                TSC (time stamp counter)</span><br><span class="line">                MSR (Model specific registers)</span><br><span class="line">                PAE (Physical address extension)</span><br><span class="line">                MCE (Machine check exception)</span><br><span class="line">                CX8 (CMPXCHG8 instruction supported)</span><br><span class="line">                APIC (On-chip APIC hardware supported)</span><br><span class="line">                SEP (Fast system call)</span><br><span class="line">                MTRR (Memory type range registers)</span><br><span class="line">                PGE (Page global enable)</span><br><span class="line">                MCA (Machine check architecture)</span><br><span class="line">                CMOV (Conditional move instruction supported)</span><br><span class="line">                PAT (Page attribute table)</span><br><span class="line">                PSE-36 (36-bit page size extension)</span><br><span class="line">                CLFSH (CLFLUSH instruction supported)</span><br><span class="line">                DS (Debug store)</span><br><span class="line">                ACPI (ACPI supported)</span><br><span class="line">                MMX (MMX technology supported)</span><br><span class="line">                FXSR (FXSAVE and FXSTOR instructions supported)</span><br><span class="line">                SSE (Streaming SIMD extensions)</span><br><span class="line">                SSE2 (Streaming SIMD extensions 2)</span><br><span class="line">                ss (Self-snoop)</span><br><span class="line">                HTT (Multi-threading)</span><br><span class="line">                TM (Thermal monitor supported)</span><br><span class="line">                PBE (Pending break enabled)</span><br><span class="line">        Version: Intel(R) Xeon(R) CPU           E5620  @ 2.40GHz</span><br><span class="line">        Voltage: 1.2 V</span><br><span class="line">        External Clock: 5866 MHz</span><br><span class="line">        Max Speed: 4400 MHz</span><br><span class="line">        Current Speed: 2400 MHz</span><br><span class="line">        Status: Populated, Enabled</span><br><span class="line">        Upgrade: ZIF Socket</span><br><span class="line">        L1 Cache Handle: 0x0002</span><br><span class="line">        L2 Cache Handle: 0x0003</span><br><span class="line">        L3 Cache Handle: 0x0004</span><br><span class="line">        Serial Number: Not Specified</span><br><span class="line">        Asset Tag: Not Specified</span><br><span class="line">        Part Number: Not Specified</span><br><span class="line">        Core Count: 4</span><br><span class="line">        Core Enabled: 4</span><br><span class="line">        Thread Count: 8</span><br><span class="line">        Characteristics:</span><br><span class="line">                64-bit capable</span><br><span class="line"></span><br><span class="line">Handle 0x0055, DMI type 4, 40 bytes</span><br><span class="line">Processor Information</span><br><span class="line">        Socket Designation: Node 1 Socket 2</span><br><span class="line">        Type: Central Processor</span><br><span class="line">        Family: Xeon MP</span><br><span class="line">        Manufacturer: Not Specified</span><br><span class="line">        ID: 00 00 00 00 00 00 00 00</span><br><span class="line">        Signature: Type 0, Family 0, Model 0, Stepping 0</span><br><span class="line">        Flags: None</span><br><span class="line">        Version: Not Specified</span><br><span class="line">        Voltage: 1.2 V</span><br><span class="line">        External Clock: 5866 MHz</span><br><span class="line">        Max Speed: 4400 MHz</span><br><span class="line">        Current Speed: Unknown</span><br><span class="line">        Status: Unpopulated</span><br><span class="line">        Upgrade: ZIF Socket</span><br><span class="line">        L1 Cache Handle: Not Provided</span><br><span class="line">        L2 Cache Handle: Not Provided</span><br><span class="line">        L3 Cache Handle: Not Provided</span><br><span class="line">        Serial Number: Not Specified</span><br><span class="line">        Asset Tag: Not Specified</span><br><span class="line">        Part Number: Not Specified</span><br><span class="line">        Characteristics: None</span><br></pre></td></tr></table></figure>
+<p>查看内存的插槽数，已经使用多少插槽。每条内存多大，已使用内存多大</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dmidecode|grep -P -A5 <span class="string">"Memory\s+Device"</span>|grep Size|grep -v Range </span><br><span class="line"></span><br><span class="line"><span class="comment">#   Size: 2048 MB</span></span><br><span class="line"><span class="comment">#   Size: 2048 MB</span></span><br><span class="line"><span class="comment">#   Size: 4096 MB</span></span><br><span class="line"><span class="comment">#   Size: No Module Installed</span></span><br></pre></td></tr></table></figure>
+<p>查看内存支持的最大内存容量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dmidecode|grep -P <span class="string">'Maximum\s+Capacity'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  Maximum Capacity: 16 GB</span></span><br></pre></td></tr></table></figure>
+<p>查看内存的频率</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">dmidecode|grep -A16 <span class="string">"Memory Device"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#   Memory Device</span></span><br><span class="line"><span class="comment">#     Array Handle: 0x1000</span></span><br><span class="line"><span class="comment">#     Error Information Handle: Not Provided</span></span><br><span class="line"><span class="comment">#     Total Width: 72 bits</span></span><br><span class="line"><span class="comment">#     Data Width: 64 bits</span></span><br><span class="line"><span class="comment">#     Size: 2048 MB</span></span><br><span class="line"><span class="comment">#     Form Factor: DIMM</span></span><br><span class="line"><span class="comment">#     Set: 1</span></span><br><span class="line"><span class="comment">#     Locator: DIMM_A1</span></span><br><span class="line"><span class="comment">#     Bank Locator: Not Specified</span></span><br><span class="line"><span class="comment">#     Type: DDR3</span></span><br><span class="line"><span class="comment">#     Type Detail: Synchronous Unbuffered (Unregistered)</span></span><br><span class="line"><span class="comment">#     Speed: 1333 MHz</span></span><br><span class="line"><span class="comment">#     Manufacturer: 00CE000080CE</span></span><br><span class="line"><span class="comment">#     Serial Number: 4830F3E1</span></span><br><span class="line"><span class="comment">#     Asset Tag: 01093200</span></span><br><span class="line"><span class="comment">#     Part Number: M391B5673EH1-CH9</span></span><br><span class="line"><span class="comment">#   --</span></span><br><span class="line"><span class="comment">#   Memory Device</span></span><br><span class="line"><span class="comment">#     Array Handle: 0x1000</span></span><br><span class="line"><span class="comment">#     Error Information Handle: Not Provided</span></span><br><span class="line"><span class="comment">#     Total Width: 72 bits</span></span><br><span class="line"><span class="comment">#     Data Width: 64 bits</span></span><br><span class="line"><span class="comment">#     Size: 2048 MB</span></span><br><span class="line"><span class="comment">#     Form Factor: DIMM</span></span><br><span class="line"><span class="comment">#     Set: 1</span></span><br><span class="line"><span class="comment">#     Locator: DIMM_A2</span></span><br><span class="line"><span class="comment">#     Bank Locator: Not Specified</span></span><br><span class="line"><span class="comment">#     Type: DDR3</span></span><br><span class="line"><span class="comment">#     Type Detail: Synchronous Unbuffered (Unregistered)</span></span><br><span class="line"><span class="comment">#     Speed: 1333 MHz</span></span><br><span class="line"><span class="comment">#     Manufacturer: 00AD000080AD</span></span><br><span class="line"><span class="comment">#     Serial Number: 1BA1F0B5</span></span><br><span class="line"><span class="comment">#     Asset Tag: 01110900</span></span><br><span class="line"><span class="comment">#     Part Number: HMT325U7BFR8C-H9</span></span><br><span class="line"><span class="comment">#   --</span></span><br><span class="line"></span><br><span class="line">dmidecode|grep -A16 <span class="string">"Memory Device"</span>|grep <span class="string">'Speed'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  Speed: 1333 MHz</span></span><br><span class="line"><span class="comment">#  Speed: 1333 MHz</span></span><br><span class="line"><span class="comment">#  Speed: 1333 MHz</span></span><br><span class="line"><span class="comment">#  Speed: Unknown</span></span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dmidecode/" data-id="cjvp9c5zj00d2j0xird86w61p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/dmesg" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dmesg/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.351Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dmesg"><a href="#dmesg" class="headerlink" title="dmesg"></a>dmesg</h1><p>显示Linux系统启动信息</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dmesg命令</strong> 被用于检查和控制内核的环形缓冲区。kernel会将开机信息存储在ring buffer中。您若是开机时来不及查看信息，可利用dmesg来查看。开机信息保存在<code>/var/log/dmesg</code>文件里。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dmesg(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-c：显示信息后，清除ring buffer中的内容；</span><br><span class="line">-s&lt;缓冲区大小&gt;：预设置为8196，刚好等于ring buffer的大小；</span><br><span class="line">-n：设置记录信息的层级。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# dmesg | head</span><br><span class="line">Linux version 2.6.18-348.6.1.el5 (mockbuild@builder17.centos.org) (gcc version 4.1.2 20080704 (Red Hat 4.1.2-54)) #1 SMP Tue May 21 15:34:22 EDT 2013</span><br><span class="line">BIOS-provided physical RAM map:</span><br><span class="line"> BIOS-e820: 0000000000010000 - 000000000009f400 (usable)</span><br><span class="line"> BIOS-e820: 000000000009f400 - 00000000000a0000 (reserved)</span><br><span class="line"> BIOS-e820: 00000000000f0000 - 0000000000100000 (reserved)</span><br><span class="line"> BIOS-e820: 0000000000100000 - 000000007f590000 (usable)</span><br><span class="line"> BIOS-e820: 000000007f590000 - 000000007f5e3000 (ACPI NVS)</span><br><span class="line"> BIOS-e820: 000000007f5e3000 - 000000007f5f0000 (ACPI data)</span><br><span class="line"> BIOS-e820: 000000007f5f0000 - 000000007f600000 (reserved)</span><br><span class="line"> BIOS-e820: 00000000e0000000 - 00000000e8000000 (reserved)</span><br></pre></td></tr></table></figure>
+<p>查看硬盘基础信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dmesg | grep sda</span><br><span class="line"></span><br><span class="line">[    2.442555] sd 0:0:0:0: [sda] 488281250 512-byte logical blocks: (250 GB/232 GiB)</span><br><span class="line">[    2.442590] sd 0:0:0:0: [sda] Write Protect is off</span><br><span class="line">[    2.442592] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00</span><br><span class="line">[    2.442607] sd 0:0:0:0: [sda] Write cache: enabled, <span class="built_in">read</span> cache: enabled, doesn<span class="string">'t support DPO or FUA</span></span><br><span class="line"><span class="string">[    2.447533]  sda: sda1</span></span><br><span class="line"><span class="string">[    2.448503] sd 0:0:0:0: [sda] Attached SCSI disk</span></span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dmesg/" data-id="cjvp9c5px0033j0xialnou66l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/dirs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dirs/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.349Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dirs"><a href="#dirs" class="headerlink" title="dirs"></a>dirs</h1><p>显示目录记录</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dirs命令</strong> 显示当前目录栈中的所有记录（不带参数的dirs命令显示当前目录栈中的记录）。dirs始终显示当然目录, 再是堆栈中的内容；即使目录堆栈为空, dirs命令仍然只显示当然目录。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dirs(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-c：删除目录栈中的所有记录</span><br><span class="line">-l：以完整格式显示</span><br><span class="line">-p：一个目录一行的方式显示</span><br><span class="line">-v：每行一个目录来显示目录栈的内容，每个目录前加上的编号</span><br><span class="line">+N：显示从左到右的第n个目录，数字从0开始</span><br><span class="line">-N：显示从右到左的第n个日录，数字从0开始</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>目录：显示目录堆叠中的记录。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost etc]# dirs</span><br><span class="line">/etc</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dirs/" data-id="cjvp9c5pw0032j0xir4j8lqg2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/dirname" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dirname/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.348Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dirname"><a href="#dirname" class="headerlink" title="dirname"></a>dirname</h1><p>去除文件名中的非目录部分</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dirname命令</strong> 去除文件名中的非目录部分，仅显示与目录有关的内容。dirname命令读取指定路径名保留最后一个<code>/</code>及其后面的字符，删除其他部分，并写结果到标准输出。如果最后一个<code>&lt;cite&gt;/&lt;/cite&gt;</code>后无字符，dirname 命令使用倒数第二个<code>/</code>，并忽略其后的所有字符。dirname 和 basename 通常在 shell 内部命令替换使用，以指定一个与指定输入文件名略有差异的输出文件名。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dirname(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">--help：显示帮助；</span><br><span class="line">--version：显示版本号。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dirname //</span><br><span class="line">结果为 /</span><br><span class="line"></span><br><span class="line">dirname /a/b/</span><br><span class="line">结果为：/a</span><br><span class="line"></span><br><span class="line">dirname a</span><br><span class="line">结果为 .</span><br><span class="line"></span><br><span class="line">dirname a/b</span><br><span class="line">结果为路径名 a</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dirname/" data-id="cjvp9c5pv0031j0xiy5kddmf0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/45/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="page-number" href="/page/45/">45</a><span class="page-number current">46</span><a class="page-number" href="/page/47/">47</a><a class="page-number" href="/page/48/">48</a><span class="space">&hellip;</span><a class="page-number" href="/page/57/">57</a><a class="extend next" rel="next" href="/page/47/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

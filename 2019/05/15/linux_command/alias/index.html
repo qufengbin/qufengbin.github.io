@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="alias用来设置指令的别名 补充说明alias命令 用来设置指令的别名。我们可以使用该命令可以将一些较长的命令进行简化。使用alias时，用户必须使用单引号&amp;#39;&amp;#39;将原来的命令引起来，防止特殊字符导致错误。 alias命令的作用只局限于该次登入的操作。若要每次登入都能够使用这些命令别名，则可将相应的alias命令存放到bash的初始化文件/etc/bashrc中。 语法1alias(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/alias/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="alias用来设置指令的别名 补充说明alias命令 用来设置指令的别名。我们可以使用该命令可以将一些较长的命令进行简化。使用alias时，用户必须使用单引号&amp;#39;&amp;#39;将原来的命令引起来，防止特殊字符导致错误。 alias命令的作用只局限于该次登入的操作。若要每次登入都能够使用这些命令别名，则可将相应的alias命令存放到bash的初始化文件/etc/bashrc中。 语法1alias(">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/05/15/linux_command/alias/alias/01.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/15/linux_command/alias/alias/02.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/15/linux_command/alias/alias/03.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/15/linux_command/alias/alias/04.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/15/linux_command/alias/alias/05.png">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="alias用来设置指令的别名 补充说明alias命令 用来设置指令的别名。我们可以使用该命令可以将一些较长的命令进行简化。使用alias时，用户必须使用单引号&amp;#39;&amp;#39;将原来的命令引起来，防止特殊字符导致错误。 alias命令的作用只局限于该次登入的操作。若要每次登入都能够使用这些命令别名，则可将相应的alias命令存放到bash的初始化文件/etc/bashrc中。 语法1alias(">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/15/linux_command/alias/alias/01.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/alias" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/alias/" class="article-date">
+  <time datetime="2019-05-15T13:24:13.992Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h1><p>用来设置指令的别名</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>alias命令</strong> 用来设置指令的别名。我们可以使用该命令可以将一些较长的命令进行简化。使用alias时，用户必须使用单引号<code>&#39;&#39;</code>将原来的命令引起来，防止特殊字符导致错误。</p>
+<p>alias命令的作用只局限于该次登入的操作。若要每次登入都能够使用这些命令别名，则可将相应的alias命令存放到bash的初始化文件<code>/etc/bashrc</code>中。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-p：打印已经设置的命令别名。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>命令别名设置：定义命令别名，格式为“命令别名=‘实际命令’”。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>alias 的基本使用方法为：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias 新的命令=&apos;原命令 -选项/参数&apos;</span><br></pre></td></tr></table></figure>
+<p>例如：<code>alias l=‘ls -lsh&#39;</code>将重新定义ls命令，现在只需输入l就可以列目录了。直接输入 alias 命令会列出当前系统中所有已经定义的命令别名。</p>
+<p>要删除一个别名，可以使用 unalias 命令，如 unalias l。</p>
+<p> <strong>查看系统已经设置的别名：</strong> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># </span></span><br><span class="line">[root@localhost ~]<span class="comment"># alias</span></span><br><span class="line"><span class="built_in">alias</span> cp=<span class="string">'cp -i'</span></span><br><span class="line"><span class="built_in">alias</span> egrep=<span class="string">'egrep --color=auto'</span></span><br><span class="line"><span class="built_in">alias</span> fgrep=<span class="string">'fgrep --color=auto'</span></span><br><span class="line"><span class="built_in">alias</span> grep=<span class="string">'grep --color=auto'</span></span><br><span class="line"><span class="built_in">alias</span> l.=<span class="string">'ls -d .* --color=auto'</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">'ls -l --color=auto'</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls --color=auto'</span></span><br><span class="line"><span class="built_in">alias</span> mv=<span class="string">'mv -i'</span></span><br><span class="line"><span class="built_in">alias</span> rm=<span class="string">'rm -i'</span></span><br><span class="line"><span class="built_in">alias</span> <span class="built_in">which</span>=<span class="string">'alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'</span></span><br><span class="line">[root@localhost ~]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<h3 id="命令别名永久生效"><a href="#命令别名永久生效" class="headerlink" title="命令别名永久生效"></a>命令别名永久生效</h3><p>直接在shell里设定的命令别名，在终端关闭或者系统重新启动后都会失效，如何才能永久有效呢？办法就是将别名的设置加入~/.bashrc文件，然后重新载入下文件就可以了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>在文件最后面加入别名设置，如：alias rm=’rm -i’，保存后重新载入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>这样就可以永久保存命令的别名了。因为修改的是当前用户目录下的.bashrc文件，所以这样的方式只对当前用户有用。如果要对所有用户都有效，修改/etc目录下的bashrc文件就可以了。在CentOS7下，这个文件是/etc/bash.bashrc。此外在CentOS7下，细看~/.bashrc文件，会发有这样一段代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ -f ~/.bash_aliases ]; <span class="keyword">then</span></span><br><span class="line">    . ~/.bash_aliases</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
+<p>这个代码的意思就是加载.bash_aliases文件，CentOS7已经帮我们考虑好了，所以也可以在用户根目录下新建一个文件.bash_aliases存放命令别名设置。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>alias这个命令是shell的内建命令，可以根据自己的使用习惯设置一些别名，需要注意的就是和其他命令冲突的情况。</p>
+<h4 id="一、-范例演示"><a href="#一、-范例演示" class="headerlink" title="一、 范例演示"></a>一、 范例演示</h4><p>在使用和维护Linux系统过程中，我们常常希望根据自己的需要来定义一些命令，那么这样的操作是不是很难呢？其实不是，系统已经为我们设置好了相关的命令，下面小编就以CentOS6.4系统为例，为大家演示如何创建自己的命令。</p>
+<h4 id="二、-自定义命令简介"><a href="#二、-自定义命令简介" class="headerlink" title="二、 自定义命令简介"></a>二、 自定义命令简介</h4><pre><code>CentOS系统下的创建自定义命令其实比较简单，使用的命令就是alias，具体使用的方法就是 alias 自定义命令名=‘命令’。但是需要注意的是，在自定义之前需要查看自定义的命令名是否是系统已经使用的命令名，否则会冲突，另外一个就是定期清理不需要的自定义命令名。
+</code></pre><h4 id="三、-演示举例"><a href="#三、-演示举例" class="headerlink" title="三、 演示举例"></a>三、 演示举例</h4><p>假定系统操作员希望进行如下操作：<br>1.进入目录/root<br>2.查看目录下文件<br>3.切换回根目录<br>通常这需要三条命令 cd /root；ls；cd / ，如果需要经常使用那么我们可以通过自定义命令的方式用一条命令完成全部操作。<br><img src="alias\01.png" alt></p>
+<h4 id="四、-操作过程"><a href="#四、-操作过程" class="headerlink" title="四、 操作过程"></a>四、 操作过程</h4><pre><code>首先使用命令 type 自定义命令名 ，查看自定义命令名是否被系统占用。从图中可以看出test命令名已被系统占用，所以不能使用，而loo这个命令名经查询可以使用。
+</code></pre><p><img src="alias\02.png" alt></p>
+<pre><code>使用命令alias创建自定义命令：alias loo=&apos;cd /root;ls;cd /&apos; 。需要注意的是命令的使用格式，分号与分号之间是没有空格的。
+</code></pre><p><img src="alias\03.png" alt></p>
+<pre><code>测试一下自定义命令，当输入命令 loo 时，发现系统依次完成了 cd /root、ls、cd / 三条命令，说明设置成功。同时也可直接使用命令 alias  查询系统中是否添加了loo这个自定义命令。
+</code></pre><p><img src="alias\04.png" alt></p>
+<pre><code>如果希望删除这个自定义命令，可以使用命令 unalias 自定义命令名 来完成。执行之后发现，loo命令已不存在，同时自定义命令库中也没有loo命令。
+</code></pre><p><img src="alias\05.png" alt></p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/alias/" data-id="cjvp9c5n9000ij0xiroxjdqai" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/apachectl/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/ack/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

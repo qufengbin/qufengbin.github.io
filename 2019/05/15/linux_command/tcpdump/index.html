@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="tcpdump一款sniffer工具，是Linux上的抓包工具，嗅探器。 补充说明tcpdump命令 是一款抓包，嗅探器工具，它可以打印所有经过网络接口的数据包的头信息，也可以使用-w选项将数据包保存到文件中，方便以后分析。 语法1tcpdump(选项) 选项12345678910111213141516171819202122232425-a：尝试将网络和广播地址转换成名称；-c&amp;lt;数据包数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/tcpdump/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="tcpdump一款sniffer工具，是Linux上的抓包工具，嗅探器。 补充说明tcpdump命令 是一款抓包，嗅探器工具，它可以打印所有经过网络接口的数据包的头信息，也可以使用-w选项将数据包保存到文件中，方便以后分析。 语法1tcpdump(选项) 选项12345678910111213141516171819202122232425-a：尝试将网络和广播地址转换成名称；-c&amp;lt;数据包数">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="tcpdump一款sniffer工具，是Linux上的抓包工具，嗅探器。 补充说明tcpdump命令 是一款抓包，嗅探器工具，它可以打印所有经过网络接口的数据包的头信息，也可以使用-w选项将数据包保存到文件中，方便以后分析。 语法1tcpdump(选项) 选项12345678910111213141516171819202122232425-a：尝试将网络和广播地址转换成名称；-c&amp;lt;数据包数">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/tcpdump" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/tcpdump/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.321Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h1><p>一款sniffer工具，是Linux上的抓包工具，嗅探器。</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>tcpdump命令</strong> 是一款抓包，嗅探器工具，它可以打印所有经过网络接口的数据包的头信息，也可以使用<code>-w</code>选项将数据包保存到文件中，方便以后分析。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">-a：尝试将网络和广播地址转换成名称；</span><br><span class="line">-c&lt;数据包数目&gt;：收到指定的数据包数目后，就停止进行倾倒操作；</span><br><span class="line">-d：把编译过的数据包编码转换成可阅读的格式，并倾倒到标准输出；</span><br><span class="line">-dd：把编译过的数据包编码转换成C语言的格式，并倾倒到标准输出；</span><br><span class="line">-ddd：把编译过的数据包编码转换成十进制数字的格式，并倾倒到标准输出；</span><br><span class="line">-e：在每列倾倒资料上显示连接层级的文件头；</span><br><span class="line">-f：用数字显示网际网络地址；</span><br><span class="line">-F&lt;表达文件&gt;：指定内含表达方式的文件；</span><br><span class="line">-i&lt;网络界面&gt;：使用指定的网络截面送出数据包；</span><br><span class="line">-l：使用标准输出列的缓冲区；</span><br><span class="line">-n：不把主机的网络地址转换成名字；</span><br><span class="line">-N：不列出域名；</span><br><span class="line">-O：不将数据包编码最佳化；</span><br><span class="line">-p：不让网络界面进入混杂模式；</span><br><span class="line">-q ：快速输出，仅列出少数的传输协议信息；</span><br><span class="line">-r&lt;数据包文件&gt;：从指定的文件读取数据包数据；</span><br><span class="line">-s&lt;数据包大小&gt;：设置每个数据包的大小；</span><br><span class="line">-S：用绝对而非相对数值列出TCP关联数；</span><br><span class="line">-t：在每列倾倒资料上不显示时间戳记；</span><br><span class="line">-tt： 在每列倾倒资料上显示未经格式化的时间戳记；</span><br><span class="line">-T&lt;数据包类型&gt;：强制将表达方式所指定的数据包转译成设置的数据包类型；</span><br><span class="line">-v：详细显示指令执行过程；</span><br><span class="line">-vv：更详细显示指令执行过程；</span><br><span class="line">-x：用十六进制字码列出数据包资料；</span><br><span class="line">-w&lt;数据包文件&gt;：把数据包数据写入指定的文件。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>直接启动tcpdump将监视第一个网络接口上所有流过的数据包</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump</span><br></pre></td></tr></table></figure>
+<p> <strong>监视指定网络接口的数据包</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i eth1</span><br></pre></td></tr></table></figure>
+<p>如果不指定网卡，默认tcpdump只会监视第一个网络接口，一般是eth0，下面的例子都没有指定网络接口。</p>
+<p> <strong>监视指定主机的数据包</strong> </p>
+<p>打印所有进入或离开sundown的数据包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump host sundown</span><br></pre></td></tr></table></figure>
+<p>也可以指定ip,例如截获所有210.27.48.1 的主机收到的和发出的所有的数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump host 210.27.48.1</span><br></pre></td></tr></table></figure>
+<p>打印helios 与 hot 或者与 ace 之间通信的数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump host helios and \( hot or ace \)</span><br></pre></td></tr></table></figure>
+<p>截获主机210.27.48.1 和主机210.27.48.2 或210.27.48.3的通信</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump host 210.27.48.1 and \ (210.27.48.2 or 210.27.48.3 \)</span><br></pre></td></tr></table></figure>
+<p>打印ace与任何其他主机之间通信的IP 数据包, 但不包括与helios之间的数据包.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump ip host ace and not helios</span><br></pre></td></tr></table></figure>
+<p>如果想要获取主机210.27.48.1除了和主机210.27.48.2之外所有主机通信的ip包，使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump ip host 210.27.48.1 and ! 210.27.48.2</span><br></pre></td></tr></table></figure>
+<p>抓取eth0网卡上的包，使用:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tcpdump -i eth0</span><br></pre></td></tr></table></figure>
+<p>截获主机hostname发送的所有数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i eth0 src host hostname</span><br></pre></td></tr></table></figure>
+<p>监视所有送到主机hostname的数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i eth0 dst host hostname</span><br></pre></td></tr></table></figure>
+<p> <strong>监视指定主机和端口的数据包</strong> </p>
+<p>如果想要获取主机210.27.48.1接收或发出的telnet包，使用如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump tcp port 23 host 210.27.48.1</span><br></pre></td></tr></table></figure>
+<p>对本机的udp 123 端口进行监视 123 为ntp的服务端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump udp port 123</span><br></pre></td></tr></table></figure>
+<p> <strong>监视指定网络的数据包</strong> </p>
+<p>打印本地主机与Berkeley网络上的主机之间的所有通信数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump net ucb-ether</span><br></pre></td></tr></table></figure>
+<p>ucb-ether此处可理解为“Berkeley网络”的网络地址，此表达式最原始的含义可表达为：打印网络地址为ucb-ether的所有数据包</p>
+<p>打印所有通过网关snup的ftp数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump &apos;gateway snup and (port ftp or ftp-data)&apos;</span><br></pre></td></tr></table></figure>
+<p>注意：表达式被单引号括起来了，这可以防止shell对其中的括号进行错误解析</p>
+<p>打印所有源地址或目标地址是本地主机的IP数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump ip and not net localnet</span><br></pre></td></tr></table></figure>
+<p>如果本地网络通过网关连到了另一网络，则另一网络并不能算作本地网络。</p>
+<p>抓取80端口的HTTP报文，以文本形式展示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tcpdump -i any port 80 -A</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tcpdump/" data-id="cjvp9c5xr00cmj0xi37efhvrg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/tcpreplay/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/tar/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

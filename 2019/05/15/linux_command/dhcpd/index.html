@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="dhcpd运行DHCP服务器。 语法1dhcpd [选项] [网络接口] 选项12345678910111213-p &amp;lt;端口&amp;gt; 指定dhcpd监听的端口-f 作为前台进程运行dhcpd-d 启用调试模式-q 在启动时不显示版权信息-t 简单地测试配置文件的语法是否正确的，但不会尝试执行任何网络操作-T 可以用来测试租约数据库文件-4 运行DHCP服务器-6 运行DHCPv6服务器-s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/dhcpd/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="dhcpd运行DHCP服务器。 语法1dhcpd [选项] [网络接口] 选项12345678910111213-p &amp;lt;端口&amp;gt; 指定dhcpd监听的端口-f 作为前台进程运行dhcpd-d 启用调试模式-q 在启动时不显示版权信息-t 简单地测试配置文件的语法是否正确的，但不会尝试执行任何网络操作-T 可以用来测试租约数据库文件-4 运行DHCP服务器-6 运行DHCPv6服务器-s">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="dhcpd运行DHCP服务器。 语法1dhcpd [选项] [网络接口] 选项12345678910111213-p &amp;lt;端口&amp;gt; 指定dhcpd监听的端口-f 作为前台进程运行dhcpd-d 启用调试模式-q 在启动时不显示版权信息-t 简单地测试配置文件的语法是否正确的，但不会尝试执行任何网络操作-T 可以用来测试租约数据库文件-4 运行DHCP服务器-6 运行DHCPv6服务器-s">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/dhcpd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dhcpd/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.326Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dhcpd"><a href="#dhcpd" class="headerlink" title="dhcpd"></a>dhcpd</h1><p>运行DHCP服务器。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dhcpd [选项] [网络接口]</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-p &lt;端口&gt; 指定dhcpd监听的端口</span><br><span class="line">-f 作为前台进程运行dhcpd</span><br><span class="line">-d 启用调试模式</span><br><span class="line">-q 在启动时不显示版权信息</span><br><span class="line">-t 简单地测试配置文件的语法是否正确的，但不会尝试执行任何网络操作</span><br><span class="line">-T 可以用来测试租约数据库文件</span><br><span class="line">-4 运行DHCP服务器</span><br><span class="line">-6 运行DHCPv6服务器</span><br><span class="line">-s &lt;服务器&gt; 指定发送回复的服务器</span><br><span class="line">-cf &lt;配置文件&gt; 指定配置文件</span><br><span class="line">-lf &lt;租约文件&gt; 指定租约文件</span><br><span class="line">-pf &lt;PID文件&gt; 指定PID文件</span><br><span class="line">-tf &lt;跟踪输出文件&gt; 指定文件记录DHCP服务器的整个启动状态</span><br></pre></td></tr></table></figure>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>对DHCP服务器进行排错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># dhcpd</span></span><br><span class="line">InternetSystems Consortium DHCP Server 4.1.1-P1</span><br><span class="line">Copyright2004-2010 Internet Systems Consortium.</span><br><span class="line">All rightsreserved.</span><br><span class="line">For info,please visit https://www.isc.org/software/dhcp/</span><br><span class="line">Not searchingLDAP since ldap-server, ldap-port and ldap-base-dn were not specified <span class="keyword">in</span> theconfig file</span><br><span class="line">Wrote 0deleted host decls to leases file.</span><br><span class="line">Wrote 0 newdynamic host decls to leases file.</span><br><span class="line">Wrote 1leases to leases file.</span><br><span class="line">Listening onLPF/eth0/00:0c:29:<span class="built_in">fc</span>:2f:e5/192.168.0.0/24</span><br><span class="line">Sendingon  LPF/eth0/00:0c:29:<span class="built_in">fc</span>:2f:e5/192.168.0.0/24</span><br><span class="line">Sendingon   Socket/fallback/fallback-net</span><br><span class="line">[root@rhel~]<span class="comment"># There's already a DHCP server running.</span></span><br><span class="line"> </span><br><span class="line">This versionof ISC DHCP is based on the release available</span><br><span class="line">onftp.isc.org.  Features have been addedand other changes</span><br><span class="line">have beenmade to the base software release <span class="keyword">in</span> order to make</span><br><span class="line">it workbetter with this distribution.</span><br><span class="line"> </span><br><span class="line">exiting.</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dhcpd/" data-id="cjvp9c5pq002wj0ximygyalre" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/dhcrelay/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/dhclient/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

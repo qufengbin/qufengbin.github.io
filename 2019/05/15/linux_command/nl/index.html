@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="nl在Linux系统中计算文件内容行号 补充说明nl命令 读取 file 参数（缺省情况下标准输入），计算输入中的行号，将计算过的行号写入标准输出。在输出中，nl命令根据您在命令行中指定的标志来计算左边的行。输入文本必须写在逻辑页中。每个逻辑页有头、主体和页脚节（可以有空节）。除非使用-p选项，nl 命令在每个逻辑页开始的地方重新设置行号。可以单独为头、主体和页脚节设置行计算标志（例如，头和页脚行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/nl/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="nl在Linux系统中计算文件内容行号 补充说明nl命令 读取 file 参数（缺省情况下标准输入），计算输入中的行号，将计算过的行号写入标准输出。在输出中，nl命令根据您在命令行中指定的标志来计算左边的行。输入文本必须写在逻辑页中。每个逻辑页有头、主体和页脚节（可以有空节）。除非使用-p选项，nl 命令在每个逻辑页开始的地方重新设置行号。可以单独为头、主体和页脚节设置行计算标志（例如，头和页脚行">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="nl在Linux系统中计算文件内容行号 补充说明nl命令 读取 file 参数（缺省情况下标准输入），计算输入中的行号，将计算过的行号写入标准输出。在输出中，nl命令根据您在命令行中指定的标志来计算左边的行。输入文本必须写在逻辑页中。每个逻辑页有头、主体和页脚节（可以有空节）。除非使用-p选项，nl 命令在每个逻辑页开始的地方重新设置行号。可以单独为头、主体和页脚节设置行计算标志（例如，头和页脚行">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/nl" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/nl/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.962Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="nl"><a href="#nl" class="headerlink" title="nl"></a>nl</h1><p>在Linux系统中计算文件内容行号</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>nl命令</strong> 读取 file 参数（缺省情况下标准输入），计算输入中的行号，将计算过的行号写入标准输出。在输出中，nl命令根据您在命令行中指定的标志来计算左边的行。输入文本必须写在逻辑页中。每个逻辑页有头、主体和页脚节（可以有空节）。除非使用<code>-p</code>选项，nl 命令在每个逻辑页开始的地方重新设置行号。可以单独为头、主体和页脚节设置行计算标志（例如，头和页脚行可以被计算然而文本行不能）。其默认的结果与<code>cat -n</code>有点不太一样， nl 可以将行号做比较多的显示设计，包括位数与是否自动补齐0等等的功能。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nl (选项) (参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-b ：指定行号指定的方式，主要有两种：</span><br><span class="line">    -b a ：表示不论是否为空行，也同样列出行号(类似 cat -n)；</span><br><span class="line">    -b t ：如果有空行，空的那一行不要列出行号(默认值)；</span><br><span class="line"></span><br><span class="line">-n ：列出行号表示的方法，主要有三种：</span><br><span class="line">    -n ln ：行号在萤幕的最左方显示；</span><br><span class="line">    -n rn ：行号在自己栏位的最右方显示，且不加 0 ；</span><br><span class="line">    -n rz ：行号在自己栏位的最右方显示，且加 0 ；</span><br><span class="line"></span><br><span class="line">-w ：行号栏位的占用的位数。</span><br><span class="line">-p ：在逻辑定界符处不重新开始计算。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>用 nl 列出 log2015.log 的内容</strong> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@localhost [test]# nl log2015.log</span><br><span class="line">1 2015-01</span><br><span class="line">2 2015-02</span><br><span class="line"></span><br><span class="line">3 ======[root@localhost test]#</span><br></pre></td></tr></table></figure>
+<p>说明：文件中的空白行，nl 不会加上行号</p>
+<p> <strong>用 nl 列出 log2015.log 的内容，空本行也加上行号</strong> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost test]# nl -b a log2015.log</span><br><span class="line">1 2015-01</span><br><span class="line">2 2015-02</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5 ======[root@localhost test]#</span><br></pre></td></tr></table></figure>
+<p> <strong>让行号前面自动补上0，统一输出格式：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost test]# nl -b a -n rz log2015.log</span><br><span class="line">000001 2015-01</span><br><span class="line">000002 2015-02</span><br><span class="line">000003 2015-03</span><br><span class="line">000004 2015-04</span><br><span class="line">000005 2015-05</span><br><span class="line">000006 2015-06</span><br><span class="line">000007 2015-07</span><br><span class="line">000008 2015-08</span><br><span class="line">000009 2015-09</span><br><span class="line">000010 2015-10</span><br><span class="line">000011 2015-11</span><br><span class="line">000012 2015-12</span><br><span class="line">000013 =======</span><br><span class="line"></span><br><span class="line">[root@localhost test]# nl -b a -n rz -w 3 log2015.log</span><br><span class="line">001 2015-01</span><br><span class="line">002 2015-02</span><br><span class="line">003 2015-03</span><br><span class="line">004 2015-04</span><br><span class="line">005 2015-05</span><br><span class="line">006 2015-06</span><br><span class="line">007 2015-07</span><br><span class="line">008 2015-08</span><br><span class="line">009 2015-09</span><br><span class="line">010 2015-10</span><br><span class="line">011 2015-11</span><br><span class="line">012 2015-12</span><br><span class="line">013 =======</span><br></pre></td></tr></table></figure>
+<p>说明：<code>nl -b a -n rz</code>命令行号默认为六位，要调整位数可以加上参数<code>-w 3</code>调整为3位。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/nl/" data-id="cjvp9c5uw008vj0xi99ubudo8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/nm/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/nisdomainname/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

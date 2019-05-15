@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="apkAlpine Linux 下的包管理工具 使用实例123456apk install xxxapk search xxx # 支持正则apk info xxx # 查看包的详细信息apk show # list local package# 卸载并删除 包apk del openssh openntp vim 升级upgrade命令升级系统已安装的所以软件包（一般包括内核），当然也可指定仅升">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/apk/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="apkAlpine Linux 下的包管理工具 使用实例123456apk install xxxapk search xxx # 支持正则apk info xxx # 查看包的详细信息apk show # list local package# 卸载并删除 包apk del openssh openntp vim 升级upgrade命令升级系统已安装的所以软件包（一般包括内核），当然也可指定仅升">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="apkAlpine Linux 下的包管理工具 使用实例123456apk install xxxapk search xxx # 支持正则apk info xxx # 查看包的详细信息apk show # list local package# 卸载并删除 包apk del openssh openntp vim 升级upgrade命令升级系统已安装的所以软件包（一般包括内核），当然也可指定仅升">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/apk" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/apk/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.000Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="apk"><a href="#apk" class="headerlink" title="apk"></a>apk</h1><p>Alpine Linux 下的包管理工具</p>
+<h2 id="使用实例"><a href="#使用实例" class="headerlink" title="使用实例"></a>使用实例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apk install xxx</span><br><span class="line">apk search xxx <span class="comment"># 支持正则</span></span><br><span class="line">apk info xxx <span class="comment"># 查看包的详细信息</span></span><br><span class="line">apk show <span class="comment"># list local package</span></span><br><span class="line"><span class="comment"># 卸载并删除 包</span></span><br><span class="line">apk del openssh openntp vim</span><br></pre></td></tr></table></figure>
+<h3 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h3><p>upgrade命令升级系统已安装的所以软件包（一般包括内核），当然也可指定仅升级部分软件包（通过-u或–upgrade选择指定）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apk update <span class="comment"># 更新最新本地镜像源</span></span><br><span class="line">apk upgrade <span class="comment"># 升级软件</span></span><br><span class="line">apk add --upgrade busybox <span class="comment"># 指定升级部分软件包</span></span><br></pre></td></tr></table></figure>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apk search <span class="comment"># 查找所以可用软件包</span></span><br><span class="line">apk search -v <span class="comment"># 查找所以可用软件包及其描述内容</span></span><br><span class="line">apk search -v <span class="string">'acf*'</span> <span class="comment"># 通过软件包名称查找软件包</span></span><br><span class="line">apk search -v -d <span class="string">'docker'</span> <span class="comment"># 通过描述文件查找特定的软件包</span></span><br></pre></td></tr></table></figure>
+<h3 id="查看包信息"><a href="#查看包信息" class="headerlink" title="查看包信息"></a>查看包信息</h3><p>info命令用于显示软件包的信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apk info <span class="comment"># 列出所有已安装的软件包</span></span><br><span class="line">apk info -a zlib <span class="comment"># 显示完整的软件包信息</span></span><br><span class="line">apk info --who-owns /sbin/lbu <span class="comment"># 显示指定文件属于的包</span></span><br></pre></td></tr></table></figure>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><p>还是蛮喜欢 alpine 的，简单纯粹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">apk add iproute2 <span class="comment"># ss vs netstat</span></span><br><span class="line">ss -ptl</span><br><span class="line">apk add drill <span class="comment"># drill vs nslookup&amp;dig</span></span><br><span class="line"></span><br><span class="line">crond <span class="comment"># 开启 cron 服务</span></span><br><span class="line">crontab -l -e</span><br><span class="line"></span><br><span class="line">apk add xxx</span><br><span class="line">apk search -v xxx</span><br><span class="line">apk info -a xxx</span><br><span class="line">apk info</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"http://mirrors.aliyun.com/alpine/v3.6/main\nhttp://mirrors.aliyun.com/alpine/v3.6/community"</span> &gt; /etc/apk/repositories</span><br><span class="line">apk update</span><br><span class="line"></span><br><span class="line"><span class="comment"># storage</span></span><br><span class="line">ibu <span class="comment"># alpine local backup</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># network</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"shortname"</span> &gt; /etc/hostname</span><br><span class="line">hostname -F /etc/hostname</span><br><span class="line">/etc/hosts</span><br><span class="line">/etc/resolv.conf <span class="comment"># conig DNS</span></span><br><span class="line">modprobe ipv6 <span class="comment"># enable ipv6</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"ipv6"</span> &gt;&gt; /etc/modules</span><br><span class="line">iface <span class="comment"># config interface</span></span><br><span class="line">apk add iptables ip6tables iptables-doc</span><br><span class="line">/etc/init.d/networking restart <span class="comment"># activate change</span></span><br><span class="line">apke add iputils <span class="comment"># IPv6 traceroute</span></span><br><span class="line">traceroute6 ipv6.google.com</span><br><span class="line">awall <span class="comment"># alpine wall</span></span><br><span class="line"><span class="comment"># setup a openvpn server</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># post-install</span></span><br><span class="line">/etc/apk/repositories</span><br><span class="line">apk add cherokee --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted</span><br><span class="line">apk search -v --description <span class="string">'NTP'</span> <span class="comment"># show description and search from description</span></span><br><span class="line">apk info -a zlib</span><br><span class="line">apk info -vv|sort</span><br><span class="line">apk info -r -R <span class="comment"># require / depency</span></span><br><span class="line">apk version -v -l <span class="string">'&lt;'</span> <span class="comment"># show available updates</span></span><br><span class="line">apk upgrade -U -a</span><br><span class="line">apk add -u xxx <span class="comment"># update xxx</span></span><br><span class="line"></span><br><span class="line">/etc/runlevels <span class="comment"># runlevel</span></span><br><span class="line">apk add openrc <span class="comment"># use openrc for init system</span></span><br><span class="line">rc-update add xxx <span class="comment"># set to start on</span></span><br><span class="line">rc-service xxx start <span class="comment"># equal -&gt; /etc/init.d/xxx start</span></span><br><span class="line">rc-status</span><br><span class="line"></span><br><span class="line">adduser xxx</span><br><span class="line">passwd xxx</span><br><span class="line"></span><br><span class="line">apk add ansible <span class="comment"># server</span></span><br><span class="line">ssh-keygen</span><br><span class="line">/etc/ansible/hosts</span><br><span class="line">apk add python <span class="comment"># node</span></span><br><span class="line">ssh-copy-id</span><br><span class="line"></span><br><span class="line">apk add man man-pages mdocml-apropos less less-doc</span><br><span class="line"><span class="built_in">export</span> PAGER=less</span><br><span class="line">/etc/rc.conf <span class="comment"># /etc/rc.conf -&gt; funny character</span></span><br><span class="line">apk add bash bash-doc bash-completion <span class="comment"># bash</span></span><br><span class="line">apk add util-linux pciutils usbutils coreutils binutils findutils grep <span class="comment"># grep / awk</span></span><br><span class="line">apk add build-base gcc abuild binutils binutils-doc gcc-doc <span class="comment"># compile</span></span><br><span class="line">apk add cmake cmake-doc extra-cmake-modules extra-cmake-modules-doc</span><br><span class="line">apk add ccache ccache-doc</span><br><span class="line"></span><br><span class="line">apk add docker <span class="comment"># docker</span></span><br><span class="line">rc-update add docker boot</span><br><span class="line">rc-service docker start</span><br><span class="line">apk add py-pip</span><br><span class="line">pip install docker-compose</span><br><span class="line">ln -s /usr/bin/docker-compose /usr/bin/doc</span><br><span class="line"></span><br><span class="line"><span class="comment"># application</span></span><br><span class="line">apk add openssh <span class="comment"># ssh</span></span><br><span class="line">rc-update add sshd</span><br><span class="line">/etc/init.d/sshd start</span><br><span class="line">/etc/sshd_config</span><br><span class="line">apk add dropbear <span class="comment"># another openssh implementation</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/apk/" data-id="cjvp9c5nc000kj0xiih5f2i8n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/apropos/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/apachectl/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="dircolors置ls命令在显示目录或文件时所用的色彩 补充说明dircolors命令 设置ls命令在显示目录或文件时所用的色彩。dircolors可根据[色彩配置文件]来设置LS_COLORS环境变量或是显示设置LS_COLORS环境变量的命令。 语法1dircolors(选项)(参数) 选项12345-b或--sh或--bourne-shell：显示在Boume shell中，将LS_COL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/linux_command/dircolors/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="dircolors置ls命令在显示目录或文件时所用的色彩 补充说明dircolors命令 设置ls命令在显示目录或文件时所用的色彩。dircolors可根据[色彩配置文件]来设置LS_COLORS环境变量或是显示设置LS_COLORS环境变量的命令。 语法1dircolors(选项)(参数) 选项12345-b或--sh或--bourne-shell：显示在Boume shell中，将LS_COL">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-28T06:38:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="dircolors置ls命令在显示目录或文件时所用的色彩 补充说明dircolors命令 设置ls命令在显示目录或文件时所用的色彩。dircolors可根据[色彩配置文件]来设置LS_COLORS环境变量或是显示设置LS_COLORS环境变量的命令。 语法1dircolors(选项)(参数) 选项12345-b或--sh或--bourne-shell：显示在Boume shell中，将LS_COL">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux_command/dircolors" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dircolors/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.346Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dircolors"><a href="#dircolors" class="headerlink" title="dircolors"></a>dircolors</h1><p>置ls命令在显示目录或文件时所用的色彩</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dircolors命令</strong> 设置ls命令在显示目录或文件时所用的色彩。dircolors可根据[色彩配置文件]来设置LS_COLORS环境变量或是显示设置LS_COLORS环境变量的命令。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dircolors(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-b或--sh或--bourne-shell：显示在Boume shell中，将LS_COLORS设为目前预设置的shell指令；</span><br><span class="line">-c或--csh或--c-shell：显示在C shell中，将LS_COLORS设为目前预设置的shell指令；</span><br><span class="line">-p或--print-database：显示预设置；</span><br><span class="line">-help：显示帮助；</span><br><span class="line">-version：显示版本信息。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定用来设置颜色的文件。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# dircolors -p</span><br><span class="line"># Configuration file for dircolors, a utility to help you set the</span><br><span class="line"># LS_COLORS environment variable used by GNU ls with the --color option.</span><br><span class="line"># The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the</span><br><span class="line"># slackware version of dircolors) are recognized but ignored.</span><br><span class="line"># Below, there should be one TERM entry for each termtype that is colorizable</span><br><span class="line">TERM linux</span><br><span class="line">TERM linux-c</span><br><span class="line">TERM mach-color</span><br><span class="line">TERM console</span><br><span class="line">TERM con132x25</span><br><span class="line">TERM con132x30</span><br><span class="line">TERM con132x43</span><br><span class="line">TERM con132x60</span><br><span class="line">TERM con80x25</span><br><span class="line">TERM con80x28</span><br><span class="line">TERM con80x30</span><br><span class="line">TERM con80x43</span><br><span class="line">TERM con80x50</span><br><span class="line">TERM con80x60</span><br><span class="line">TERM cygwin</span><br><span class="line">TERM dtterm</span><br><span class="line">TERM putty</span><br><span class="line">TERM xterm</span><br><span class="line">TERM xterm-color</span><br><span class="line">TERM xterm-debian</span><br><span class="line">TERM rxvt</span><br><span class="line">TERM screen</span><br><span class="line">TERM screen-bce</span><br><span class="line">TERM screen-w</span><br><span class="line">TERM vt100</span><br><span class="line">TERM Eterm</span><br><span class="line"># Below are the color init strings for the basic file types. A color init</span><br><span class="line"># string consists of one or more of the following numeric codes:</span><br><span class="line"># Attribute codes:</span><br><span class="line"># 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed</span><br><span class="line"># Text color codes:</span><br><span class="line"># 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white</span><br><span class="line"># Background color codes:</span><br><span class="line"># 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white</span><br><span class="line">NORMAL 00 # global default, although everything should be something.</span><br><span class="line">FILE 00 # normal file</span><br><span class="line">DIR 01;34 # directory</span><br><span class="line">LINK 01;36 # symbolic link. (If you set this to &apos;target&apos; instead of a</span><br><span class="line"> # numerical value, the color is as for the file pointed to.)</span><br><span class="line">FIFO 40;33 # pipe</span><br><span class="line">SOCK 01;35 # socket</span><br><span class="line">DOOR 01;35 # door</span><br><span class="line">BLK 40;33;01 # block device driver</span><br><span class="line">CHR 40;33;01 # character device driver</span><br><span class="line">ORPHAN 40;31;01 # symlink to nonexistent file</span><br><span class="line">SETUID 37;41 # file that is setuid (u+s)</span><br><span class="line">SETGID 30;43 # file that is setgid (g+s)</span><br><span class="line">STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable (+t,o+w)</span><br><span class="line">OTHER_WRITABLE 34;42 # dir that is other-writable (o+w) and not sticky</span><br><span class="line">STICKY 37;44 # dir with the sticky bit set (+t) and not other-writable</span><br><span class="line"># This is for files with execute permission:</span><br><span class="line">exec 01;32</span><br><span class="line"># List any file extensions like &apos;.gz&apos; or &apos;.tar&apos; that you would like ls</span><br><span class="line"># to colorize below. Put the extension, a space, and the color init string.</span><br><span class="line"># (and any comments you want to add after a &apos;#&apos;)</span><br><span class="line"># If you use DOS-style suffixes, you may want to uncomment the following:</span><br><span class="line">#.cmd 01;32 # executables (bright green)</span><br><span class="line">#.exe 01;32</span><br><span class="line">#.com 01;32</span><br><span class="line">#.btm 01;32</span><br><span class="line">#.bat 01;32</span><br><span class="line">.tar 01;31 # archives or compressed (bright red)</span><br><span class="line">.tgz 01;31</span><br><span class="line">.arj 01;31</span><br><span class="line">.taz 01;31</span><br><span class="line">.lzh 01;31</span><br><span class="line">.zip 01;31</span><br><span class="line">.z 01;31</span><br><span class="line">.Z 01;31</span><br><span class="line">.gz 01;31</span><br><span class="line">.bz2 01;31</span><br><span class="line">.deb 01;31</span><br><span class="line">.rpm 01;31</span><br><span class="line">.jar 01;31</span><br><span class="line"># image formats</span><br><span class="line">.jpg 01;35</span><br><span class="line">.jpeg 01;35</span><br><span class="line">.gif 01;35</span><br><span class="line">.bmp 01;35</span><br><span class="line">.pbm 01;35</span><br><span class="line">.pgm 01;35</span><br><span class="line">.ppm 01;35</span><br><span class="line">.tga 01;35</span><br><span class="line">.xbm 01;35</span><br><span class="line">.xpm 01;35</span><br><span class="line">.tif 01;35</span><br><span class="line">.tiff 01;35</span><br><span class="line">.png 01;35</span><br><span class="line">.mov 01;35</span><br><span class="line">.mpg 01;35</span><br><span class="line">.mpeg 01;35</span><br><span class="line">.avi 01;35</span><br><span class="line">.fli 01;35</span><br><span class="line">.gl 01;35</span><br><span class="line">.dl 01;35</span><br><span class="line">.xcf 01;35</span><br><span class="line">.xwd 01;35</span><br><span class="line"># audio formats</span><br><span class="line">.flac 01;35</span><br><span class="line">.mp3 01;35</span><br><span class="line">.mpc 01;35</span><br><span class="line">.ogg 01;35</span><br><span class="line">.wav 01;35</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dircolors/" data-id="cjvp9c5pt002zj0xi7gw9i5wj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/15/linux_command/dirname/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/05/15/linux_command/dig/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

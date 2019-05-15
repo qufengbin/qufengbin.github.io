@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/43/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-linux_command/exportfs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/exportfs/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.478Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="exportfs"><a href="#exportfs" class="headerlink" title="exportfs"></a>exportfs</h1><p>管理NFS共享文件系统列表</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p>exportfs 命令用来管理当前NFS共享的文件系统列表。</p>
+<p>参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-a 打开或取消所有目录共享。</span><br><span class="line">-o options,...指定一列共享选项，与 exports(5) 中讲到的类似。</span><br><span class="line">-i 忽略 /etc/exports 文件，从而只使用默认的和命令行指定的选项。</span><br><span class="line">-r 重新共享所有目录。它使 /var/lib/nfs/xtab 和 /etc/exports 同步。 它将 /etc/exports 中已删除的条目从 /var/lib/nfs/xtab 中删除，将内核共享表中任何不再有效的条目移除。</span><br><span class="line">-u 取消一个或多个目录的共享。</span><br><span class="line">-f 在“新”模式下，刷新内核共享表之外的任何东西。 任何活动的客户程序将在它们的下次请求中得到 mountd添加的新的共享条目。</span><br><span class="line">-v 输出详细信息。当共享或者取消共享时，显示在做什么。 显示当前共享列表的时候，同时显示共享的选项。</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/exportfs/" data-id="cjvp9c5qx0041j0xig71mctl0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/export" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/export/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.476Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="export"><a href="#export" class="headerlink" title="export"></a>export</h1><p>设置或显示系统环境变量</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>export命令</strong> 用于将shell变量输出为环境变量，或者将shell函数输出为环境变量。</p>
+<p>一个变量创建时，它不会自动地为在它之后创建的shell进程所知。而命令export可以向后面的shell传递变量的值。当一个shell脚本调用并执 行时，它不会自动得到原为脚本（调用者）里定义的变量的访问权，除非这些变量已经被显式地设置为可用。export命令可以用于传递一个或多个变量的值到任何后继脚本。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-f：代表[变量名称]中为函数名称；</span><br><span class="line">-n：删除指定的变量。变量实际上并未删除，只是不会输出到后续指令的执行环境中；</span><br><span class="line">-p：列出所有的shell赋予程序的环境变量。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>变量：指定要输出或者删除的环境变量。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>一般来说，配置交叉编译工具链的时候需要指定编译工具的路径，此时就需要设置环境变量。查看已经存在的环境变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# export</span><br><span class="line">declare -x G_BROKEN_FILENAMES=&quot;1&quot;</span><br><span class="line">declare -x HISTSIZE=&quot;1000&quot;</span><br><span class="line">declare -x HOME=&quot;/root&quot;</span><br><span class="line">declare -x hostname=&quot;localhost&quot;</span><br><span class="line">declare -x INPUTRC=&quot;/etc/inputrc&quot;</span><br><span class="line">declare -x LANG=&quot;zh_CN.UTF-8&quot;</span><br><span class="line">declare -x LESSOPEN=&quot;|/usr/bin/lesspipe.sh %s&quot;</span><br><span class="line">declare -x logname=&quot;root&quot;</span><br><span class="line">declare -x LS_COLORS=&quot;no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=01;32:*.cmd=01;32:*.exe=01;32:*.com=01;32:*.btm=01;32:*.bat=01;32:*.sh=01;32:*.csh=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tz=01;31:*.rpm=01;31:*.cpio=01;31:*.jpg=01;35:*.gif=01;35:*.bmp=01;35:*.xbm=01;35:*.xpm=01;35:*.png=01;35:*.tif=01;35:&quot;</span><br><span class="line">declare -x mail=&quot;/var/spool/mail/root&quot;</span><br><span class="line">declare -x OLDPWD</span><br><span class="line">declare -x PATH=&quot;/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin&quot;</span><br><span class="line">declare -x pwd=&quot;/root&quot;</span><br><span class="line">declare -x SHELL=&quot;/bin/bash&quot;</span><br><span class="line">declare -x SHLVL=&quot;1&quot;</span><br><span class="line">declare -x SSH_CLIENT=&quot;192.168.2.111 2705 22&quot;</span><br><span class="line">declare -x SSH_CONNECTION=&quot;192.168.2.111 2705 192.168.2.2 22&quot;</span><br><span class="line">declare -x SSH_TTY=&quot;/dev/pts/0&quot;</span><br><span class="line">declare -x TERM=&quot;linux&quot;</span><br><span class="line">declare -x USER=&quot;root&quot;</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/export/" data-id="cjvp9c5qw0040j0xipacyjaf6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/expand" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/expand/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.474Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="expand"><a href="#expand" class="headerlink" title="expand"></a>expand</h1><p>将文件的制表符转换为空白字符</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>expand命令</strong> 用于将文件的制表符（TAB）转换为空白字符（space），将结果显示到标准输出设备。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expand(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-t&lt;数字&gt;：指定制表符所代表的空白字符的个数，而不使用默认的8。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定要转换制表符为空白的文件。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/expand/" data-id="cjvp9c5qv003zj0xibj3apcbk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/exit" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/exit/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.472Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="exit"><a href="#exit" class="headerlink" title="exit"></a>exit</h1><p>退出当前的shell</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>exit命令</strong> 同于退出shell，并返回给定值。在shell脚本中可以终止当前脚本执行。执行exit可使shell以指定的状态值退出。若不设置状态值参数，则shell以预设值退出。状态值0代表执行成功，其他值代表执行失败。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>返回值：指定shell返回值。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>退出当前shell：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# exit</span><br><span class="line">logout</span><br></pre></td></tr></table></figure>
+<p>在脚本中，进入脚本所在目录，否则退出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd $(dirname $0) || exit 1</span><br></pre></td></tr></table></figure>
+<p>在脚本中，判断参数数量，不匹配就打印使用方式，退出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if [ &quot;$#&quot; -ne &quot;2&quot; ]; then</span><br><span class="line">    echo &quot;usage: $0 &lt;area&gt; &lt;hours&gt;&quot;</span><br><span class="line">    exit 2</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>在脚本中，退出时删除临时文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trap &quot;rm -f tmpfile; echo Bye.&quot; EXIT</span><br></pre></td></tr></table></figure>
+<p>检查上一命令的退出码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./mycommand.sh</span><br><span class="line">EXCODE=$?</span><br><span class="line">if [ &quot;$EXCODE&quot; == &quot;0&quot; ]; then</span><br><span class="line">    echo &quot;O.K&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/exit/" data-id="cjvp9c5qv003yj0xiyiurv48x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/exec" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/exec/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.470Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h1><p>调用并执行指定的命令</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>exec命令</strong> 用于调用并执行指令的命令。exec命令通常用在shell脚本程序中，可以调用其他的命令。如果在当前终端中使用命令，则当指定的命令执行完毕后会立即退出终端。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-c：在空环境中执行指定的命令。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>指令：要执行的指令和相应的参数。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>首先使用echo命令将文本“Linux C++”进行输出，输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo Linux C++           #输出指定信息</span><br></pre></td></tr></table></figure>
+<p>执行上面的指令后，输出如下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux C++                #输出信息</span><br></pre></td></tr></table></figure>
+<p>然后再使用exec命令调用echo命令输出同样的信息，并且对输出的信息进行对比，输入指令如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec -c echo Linux C++          #调用命令</span><br></pre></td></tr></table></figure>
+<p>执行以上命令后，其输出信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux C++                       #使用指定指令输出信息</span><br></pre></td></tr></table></figure>
+<p>通过比较两者执行后的结果来看，所实现的功能是相同的，即使用exec命令调用echo命令成功。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/exec/" data-id="cjvp9c5r00044j0xi2l9run67" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/ex" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/ex/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.468Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ex"><a href="#ex" class="headerlink" title="ex"></a>ex</h1><p>启动vim编辑器的ex编辑模式</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p>在 <strong>ex</strong> 模式下启动vim文本编辑器。ex执行效果如同<code>vi -E</code>，适用于法及参数可参照vi指令，如要从Ex模式回到普通模式，则在vim中输入<code>:vi</code>或<code>:visual</code>即可。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ex（参数）</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定待编辑的文件。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ex/" data-id="cjvp9c5qt003wj0xivbzbsvi7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/ethtool" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/ethtool/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.467Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ethtool"><a href="#ethtool" class="headerlink" title="ethtool"></a>ethtool</h1><p>显示或修改以太网卡的配置信息</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p>ethtool命令用于获取以太网卡的配置信息，或者修改这些配置。这个命令比较复杂，功能特别多。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ethtool [ -a | -c | -g | -i | -d | -k | -r | -S |] ethX</span><br><span class="line">ethtool [-A] ethX [autoneg on|off] [rx on|off] [tx on|off]</span><br><span class="line">ethtool [-C] ethX [adaptive-rx on|off] [adaptive-tx on|off] [rx-usecs N] [rx-frames N] [rx-usecs-irq N] [rx-frames-irq N] [tx-usecs N] [tx-frames N] [tx-usecs-irq N] [tx-frames-irq N] [stats-block-usecs N][pkt-rate-low N][rx-usecs-low N] [rx-frames-low N] [tx-usecs-low N] [tx-frames-lowN] [pkt-rate-high N] [rx-usecs-high N] [rx-frames-high N] [tx-usecs-high N] [tx-frames-high N] [sample-interval N]</span><br><span class="line">ethtool [-G] ethX [rx N] [rx-mini N] [rx-jumbo N] [tx N]</span><br><span class="line">ethtool [-e] ethX [raw on|off] [offset N] [length N]</span><br><span class="line">ethtool [-E] ethX [magic N] [offset N] [value N]</span><br><span class="line">ethtool [-K] ethX [rx on|off] [tx on|off] [sg on|off] [tso on|off]</span><br><span class="line">ethtool [-p] ethX [N]</span><br><span class="line">ethtool [-t] ethX [offline|online]</span><br><span class="line">ethtool [-s] ethX [speed 10|100|1000] [duplex half|full] [autoneg on|off] [port tp|aui|bnc|mii] [phyad N] [xcvr internal|external]</span><br><span class="line">[wol p|u|m|b|a|g|s|d...] [sopass xx:yy:zz:aa:bb:cc] [msglvl N]</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-a 查看网卡中 接收模块RX、发送模块TX和Autonegotiate模块的状态：启动on 或 停用off。</span><br><span class="line">-A 修改网卡中 接收模块RX、发送模块TX和Autonegotiate模块的状态：启动on 或 停用off。</span><br><span class="line">-c display the Coalesce information of the specified ethernet card。</span><br><span class="line">-C Change the Coalesce setting of the specified ethernet card。</span><br><span class="line">-g Display the rx/tx ring parameter information of the specified ethernet card。</span><br><span class="line">-G change the rx/tx ring setting of the specified ethernet card。</span><br><span class="line">-i 显示网卡驱动的信息，如驱动的名称、版本等。</span><br><span class="line">-d 显示register dump信息, 部分网卡驱动不支持该选项。</span><br><span class="line">-e 显示EEPROM dump信息，部分网卡驱动不支持该选项。</span><br><span class="line">-E 修改网卡EEPROM byte。</span><br><span class="line">-k 显示网卡Offload参数的状态：on 或 off，包括rx-checksumming、tx-checksumming等。</span><br><span class="line">-K 修改网卡Offload参数的状态。</span><br><span class="line">-p 用于区别不同ethX对应网卡的物理位置，常用的方法是使网卡port上的led不断的闪；N指示了网卡闪的持续时间，以秒为单位。</span><br><span class="line">-r 如果auto-negotiation模块的状态为on，则restarts auto-negotiation。</span><br><span class="line">-S 显示NIC- and driver-specific 的统计参数，如网卡接收/发送的字节数、接收/发送的广播包个数等。</span><br><span class="line">-t 让网卡执行自我检测，有两种模式：offline or online。</span><br><span class="line">-s 修改网卡的部分配置，包括网卡速度、单工/全双工模式、mac地址等。</span><br></pre></td></tr></table></figure>
+<h3 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h3><p>Ethtool命令显示的信息来源于网卡驱动层，即TCP/ip协议的链路层。该命令在Linux内核中实现的逻辑层次为：</p>
+<p>最重要的结构体<code>struct ethtool_ops</code>，该结构体成员为用于显示或修改以太网卡配置的一系列函数指针，见下表中的第二列。</p>
+<p>网卡驱动负责实现（部分）这些函数，并将其封装入<code>ethtool_ops</code>结构体，为网络核心层提供统一的调用接口。因此，不同的网卡驱动会给应用层返回不同的信息。<code>Ethtool命令选项</code>、<code>struct ethtool_ops成员函数</code>、<code>Ethtool命令显示参数的来源</code>，三者间的对应关系如下表所示：</p>
+<table><br><br><tbody><br><br><tr><br><br><th style="width: 100px;">命令选项</th><br><br><th>struct ethtool_ops成员函数</th><br><br><th>Ethtool命令显示参数的来源（以网卡驱动BNX2为例）</th><br><br></tr><br><br><tr><br><br><td>无 -s</td><br><br><td>get_settingsget_wol get_msglevel get_link set_settings set_wol set_msglevel</td><br><br><td>从网卡寄存器中获得网卡速度等信息，可配置。</td><br><br></tr><br><br><tr><br><br><td>-a -A</td><br><br><td>get_pauseparam set_pauseparam</td><br><br><td>从网卡寄存器中获得Autonegotiate/RX/TX模块的状态：on oroff，可配置。</td><br><br></tr><br><br><tr><br><br><td>-c -C</td><br><br><td>get_coalesceset_coalesce</td><br><br><td>从网卡寄存器中获得coalescing参数：TX/RX一个数据包后，推迟发生TX/RX中断的时间(us)/数据包个数。—减小该值可以提高网卡的响应时间。 当rx-usecs&amp;rx-frames同时被设为0时，RX中断停止。 当tx-usecs&amp;tx-frames同时被设为0时，TX中断停止。</td><br><br></tr><br><br><tr><br><br><td>-g -G</td><br><br><td>get_ringparam set_ringparam</td><br><br><td>除当前TX/RX ring的值（从网卡寄存器中读取得到，可配置）外，其它为网卡bnx2自己固定的信息。</td><br><br></tr><br><br><tr><br><br><td>-k -K</td><br><br><td>get_rx_csumget_tx_csum get_sg get_tso set_rx_csum set_tx_csum set_sg set_tso</td><br><br><td>显示信息从保存该状态的变量中读取得到，没有对应的寄存器。因此，TX/RX校验等模块一直处于on状态，实际上是无法修改的。</td><br><br></tr><br><br><tr><br><br><td>-i</td><br><br><td>get_drvinfo[self_test_count, get_stats_coun,t get_regs_len, get_eeprom_len]</td><br><br><td>网卡bnx2自己固定的信息，如：<br>——————————————————–<br>driver: bnx2 version: 1.4.30 firmware-version: 1.8.0.5 bus-info: 0000:09:00.0<br>——————————————————–</td><br><br></tr><br><br><tr><br><br><td>-d</td><br><br><td>get_drvinfoget_regs</td><br><br><td>不支持，即bnx2中没有实现函数get_regs。</td><br><br></tr><br><br><tr><br><br><td>-e -E</td><br><br><td>get_eepromset_eeprom</td><br><br><td>不支持，即bnx2中没有实现函数get_eeprom。</td><br><br></tr><br><br><tr><br><br><td>-r</td><br><br><td>nway_reset</td><br><br><td>配置网卡MII_BMCR寄存器，重启Auto negotiation模块。</td><br><br></tr><br><br><tr><br><br><td>-p</td><br><br><td>phys_id</td><br><br><td>配置网卡BNX2_EMAC_LED寄存器，实现LED闪功能。</td><br><br></tr><br><br><tr><br><br><td>-t</td><br><br><td>self_test</td><br><br><td>通过配置网卡寄存器，逐一测试网卡的硬件模块：registers，memory，loopback，Link stat，interrupt。</td><br><br></tr><br><br><tr><br><br><td>-S</td><br><br><td>get_ethtool_stats</td><br><br><td>显示信息来源于网卡驱动中的结构体变量stats_blk。（网卡通过DMA方式，将寄存器BNX2_HC_STATISTICS _ADDR_L和BNX2_HC_STATISTICS_ADDR_H中的数据实时地读取到结构体变量struct statistics_block *stats_blk中。） —显示的数据都是从网卡寄存器中统计得到的，各项的含义需查询网卡（芯片）手册。</td><br><br></tr><br><br></tbody><br><br></table>
+
+<p>由上可见，ethtool命令用于显示/配置网卡硬件（寄存器）。  </p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>查看机器上网卡的速度：百兆还是千兆，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethool eth0</span><br></pre></td></tr></table></figure>
+<p>操作完毕后，输出信息中<code>Speed:</code>这一项就指示了网卡的速度。停止网卡的发送模块TX，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool -A tx off eth0</span><br></pre></td></tr></table></figure>
+<p>操作完毕后，可输入<code>ethtool -a eth0</code>，查看tx模块是否已被停止。查看网卡eth0采用了何种驱动，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool -i eth0</span><br></pre></td></tr></table></figure>
+<p>操作完毕后，显示 driver: bnx2；version: 1.4.30 等信息。关闭网卡对收到的数据包的校验功能，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool -K eth0 rx off</span><br></pre></td></tr></table></figure>
+<p>操作完毕后，可输入<code>ethtool –k eth0</code>，查看校验功能是否已被停止。如果机器上安装了两块网卡，那么eth0对应着哪块网卡呢？输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool -p eth0 10</span><br></pre></td></tr></table></figure>
+<p>操作完毕后，看哪块网卡的led灯在闪，eth0就对应着哪块网卡。查看网卡，在接收/发送数据时，有没有出错？请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool –S eth0</span><br></pre></td></tr></table></figure>
+<p>将千兆网卡的速度降为百兆，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ethtool -s eth0 speed 100</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ethtool/" data-id="cjvp9c5qu003xj0xiemyu74h7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/env" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/env/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.464Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="env"><a href="#env" class="headerlink" title="env"></a>env</h1><p>显示系统中已存在的环境变量</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>env命令</strong> 用于显示系统中已存在的环境变量，以及在定义的环境中执行指令。该命令只使用”-“作为参数选项时，隐藏了选项”-i”的功能。若没有设置任何选项和参数时，则直接显示当前的环境变量。</p>
+<p>如果使用env命令在新环境中执行指令时，会因为没有定义环境变量”PATH”而提示错误信息”such file or directory”。此时，用户可以重新定义一个新的”PATH”或者使用绝对路径。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-i：开始一个新的空的环境；</span><br><span class="line">-u&lt;变量名&gt;：从当前环境中删除指定的变量。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>变量定义：定义在新的环境中变量，定义多个变量定义用空格隔开。格式为“变量名=值”；</li>
+<li>指定：指定要执行的指令和参数。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# env</span><br><span class="line">hostname=LinServ-1</span><br><span class="line">TERM=linux</span><br><span class="line">SHELL=/bin/bash</span><br><span class="line">HISTSIZE=1000</span><br><span class="line">SSH_CLIENT=192.168.2.111 2705 22</span><br><span class="line">SSH_TTY=/dev/pts/0</span><br><span class="line">USER=root</span><br><span class="line">LS_COLORS=no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=01;32:*.cmd=01;32:*.exe=01;32:*.com=01;32:*.btm=01;32:*.bat=01;32:*.sh=01;32:*.csh=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tz=01;31:*.rpm=01;31:*.cpio=01;31:*.jpg=01;35:*.gif=01;35:*.bmp=01;35:*.xbm=01;35:*.xpm=01;35:*.png=01;35:*.tif=01;35:</span><br><span class="line">mail=/var/spool/mail/root</span><br><span class="line">PATH=/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin</span><br><span class="line">INPUTRC=/etc/inputrc</span><br><span class="line">pwd=/root</span><br><span class="line">LANG=zh_CN.UTF-8</span><br><span class="line">SHLVL=1</span><br><span class="line">HOME=/root</span><br><span class="line">logname=root</span><br><span class="line">SSH_CONNECTION=192.168.2.111 2705 192.168.2.2 22</span><br><span class="line">LESSOPEN=|/usr/bin/lesspipe.sh %s</span><br><span class="line">G_BROKEN_FILENAMES=1</span><br><span class="line">_=/bin/env</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/env/" data-id="cjvp9c5qs003uj0xi5pc45pch" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/enable" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/enable/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.463Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="enable"><a href="#enable" class="headerlink" title="enable"></a>enable</h1><p>启动或关闭shell内建命令</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>enable命令</strong> 用于临时关闭或者激活指定的shell内部命令。若要执行的文件名称与shell内建命令相同，可用<code>enable -n</code>来关闭shell内建命令。若不加<code>-n</code>选项，enable可重新启动关闭的命令。</p>
+<p>linux shell命令执行时，shell总是先在自己的shell builtin中查找该命令，如果找到则执行该命令；如果找不到该命令，则会从环境变量$PATH指定的路径中依次去查找待执行的命令。因为了解了这一点，所以看起来好像没有办法编写用户自己的命令来替代shell builtin命令。幸运的是，有了enable命令我们就能做到了。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enable(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-n：关闭指定的内部命令；</span><br><span class="line">-a：显示所有激活的内部命令；</span><br><span class="line">-f：从指定文件中读取内部命令。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>内部命令：指定要关闭或激活的内部命令。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用enable命令显示所有激活的内部命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# enable -a</span><br><span class="line">enable .</span><br><span class="line">enable :</span><br><span class="line">enable alias</span><br><span class="line">enable bg</span><br><span class="line">enable bind</span><br><span class="line">enable break</span><br><span class="line">enable builtin</span><br><span class="line">enable caller</span><br><span class="line">enable cd</span><br><span class="line">enable command</span><br><span class="line">enable compgen</span><br><span class="line">enable complete</span><br><span class="line">enable continue</span><br><span class="line">enable declare</span><br><span class="line">enable dirs</span><br><span class="line">enable disown</span><br><span class="line">enable echo</span><br><span class="line">enable enable</span><br><span class="line">enable eval</span><br><span class="line">enable exec</span><br><span class="line">enable exit</span><br><span class="line">enable export</span><br><span class="line">enable false</span><br><span class="line">enable fc</span><br><span class="line">enable fg</span><br><span class="line">enable getopts</span><br><span class="line">enable hash</span><br><span class="line">enable help</span><br><span class="line">enable history</span><br><span class="line">enable jobs</span><br><span class="line">enable kill</span><br><span class="line">enable let</span><br><span class="line">enable local</span><br><span class="line">enable logout</span><br><span class="line">enable popd</span><br><span class="line">enable printf</span><br><span class="line">enable pushd</span><br><span class="line">enable pwd</span><br><span class="line">enable read</span><br><span class="line">enable readonly</span><br><span class="line">enable return</span><br><span class="line">enable set</span><br><span class="line">enable shift</span><br><span class="line">enable shopt</span><br><span class="line">enable source</span><br><span class="line">enable suspend</span><br><span class="line">enable test</span><br><span class="line">enable times</span><br><span class="line">enable trap</span><br><span class="line">enable true</span><br><span class="line">enable type</span><br><span class="line">enable typeset</span><br><span class="line">enable ulimit</span><br><span class="line">enable umask</span><br><span class="line">enable unalias</span><br><span class="line">enable unset</span><br><span class="line">enable wait</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/enable/" data-id="cjvp9c5qr003tj0xi0x9em95i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/emacs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/emacs/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.440Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="emacs"><a href="#emacs" class="headerlink" title="emacs"></a>emacs</h1><p>功能强大的全屏文本编辑器</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>emacs命令</strong> 是由GNU组织的创始人Richard Stallman开发的一个功能强大的全屏文本编辑器，它支持多种编程语言，具有很多优良的特性。有众多的系统管理员和软件开发者使用emacs。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">emacs(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+&lt;行号&gt;：启动emacs编辑器，并将光标移动到制定行号的行；</span><br><span class="line">-q：启动emacs编辑器，而不加载初始化文件；</span><br><span class="line">-u&lt;用户&gt;：启动emacs编辑器时，加载指定用户的初始化文件；</span><br><span class="line">-t&lt;文件&gt;：启动emacs编辑器时，把指定的文件作为中端，不适用标准输入（stdin）与标准输出（stdout）；</span><br><span class="line">-f&lt;函数&gt;：执行指定lisp（广泛应用于人工智能领域的编程语言）函数；</span><br><span class="line">-l&lt;lisp代码文件&gt;：加载指定的lisp代码文件；</span><br><span class="line">-batch：以批处理模式运行emacs编辑器。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定要编辑的文本文件。</p>
+<h2 id="emacs命令操作大全"><a href="#emacs命令操作大全" class="headerlink" title="emacs命令操作大全"></a>emacs命令操作大全</h2><p>基本命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C-x C-c : 退出Emacs</span><br><span class="line">C-x C-f : 打开一个文件，如果文件不存在，则创建一个文件</span><br><span class="line">C-g : 取消未完成的命令</span><br></pre></td></tr></table></figure>
+<p>编辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C-z (redefined): Undo；原来C-z是挂起Emacs（然后用fg命令调出）；C-x u 是默认的命令； 移动一下光标，再C-z就可以redo</span><br><span class="line">M-d : 删除光标后的词语</span><br></pre></td></tr></table></figure>
+<p>移动光标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">C-v : 向前翻页</span><br><span class="line">M-v : 向后翻页</span><br><span class="line">M-r : 将光标移动到屏幕中间那行</span><br><span class="line">C-a : 移到行首</span><br><span class="line">M-a : 移到句首，从行首到句首之间可能有空格</span><br><span class="line">C-e : 移到行尾</span><br><span class="line">M-e : 移到句尾</span><br><span class="line">M-&#123; : 向上移动一段</span><br><span class="line">M-&#125; : 向下移动一段</span><br><span class="line">C-right : 向前移动一个单词</span><br><span class="line">C-left : 向后移动一个单词</span><br><span class="line">C-up : 向前移动一段</span><br><span class="line">C-down : 向后移动一段</span><br><span class="line">M-&lt; : 移到整个文本开头</span><br><span class="line">M-&gt; : 移到整个文本末尾</span><br><span class="line">C-u 数字 命令 : 执行多次(数字表示次数)该命令；&quot;M-数字 命令&quot; 也可以</span><br><span class="line">M-x goto-line : 移动到某一行</span><br><span class="line">C-l : 重绘屏幕，效果就是当前编辑行移动窗口中央</span><br></pre></td></tr></table></figure>
+<p>Buffer 相关</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">C-x k : 关闭当前buffer</span><br><span class="line">C-x b : 切换到前一个编辑的buffer</span><br><span class="line">C-x C-b : 列出当前所有buffer</span><br><span class="line">C-x C-s : 保存当前buffer</span><br><span class="line">C-x s : 保存所有未保存的buffer，会提示你是否需要保存</span><br><span class="line">C-x C-w : 文件另存为</span><br></pre></td></tr></table></figure>
+<p>拷贝与粘贴</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">M-space (redefined): 设置mark; C-@ 是默认命令</span><br><span class="line">C-w (redefined) : 剪切一块区域；如果没有设置mark，则是剪切一行</span><br><span class="line">M-w (redefined) : 拷贝一块区域；如果没有设置mark, 则是拷贝一行</span><br><span class="line">C-k : 从当前位置剪切到行尾</span><br><span class="line">C-y : 粘贴</span><br><span class="line">M-y : 用C-y拉回最近被除去的文本后，换成 M-y可以拉回以前被除去的文本。键入多次的M-y可以拉回更早以前被除去的文本。</span><br><span class="line">C-x r k : 执行矩形区域的剪切</span><br><span class="line">C-x r y : 执行矩形区域的粘贴</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">窗口操作</span><br><span class="line">C-x 0 : 关闭当前窗口</span><br><span class="line">C-x 1 : 将当前窗口最大化</span><br><span class="line">C-x 2 : 垂直分割窗口</span><br><span class="line">C-x 3 : 水平分割窗口</span><br><span class="line">M-o (redefined) : 在窗口之间切换; C-x o 是默认命令</span><br><span class="line">C-x 5 1/2/3/0 : 对frame类似的操作</span><br><span class="line">C-x &lt; : 窗口内容右卷</span><br><span class="line">C-x &gt; : 窗口内容左卷（这两个命令在垂直分割窗口后比较有用）</span><br><span class="line">(C-u) C-x ^ : 加高当前窗口，如果有C-u，则每次加高4行</span><br><span class="line">(C-u) C-x &#125; : 加宽当前窗口</span><br><span class="line">(C-u) C-x &#123; : 压窄当前窗口</span><br><span class="line">ESC C-v : 在其它窗口进行卷屏操作</span><br></pre></td></tr></table></figure>
+<p>搜索和替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">C-s : 向前搜索（增量式搜索）；连续C-s，跳到下一个搜索到的目标</span><br><span class="line">C-s RET : 普通搜索</span><br><span class="line">C-r : 向前搜索</span><br><span class="line">C-s RET C-w : 按单词查询</span><br><span class="line">M-% : 查询替换，也就是替换前会询问一下</span><br><span class="line">M-x replace-string : 普通替换</span><br></pre></td></tr></table></figure>
+<p>Tags</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">M-! etags .c .h : 创建TAGS文件</span><br><span class="line">M-. : 跳到tag所在位置</span><br><span class="line">M-x list-tags : 列出tags</span><br></pre></td></tr></table></figure>
+<p>书签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C-x r m : 设置书签bookmark</span><br><span class="line">C-x r b : 跳到bookmark处</span><br></pre></td></tr></table></figure>
+<p>帮助</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">C-h ? : 查看帮助信息</span><br><span class="line">C-h f : 查看一个函数</span><br><span class="line">C-h v : 查看一个变量</span><br><span class="line">C-h k : 查看一个键绑定 (C－h c 也是查看键绑定，但是信息较简略)</span><br><span class="line">C-h C-f : 查看一个函数的info，非常有用</span><br><span class="line">C-h i : 看Info</span><br></pre></td></tr></table></figure>
+<p>其它</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">C-M-\ : 对选中区域，按照某种格式(比如C程序)进行格式化</span><br><span class="line">C-x h : 全部选中</span><br><span class="line">M-! : 执行外部shell命令</span><br><span class="line">M-x shell : 模拟shell的buffer</span><br><span class="line">M-x term : 模拟terminal, C-c k 关闭terminal</span><br><span class="line">C-x C-q : 修改buffer的只读属性</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/emacs/" data-id="cjvp9c5qq003sj0xiq407458c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/42/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="page-number" href="/page/42/">42</a><span class="page-number current">43</span><a class="page-number" href="/page/44/">44</a><a class="page-number" href="/page/45/">45</a><span class="space">&hellip;</span><a class="page-number" href="/page/57/">57</a><a class="extend next" rel="next" href="/page/44/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

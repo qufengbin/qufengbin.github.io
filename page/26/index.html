@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/26/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-linux_command/mysqladmin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/mysqladmin/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.933Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mysqladmin"><a href="#mysqladmin" class="headerlink" title="mysqladmin"></a>mysqladmin</h1><p>MySQL服务器管理客户端</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>mysqladmin命令</strong> 是mysql服务器管理任务的客户端工具，它可以检查mytsql服务器的配置和当前工作状态，创建和删除数据库，创建用户和修改用户密码等操作。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-h：MySQL服务器主机名或ip地址；</span><br><span class="line">-u：连接MySQL服务器的用户名；</span><br><span class="line">-p：连接MySQL服务器的密码；</span><br><span class="line">--help：显示帮助信息。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>管理命令：需要在MySQL服务器上执行的管理命令。</p>
+<p> <strong>mysqladmin支持下列命令：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">create databasename：创建一个新数据库；</span><br><span class="line">drop databasename：删除一个数据库及其所有表；</span><br><span class="line">extended-status：给出服务器的一个扩展状态消息；</span><br><span class="line">flush-hosts：清空所有缓存的主机；</span><br><span class="line">flush-logs：清空所有日志；</span><br><span class="line">flush-tables：清空所有表；</span><br><span class="line">flush-privileges：再次装载授权表(同reload)；</span><br><span class="line">kill id,id,...：杀死mysql线程；</span><br><span class="line">password 新口令：将老密码改为新密码；</span><br><span class="line">ping：检查mysqld是否活着；</span><br><span class="line">processlist：显示服务其中活跃线程列表；</span><br><span class="line">reload：重载授权表；</span><br><span class="line">refresh：清空所有表并关闭和打开日志文件；</span><br><span class="line">shutdown：关掉服务器；</span><br><span class="line">status：给出服务器的简短状态消息；</span><br><span class="line">variables：打印出可用变量；</span><br><span class="line">version：得到服务器的版本信息。</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mysqladmin/" data-id="cjvp9c5uj008gj0xiesmk4utd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/mysql/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.931Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1><p>MySQL服务器客户端工具</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>mysql命令</strong> 是MySQL数据库服务器的客户端工具，它工作在命令行终端中，完成对远程MySQL数据库服务器的操作。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-h：MySQL服务器的ip地址或主机名；</span><br><span class="line">-u：连接MySQL服务器的用户名；</span><br><span class="line">-e：执行mysql内部命令；</span><br><span class="line">-p：连接MySQL服务器的密码。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>数据库：指定连接服务器后自动打开的数据库。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mysql/" data-id="cjvp9c5uj008fj0xig4h3ncts" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/mv" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/mv/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.929Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h1><p>用来对文件或目录重新命名</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>mv命令</strong> 用来对文件或目录重新命名，或者将文件从一个目录移到另一个目录中。source表示源文件或目录，target表示目标文件或目录。如果将一个文件移到一个已经存在的目标文件中，则目标文件的内容将被覆盖。</p>
+<p>mv命令可以用来将源文件移至一个目标文件中，或将一组文件移至一个目标目录中。源文件被移至目标文件有两种不同的结果：</p>
+<ol>
+<li>如果目标文件是到某一目录文件的路径，源文件会被移到此目录下，且文件名不变。</li>
+<li>如果目标文件不是目录文件，则源文件名（只能有一个）会变为此目标文件名，并覆盖己存在的同名文件。如果源文件和目标文件在同一个目录下，mv的作用就是改文件名。当目标文件是目录文件时，源文件或目录参数可以有多个，则所有的源文件都会被移至目标文件中。所有移到该目录下的文件都将保留以前的文件名。</li>
+</ol>
+<p>注意事项：mv与cp的结果不同，mv好像文件“搬家”，文件个数并未增加。而cp对文件进行复制，文件个数增加了。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">--backup=&lt;备份模式&gt;：若需覆盖文件，则覆盖前先行备份；</span><br><span class="line">-b：当文件存在时，覆盖前，为其创建一个备份；</span><br><span class="line">-f：若目标文件或目录与现有的文件或目录重复，则直接覆盖现有的文件或目录；</span><br><span class="line">-i：交互式操作，覆盖前先行询问用户，如果源文件与目标文件或目标目录中的文件同名，则询问用户是否覆盖目标文件。用户输入”y”，表示将覆盖目标文件；输入”n”，表示取消对源文件的移动。这样可以避免误将文件覆盖。</span><br><span class="line">--strip-trailing-slashes：删除源文件中的斜杠“/”；</span><br><span class="line">-S&lt;后缀&gt;：为备份文件指定后缀，而不使用默认的后缀；</span><br><span class="line">--target-directory=&lt;目录&gt;：指定源文件要移动到目标目录；</span><br><span class="line">-u：当源文件比目标文件新或者目标文件不存在时，才执行移动操作。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>源文件：源文件列表。</li>
+<li>目标文件：如果“目标文件”是文件名则在移动文件的同时，将其改名为“目标文件”；如果“目标文件”是目录名则将源文件移动到“目标文件”下。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>将目录<code>/usr/men</code>中的所有文件移到当前目录（用<code>.</code>表示）中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /usr/men/* .</span><br></pre></td></tr></table></figure>
+<p>移动文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv file_1.txt /home/office/</span><br></pre></td></tr></table></figure>
+<p>移动多个文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv file_2.txt file_3.txt file_4.txt /home/office/</span><br><span class="line">mv *.txt /home/office/</span><br></pre></td></tr></table></figure>
+<p>移动目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv directory_1/ /home/office/</span><br></pre></td></tr></table></figure>
+<p>重命名文件或目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv file_1.txt file_2.txt <span class="comment"># 将文件file_1.txt改名为file_2.txt</span></span><br></pre></td></tr></table></figure>
+<p>重命名目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv directory_1/ directory_2/</span><br></pre></td></tr></table></figure>
+<p>打印移动信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv -v *.txt /home/office</span><br></pre></td></tr></table></figure>
+<p>提示是否覆盖文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv -i file_1.txt /home/office</span><br></pre></td></tr></table></figure>
+<p>源文件比目标文件新时才执行更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv -uv *.txt /home/office</span><br></pre></td></tr></table></figure>
+<p>不要覆盖任何已存在的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv -vn *.txt /home/office</span><br></pre></td></tr></table></figure>
+<p>复制时创建备份</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv -bv *.txt /home/office</span><br></pre></td></tr></table></figure>
+<p>无条件覆盖已经存在的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv -f *.txt /home/office</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mv/" data-id="cjvp9c5ui008ej0xi314ixi1f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/mtools" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/mtools/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.928Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mtools"><a href="#mtools" class="headerlink" title="mtools"></a>mtools</h1><p>显示mtools支持的指令</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>mtools命令</strong> 显示mtools支持的指令，mtools为MS-DOS文件系统的工具程序，可模拟许多MS-DOS的指令。这些指令都是mtools的符号连接，因此会有一些共同的特性。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mtools(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-a：长文件名重复时自动更改目标文件的长文件名；</span><br><span class="line">-A：短文件名重复但长文件名不同时自动更改目标文件的短文件名；</span><br><span class="line">-o：长文件名重复时，将目标文件覆盖现有的文件；</span><br><span class="line">-O：短文件名重复但长文件名不同时，将目标文件覆盖现有的文件；</span><br><span class="line">-r：长文件名重复时，要求用户更改目标文件的长文件名；</span><br><span class="line">-R：短文件名重复但长文件名不同时，要求用户更改目标文件的短文件名；</span><br><span class="line">-s：长文件名重复时，则不处理该目标文件；</span><br><span class="line">-S：短文件名重复但长文件名不同时，则不处理该目标文件；</span><br><span class="line">-v：执行时显示详细的说明；</span><br><span class="line">-V：显示版本信息。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用mtools命令显示其支持的所有的指令，输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# mtools     #显示所有支持的指令名称</span><br><span class="line">Supported commands:</span><br><span class="line">mattrib, mbadblocks, mcat, mcd, mclasserase, mcopy, mdel, mdeltree</span><br><span class="line">mdir, mdoctorfat, mdu, mformat, minfo, mlabel, mmd, mmount</span><br><span class="line">mpartition, mrd, mread, mmove, mren, mshowfat, mtoolstest, mtype</span><br><span class="line">mwrite, mzip</span><br></pre></td></tr></table></figure>
+<p>如上所示，其显示的所有命令均为mtools工具所支持的。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mtools/" data-id="cjvp9c5ui008dj0xixpxabdcg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/mpstat" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/mpstat/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.926Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mpstat"><a href="#mpstat" class="headerlink" title="mpstat"></a>mpstat</h1><p>显示各个可用CPU的状态</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>mpstat命令</strong> 指令主要用于多CPU环境下，它显示各个可用CPU的状态系你想。这些信息存放在<code>/proc/stat</code>文件中。在多CPUs系统里，其不但能查看所有CPU的平均状况信息，而且能够查看特定CPU的信息。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mpstat(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-P：指定CPU编号。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>间隔时间：每次报告的间隔时间（秒）；</li>
+<li>次数：显示报告的次数。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>当mpstat不带参数时，输出为从系统启动以来的平均值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mpstat</span><br><span class="line">Linux 2.6.9-5.31AXsmp (builder.redflag-linux.com) 12/16/2005</span><br><span class="line">09:38:46 AM CPU %user %nice %system %iowait %irq %soft %idle intr/s</span><br><span class="line">09:38:48 AM all 23.28 0.00 1.75     0.50 0.00 0.00 74.47 1018.59</span><br></pre></td></tr></table></figure>
+<p> <strong>每2秒产生了2个处理器的统计数据报告：</strong> </p>
+<p>下面的命令可以每2秒产生了2个处理器的统计数据报告，一共产生三个interval 的信息，然后再给出这三个interval的平均信息。默认时，输出是按照CPU 号排序。第一个行给出了从系统引导以来的所有活跃数据。接下来每行对应一个处理器的活跃状态。。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mpstat -P ALL 2 3</span><br><span class="line">Linux 2.6.18-164.el5 (server.sys.com)    01/04/2010</span><br><span class="line">09:34:20 PM CPU   %user   %nice    %sys %iowait    %irq   %soft %steal   %idle    intr/s</span><br><span class="line">09:34:22 PM all    0.00    0.00    0.00    0.00    0.00    0.00    0.00 100.00   1001.49</span><br><span class="line">09:34:22 PM    0    0.00    0.00    0.50    0.00    0.00    0.00    0.00   99.50   1001.00</span><br><span class="line">09:34:22 PM    1    0.00    0.00    0.00    0.00    0.00    0.00    0.00 100.00      0.00</span><br></pre></td></tr></table></figure>
+<p> <strong>比较带参数和不带参数的mpstat的结果：</strong> </p>
+<p>在后台开一个2G的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat 1.img &amp;</span><br></pre></td></tr></table></figure>
+<p>然后在另一个终端运行mpstat命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mpstat</span><br><span class="line">Linux 2.6.18-164.el5 (server.sys.com)    01/04/2010</span><br><span class="line">10:17:31 PM CPU   %user   %nice    %sys %iowait    %irq   %soft %steal   %idle    intr/s</span><br><span class="line">10:17:31 PM all    0.07    0.02    0.25    0.21    0.01    0.04    0.00   99.40   1004.57</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mpstat</span><br><span class="line">Linux 2.6.18-164.el5 (server.sys.com)    01/04/2010</span><br><span class="line">10:17:35 PM CPU   %user   %nice    %sys %iowait    %irq   %soft %steal   %idle    intr/s</span><br><span class="line">10:17:35 PM all    0.07    0.02    0.25    0.21    0.01    0.04    0.00   99.39   1004.73</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mpstat 3 10</span><br><span class="line">Linux 2.6.18-164.el5 (server.sys.com)    01/04/2010</span><br><span class="line">10:17:55 PM CPU   %user   %nice    %sys %iowait    %irq   %soft %steal   %idle    intr/s</span><br><span class="line">10:17:58 PM all   13.12    0.00   20.93    0.00    1.83    9.80    0.00   54.32   2488.08</span><br><span class="line">10:18:01 PM all   10.82    0.00   19.30    0.83    1.83    9.32    0.00   57.90   2449.83</span><br><span class="line">10:18:04 PM all   10.95    0.00   20.40    0.17    1.99    8.62    0.00   57.88   2384.05</span><br><span class="line">10:18:07 PM all   10.47    0.00   18.11    0.00    1.50    8.47    0.00   61.46   2416.00</span><br><span class="line">10:18:10 PM all   11.81    0.00   22.63    0.00    1.83   11.98    0.00   51.75   2210.60</span><br><span class="line">10:18:13 PM all    6.31    0.00   10.80    0.00    1.00    5.32    0.00   76.58   1795.33</span><br><span class="line">10:18:19 PM all    1.75    0.00    3.16    0.75    0.25    1.25    0.00   92.85   1245.18</span><br><span class="line">10:18:22 PM all   11.94    0.00   19.07    0.00    1.99    8.29    0.00   58.71   2630.46</span><br><span class="line">10:18:25 PM all   11.65    0.00   19.30    0.50    2.00    9.15    0.00   57.40   2673.91</span><br><span class="line">10:18:28 PM all   11.44    0.00   21.06    0.33    1.99   10.61    0.00   54.56   2369.87</span><br><span class="line">Average:     all    9.27    0.00   16.18    0.30    1.50    7.64    0.00   65.11   2173.54</span><br></pre></td></tr></table></figure>
+<p>上两表显示出当要正确反映系统的情况，需要正确使用命令的参数。vmstat 和iostat 也需要注意这一问题。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mpstat/" data-id="cjvp9c5uh008cj0xienugtp4l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/mount" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/mount/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.924Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mount"><a href="#mount" class="headerlink" title="mount"></a>mount</h1><p>用于挂载Linux系统外的文件。</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>mount命令</strong> Linux mount命令是经常会使用到的命令，它用于挂载Linux系统外的文件。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mount [-hV]</span><br><span class="line">mount -a [-fFnrsvw] [-t vfstype]</span><br><span class="line">mount [-fnrsvw] [-o options [,...]] device | dir</span><br><span class="line">mount [-fnrsvw] [-t vfstype] [-o options] device dir</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">-V：显示程序版本</span><br><span class="line">-h：显示辅助讯息</span><br><span class="line">-v：显示较讯息，通常和 -f 用来除错。</span><br><span class="line">-a：将 /etc/fstab 中定义的所有档案系统挂上。</span><br><span class="line">-F：这个命令通常和 -a 一起使用，它会为每一个 mount 的动作产生一个行程负责执行。在系统需要挂上大量 NFS 档案系统时可以加快挂上的动作。</span><br><span class="line">-f：通常用在除错的用途。它会使 mount 并不执行实际挂上的动作，而是模拟整个挂上的过程。通常会和 -v 一起使用。</span><br><span class="line">-n：一般而言，mount 在挂上后会在 /etc/mtab 中写入一笔资料。但在系统中没有可写入档案系统存在的情况下可以用这个选项取消这个动作。</span><br><span class="line">-s-r：等于 -o ro</span><br><span class="line">-w：等于 -o rw</span><br><span class="line">-L：将含有特定标签的硬盘分割挂上。</span><br><span class="line">-U：将档案分割序号为 的档案系统挂下。-L 和 -U 必须在/proc/partition 这种档案存在时才有意义。</span><br><span class="line">-t：指定档案系统的型态，通常不必指定。mount 会自动选择正确的型态。</span><br><span class="line">-o async：打开非同步模式，所有的档案读写动作都会用非同步模式执行。</span><br><span class="line">-o sync：在同步模式下执行。</span><br><span class="line">-o atime、-o noatime：当 atime 打开时，系统会在每次读取档案时更新档案的『上一次调用时间』。当我们使用 flash 档案系统时可能会选项把这个选项关闭以减少写入的次数。</span><br><span class="line">-o auto、-o noauto：打开/关闭自动挂上模式。</span><br><span class="line">-o defaults:使用预设的选项 rw, suid, dev, exec, auto, nouser, and async.</span><br><span class="line">-o dev、-o nodev-o exec、-o noexec允许执行档被执行。</span><br><span class="line">-o suid、-o nosuid：</span><br><span class="line">允许执行档在 root 权限下执行。</span><br><span class="line">-o user、-o nouser：使用者可以执行 mount/umount 的动作。</span><br><span class="line">-o remount：将一个已经挂下的档案系统重新用不同的方式挂上。例如原先是唯读的系统，现在用可读写的模式重新挂上。</span><br><span class="line">-o ro：用唯读模式挂上。</span><br><span class="line">-o rw：用可读写模式挂上。</span><br><span class="line">-o loop=：使用 loop 模式用来将一个档案当成硬盘分割挂上系统。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>将 <code>/dev/hda1</code> 挂在 <code>/mnt</code> 之下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mount /dev/hda1 /mnt</span><br></pre></td></tr></table></figure>
+<p>将 <code>/dev/hda1</code> 用唯读模式挂在 <code>/mnt</code> 之下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mount -o ro /dev/hda1 /mnt</span><br></pre></td></tr></table></figure>
+<p>将 <code>/tmp/image.iso</code> 这个光碟的 <code>image</code> 档使用 <code>loop</code> 模式挂在 <code>/mnt/cdrom</code> 之下。用这种方法可以将一般网络上可以找到的 <code>Linux</code> 光 碟 ISO 档在不烧录成光碟的情况下检视其内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#mount -o loop /tmp/image.iso /mnt/cdrom</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mount/" data-id="cjvp9c5ug008bj0xi4mds5b7q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/more" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/more/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.922Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="more"><a href="#more" class="headerlink" title="more"></a>more</h1><p>显示文件内容，每次显示一屏</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>more命令</strong> 是一个基于vi编辑器文本过滤器，它以全屏幕的方式按页显示文本文件的内容，支持vi中的关键字定位操作。more名单中内置了若干快捷键，常用的有H（获得帮助信息），Enter（向下翻滚一行），空格（向下滚动一屏），Q（退出命令）。</p>
+<p>该命令一次显示一屏文本，满屏后停下来，并且在屏幕的底部出现一个提示信息，给出至今己显示的该文件的百分比：–More–（XX%）可以用下列不同的方法对提示做出回答：</p>
+<ul>
+<li>按Space键：显示文本的下一屏内容。</li>
+<li>按Enier键：只显示文本的下一行内容。</li>
+<li>按斜线符<code>|</code>：接着输入一个模式，可以在文本中寻找下一个相匹配的模式。</li>
+<li>按H键：显示帮助屏，该屏上有相关的帮助信息。</li>
+<li>按B键：显示上一屏内容。</li>
+<li>按Q键：退出rnore命令。</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more(语法)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-&lt;数字&gt;：指定每屏显示的行数；</span><br><span class="line">-d：显示“[press space to continue,&apos;q&apos; to quit.]”和“[Press &apos;h&apos; for instructions]”；</span><br><span class="line">-c：不进行滚屏操作。每次刷新这个屏幕；</span><br><span class="line">-s：将多个空行压缩成一行显示；</span><br><span class="line">-u：禁止下划线；</span><br><span class="line">+&lt;数字&gt;：从指定数字的行开始显示。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定分页显示内容的文件。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>显示文件file的内容，但在显示之前先清屏，并且在屏幕的最下方显示完核的百分比。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more -dc file</span><br></pre></td></tr></table></figure>
+<p>显示文件file的内容，每10行显示一次，而且在显示之前先清屏。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more -c -10 file</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/more/" data-id="cjvp9c5uf008aj0xigu4zckz8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/modprobe" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/modprobe/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.921Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="modprobe"><a href="#modprobe" class="headerlink" title="modprobe"></a>modprobe</h1><p>自动处理可载入模块</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>modprobe命令</strong> 用于智能地向内核中加载模块或者从内核中移除模块。</p>
+<p>modprobe可载入指定的个别模块，或是载入一组相依的模块。modprobe会根据depmod所产生的相依关系，决定要载入哪些模块。若在载入过程中发生错误，在modprobe会卸载整组的模块。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">modprobe(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-a或--all：载入全部的模块；</span><br><span class="line">-c或--show-conf：显示所有模块的设置信息；</span><br><span class="line">-d或--debug：使用排错模式；</span><br><span class="line">-l或--list：显示可用的模块；</span><br><span class="line">-r或--remove：模块闲置不用时，即自动卸载模块；</span><br><span class="line">-t或--type：指定模块类型；</span><br><span class="line">-v或--verbose：执行时显示详细的信息；</span><br><span class="line">-V或--version：显示版本信息；</span><br><span class="line">-help：显示帮助。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>模块名：要加载或移除的模块名称。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>查看modules的配置文件：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">modprobe -c</span><br></pre></td></tr></table></figure>
+<p>这里，可以查看modules的配置文件，比如模块的alias别名是什么等。会打印许多行信息，例如其中的一行会类似如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias symbol:ip_conntrack_unregister_notifier ip_conntrack</span><br></pre></td></tr></table></figure>
+<p> <strong>列出内核中所有已经或者未挂载的所有模块：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">modprobe -l</span><br></pre></td></tr></table></figure>
+<p>这里，我们能查看到我们所需要的模块，然后根据我们的需要来挂载；其实<code>modprobe -l</code>读取的模块列表就位于/lib/modules/`uname -r `目录中；其中<code>uname -r</code>是内核的版本，例如输出结果的其中一行是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/lib/modules/2.6.18-348.6.1.el5/kernel/net/netfilter/xt_statistic.ko</span><br></pre></td></tr></table></figure>
+<p> <strong>挂载vfat模块：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">modprobe vfat</span><br></pre></td></tr></table></figure>
+<p>这里，使用格式<code>modprobe 模块名</code>来挂载一个模块。挂载之后，用lsmod可以查看已经挂载的模块。模块名是不能带有后缀的，我们通过<code>modprobe -l</code>所看到的模块，都是带有<code>.ko</code>或<code>.o</code>后缀。</p>
+<p> <strong>移除已经加载的模块：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">modprobe -r 模块名</span><br></pre></td></tr></table></figure>
+<p>这里，移除已加载的模块，和rmmod功能相同。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/modprobe/" data-id="cjvp9c5uf0089j0xizcfxojl5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/mktemp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/mktemp/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.920Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mktemp"><a href="#mktemp" class="headerlink" title="mktemp"></a>mktemp</h1><p>创建临时文件供shell脚本使用</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>mktemp命令</strong> 被用来创建临时文件供shell脚本使用。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mktemp(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-q：执行时若发生错误，不会显示任何信息；</span><br><span class="line">-u：暂存文件会在mktemp结束前先行删除；</span><br><span class="line">-d：创建一个目录而非文件。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定创建的临时文件。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mktemp/" data-id="cjvp9c5ue0088j0xis10mela6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/mkswap" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/mkswap/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.917Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mkswap"><a href="#mkswap" class="headerlink" title="mkswap"></a>mkswap</h1><p>建立和设置SWAP交换分区</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>mkswap命令</strong> 用于在一个文件或者设备上建立交换分区。在建立完之后要使用sawpon命令开始使用这个交换区。最后一个选择性参数指定了交换区的大小，但是这个参数是为了向后兼容设置的，没有使用的必要，一般都将整个文件或者设备作为交换区。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-c：建立交换区前，先检查是否有损坏的区块；</span><br><span class="line">-f：在SPARC电脑上建立交换区时，要加上此参数；</span><br><span class="line">-v0：建立旧式交换区，此为预设值；</span><br><span class="line">-v1：建立新式交换区。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>设备：指定交换空间对应的设备文件或者交换文件。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>查看系统swap space大小：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">free -m</span><br><span class="line">total used free shared buffers cached</span><br><span class="line">Mem: 377 180 197 0 19 110</span><br><span class="line">-/+ buffers/cache: 50 327</span><br><span class="line">Swap: 572 0 572</span><br></pre></td></tr></table></figure>
+<p> <strong>查看当前的swap空间(file(s)/partition(s))：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br><span class="line"></span><br><span class="line">等价于</span><br><span class="line"></span><br><span class="line">cat /proc/swaps</span><br></pre></td></tr></table></figure>
+<p> <strong>添加交换空间</strong> </p>
+<p>添加一个 <strong>交换分区</strong> 或添加一个 <strong>交换文件</strong> 。推荐你添加一个交换分区；不过，若你没有多少空闲空间可用，则添加交换文件。</p>
+<p>添加一个交换分区，步骤如下：</p>
+<p>使用fdisk来创建交换分区（假设 /dev/sdb2 是创建的交换分区），使用 mkswap 命令来设置交换分区：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap /dev/sdb2</span><br></pre></td></tr></table></figure>
+<p>启用交换分区：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /dev/sdb2</span><br></pre></td></tr></table></figure>
+<p>写入<code>/etc/fstab</code>，以便在引导时启用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/dev/sdb2 swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
+<p>添加一个交换文件，步骤如下：</p>
+<p>创建大小为512M的交换文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd if=/dev/zero of=/swapfile1 bs=1024 count=524288</span><br></pre></td></tr></table></figure>
+<p>使用mkswap命令来设置交换文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap /swapfile1</span><br></pre></td></tr></table></figure>
+<p>启用交换分区：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /swapfile1</span><br></pre></td></tr></table></figure>
+<p>写入<code>/etc/fstab</code>，以便在引导时启用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/swapfile1 swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
+<p>新添了交换分区并启用它之后，请查看<code>cat /proc/swaps</code>或free命令的输出来确保交换分区已被启用了。</p>
+<p> <strong>删除交换空间：</strong> </p>
+<p>禁用交换分区：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapoff /dev/sdb2</span><br></pre></td></tr></table></figure>
+<p>从<code>/etc/fstab</code>中删除项目，使用fdisk或yast工具删除分区。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkswap/" data-id="cjvp9c5ud0087j0xivy92uvlk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/25/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/57/">57</a><a class="extend next" rel="next" href="/page/27/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

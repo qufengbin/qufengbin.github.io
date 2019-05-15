@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/9/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-linux_command/tftp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/tftp/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.332Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="tftp"><a href="#tftp" class="headerlink" title="tftp"></a>tftp</h1><p>在本机和tftp服务器之间使用TFTP协议传输文件</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>tftp命令</strong> 用在本机和tftp服务器之间使用TFTP协议传输文件。</p>
+<p>TFTP是用来下载远程文件的最简单网络协议，它其于UDP协议而实现。嵌入式linux的tftp开发环境包括两个方面：一是linux服务器端的tftp-server支持，二是嵌入式目标系统的tftp-client支持。因为u-boot本身内置支持tftp-client，所以嵌入式目标系统端就不用配置了。下面就详细介绍一下linux服务器端tftp-server的配置。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tftp(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-c：指定与tftp服务器连接成功后，立即要执行的指令；</span><br><span class="line">-m：指定文件传输模式。可以是ASCII或者Binary；</span><br><span class="line">-v：显示指令详细执行过程；</span><br><span class="line">-V：显示指令版本信息。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>主机：指定tftp要联机的tftp服务器的ip地址或主机名。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>1、安装tftp服务器</strong> </p>
+<p>需要安装xinetd、tftp和tftp-server 3个软件</p>
+<p>如果能上网，通过yum安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install xinetd</span><br><span class="line">yum install tftp</span><br><span class="line">yum install tftp-server</span><br></pre></td></tr></table></figure>
+<p>如果不能上网，可以直接安装提供的rpm包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh xinetd-2.3.14-18.fc9.i386.rpm</span><br><span class="line">rpm -ivh tftp-0.48-3.fc9.i386.rpm</span><br><span class="line">rpm -ivh tftp-server-0.48-3.fc9.i386.rpm</span><br></pre></td></tr></table></figure>
+<p> <strong>2、配置tftp服务器</strong> </p>
+<p>修改/etc/xinetd.d/tftp文件，将其中的disable=yes改为disable=no。主要是设置TFTP服务器的根目录，开启服务。修改后的文件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">service tftp</span><br><span class="line">&#123;</span><br><span class="line">       socket_type           =dgram</span><br><span class="line">       protocol              =udp</span><br><span class="line">       wait                  =yes</span><br><span class="line">       user                  =root</span><br><span class="line">       server                =/usr/sbin/in.tftpd</span><br><span class="line">       server_args           =-s  /home/mike/tftpboot -c</span><br><span class="line">       disable               =no</span><br><span class="line">       per_source            =11</span><br><span class="line">       cps                   =100 2</span><br><span class="line">       flags                 =IPv4</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>说明：修改项<code>server_args= -s &lt;path&gt; -c</code>，其中<path>处可以改为你的tftp-server的根目录，参数-s指定chroot，-c指定了可以创建文件。</path></p>
+<p> <strong>3、启动tftp服务器并关闭防火墙</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/iptables stop        //关闭防火墙</span><br><span class="line">sudo /sbin/service xinetd start</span><br><span class="line">或</span><br><span class="line">service xinetd restart</span><br><span class="line">/etc/init.d/xinetd start</span><br></pre></td></tr></table></figure>
+<p>看到启动[OK]就可以了</p>
+<p>4、查看tftp服务是否开启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -a | grep tftp</span><br></pre></td></tr></table></figure>
+<p>显示结果为<code>udp 0 0 *:tftp *:*</code>表明服务已经开启，就表明tftp配置成功了。</p>
+<p> <strong>5、tftp使用</strong> </p>
+<p>复制一个文件到tftp服务器目录，然后在主机启动tftp软件，进行简单测试。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tftp 192.168.1.2</span><br><span class="line">tftp&gt;get &lt;download file&gt; </span><br><span class="line"></span><br><span class="line">tftp&gt;put &lt;upload file&gt;</span><br><span class="line">tftp&gt;q</span><br></pre></td></tr></table></figure>
+<p> <strong>6、tftp命令用法如下</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tftp your-ip-address</span><br></pre></td></tr></table></figure>
+<p>进入TFTP操作：</p>
+<ul>
+<li>connect：连接到远程tftp服务器</li>
+<li>mode：文件传输模式</li>
+<li>put：上传文件</li>
+<li>get：下载文件</li>
+<li>quit：退出</li>
+<li>verbose：显示详细的处理信息</li>
+<li>tarce：显示包路径</li>
+<li>status：显示当前状态信息</li>
+<li>binary：二进制传输模式</li>
+<li>ascii：ascii 传送模式</li>
+<li>rexmt：设置包传输的超时时间</li>
+<li>timeout：设置重传的超时时间</li>
+<li>help：帮助信息</li>
+<li><p>? ：帮助信息</p>
+<p><strong>7、如果老是出现“AVC Denial, click icon to view”的错误，并不能传输文件，需要作如下修改</strong> </p>
+</li>
+</ul>
+<p>修改<code>/etc/sysconfig/selinux</code>,将SELINUX设定为disable，使用命令<code>setenforce 0</code>让selinux配置文件生效。</p>
+<p> <strong>8、Busybox中tftp命令的用法</strong> </p>
+<p>命令格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tftp [option] ... host [port]</span><br></pre></td></tr></table></figure>
+<p>如果要下载或上传文件的话是一定要用这些option的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-g 表示下载文件 (get)</span><br><span class="line">-p 表示上传文件 (put)</span><br><span class="line">-l 表示本地文件名 (local file)</span><br><span class="line">-r 表示远程主机的文件名 (remote file)</span><br></pre></td></tr></table></figure>
+<p>例如，要从远程主机192.168.1.2上下载 embedexpert，则应输入以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tftp -g -r embedexpert 192.168.1.2</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tftp/" data-id="cjvp9c5yd00ctj0xixpj0l4zx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/test/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.331Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="test"><a href="#test" class="headerlink" title="test"></a>test</h1><p>shell环境中测试条件表达式工具</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>test命令</strong> 是shell环境中测试条件表达式的实用工具。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-b&lt;文件&gt;：如果文件为一个块特殊文件，则为真；</span><br><span class="line">-c&lt;文件&gt;：如果文件为一个字符特殊文件，则为真；</span><br><span class="line">-d&lt;文件&gt;：如果文件为一个目录，则为真；</span><br><span class="line">-e&lt;文件&gt;：如果文件存在，则为真；</span><br><span class="line">-f&lt;文件&gt;：如果文件为一个普通文件，则为真；</span><br><span class="line">-g&lt;文件&gt;：如果设置了文件的SGID位，则为真；</span><br><span class="line">-G&lt;文件&gt;：如果文件存在且归该组所有，则为真；</span><br><span class="line">-k&lt;文件&gt;：如果设置了文件的粘着位，则为真；</span><br><span class="line">-O&lt;文件&gt;：如果文件存在并且归该用户所有，则为真；</span><br><span class="line">-p&lt;文件&gt;：如果文件为一个命名管道，则为真；</span><br><span class="line">-r&lt;文件&gt;：如果文件可读，则为真；</span><br><span class="line">-s&lt;文件&gt;：如果文件的长度不为零，则为真；</span><br><span class="line">-S&lt;文件&gt;：如果文件为一个套接字特殊文件，则为真；</span><br><span class="line">-u&lt;文件&gt;：如果设置了文件的SUID位，则为真；</span><br><span class="line">-w&lt;文件&gt;：如果文件可写，则为真；</span><br><span class="line">-x&lt;文件&gt;：如果文件可执行，则为真。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>linux中shell编程中的test常见用法：</p>
+<p> <strong>判断表达式</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if test     #表达式为真</span><br><span class="line">if test !   #表达式为假</span><br><span class="line">test 表达式1 –a 表达式2     #两个表达式都为真</span><br><span class="line">test 表达式1 –o 表达式2     #两个表达式有一个为真</span><br><span class="line">test 表达式1 ! 表达式2       #条件求反</span><br></pre></td></tr></table></figure>
+<p> <strong>判断字符串</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">test –n 字符串    #字符串的长度非零</span><br><span class="line">test –z 字符串    #字符串的长度是否为零</span><br><span class="line">test 字符串1＝字符串2       #字符串是否相等，若相等返回true</span><br><span class="line">test 字符串1!＝字符串2      #字符串是否不等，若不等反悔false</span><br></pre></td></tr></table></figure>
+<p> <strong>判断整数</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">test 整数1 -eq 整数2    #整数相等</span><br><span class="line">test 整数1 -ge 整数2    #整数1大于等于整数2</span><br><span class="line">test 整数1 -gt 整数2    #整数1大于整数2</span><br><span class="line">test 整数1 -le 整数2    #整数1小于等于整数2</span><br><span class="line">test 整数1 -lt 整数2    #整数1小于整数2</span><br><span class="line">test 整数1 -ne 整数2    #整数1不等于整数2</span><br></pre></td></tr></table></figure>
+<p> <strong>判断文件</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">test File1 –ef File2    两个文件是否为同一个文件，可用于硬连接。主要判断两个文件是否指向同一个inode。</span><br><span class="line">test File1 –nt File2    判断文件1是否比文件2新</span><br><span class="line">test File1 –ot File2    判断文件1比是否文件2旧</span><br><span class="line">test –b file   #文件是否块设备文件</span><br><span class="line">test –c File   #文件并且是字符设备文件</span><br><span class="line">test –d File   #文件并且是目录</span><br><span class="line">test –e File   #文件是否存在 （常用）</span><br><span class="line">test –f File   #文件是否为正规文件 （常用）</span><br><span class="line">test –g File   #文件是否是设置了组id</span><br><span class="line">test –G File   #文件属于的有效组ID</span><br><span class="line">test –h File   #文件是否是一个符号链接（同-L）</span><br><span class="line">test –k File   #文件是否设置了Sticky bit位</span><br><span class="line">test –b File   #文件存在并且是块设备文件</span><br><span class="line">test –L File   #文件是否是一个符号链接（同-h）</span><br><span class="line">test –o File   #文件的属于有效用户ID</span><br><span class="line">test –p File   #文件是一个命名管道</span><br><span class="line">test –r File   #文件是否可读</span><br><span class="line">test –s File   #文件是否是非空白文件</span><br><span class="line">test –t FD     #文件描述符是在一个终端打开的</span><br><span class="line">test –u File   #文件存在并且设置了它的set-user-id位</span><br><span class="line">test –w File   #文件是否存在并可写</span><br><span class="line">test –x File   #文件属否存在并可执行</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/test/" data-id="cjvp9c5yc00csj0xia3mp60jk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/tempfile" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/tempfile/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.329Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="tempfile"><a href="#tempfile" class="headerlink" title="tempfile"></a>tempfile</h1><p>shell中给临时文件命名</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p>有时候在写Shell脚本的时候需要一些临时存储数据的才做，最适合存储临时文件数据的位置就是<code>/tmp</code>，因为该目录中所有的内容在系统重启后就会被清空。下面是两种方法为临时数据生成标准的文件名。</p>
+<h3 id="tempfile命令"><a href="#tempfile命令" class="headerlink" title="tempfile命令"></a>tempfile命令</h3><p><code>tempfile命令</code>只有在基于Debian的发行版中才默认自带，比如Ubuntu，其他发行版没有这个命令。</p>
+<p>用tempfile命令为一个临时文件命名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">temp_file_name=$(tempfile)</span><br></pre></td></tr></table></figure>
+<p>用一个加带了随机数的文件名作为临时文件命名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">temp_file_name=&quot;/tmp/file_$RANDOM&quot;</span><br></pre></td></tr></table></figure>
+<p>$RANDOM是一个返回随机数的环境变量。</p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="$$变量"></a>$$变量</h3><p>如果没有tempfile命令的Linux发行版，也可以使用自己的临时文件名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">temp_file_name=&quot;/tmp/file.$&quot;</span><br></pre></td></tr></table></figure>
+<p><code>$$</code>是系统预定义变量，显示当前所在进程的进程号，用<code>.$$</code>作为添加的后缀会被扩展成当前运行脚本的进程id。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tempfile/" data-id="cjvp9c5yc00crj0xibeg3edui" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/telnet" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/telnet/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.327Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="telnet"><a href="#telnet" class="headerlink" title="telnet"></a>telnet</h1><p>登录远程主机和管理(测试ip端口是否连通)</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>telnet命令</strong> 用于登录远程主机，对远程主机进行管理。telnet因为采用明文传送报文，安全性不好，很多Linux服务器都不开放telnet服务，而改用更安全的ssh方式了。但仍然有很多别的系统可能采用了telnet方式来提供远程登录，因此弄清楚telnet客户端的使用方式仍是很有必要的。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">-8：允许使用8位字符资料，包括输入与输出；</span><br><span class="line">-a：尝试自动登入远端系统；</span><br><span class="line">-b&lt;主机别名&gt;：使用别名指定远端主机名称；</span><br><span class="line">-c：不读取用户专属目录里的.telnetrc文件；</span><br><span class="line">-d：启动排错模式；</span><br><span class="line">-e&lt;脱离字符&gt;：设置脱离字符；</span><br><span class="line">-E：滤除脱离字符；</span><br><span class="line">-f：此参数的效果和指定&quot;-F&quot;参数相同；</span><br><span class="line">-F：使用Kerberos V5认证时，加上此参数可把本地主机的认证数据上传到远端主机；</span><br><span class="line">-k&lt;域名&gt;：使用Kerberos认证时，加上此参数让远端主机采用指定的领域名，而非该主机的域名；</span><br><span class="line">-K：不自动登入远端主机；</span><br><span class="line">-l&lt;用户名称&gt;：指定要登入远端主机的用户名称；</span><br><span class="line">-L：允许输出8位字符资料；</span><br><span class="line">-n&lt;记录文件&gt;：指定文件记录相关信息；</span><br><span class="line">-r：使用类似rlogin指令的用户界面；</span><br><span class="line">-S&lt;服务类型&gt;：设置telnet连线所需的ip TOS信息；</span><br><span class="line">-x：假设主机有支持数据加密的功能，就使用它；</span><br><span class="line">-X&lt;认证形态&gt;：关闭指定的认证形态。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>远程主机：指定要登录进行管理的远程主机；</li>
+<li>端口：指定TELNET协议使用的端口号。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ telnet 192.168.2.10</span><br><span class="line">Trying 192.168.2.10...</span><br><span class="line">Connected to 192.168.2.10 (192.168.2.10).</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line"></span><br><span class="line">    localhost (Linux release 2.6.18-274.18.1.el5 #1 SMP Thu Feb 9 12:45:44 EST 2012) (1)</span><br><span class="line"></span><br><span class="line">login: root</span><br><span class="line">Password:</span><br><span class="line">Login incorrect</span><br></pre></td></tr></table></figure>
+<p>一般情况下不允许root从远程登录，可以先用普通账号登录，然后再用su -切到root用户。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ telnet 192.168.188.132</span><br><span class="line">Trying 192.168.188.132...</span><br><span class="line">telnet: connect to address 192.168.188.132: Connection refused</span><br><span class="line">telnet: Unable to connect to remote host</span><br></pre></td></tr></table></figure>
+<p>处理这种情况方法：</p>
+<ol>
+<li>确认ip地址是否正确？</li>
+<li>确认ip地址对应的主机是否已经开机？</li>
+<li>如果主机已经启动，确认路由设置是否设置正确？（使用route命令查看）</li>
+<li>如果主机已经启动，确认主机上是否开启了telnet服务？（使用netstat命令查看，TCP的23端口是否有LISTEN状态的行）</li>
+<li>如果主机已经启动telnet服务，确认防火墙是否放开了23端口的访问？（使用iptables-save查看）</li>
+</ol>
+<p><strong>启动telnet服务</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service xinetd restart</span><br></pre></td></tr></table></figure>
+<p>配置参数，通常的配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">service telnet</span><br><span class="line">&#123;</span><br><span class="line">    disable = no #启用</span><br><span class="line">    flags = REUSE #socket可重用</span><br><span class="line">    socket_type = stream #连接方式为TCP</span><br><span class="line">    wait = no #为每个请求启动一个进程</span><br><span class="line">    user = root #启动服务的用户为root</span><br><span class="line">    server = /usr/sbin/in.telnetd #要激活的进程</span><br><span class="line">    log_on_failure += USERID #登录失败时记录登录用户名</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果要配置允许登录的客户端列表，加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">only_from = 192.168.0.2 #只允许192.168.0.2登录</span><br></pre></td></tr></table></figure></p>
+<p>如果要配置禁止登录的客户端列表，加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">no_access = 192.168.0.&#123;2,3,4&#125; #禁止192.168.0.2、192.168.0.3、192.168.0.4登录</span><br></pre></td></tr></table></figure></p>
+<p>如果要设置开放时段，加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">access_times = 9:00-12:00 13:00-17:00 # 每天只有这两个时段开放服务（我们的上班时间：P）</span><br></pre></td></tr></table></figure></p>
+<p>如果你有两个IP地址，一个是私网的IP地址如192.168.0.2，一个是公网的IP地址如218.75.74.83，如果你希望用户只能从私网来登录telnet服务，那么加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind = 192.168.0.2</span><br></pre></td></tr></table></figure></p>
+<p>各配置项具体的含义和语法可参考xined配置文件属性说明（man xinetd.conf）</p>
+<p>配置端口，修改services文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/services</span><br></pre></td></tr></table></figure>
+<p>找到以下两句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">telnet 23/tcp</span><br><span class="line">telnet 23/udp</span><br></pre></td></tr></table></figure>
+<p>如果前面有#字符，就去掉它。telnet的默认端口是23，这个端口也是黑客端口扫描的主要对象，因此最好将这个端口修改掉，修改的方法很简单，就是将23这个数字修改掉，改成大一点的数字，比如61123。注意，1024以下的端口号是internet保留的端口号，因此最好不要用，还应该注意不要与其它服务的端口冲突。</p>
+<p>启动服务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service xinetd restart</span><br></pre></td></tr></table></figure></p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/telnet/" data-id="cjvp9c5y900cqj0xixx6izb4f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/telint" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/telint/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.326Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="telint"><a href="#telint" class="headerlink" title="telint"></a>telint</h1><p>切换当前正在运行系统的运行等级</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>telint命令</strong> 用于切换当前正在运行的Linux系统的运行等级。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telint(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-t：指定等待的秒数。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>运行等级：指定要切换的运行等级。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/telint/" data-id="cjvp9c5xw00cpj0xir32pwgu5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/tee" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/tee/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.324Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="tee"><a href="#tee" class="headerlink" title="tee"></a>tee</h1><p>把数据重定向到给定文件和屏幕上</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>tee命令</strong> 用于将数据重定向到文件，另一方面还可以提供一份重定向数据的副本作为后续命令的stdin。简单的说就是把数据重定向到给定文件和屏幕上。</p>
+<p>!</p>
+<p>存在缓存机制，每1024个字节将输出一次。若从管道接收输入数据，应该是缓冲区满，才将数据转存到指定的文件中。若文件内容不到1024个字节，则接收完从标准输入设备读入的数据后，将刷新一次缓冲区，并转存数据到指定文件。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tee(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-a：向文件中重定向时使用追加模式；</span><br><span class="line">-i：忽略中断（interrupt）信号。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定输出重定向的文件。</p>
+<p>在终端打印stdout同时重定向到文件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ls | tee out.txt</span><br><span class="line">1.sh</span><br><span class="line">1.txt</span><br><span class="line">2.txt</span><br><span class="line">eee.tst</span><br><span class="line">EEE.tst</span><br><span class="line">one</span><br><span class="line">out.txt</span><br><span class="line">string2</span><br><span class="line">www.pdf</span><br><span class="line">WWW.pdf</span><br><span class="line">WWW.pef</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost text]# ls | tee out.txt | cat -n</span><br><span class="line">     1  1.sh</span><br><span class="line">     2  1.txt</span><br><span class="line">     3  2.txt</span><br><span class="line">     4  eee.tst</span><br><span class="line">     5  EEE.tst</span><br><span class="line">     6  one</span><br><span class="line">     7  out.txt</span><br><span class="line">     8  string2</span><br><span class="line">     9  www.pdf</span><br><span class="line">    10  WWW.pdf</span><br><span class="line">    11  WWW.pef</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tee/" data-id="cjvp9c5xv00coj0xieubbh0tx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/tcpreplay" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/tcpreplay/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.323Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="tcpreplay"><a href="#tcpreplay" class="headerlink" title="tcpreplay"></a>tcpreplay</h1><p>将PCAP包重新发送，用于性能或者功能测试</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p>简单的说， <strong>tcpreplay</strong> 是一种pcap包的重放工具，它可以将用ethreal、wireshark工具抓下来的包原样或经过任意修改后重放回去。它允许你对报文做任意的修改（主要是指对2层、3层、4层报文头），指定重放报文的速度等，这样tcpreplay就可以用来复现抓包的情景以定位bug，以极快的速度重放从而实现压力测试。</p>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">-A &quot;&lt;args&gt;&quot; 在使用 tcpdump 风格打印输出信息时，同时再调用tcpdump中的参数， 默认已经带有“-n,-l”，所以一般看到的都是ip地址，而没有主机名的打印，注意这个是在tcpreplay使用了-v参数时才能使用，不带-v不会报错，但是没有实际意义。格式：-vA “nnt”表示以tcpdump风格输出报文信息，并且不打印时间戳、主机名、端口服务名称。注意不要使用-c参数来指定打印的数据报文的个数，这样发送出去的报文也会变少。</span><br><span class="line">-c &lt;cachefile&gt; 双网卡回放报文必选参数，后面紧跟cache文件名，该文件为tcpprep根据对应的pcap文件构造出来。 </span><br><span class="line">-D 把应用层的数据，使用dump mode写入到指定文件中去，和-w、-W 参数一起使用。 </span><br><span class="line">-e &lt;ip1:ip2&gt; 指定端点的ip，即把发送报文的和接收的报文的ip都修改称对应的参数值中指定的ip，但是这样发送的出的报文不会区分client和server。。 </span><br><span class="line">-f &lt;configfile&gt; 指定配置文件。</span><br><span class="line">-F 在发送报文时，自动纠正错误的校验和。对测试DUT的校验和检验。</span><br><span class="line">-h 显示帮助文件。 </span><br><span class="line">-i &lt;nic&gt; 双网卡回放报文必选参数，指定主接口。</span><br><span class="line">-I &lt;mac&gt; 重写主网卡发送出报文的目的MAC地址。 </span><br><span class="line">-j &lt;nic&gt; 双网卡回放报文必选参数，指定从接口。</span><br><span class="line">-J &lt;mac&gt; 重写从网卡发送出报文的目的MAC地址。 </span><br><span class="line">-k &lt;mac&gt; 重写主网卡发送报文的源MAC地址。 </span><br><span class="line">-K &lt;mac&gt; 重写从网卡发送报文的源MAC地址。</span><br><span class="line">-l &lt;loop&gt; 指定循环的次数。</span><br><span class="line">-L &lt;limit&gt; 指定最大的发包数量。可以在确认连接的调试时使用。 </span><br><span class="line">-m &lt;multiple&gt; 指定一个倍数值，就是必默认发送速率要快多少倍的速率发送报文。 加大发送的速率后，对于DUT可能意味着有更多的并发连接和连接数，特别是对于BT报文的重放， 因为连接的超时是固定的，如果速率增大的话， 留在session表中的连接数量增大，还可以通过修改连接的超时时间来达到该目的。</span><br><span class="line">-M 表示不发送“火星”的ip报文，man文件中的定义是 0/8、172/8、 255/8。</span><br><span class="line">-n 在使用-S参数，不对混杂模式进行侦听。</span><br><span class="line">-N &lt;CIDR1:CIDR2,...&gt; 通过伪造的NAT，重写IP地址。这个参数应该有很重要的应用，目前没有测试使用。</span><br><span class="line">-O 没有测试使用。</span><br><span class="line">-p &lt;packetrate&gt; 指定每秒发送报文的个数，指定该参数，其它速率相关的参数被忽略，最后的打印信息不会有速率和每秒发送报文的统计。</span><br><span class="line">-P 表示在输出信息中打印PID的信息，用于单用户或单帐户模式下暂停和重启程序。</span><br><span class="line">-r &lt;rate&gt; 指定发送的速率。目前-m/-r/-p这3个参数的相互关系。</span><br><span class="line">-R 让网卡极限速度发数据包。 </span><br><span class="line">-t &lt;mtu&gt; 指定MTU，标准的10/100M网卡的默认值是1500。 </span><br><span class="line">-T Truncate packets &gt; 截去报文中MTU大于标准值的部分再发送出去，默认是不发送，skip掉。</span><br><span class="line">-v 每发送一个报文都以 tcpdump 的风格打印出对应的信息。</span><br><span class="line">-V 查看版本号。</span><br><span class="line">-w &lt;file&gt; 将主网卡发送的报文写入一个文件中，参数后紧跟文件名。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>1、重放在客户端 ftp 连接的报文 </strong> </p>
+<p>a、在客户端使用 ethereal 抓包，存为 ftp.pcap 文件。</p>
+<p>b、 将 ftp.pcap 文件进行 tcpprep 操作，制作 cache 文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@A ~]# tcpprep -an client -i ftp.pcap -o ftp.cache –v</span><br></pre></td></tr></table></figure>
+<p>c、 将 DUT 设备的两个接口和 PC 的两个接口使用网线连接，使用 tcpreplay 重 放报文。注意防火墙的配置为网桥（透明）模式。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@A ~]# tcpreplay -c ftp.cache -i eth0 -j eth1 ftp.pcap -R –v</span><br></pre></td></tr></table></figure>
+<p>-R 参数表示全速发送，-v 显示打印信息。 </p>
+<p> <strong>2、重放在客户端 BT 连接的报文 </strong> </p>
+<p>a、在实验室 BT 下载一些台湾的娱乐节目和热门的大片，使用 ethereal 抓包， 存为 bt.pcap 文件。注意 pcap 文件大小的控制，对 pc 的内存要求比较高，我保 存了一个 600 多 M 的 pcap 文件用了 40 多分钟，大家有需要可以直接从实验室 copy。 </p>
+<p>b、将 bt.pcap 文件进行 tcpprep 操作，制作 cache 文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@A ~]# tcpprep -an client -i bt.pcap -o bt.cache -C &quot;100M BT Packet&quot; –v</span><br></pre></td></tr></table></figure>
+<p>制作 cache 文件，在 cache 文件中写入“100M BT Packet”的注释。 </p>
+<p>c、使用 tcpreplay 重放报文。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@A ~]# tcpreplay -c bt.cache -i eth0 -j eth1 bt.pcap -v –R</span><br></pre></td></tr></table></figure>
+<p> <strong>3、重放 tftp 服务器上抓到的报文 </strong> </p>
+<p>a、在 tftp 服务器上使用 ethereal 抓包，存为 tftp.pcap 文件。 </p>
+<p>b、将 pcap 文件进行 tcpprep 的操作，制作 cache 文件。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@A ~]# tcpprep -an server -i tftp.pcap -o tftp.cache –v</span><br></pre></td></tr></table></figure>
+<p>注意：我在测试的时候犯了一个错误，使用 DUT 的 tftp 升级来做实验，同时穿 过 DUT 重放报文，结果在网卡发送报文的后，DUT 的 mac 地址做了的回应，导致 交互过程没有穿过 DUT，这个问题比较搞笑，上午弄了半天才发现原因，开始还 以为 udp 的连接不能重放。 </p>
+<p>c、使用 tcpreplay 重放报文。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@A ~]# tcpreplay -c tftp.cache -i eth0 -j eth1 tftp.pcap –v</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tcpreplay/" data-id="cjvp9c5xu00cnj0xigm19v9p5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/tcpdump" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/tcpdump/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.321Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h1><p>一款sniffer工具，是Linux上的抓包工具，嗅探器。</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>tcpdump命令</strong> 是一款抓包，嗅探器工具，它可以打印所有经过网络接口的数据包的头信息，也可以使用<code>-w</code>选项将数据包保存到文件中，方便以后分析。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">-a：尝试将网络和广播地址转换成名称；</span><br><span class="line">-c&lt;数据包数目&gt;：收到指定的数据包数目后，就停止进行倾倒操作；</span><br><span class="line">-d：把编译过的数据包编码转换成可阅读的格式，并倾倒到标准输出；</span><br><span class="line">-dd：把编译过的数据包编码转换成C语言的格式，并倾倒到标准输出；</span><br><span class="line">-ddd：把编译过的数据包编码转换成十进制数字的格式，并倾倒到标准输出；</span><br><span class="line">-e：在每列倾倒资料上显示连接层级的文件头；</span><br><span class="line">-f：用数字显示网际网络地址；</span><br><span class="line">-F&lt;表达文件&gt;：指定内含表达方式的文件；</span><br><span class="line">-i&lt;网络界面&gt;：使用指定的网络截面送出数据包；</span><br><span class="line">-l：使用标准输出列的缓冲区；</span><br><span class="line">-n：不把主机的网络地址转换成名字；</span><br><span class="line">-N：不列出域名；</span><br><span class="line">-O：不将数据包编码最佳化；</span><br><span class="line">-p：不让网络界面进入混杂模式；</span><br><span class="line">-q ：快速输出，仅列出少数的传输协议信息；</span><br><span class="line">-r&lt;数据包文件&gt;：从指定的文件读取数据包数据；</span><br><span class="line">-s&lt;数据包大小&gt;：设置每个数据包的大小；</span><br><span class="line">-S：用绝对而非相对数值列出TCP关联数；</span><br><span class="line">-t：在每列倾倒资料上不显示时间戳记；</span><br><span class="line">-tt： 在每列倾倒资料上显示未经格式化的时间戳记；</span><br><span class="line">-T&lt;数据包类型&gt;：强制将表达方式所指定的数据包转译成设置的数据包类型；</span><br><span class="line">-v：详细显示指令执行过程；</span><br><span class="line">-vv：更详细显示指令执行过程；</span><br><span class="line">-x：用十六进制字码列出数据包资料；</span><br><span class="line">-w&lt;数据包文件&gt;：把数据包数据写入指定的文件。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>直接启动tcpdump将监视第一个网络接口上所有流过的数据包</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump</span><br></pre></td></tr></table></figure>
+<p> <strong>监视指定网络接口的数据包</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i eth1</span><br></pre></td></tr></table></figure>
+<p>如果不指定网卡，默认tcpdump只会监视第一个网络接口，一般是eth0，下面的例子都没有指定网络接口。</p>
+<p> <strong>监视指定主机的数据包</strong> </p>
+<p>打印所有进入或离开sundown的数据包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump host sundown</span><br></pre></td></tr></table></figure>
+<p>也可以指定ip,例如截获所有210.27.48.1 的主机收到的和发出的所有的数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump host 210.27.48.1</span><br></pre></td></tr></table></figure>
+<p>打印helios 与 hot 或者与 ace 之间通信的数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump host helios and \( hot or ace \)</span><br></pre></td></tr></table></figure>
+<p>截获主机210.27.48.1 和主机210.27.48.2 或210.27.48.3的通信</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump host 210.27.48.1 and \ (210.27.48.2 or 210.27.48.3 \)</span><br></pre></td></tr></table></figure>
+<p>打印ace与任何其他主机之间通信的IP 数据包, 但不包括与helios之间的数据包.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump ip host ace and not helios</span><br></pre></td></tr></table></figure>
+<p>如果想要获取主机210.27.48.1除了和主机210.27.48.2之外所有主机通信的ip包，使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump ip host 210.27.48.1 and ! 210.27.48.2</span><br></pre></td></tr></table></figure>
+<p>抓取eth0网卡上的包，使用:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tcpdump -i eth0</span><br></pre></td></tr></table></figure>
+<p>截获主机hostname发送的所有数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i eth0 src host hostname</span><br></pre></td></tr></table></figure>
+<p>监视所有送到主机hostname的数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i eth0 dst host hostname</span><br></pre></td></tr></table></figure>
+<p> <strong>监视指定主机和端口的数据包</strong> </p>
+<p>如果想要获取主机210.27.48.1接收或发出的telnet包，使用如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump tcp port 23 host 210.27.48.1</span><br></pre></td></tr></table></figure>
+<p>对本机的udp 123 端口进行监视 123 为ntp的服务端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump udp port 123</span><br></pre></td></tr></table></figure>
+<p> <strong>监视指定网络的数据包</strong> </p>
+<p>打印本地主机与Berkeley网络上的主机之间的所有通信数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump net ucb-ether</span><br></pre></td></tr></table></figure>
+<p>ucb-ether此处可理解为“Berkeley网络”的网络地址，此表达式最原始的含义可表达为：打印网络地址为ucb-ether的所有数据包</p>
+<p>打印所有通过网关snup的ftp数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump &apos;gateway snup and (port ftp or ftp-data)&apos;</span><br></pre></td></tr></table></figure>
+<p>注意：表达式被单引号括起来了，这可以防止shell对其中的括号进行错误解析</p>
+<p>打印所有源地址或目标地址是本地主机的IP数据包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump ip and not net localnet</span><br></pre></td></tr></table></figure>
+<p>如果本地网络通过网关连到了另一网络，则另一网络并不能算作本地网络。</p>
+<p>抓取80端口的HTTP报文，以文本形式展示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tcpdump -i any port 80 -A</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tcpdump/" data-id="cjvp9c5xr00cmj0xi37efhvrg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/tar" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/tar/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.317Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h1><p>Linux下的归档使用工具，用来打包和备份。</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>tar命令</strong> 可以为linux的文件和目录创建档案。利用tar，可以为某一特定文件创建档案（备份文件），也可以在档案中改变文件，或者向档案中加入新的文件。tar最初被用来在磁带上创建档案，现在，用户可以在任何设备上创建档案。利用tar命令，可以把一大堆的文件和目录全部打包成一个文件，这对于备份文件或将几个文件组合成为一个文件以便于网络传输是非常有用的。</p>
+<p>首先要弄清两个概念：打包和压缩。打包是指将一大堆文件或目录变成一个总的文件；压缩则是将一个大的文件通过一些压缩算法变成一个小文件。</p>
+<p>为什么要区分这两个概念呢？这源于Linux中很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你得先将这一大堆文件先打成一个包（tar命令），然后再用压缩程序进行压缩（gzip bzip2命令）。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">-A或--catenate：新增文件到以存在的备份文件；</span><br><span class="line">-B：设置区块大小；</span><br><span class="line">-c或--create：建立新的备份文件；</span><br><span class="line">-C &lt;目录&gt;：这个选项用在解压缩，若要在特定目录解压缩，可以使用这个选项。</span><br><span class="line">-d：记录文件的差别；</span><br><span class="line">-x或--extract或--get：从备份文件中还原文件；</span><br><span class="line">-t或--list：列出备份文件的内容；</span><br><span class="line">-z或--gzip或--ungzip：通过gzip指令处理备份文件；</span><br><span class="line">-Z或--compress或--uncompress：通过compress指令处理备份文件；</span><br><span class="line">-f&lt;备份文件&gt;或--file=&lt;备份文件&gt;：指定备份文件；</span><br><span class="line">-v或--verbose：显示指令执行过程；</span><br><span class="line">-r：添加文件到已经压缩的文件；</span><br><span class="line">-u：添加改变了和现有的文件到已经存在的压缩文件；</span><br><span class="line">-j：支持bzip2解压文件；</span><br><span class="line">-v：显示操作过程；</span><br><span class="line">-l：文件系统边界设置；</span><br><span class="line">-k：保留原有文件不覆盖；</span><br><span class="line">-m：保留文件不被覆盖；</span><br><span class="line">-w：确认压缩文件的正确性；</span><br><span class="line">-p或--same-permissions：用原来的文件权限还原文件；</span><br><span class="line">-P或--absolute-names：文件名使用绝对名称，不移除文件名称前的“/”号；</span><br><span class="line">-N &lt;日期格式&gt; 或 --newer=&lt;日期时间&gt;：只将较指定日期更新的文件保存到备份文件里；</span><br><span class="line">--exclude=&lt;范本样式&gt;：排除符合范本样式的文件。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件或目录：指定要打包的文件或目录列表。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- z：有gzip属性的</span><br><span class="line">- j：有bz2属性的</span><br><span class="line">- Z：有compress属性的</span><br><span class="line">- v：显示所有过程</span><br><span class="line">- O：将文件解开到标准输出</span><br></pre></td></tr></table></figure>
+<p>下面的参数-f是必须的</p>
+<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tar -cf all.tar *.jpg</span><br><span class="line"><span class="comment"># 这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。</span></span><br><span class="line"></span><br><span class="line">tar -rf all.tar *.gif</span><br><span class="line"><span class="comment"># 这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。</span></span><br><span class="line"></span><br><span class="line">tar -uf all.tar logo.gif</span><br><span class="line"><span class="comment"># 这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。</span></span><br><span class="line"></span><br><span class="line">tar -tf all.tar</span><br><span class="line"><span class="comment"># 这条命令是列出all.tar包中所有文件，-t是列出文件的意思</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -cfv archive.tar foo bar  <span class="comment"># 从文件foo和bar创建archive.tar。</span></span><br><span class="line">tar -tvf archive.tar         <span class="comment"># 详细列出archive.tar中的所有文件。</span></span><br><span class="line">tar -xf archive.tar          <span class="comment"># 从archive.tar提取所有文件。</span></span><br></pre></td></tr></table></figure>
+<h4 id="zip格式"><a href="#zip格式" class="headerlink" title="zip格式"></a>zip格式</h4><p>压缩： zip -r [目标文件名].zip [原文件/目录名]<br>解压： unzip [原文件名].zip<br>注：-r参数代表递归  </p>
+<h4 id="tar格式（该格式仅仅打包，不压缩）"><a href="#tar格式（该格式仅仅打包，不压缩）" class="headerlink" title="tar格式（该格式仅仅打包，不压缩）"></a>tar格式（该格式仅仅打包，不压缩）</h4><p>打包：tar -cvf [目标文件名].tar [原文件名/目录名]<br>解包：tar -xvf [原文件名].tar<br>注：c参数代表create（创建），x参数代表extract（解包），v参数代表verbose（详细信息），f参数代表filename（文件名），所以f后必须接文件名。  </p>
+<h4 id="tar-gz格式"><a href="#tar-gz格式" class="headerlink" title="tar.gz格式"></a>tar.gz格式</h4><p>方式一：利用前面已经打包好的tar文件，直接用压缩命令。</p>
+<p>压缩：gzip [原文件名].tar<br>解压：gunzip [原文件名].tar.gz  </p>
+<p>方式二：一次性打包并压缩、解压并解包</p>
+<p>打包并压缩： tar -zcvf [目标文件名].tar.gz [原文件名/目录名]<br>解压并解包： tar -zxvf [原文件名].tar.gz<br>注：z代表用gzip算法来压缩/解压。  </p>
+<h4 id="tar-bz2格式"><a href="#tar-bz2格式" class="headerlink" title="tar.bz2格式"></a>tar.bz2格式</h4><p>方式一：利用已经打包好的tar文件，直接执行压缩命令：</p>
+<p>压缩：bzip2 [原文件名].tar<br>解压：bunzip2 [原文件名].tar.bz2<br>方式二：一次性打包并压缩、解压并解包  </p>
+<p>打包并压缩： tar -jcvf [目标文件名].tar.bz2 [原文件名/目录名]<br>解压并解包： tar -jxvf [原文件名].tar.bz2<br>注：小写j代表用bzip2算法来压缩/解压。  </p>
+<h4 id="tar-xz格式"><a href="#tar-xz格式" class="headerlink" title="tar.xz格式"></a>tar.xz格式</h4><p>方式一：利用已经打包好的tar文件，直接用压缩命令：</p>
+<p>压缩：xz [原文件名].tar<br>解压：unxz [原文件名].tar.xz<br>方式二：一次性打包并压缩、解压并解包  </p>
+<p>打包并压缩： tar -Jcvf [目标文件名].tar.xz [原文件名/目录名]<br>解压并解包： tar -Jxvf [原文件名].tar.xz<br>注：大写J代表用xz算法来压缩/解压。  </p>
+<h4 id="tar-Z格式（已过时）"><a href="#tar-Z格式（已过时）" class="headerlink" title="tar.Z格式（已过时）"></a>tar.Z格式（已过时）</h4><p>方式一：利用已经打包好的tar文件，直接用压缩命令：</p>
+<p>压缩：compress [原文件名].tar<br>解压：uncompress [原文件名].tar.Z<br>方式二：一次性打包并压缩、解压并解包  </p>
+<p>打包并压缩： tar -Zcvf [目标文件名].tar.Z [原文件名/目录名]<br>解压并解包： tar -Zxvf [原文件名].tar.Z<br>注：大写Z代表用ncompress算法来压缩/解压。另，ncompress是早期Unix系统的压缩格式，但由于ncompress的压缩率太低，现已过时。  </p>
+<h4 id="jar格式"><a href="#jar格式" class="headerlink" title="jar格式"></a>jar格式</h4><p>压缩：jar -cvf [目标文件名].jar [原文件名/目录名]<br>解压：jar -xvf [原文件名].jar  </p>
+<p>注：如果是打包的是Java类库，并且该类库中存在主类，那么需要写一个META-INF/MANIFEST.MF配置文件，内容如下：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Manifest-Version: 1.0</span><br><span class="line">Created-By: 1.6.0_27 (Sun Microsystems Inc.)</span><br><span class="line">Main-class: the_name_of_the_main_class_should_be_put_here</span><br></pre></td></tr></table></figure>
+<p>然后用如下命令打包：</p>
+<p>jar -cvfm [目标文件名].jar META-INF/MANIFEST.MF [原文件名/目录名]<br>这样以后就能用“java -jar [文件名].jar”命令直接运行主类中的public static void main方法了。  </p>
+<h4 id="7z格式"><a href="#7z格式" class="headerlink" title="7z格式"></a>7z格式</h4><p>压缩：7z a [目标文件名].7z [原文件名/目录名]<br>解压：7z x [原文件名].7z<br>注：这个7z解压命令支持rar格式，即：  </p>
+<p>7z x [原文件名].rar</p>
+<h4 id="其它例子"><a href="#其它例子" class="headerlink" title="其它例子"></a>其它例子</h4><p><strong>将文件全部打包成tar包</strong> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -cvf log.tar log2012.log    仅打包，不压缩！</span><br><span class="line">tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩</span><br><span class="line">tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩</span><br></pre></td></tr></table></figure>
+<p>在选项<code>f</code>之后的文件档名是自己取的，我们习惯上都用 .tar 来作为辨识。 如果加<code>z</code>选项，则以.tar.gz或.tgz来代表gzip压缩过的tar包；如果加<code>j</code>选项，则以.tar.bz2来作为tar包名。</p>
+<p><strong>解压目录</strong></p>
+<p>去掉第一层目录结构，要出除第二层，–strip-components 2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf portal-web-v2.0.0.tar --strip-components 1  -C 指定目录</span><br></pre></td></tr></table></figure>
+<p><strong>查阅上述tar包内有哪些文件</strong> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -ztvf log.tar.gz</span><br></pre></td></tr></table></figure>
+<p>由于我们使用 gzip 压缩的log.tar.gz，所以要查阅log.tar.gz包内的文件时，就得要加上<code>z</code>这个选项了。</p>
+<p><strong>将tar包解压缩</strong> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf /opt/soft/test/log.tar.gz</span><br></pre></td></tr></table></figure>
+<p>在预设的情况下，我们可以将压缩档在任何地方解开的</p>
+<p><strong>只将tar内的部分文件解压出来</strong> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf /opt/soft/test/log30.tar.gz log2013.log</span><br></pre></td></tr></table></figure>
+<p>我可以透过<code>tar -ztvf</code>来查阅 tar 包内的文件名称，如果单只要一个文件，就可以透过这个方式来解压部分文件！</p>
+<p><strong>文件备份下来，并且保存其权限</strong> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvpf log31.tar.gz log2014.log log2015.log log2016.log</span><br></pre></td></tr></table></figure>
+<p>这个<code>-p</code>的属性是很重要的，尤其是当您要保留原本文件的属性时。</p>
+<p><strong>在文件夹当中，比某个日期新的文件才备份</strong> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -N &quot;2012/11/13&quot; -zcvf log17.tar.gz test</span><br></pre></td></tr></table></figure>
+<p><strong>备份文件夹内容是排除部分文件：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar --exclude scf/service -zcvf scf.tar.gz scf/*</span><br></pre></td></tr></table></figure>
+<p><strong>其实最简单的使用 tar 就只要记忆底下的方式即可：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">压　缩：tar -jcv -f filename.tar.bz2 要被压缩的文件或目录名称</span><br><span class="line">查　询：tar -jtv -f filename.tar.bz2</span><br><span class="line">解压缩：tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tar/" data-id="cjvp9c5zz00dnj0xi1pgyquvz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux_command/talk" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/talk/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.315Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="talk"><a href="#talk" class="headerlink" title="talk"></a>talk</h1><p>让用户和其他用户聊天</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>talk命令</strong> 是talk服务器的客户端工具，通过talk命令可以让用户和其他用户聊天。linux中talk命令参数程序的使用很简单，只要知道交谈对象的地址，就可以邀请对方交谈。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">talk(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>用户：指定聊天的用户；</li>
+<li>终端：指定用户的终端。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>例如登录在主机rs6000.cic.test.com上的用户jdx希望和登录在主机tirc.cs.test.com上的用户wangxz进行交谈，则可以输入下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">talk wangxz@tirc.cs.test.com</span><br></pre></td></tr></table></figure>
+<p>Internet上的相关程序（Talk Daemon）就会传送一条信息邀请wangxz来交谈，这时用户wangxz的屏幕上就会出现如下信息，并响铃提示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Message from Talk_Daemon@tirc.cs.test.com at 21:44 …</span><br><span class="line">talk: connection requested by jdx@rs6000.cic.test.com</span><br><span class="line">talk: respond with:  talk jdx@rs6000.cic.test.com</span><br></pre></td></tr></table></figure>
+<p>这时，用户wangxz应该做的工作就是按照上面的信息提示，即输入linux中talk命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">talk jdx@rs6000.cic.test.com</span><br></pre></td></tr></table></figure>
+<p>之后，连接建立成功，两个用户就可以进行交谈了。这时，双方的终端屏幕上都将显示信息 <strong>[Connection established]</strong> 并响铃，同时屏幕被linux中talk命令程序以一条水平线分割为上下两部分，上半部分用来显示用户自己输入的内容，下半部分用来显示对方输入的内容。两个用户可以同时输入，他们输入的内容将会立即显示在双方的屏幕上。</p>
+<p>在用户进行输入时，可按 <strong>BACKSPACE</strong> 见来更正前一个字符，也可按 <strong>CTRL+w</strong> 来删除一个完整的单词，或者用 <strong>CTRL+U</strong> 来删除一整行，另外，用户还可以通过按 <strong>CTRL+L</strong> 来刷新屏幕。如果要结束交谈，可由任何一方按下 <strong>CTRL+C</strong> 来中断连接，但在结束对话前最好道声“再见”，并等待对方回应。linux中talk命令程序结束时，在屏幕上将回显示一条信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Connection closing. Exiting]</span><br></pre></td></tr></table></figure>
+<p>并非每次要求对方交谈都能成功，有时对方没有登录，则linux中talk命令程序提示信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Your party is not logged on]</span><br></pre></td></tr></table></figure>
+<p>并退出；如果对方已登录，但因某种原因（如不是正在使用机器）没有响应，那么linux中talk命令程序将会每隔10秒钟给他发一条邀请信息，同时在自己的屏幕上显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Ringing your party again]</span><br></pre></td></tr></table></figure>
+<p>如果用户不愿等待，则可以按 <strong>CTRL+C</strong> 终止linux中talk命令程序。还有的时候系统可能出现下面的信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Checking for invitation on caller’s machine]</span><br></pre></td></tr></table></figure>
+<p>这说明双方的linux中talk命令程序不兼容，这时可以试试ntalk和ytalk命令，如果没有，就只好找系统管理员了。</p>
+<p>如果用户在做某些紧急工作（如编辑邮件）时不希望被linux中talk命令的邀请打搅，他可以使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mesg n</span><br></pre></td></tr></table></figure>
+<p>来暂时拒绝交谈，这时如果有用户邀请他交谈，只能得到提示信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Your party is refusing messages]</span><br></pre></td></tr></table></figure>
+<p>不过要注意的是，一旦完成紧急工作。最好立即打开信息接收开关（用命令<code>mesg y</code>），否则将会失去很多信息交流的机会。</p>
+<p>以上是linux中talk命令参数的是使用方法。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/talk/" data-id="cjvp9c5xp00clj0xirc6qpiu2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/57/">57</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ARTS/">ARTS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ARTS/" style="font-size: 20px;">ARTS</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/znew/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
