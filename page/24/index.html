@@ -62,6 +62,40 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/nslookup" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/nslookup/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.975Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="nslookup"><a href="#nslookup" class="headerlink" title="nslookup"></a>nslookup</h1><p>查询域名DNS信息的工具</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>nslookup命令</strong> 是常用域名查询工具，就是查DNS信息用的命令。</p>
+<p>nslookup4有两种工作模式，即“交互模式”和“非交互模式”。在“交互模式”下，用户可以向域名服务器查询各类主机、域名的信息，或者输出域名中的主机列表。而在“非交互模式”下，用户可以针对一个主机或域名仅仅获取特定的名称或所需信息。</p>
+<p>进入交互模式，直接输入nslookup命令，不加任何参数，则直接进入交互模式，此时nslookup会连接到默认的域名服务器（即<code>/etc/resolv.conf</code>的第一个dns地址）。或者输入<code>nslookup -nameserver/ip</code>。进入非交互模式，就直接输入<code>nslookup 域名</code>就可以了。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nslookup(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-sil：不显示任何警告信息。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>域名：指定要查询域名。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# nslookup www.jsdig.com</span><br><span class="line">Server:         202.96.104.15</span><br><span class="line">Address:        202.96.104.15#53</span><br><span class="line"></span><br><span class="line">Non-authoritative answer:</span><br><span class="line">www.jsdig.com canonical name = host.1.jsdig.com.</span><br><span class="line">Name:   host.1.jsdig.com</span><br><span class="line">Address: 100.42.212.8</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/nslookup/" data-id="cjw4xtiuf009dr4xighux96xv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/nologin" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/nologin/" class="article-date">
@@ -96,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/nologin/" data-id="cjvp9c5uz0090j0xiierhzi34" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/nologin/" data-id="cjw4xtiue009br4xix4btufvh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/nohup/" data-id="cjvp9c5uy008zj0xirzvo53pw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/nohup/" data-id="cjw4xtiud009ar4xi7t8rj2cu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/nmcli/" data-id="cjvp9c5uy008yj0xiq6rprnwz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/nmcli/" data-id="cjw4xtiua0096r4xi0egkzti2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -203,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/nmap/" data-id="cjvp9c5ux008xj0xiz8qg4nrw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/nmap/" data-id="cjw4xtiub0098r4xip3rakrvy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -234,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/nm/" data-id="cjvp9c5uw008wj0xicntd04wn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/nm/" data-id="cjw4xtiu90094r4xievy02rm9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -272,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/nl/" data-id="cjvp9c5uw008vj0xi99ubudo8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/nl/" data-id="cjw4xtiua0095r4xi5i4lzohe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -302,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/nisdomainname/" data-id="cjvp9c5uv008uj0xiscl8qhwf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/nisdomainname/" data-id="cjw4xtiu70091r4xi4cyiymei" class="article-share-link">Share</a>
       
       
     </footer>
@@ -337,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/nice/" data-id="cjvp9c5uu008tj0xi59rcx906" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/nice/" data-id="cjw4xtiub0097r4xini3eou27" class="article-share-link">Share</a>
       
       
     </footer>
@@ -387,45 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ngrep/" data-id="cjvp9c5uu008sj0xi8fulagcl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/nfsstat" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/nfsstat/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.954Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="nfsstat"><a href="#nfsstat" class="headerlink" title="nfsstat"></a>nfsstat</h1><p>列出NFS客户端和服务器的工作状态</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>nfsstat命令</strong> 用于列出NFS客户端和服务器的工作状态。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nfsstat(选项)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-s：仅列出NFS服务器端状态；</span><br><span class="line">-c：仅列出NFS客户端状态；</span><br><span class="line">-n：仅列出NFS状态，默认显示nfs客户端和服务器的状态；</span><br><span class="line">-2：仅列出NFS版本2的状态；</span><br><span class="line">-3：仅列出NFS版本3的状态；</span><br><span class="line">-4：仅列出NFS版本4的状态；</span><br><span class="line">-m：打印以加载的nfs文件系统状态；</span><br><span class="line">-r：仅打印rpc状态。</span><br></pre></td></tr></table></figure>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>要显示关于客户机发送和拒绝的RPC和NFS调用数目的信息，输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nfsstat -c</span><br></pre></td></tr></table></figure>
-<p>要显示和打印与客户机NFS调用相关的信息，输入如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nfsstat -cn</span><br></pre></td></tr></table></figure>
-<p>要显示和打印客户机和服务器的与RPC调用相关的信息，输入如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nfsstat -r</span><br></pre></td></tr></table></figure>
-<p>要显示关于服务器接收和拒绝的RPC和NFS调用数目的信息，输入如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nfsstat –s</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/nfsstat/" data-id="cjvp9c5ur008rj0xijrseeq9l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ngrep/" data-id="cjw4xtiu80092r4xiaxdl8kkd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -485,6 +481,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -498,10 +498,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

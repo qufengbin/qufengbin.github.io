@@ -62,6 +62,103 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/crontab" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/crontab/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.266Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="crontab"><a href="#crontab" class="headerlink" title="crontab"></a>crontab</h1><p>提交和管理用户的需要周期性执行的任务</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>crontab命令</strong> 被用来提交和管理用户的需要周期性执行的任务，与windows下的计划任务类似，当安装完成操作系统后，默认会安装此服务工具，并且会自动启动crond进程，crond进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-e：编辑该用户的计时器设置；</span><br><span class="line">-l：列出该用户的计时器设置；</span><br><span class="line">-r：删除该用户的计时器设置；</span><br><span class="line">-u&lt;用户名称&gt;：指定要设定计时器的用户名称。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>crontab文件：指定包含待执行任务的crontab文件。</p>
+<h3 id="知识扩展"><a href="#知识扩展" class="headerlink" title="知识扩展"></a>知识扩展</h3><p>Linux下的任务调度分为两类： <strong>系统任务调度</strong> 和 <strong>用户任务调度</strong> 。</p>
+<p> <strong>系统任务调度：</strong> 系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等。在<code>/etc</code>目录下有一个crontab文件，这个就是系统任务调度的配置文件。</p>
+<p><code>/etc/crontab</code>文件包括下面几行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SHELL=/bin/bash</span><br><span class="line">PATH=/sbin:/bin:/usr/sbin:/usr/bin</span><br><span class="line">MAILTO=&quot;&quot;HOME=/</span><br><span class="line"></span><br><span class="line"># run-parts</span><br><span class="line">51 * * * * root run-parts /etc/cron.hourly</span><br><span class="line">24 7 * * * root run-parts /etc/cron.daily</span><br><span class="line">22 4 * * 0 root run-parts /etc/cron.weekly</span><br><span class="line">42 4 1 * * root run-parts /etc/cron.monthly</span><br></pre></td></tr></table></figure>
+<p>前四行是用来配置crond任务运行的环境变量，第一行SHELL变量指定了系统要使用哪个shell，这里是bash，第二行PATH变量指定了系统执行命令的路径，第三行MAILTO变量指定了crond的任务执行信息将通过电子邮件发送给root用户，如果MAILTO变量的值为空，则表示不发送任务执行信息给用户，第四行的HOME变量指定了在执行命令或者脚本时使用的主目录。</p>
+<p> <strong>用户任务调度：</strong> 用户定期要执行的工作，比如用户数据备份、定时邮件提醒等。用户可以使用 crontab 工具来定制自己的计划任务。所有用户定义的crontab文件都被保存在<code>/var/spool/cron</code>目录中。其文件名与用户名一致，使用者权限文件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/etc/cron.deny     该文件中所列用户不允许使用crontab命令</span><br><span class="line">/etc/cron.allow    该文件中所列用户允许使用crontab命令</span><br><span class="line">/var/spool/cron/   所有用户crontab文件存放的目录,以用户名命名</span><br></pre></td></tr></table></figure>
+<p>crontab文件的含义：用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，前五段是时间设定段，第六段是要执行的命令段，格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minute   hour   day   month   week   command     顺序：分 时 日 月 周</span><br></pre></td></tr></table></figure>
+<p>其中：</p>
+<ul>
+<li>minute： 表示分钟，可以是从0到59之间的任何整数。</li>
+<li>hour：表示小时，可以是从0到23之间的任何整数。</li>
+<li>day：表示日期，可以是从1到31之间的任何整数。</li>
+<li>month：表示月份，可以是从1到12之间的任何整数。</li>
+<li>week：表示星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日。</li>
+<li>command：要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。</li>
+</ul>
+<p>在以上各个字段中，还可以使用以下特殊字符：</p>
+<ul>
+<li>星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。</li>
+<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如，“1,2,5,7,8,9”</li>
+<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如“2-6”表示“2,3,4,5,6”</li>
+<li><p>正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。</p>
+<p><strong>crond服务</strong> </p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/sbin/service crond start    //启动服务</span><br><span class="line">/sbin/service crond stop     //关闭服务</span><br><span class="line">/sbin/service crond restart  //重启服务</span><br><span class="line">/sbin/service crond reload   //重新载入配置</span><br></pre></td></tr></table></figure>
+<p>查看crontab服务状态：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service crond status</span><br></pre></td></tr></table></figure>
+<p>手动启动crontab服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service crond start</span><br></pre></td></tr></table></figure>
+<p>查看crontab服务是否已设置为开机启动，执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ntsysv</span><br></pre></td></tr></table></figure>
+<p>加入开机自动启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig –level 35 crond on</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>每1分钟执行一次command</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* * * * * command</span><br></pre></td></tr></table></figure>
+<p>每小时的第3和第15分钟执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3,15 * * * * command</span><br></pre></td></tr></table></figure>
+<p>在上午8点到11点的第3和第15分钟执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3,15 8-11 * * * command</span><br></pre></td></tr></table></figure>
+<p>每隔两天的上午8点到11点的第3和第15分钟执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3,15 8-11 */2 * * command</span><br></pre></td></tr></table></figure>
+<p>每个星期一的上午8点到11点的第3和第15分钟执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3,15 8-11 * * 1 command</span><br></pre></td></tr></table></figure>
+<p>每晚的21:30重启smb </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">30 21 * * * /etc/init.d/smb restart</span><br></pre></td></tr></table></figure>
+<p>每月1、10、22日的4 : 45重启smb </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">45 4 1,10,22 * * /etc/init.d/smb restart</span><br></pre></td></tr></table></figure>
+<p>每周六、周日的1:10重启smb</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10 1 * * 6,0 /etc/init.d/smb restart</span><br></pre></td></tr></table></figure>
+<p>每天18 : 00至23 : 00之间每隔30分钟重启smb </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0,30 18-23 * * * /etc/init.d/smb restart</span><br></pre></td></tr></table></figure>
+<p>每星期六的晚上11:00 pm重启smb </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 23 * * 6 /etc/init.d/smb restart</span><br></pre></td></tr></table></figure>
+<p>每一小时重启smb </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* */1 * * * /etc/init.d/smb restart</span><br></pre></td></tr></table></figure>
+<p>晚上11点到早上7点之间，每隔一小时重启smb</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 23-7/1 * * * /etc/init.d/smb restart</span><br></pre></td></tr></table></figure>
+<p>每月的4号与每周一到周三的11点重启smb </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 11 4 * mon-wed /etc/init.d/smb restart</span><br></pre></td></tr></table></figure>
+<p>一月一号的4点重启smb</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 4 1 jan * /etc/init.d/smb restart</span><br></pre></td></tr></table></figure>
+<p>每小时执行<code>/etc/cron.hourly</code>目录内的脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01 * * * * root run-parts /etc/cron.hourly</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/crontab/" data-id="cjw4xtio0002or4xivtaagfm1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/cpio" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/cpio/" class="article-date">
@@ -94,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cpio/" data-id="cjvp9c5pa002hj0xiya0ellw3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/cpio/" data-id="cjw4xtinz002nr4xiniaopfy9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cp/" data-id="cjvp9c5p8002gj0xim7owuf1j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/cp/" data-id="cjw4xtio1002pr4xisd5sc9vu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -182,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/convertquota/" data-id="cjvp9c5p7002fj0xio06tzwjo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/convertquota/" data-id="cjw4xtinw002kr4xicyzcwwkh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,7 +309,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/consoletype/" data-id="cjvp9c5p6002ej0xi9456t4wj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/consoletype/" data-id="cjw4xtinv002jr4xi100zwhz6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -252,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/compress/" data-id="cjvp9c5p5002dj0xiiorafq1z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/compress/" data-id="cjw4xtinu002ir4xi4gepalrs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -286,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/command/" data-id="cjvp9c5p3002bj0xi3gv15czb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/command/" data-id="cjw4xtins002gr4xihpky64s5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -349,7 +446,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/comm/" data-id="cjvp9c5p4002cj0xifewpnrtl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/comm/" data-id="cjw4xtint002hr4xiimkod7we" class="article-share-link">Share</a>
       
       
     </footer>
@@ -382,7 +479,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/colrm/" data-id="cjvp9c5p3002aj0xijgpj6wn9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/colrm/" data-id="cjw4xtinr002fr4xi00ttdpkx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -412,45 +509,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/col/" data-id="cjvp9c5p20029j0xixuo8f3lx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/cmp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/cmp/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.228Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="cmp"><a href="#cmp" class="headerlink" title="cmp"></a>cmp</h1><p>比较两个文件是否有差异</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>cmp命令</strong> 用来比较两个文件是否有差异。当相互比较的两个文件完全一样时，则该指令不会显示任何信息。若发现有差异，预设会标示出第一个不通之处的字符和列数编号。若不指定任何文件名称或是所给予的文件名为“-”，则cmp指令会从标准输入设备读取数据。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmp(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-c或--print-chars：除了标明差异处的十进制字码之外，一并显示该字符所对应字符；</span><br><span class="line">-i&lt;字符数目&gt;或--ignore-initial=&lt;字符数目&gt;：指定一个数目；</span><br><span class="line">-l或——verbose：标示出所有不一样的地方；</span><br><span class="line">-s或--quiet或——silent：不显示错误信息；</span><br><span class="line">-v或——version：显示版本信息；</span><br><span class="line">--help：在线帮助。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>目录：比较两个文件的差异。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用cmp命令比较文件”testfile”和文件”testfile1”两个文件，则输入下面的命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmp testfile testfile1            #比较两个指定的文件</span><br></pre></td></tr></table></figure>
-<p>在上述指令执行之前，使用cat命令查看两个指定的文件内容，如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat testfile                    #查看文件内容  </span><br><span class="line">Absncn 50                       #显示文件“testfile”  </span><br><span class="line">Asldssja 60  </span><br><span class="line">Jslkadjls 85 </span><br><span class="line"></span><br><span class="line">cat testfile1                   #查看文件内容  </span><br><span class="line">Absncn 50                       #显示文件“testfile1”  </span><br><span class="line">AsldssjE 62  </span><br><span class="line">Jslkadjls 85</span><br></pre></td></tr></table></figure>
-<p>然后，再执行cmp命令，并返回比较结果，具体如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cmp testfile testfile1       #比较两个文件  </span><br><span class="line">testfile testfile1           #有差异：第8字节，第2行</span><br></pre></td></tr></table></figure>
-<p>注意：在比较结果中，只能够显示第一比较结果。</p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cmp/" data-id="cjvp9c5p10028j0xih5nbyzcl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/col/" data-id="cjw4xtinq002er4xif1a5q9iu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -510,6 +569,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -523,10 +586,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

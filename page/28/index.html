@@ -62,6 +62,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/md5sum" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/md5sum/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.896Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="md5sum"><a href="#md5sum" class="headerlink" title="md5sum"></a>md5sum</h1><p>计算和校验文件报文摘要的工具程序</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>md5sum命令</strong> 采用MD5报文摘要算法（128位）计算和检查文件的校验和。一般来说，安装了Linux后，就会有md5sum这个工具，直接在命令行终端直接运行。</p>
+<p>MD5算法常常被用来验证网络文件传输的完整性，防止文件被人篡改。MD5 全称是报文摘要算法（Message-Digest Algorithm 5），此算法对任意长度的信息逐位进行计算，产生一个二进制长度为128位（十六进制长度就是32位）的“指纹”（或称“报文摘要”），不同的文件产生相同的报文摘要的可能性是非常非常之小的。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5sum(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-b：二进制模式读取文件；</span><br><span class="line">-t或--text：把输入的文件作为文本文件看待；</span><br><span class="line">-c：从指定文件中读取MD5校验和，并进行校验；</span><br><span class="line">--status：验证成功时不输出任何信息；</span><br><span class="line">-w：当校验不正确时给出警告信息。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定保存着文件名和校验和的文本文件。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p><strong>使用 md5sum 生成密码</strong></p>
+<p>另一种获取可用作密码的随机字符串的方法是计算 MD5 校验值！校验值看起来确实像是随机字符串组合在一起，我们可以用作密码。确保你的计算源是个变量，这样的话每次运行命令时生成的校验值都不一样。比如 date ！date 命令 总会生成不同的输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# date | md5sum</span><br><span class="line">6a43f2c246cdc3e6a3592652f831d186  -</span><br></pre></td></tr></table></figure>
+<p><strong>生成一个文件insert.sql的md5值：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# md5sum insert.sql</span><br><span class="line">bcda6cb5c704664f989703ac5a88f112  insert.sql</span><br></pre></td></tr></table></figure>
+<p><strong>检查文件testfile是否被修改过：</strong> </p>
+<p>首先生成md5文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5sum testfile &gt; testfile.md5</span><br></pre></td></tr></table></figure>
+<p>检查：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5sum testfile -c testfile.md5</span><br></pre></td></tr></table></figure>
+<p>如果文件没有变化，输出应该如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">forsort: OK</span><br></pre></td></tr></table></figure>
+<p>此时，md5sum命令返回0。</p>
+<p>如果文件发生了变化，输出应该如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forsort: FAILED</span><br><span class="line">md5sum: WARNING: 1 of 1 computed checksum did NOT match</span><br></pre></td></tr></table></figure>
+<p>此时，md5sum命令返回非0。</p>
+<p>这里，检查用的文件名随意。如果不想有任何输出，则<code>md5sum testfile --status -c testfile.md5</code>，这时候通过返回值来检测结果。</p>
+<p>检测的时候如果检测文件非法则输出信息的选项:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5sum -w -c testfile.md5</span><br></pre></td></tr></table></figure>
+<p>输出之后，文件异常输出类似如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">md5sum: testfile.md5: 1: improperly formatted MD5 checksum line</span><br><span class="line">md5sum: testfile.md5: no properly formatted MD5 checksum lines found</span><br></pre></td></tr></table></figure>
+<p>这里，testfile.md5只有一行信息，但是我认为地给它多加了一个字符，导致非法。如果md5文件正常那么<code>-w</code>有没有都一样。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/md5sum/" data-id="cjw4xtitm0085r4xi1dfy7a0i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/man" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/man/" class="article-date">
@@ -93,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/man/" data-id="cjvp9c5u6007wj0xijygrvkpf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/man/" data-id="cjw4xtitn0086r4xi1fshh1mb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -129,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/make/" data-id="cjvp9c5u5007vj0xilu82f02s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/make/" data-id="cjw4xtito0088r4xig9xcffjr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -160,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mailstat/" data-id="cjvp9c5u5007uj0xiscjffmcz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mailstat/" data-id="cjw4xtiti0080r4xiaw4i22cj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -191,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mailq/" data-id="cjvp9c5u4007tj0xin11gl4fv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mailq/" data-id="cjw4xtitk0083r4xi8ymsv0ck" class="article-share-link">Share</a>
       
       
     </footer>
@@ -241,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mail/" data-id="cjvp9c5u4007sj0xiboutdscb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mail/" data-id="cjw4xtitk0082r4xippp9ovlb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -280,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lynx/" data-id="cjvp9c5u3007rj0xi4x89o5l0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lynx/" data-id="cjw4xtith007zr4xi6icj6gd3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -314,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvscan/" data-id="cjvp9c5u2007qj0xi82qa1jq0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvscan/" data-id="cjw4xtitg007xr4ximehzjs11" class="article-share-link">Share</a>
       
       
     </footer>
@@ -349,7 +404,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvresize/" data-id="cjvp9c5u2007pj0xi9vtzesqz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvresize/" data-id="cjw4xtitj0081r4xii185gdmv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -384,42 +439,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvremove/" data-id="cjvp9c5u1007oj0xi4as16vcp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/lvreduce" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/lvreduce/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.876Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="lvreduce"><a href="#lvreduce" class="headerlink" title="lvreduce"></a>lvreduce</h1><p>收缩逻辑卷空间</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>lvreduce命令</strong> 用于减少LVM逻辑卷占用的空间大小。使用lvreduce命令收缩逻辑卷的空间大小有可能会删除逻辑卷上已有的数据，所以在操作前必须进行确认。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lvreduce(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-L：指定逻辑卷的大小，单位为“kKmMgGtT”字节；</span><br><span class="line">-l：指定逻辑卷的大小（LE数）。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>逻辑卷：指定要操作的逻辑卷对应的设备文件。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用lvreduce命令减少指定的逻辑卷的空间大小。在命令行中输入下面的命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# lvreduce -L -50M /dev/vg1000/lvol0     #将逻辑卷的空间大小减少50M</span><br></pre></td></tr></table></figure>
-<p>输出信息如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">......省略部分输出内容......  </span><br><span class="line">Do you really want to reduce lvol0? [y/n]: y  #确认操作  </span><br><span class="line">  Reducing logical volume lvol0 to 252.00 MB  </span><br><span class="line">  Logical volume lvol0 successfully resized</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvreduce/" data-id="cjvp9c5u1007nj0xi5mr5v68j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvremove/" data-id="cjw4xtitg007wr4xi8n5kdjwf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -479,6 +499,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -492,10 +516,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

@@ -62,6 +62,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/scp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/scp/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.143Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="scp"><a href="#scp" class="headerlink" title="scp"></a>scp</h1><p>加密的方式在本地主机和远程主机之间复制文件</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>scp命令</strong> 用于在Linux下进行远程拷贝文件的命令，和它类似的命令有cp，不过cp只是在本机进行拷贝不能跨服务器，而且scp传输是加密的。可能会稍微影响一下速度。当你服务器硬盘变为只读read only system时，用scp可以帮你把文件移出来。另外，scp还非常不占资源，不会提高多少系统负荷，在这一点上，rsync就远远不及它了。虽然 rsync比scp会快一点，但当小文件众多的情况下，rsync会导致硬盘I/O非常高，而scp基本不影响系统正常使用。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-1：使用ssh协议版本1；</span><br><span class="line">-2：使用ssh协议版本2；</span><br><span class="line">-4：使用ipv4；</span><br><span class="line">-6：使用ipv6；</span><br><span class="line">-B：以批处理模式运行；</span><br><span class="line">-C：使用压缩；</span><br><span class="line">-F：指定ssh配置文件；</span><br><span class="line">-i：identity_file 从指定文件中读取传输时使用的密钥文件（例如亚马逊云pem），此参数直接传递给ssh；</span><br><span class="line">-l：指定宽带限制；</span><br><span class="line">-o：指定使用的ssh选项；</span><br><span class="line">-P：指定远程主机的端口号；</span><br><span class="line">-p：保留文件的最后修改时间，最后访问时间和权限模式；</span><br><span class="line">-q：不显示复制进度；</span><br><span class="line">-r：以递归方式复制。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>源文件：指定要复制的源文件。</li>
+<li>目标文件：目标文件。格式为<code>user@host：filename</code>（文件名为目标文件的名称）。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>从远程复制到本地的scp命令与上面的命令雷同，只要将从本地复制到远程的命令后面2个参数互换顺序就行了。</p>
+<p> <strong>从远处复制文件到本地目录</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp root@10.10.10.10:/opt/soft/nginx-0.5.38.tar.gz /opt/soft/</span><br></pre></td></tr></table></figure>
+<p>从10.10.10.10机器上的<code>/opt/soft/</code>的目录中下载nginx-0.5.38.tar.gz 文件到本地<code>/opt/soft/</code>目录中。</p>
+<p><strong>从亚马逊云复制OpenVPN到本地目录</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -i amazon.pem ubuntu@10.10.10.10:/usr/local/openvpn_as/etc/exe/openvpn-connect-2.1.3.110.dmg openvpn-connect-2.1.3.110.dmg</span><br></pre></td></tr></table></figure>
+<p>从10.10.10.10机器上下载openvpn安装文件到本地当前目录来。</p>
+<p> <strong>从远处复制到本地</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r root@10.10.10.10:/opt/soft/mongodb /opt/soft/</span><br></pre></td></tr></table></figure>
+<p>从10.10.10.10机器上的<code>/opt/soft/</code>中下载mongodb目录到本地的<code>/opt/soft/</code>目录来。</p>
+<p> <strong>上传本地文件到远程机器指定目录</strong> </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest</span><br><span class="line"><span class="comment"># 指定端口 2222</span></span><br><span class="line">scp -rp -P 2222 /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest</span><br></pre></td></tr></table></figure>
+<p>复制本地<code>/opt/soft/</code>目录下的文件nginx-0.5.38.tar.gz到远程机器10.10.10.10的<code>opt/soft/scptest</code>目录。</p>
+<p> <strong>上传本地目录到远程机器指定目录</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r /opt/soft/mongodb root@10.10.10.10:/opt/soft/scptest</span><br></pre></td></tr></table></figure>
+<p>上传本地目录<code>/opt/soft/mongodb</code>到远程机器10.10.10.10上<code>/opt/soft/scptest</code>的目录中去。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/scp/" data-id="cjw4xtivp00bfr4xiqzbrcmzm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/sar" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/sar/" class="article-date">
@@ -91,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/sar/" data-id="cjvp9c5wj00b4j0xipboxjr3e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/sar/" data-id="cjw4xtivn00bcr4xigt59zk8u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -126,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/runlevel/" data-id="cjvp9c5wh00b2j0xib1830myl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/runlevel/" data-id="cjw4xtivo00bdr4xidkj10lgm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -184,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rsync/" data-id="cjvp9c5zu00dgj0xi3cy2o9i5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rsync/" data-id="cjw4xtiyf00flr4xi76hf1516" class="article-share-link">Share</a>
       
       
     </footer>
@@ -218,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rsh/" data-id="cjvp9c5wh00b1j0xied49mgzr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rsh/" data-id="cjw4xtivn00bbr4xi4tewkmrn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -248,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpmverify/" data-id="cjvp9c5wg00b0j0xirk27irv0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpmverify/" data-id="cjw4xtivm00bar4xioimoygue" class="article-share-link">Share</a>
       
       
     </footer>
@@ -278,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpmsign/" data-id="cjvp9c5wf00azj0xiwqme1eto" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpmsign/" data-id="cjw4xtivl00b8r4xisq4wo080" class="article-share-link">Share</a>
       
       
     </footer>
@@ -310,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpmquery/" data-id="cjvp9c5wf00ayj0xigef3etb3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpmquery/" data-id="cjw4xtivk00b7r4xiea0asfje" class="article-share-link">Share</a>
       
       
     </footer>
@@ -340,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpmdb/" data-id="cjvp9c5we00axj0xirtefwgy3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpmdb/" data-id="cjw4xtivk00b6r4xik67lhs2p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -372,38 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpmbuild/" data-id="cjvp9c5we00awj0xirnhgac32" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/rpm2cpio" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/rpm2cpio/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.126Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="rpm2cpio"><a href="#rpm2cpio" class="headerlink" title="rpm2cpio"></a>rpm2cpio</h1><p>将RPM软件包转换为cpio格式的文件</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>rpm2cpio命令</strong> 用于将rpm软件包转换为cpio格式的文件。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm2cpio(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定要转换的rpm包的文件名。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm2cpio ../libstdc++-4.3.0-8.i386.rpm | cpio -idv</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpm2cpio/" data-id="cjvp9c5wc00auj0xivkk0b32u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpmbuild/" data-id="cjw4xtivm00b9r4xiw58dq62q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -463,6 +483,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -476,10 +500,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

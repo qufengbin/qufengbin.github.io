@@ -62,6 +62,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/fuser" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/fuser/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.549Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="fuser"><a href="#fuser" class="headerlink" title="fuser"></a>fuser</h1><p>使用文件或文件结构识别进程</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>fuser命令</strong> 用于报告进程使用的文件和网络套接字。fuser命令列出了本地进程的进程号，那些本地进程使用file，参数指定的本地或远程文件。对于阻塞特别设备，此命令列出了使用该设备上任何文件的进程。</p>
+<p>每个进程号后面都跟随一个字母，该字母指示进程如何使用文件。</p>
+<ul>
+<li>c：指示进程的工作目录。</li>
+<li>e：指示该文件为进程的可执行文件(即进程由该文件拉起)。</li>
+<li>f：指示该文件被进程打开，默认情况下f字符不显示。</li>
+<li>F：指示该文件被进程打开进行写入，默认情况下F字符不显示。</li>
+<li>r：指示该目录为进程的根目录。</li>
+<li>m：指示进程使用该文件进行内存映射，抑或该文件为共享库文件，被进程映射进内存。</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fuser(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-a：显示命令行中指定的所有文件；</span><br><span class="line">-k：杀死访问指定文件的所有进程；</span><br><span class="line">-i：杀死进程前需要用户进行确认；</span><br><span class="line">-l：列出所有已知信号名；</span><br><span class="line">-m：指定一个被加载的文件系统或一个被加载的块设备；</span><br><span class="line">-n：选择不同的名称空间；</span><br><span class="line">-u：在每个进程后显示所属的用户名。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：可以是文件名或者TCP、UDP端口号。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>要列出使用<code>/etc/passwd</code>文件的本地进程的进程号，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fuser /etc/passwd</span><br></pre></td></tr></table></figure>
+<p>要列出使用<code>/etc/filesystems</code>文件的进程的进程号和用户登录名，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fuser -u /etc/filesystems</span><br></pre></td></tr></table></figure>
+<p>要终止使用给定文件系统的所有进程，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fuser -k -x -u -c /dev/hd1  或者  fuser -kxuc /home</span><br></pre></td></tr></table></figure>
+<p>任一命令都列出了进程号和用户名，然后终止每个正在使用<code>/dev/hd1 (/home)</code>文件系统的进程。仅有root用户能终止属于另一用户的进程。如果您正在试图卸下<code>/dev/hd1</code>文件系统，而一个正在访问<code>/dev/hd1</code>文件系统的进程不允许这样，您可能希望使用此命令。</p>
+<p>要列出正在使用已从给定文件系统删除的文件的全部进程，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fuser -d /usr文件</span><br></pre></td></tr></table></figure>
+<p><code>/dev/kmem</code> 用于系统映像。<br><code>/dev/mem</code>  也用于系统映像。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/fuser/" data-id="cjw4xtir8004xr4xiptzh4vk3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/ftpwho" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/ftpwho/" class="article-date">
@@ -82,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftpwho/" data-id="cjvp9c5rc004jj0xicu18nqrx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftpwho/" data-id="cjw4xtir3004rr4xik4d6zt66" class="article-share-link">Share</a>
       
       
     </footer>
@@ -112,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftptop/" data-id="cjvp9c5rc004ij0xila4x57j9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftptop/" data-id="cjw4xtir2004pr4xi1h4mczac" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftpshut/" data-id="cjvp9c5ra004hj0xi1t168c76" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftpshut/" data-id="cjw4xtir3004sr4xi3ne6ohd2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -174,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftpcount/" data-id="cjvp9c5ra004gj0xipelqh0p4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftpcount/" data-id="cjw4xtir0004nr4xix1k5h0m8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -213,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftp/" data-id="cjvp9c5r9004fj0xi7cak4taa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftp/" data-id="cjw4xtir2004qr4xi3ogt2xkx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -251,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/fsck/" data-id="cjvp9c5r7004dj0xi6r966vtj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/fsck/" data-id="cjw4xtir4004tr4xiqotvzwsd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -314,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/free/" data-id="cjvp9c5r8004ej0xibp26ra2n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/free/" data-id="cjw4xtiqz004mr4xiqruus3y3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -345,7 +395,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/fold/" data-id="cjvp9c5r6004cj0xigznp03wl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/fold/" data-id="cjw4xtiqw004jr4xih2sqhu1v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,62 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/fmt/" data-id="cjvp9c5r6004bj0xibx93cmji" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/fishshell" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/fishshell/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.507Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="fishshell"><a href="#fishshell" class="headerlink" title="fishshell"></a>fishshell</h1><p>比 bash 更好用的 shell</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Ubuntu 和 Debian 的安装方法。</span></span><br><span class="line">sudo apt-get install fish</span><br><span class="line"><span class="comment"># Mac 的安装方法。</span></span><br><span class="line">brew install fish</span><br></pre></td></tr></table></figure>
-<h2 id="启动与帮助"><a href="#启动与帮助" class="headerlink" title="启动与帮助"></a>启动与帮助</h2><p>由于 <code>Fish</code> 的语法与 <code>Bash</code> 有很大差异，<code>Bash</code> 脚本一般不兼容。因此，建议不要将 <code>Fish</code> 设为默认 <code>Shell</code>，而是每次手动启动它。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装完成后，就可以启动 Fish。</span></span><br><span class="line">$ fish</span><br><span class="line"><span class="comment"># 使用过程中，如果需要帮助，可以输入 help 命令</span></span><br><span class="line">$ <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-<h2 id="彩色显示"><a href="#彩色显示" class="headerlink" title="彩色显示"></a>彩色显示</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 无效命令为红色</span></span><br><span class="line">$ mkd</span><br><span class="line"><span class="comment"># 有效命令为蓝色</span></span><br><span class="line">$ mkdir</span><br><span class="line"><span class="comment"># 有效路径会有下划线。如果没有下划线，你就知道这个路径不存在。</span></span><br><span class="line">$ cat ~/somefi</span><br></pre></td></tr></table></figure>
-<h2 id="自动建议"><a href="#自动建议" class="headerlink" title="自动建议"></a>自动建议</h2><p>Fish 会自动在光标后面给出建议，表示可能的选项，颜色为灰色。如果采纳建议，可以按下 <code>→</code> 或 <code>Control + F</code> 。如果只采纳一部分，可以按下 <code>Alt + →</code>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ /bin/hostname <span class="comment"># 命令建议</span></span><br><span class="line">$ grep --ignore-case <span class="comment"># 参数建议</span></span><br><span class="line">$ ls node_modules <span class="comment"># 路径建议</span></span><br></pre></td></tr></table></figure>
-<h2 id="自动补全"><a href="#自动补全" class="headerlink" title="自动补全"></a>自动补全</h2><p>输入命令时，<code>Fish</code> 会自动显示匹配的上一条历史记录。如果没有匹配的历史记录，<code>Fish</code> 会猜测可能的结果，自动补全各种输入。比如，输入 <code>pyt</code> 再按下 <code>Tab</code> ，就会自动补全为 <code>python</code> 命令。</p>
-<p><code>Fish</code> 还可以自动补全 <code>Git</code> 分支。</p>
-<h2 id="脚本语法"><a href="#脚本语法" class="headerlink" title="脚本语法"></a>脚本语法</h2><h3 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> grep fish /etc/shells</span><br><span class="line">    <span class="built_in">echo</span> Found fish</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> grep bash /etc/shells</span><br><span class="line">    <span class="built_in">echo</span> Found bash</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> Got nothing</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<h3 id="switch-语句"><a href="#switch-语句" class="headerlink" title="switch 语句"></a>switch 语句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">switch (uname)</span><br><span class="line"><span class="keyword">case</span> Linux</span><br><span class="line">    <span class="built_in">echo</span> Hi Tux!</span><br><span class="line"><span class="keyword">case</span> Darwin</span><br><span class="line">    <span class="built_in">echo</span> Hi Hexley!</span><br><span class="line"><span class="keyword">case</span> FreeBSD NetBSD DragonFly</span><br><span class="line">    <span class="built_in">echo</span> Hi Beastie!</span><br><span class="line"><span class="keyword">case</span> <span class="string">'*'</span></span><br><span class="line">    <span class="built_in">echo</span> Hi, stranger!</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<h3 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Loop forever"</span></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<h3 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> *.txt</span><br><span class="line">    cp <span class="variable">$file</span> <span class="variable">$file</span>.bak</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p><code>Fish</code> 的函数用来封装命令，或者为现有的命令起别名。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> ll</span><br><span class="line">    ls -lhG <span class="variable">$argv</span></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p>上面代码定义了一个 <code>ll</code> 函数。命令行执行这个函数以后，就可以用 <code>ll</code> 命令替代 <code>ls -lhG</code>。其中，变量 <code>$argv</code> 表示函数的参数。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> ls</span><br><span class="line">    <span class="built_in">command</span> ls -hG <span class="variable">$argv</span></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p>上面的代码重新定义 <code>ls</code> 命令。注意，函数体内的 <code>ls</code> 之前，要加上 <code>command</code>，否则会因为无限循环而报错。</p>
-<h3 id="提示符"><a href="#提示符" class="headerlink" title="提示符"></a>提示符</h3><p><code>fish_prompt</code> 函数用于定义命令行提示符（prompt）。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fish_prompt</span><br><span class="line">  set_color purple</span><br><span class="line">  date <span class="string">"+%m/%d/%y"</span></span><br><span class="line">  set_color FF0</span><br><span class="line">  <span class="built_in">echo</span> (<span class="built_in">pwd</span>) <span class="string">'&gt;'</span></span><br><span class="line">  set_color normal</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p>执行上面的函数以后，你的命令行提示符就会变成下面这样。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">02/06/13</span><br><span class="line">/home/tutorial &gt;</span><br></pre></td></tr></table></figure>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Fish 的配置文件是 <code>~/.config/fish/config.fish</code>，每次 <code>Fish</code> 启动，就会自动加载这个文件。Fish 还提供 Web 界面配置该文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fish_config <span class="comment"># 浏览器打开 Web 界面配置</span></span><br></pre></td></tr></table></figure>
-<p>Running Commands: 兼容 bash 等shell的命令执行方式<br>Getting Help: <code>help/man cmd -&gt; browser/terminal</code><br>Syntax Highlighting: 实时检查命令是否正确<br>Wildcards: 支持缩写  <code>*</code> 递归 匹配<br>Pipes and Redirections: 使用 <code>^</code> 代表 stderr<br>Autosuggestions: 自动建议, 可以使用 <code>Ctrl-f / -&gt;</code> 来补全<br>Tab Completions: 更强大的 tab 补全<br>Variables: 使用 set 设置<br>Exit Status: 使用 <code>echo $status</code> 替代 <code>$?</code><br>Exports (Shell Variables)<br>Lists: all variables in fish are really lists<br>Command Substitutions: 使用 <code>(cmd)</code> 来执行命令, 而不是 反引号、<code>$()</code><br>Combiners (And, Or, Not): 不支持使用符合来表示逻辑运算<br>Functions：使用 <code>$argv</code> 替代 <code>$1</code><br>Conditionals (If, Else, Switch) / Functions / Loops: 更人性化的写法(参考 py)<br>Prompt: <code>function fish_prompt</code> 实现<br>Startup (Where’s .bashrc?): <code>~/.config/fish/config.fish</code>，更好的方式是 autoloading-function、universal-variables<br>Autoloading Functions: <code>~/.config/fish/functions/.</code><br>Universal Variables：a variable whose value is shared across all instances of fish  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> name <span class="string">'czl'</span> <span class="comment"># 设置变量，替代 name=czl</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$name</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$status</span> <span class="comment"># exit status，替代 $?</span></span><br><span class="line">env <span class="comment"># 环境变量</span></span><br><span class="line"><span class="built_in">set</span> -x MyVariable SomeValue <span class="comment"># 替代 export</span></span><br><span class="line"><span class="built_in">set</span> -e MyVariable</span><br><span class="line"><span class="built_in">set</span> PATH <span class="variable">$PATH</span> /usr/<span class="built_in">local</span>/bin <span class="comment"># 使用 lists 记录 PATH</span></span><br><span class="line"><span class="built_in">set</span> -U fish_user_paths /usr/<span class="built_in">local</span>/bin <span class="variable">$fish_user_paths</span> <span class="comment"># 永久生效</span></span><br><span class="line">touch <span class="string">"testing_"</span>(date +%s)<span class="string">".txt"</span> <span class="comment"># command subtitution，替代 `date +%s`</span></span><br><span class="line">cp file.txt file.txt.bak; and <span class="built_in">echo</span> <span class="string">'back success'</span>; or <span class="built_in">echo</span> <span class="string">'back fail'</span> <span class="comment"># combiner</span></span><br><span class="line"><span class="built_in">functions</span> <span class="comment"># 列出 fish 下定义的函数</span></span><br></pre></td></tr></table></figure>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li><a href="http://fishshell.com" target="_blank" rel="noopener">fish-shell官网</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/fishshell/" data-id="cjvp9c5r5004aj0xi0x9swm0u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/fmt/" data-id="cjw4xtiqx004kr4xigbsif3o0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -491,6 +486,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -504,10 +503,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

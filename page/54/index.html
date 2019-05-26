@@ -62,6 +62,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/badblocks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/badblocks/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.086Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="badblocks"><a href="#badblocks" class="headerlink" title="badblocks"></a>badblocks</h1><p>查找磁盘中损坏的区块</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>badblock命令</strong> 用于查找磁盘中损坏的区块。 硬盘是一个损耗设备，当使用一段时间后可能会出现坏道等物理故障。电脑硬盘出现坏道后，如果不及时更换或进行技术处理，坏道就会越来越多，并会造成频繁死机和数据丢失。最好的处理方式是更换磁盘，但在临时的情况下，应及时屏蔽坏道部分的扇区，不要触动它们。badblocks就是一个很好的检查坏道位置的工具。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">badblock(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-b&lt;区块大小&gt;：指定磁盘的区块大小，单位为字节；</span><br><span class="line">-o&lt;输出文件&gt;：将检查的结果写入指定的输出文件；</span><br><span class="line">-s：在检查时显示进度；</span><br><span class="line">-v：执行时显示详细的信息；</span><br><span class="line">-w：在检查时，执行写入测试。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>磁盘装置：指定要检查的磁盘装置；</li>
+<li>磁盘区块数：指定磁盘装置的区块总数；</li>
+<li>启始区块：指定要从哪个区块开始检查。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>badblocks以4096的一个block，每一个block检查16次，将结果输出到“hda-badblocks-list”文件里。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">badblocks -b 4096 -c 16 /dev/hda1 -o hda-badblocks-list</span><br></pre></td></tr></table></figure>
+<p>hda-badblocks-list是个文本文件，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat hda-badblocks-list</span><br><span class="line">51249</span><br><span class="line">51250</span><br><span class="line">51251</span><br><span class="line">51253</span><br><span class="line">51254</span><br><span class="line">……</span><br><span class="line">61245</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+<p>可以针对可疑的区块多做几次操作。下面，badblocks以4096字节为一个“block”,每一个“block”检查1次, 将结果输出到“hda-badblocks-list.1”文件中，由第51000 block开始，到63000 block结束。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">badblocks -b 4096 -c 1 /dev/hda1 -o hda-badblocks-list.1 63000 51000</span><br></pre></td></tr></table></figure>
+<p>这次花费的时间比较短，硬盘在指定的情况下在很短的时间就产生“嘎嘎嘎嘎”的响声。由于检查条件的不同，其输出的结果也不完全是相同的。重复几次同样的操作，因条件多少都有些不同，所以结果也有所不同。进行多次操作后，直到产生最后的hda-badblock-list.final文件。</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p> <strong>1、fsck使用badblocks的信息</strong> </p>
+<p>badblocks只会在日志文件中标记出坏道的信息，但若希望在检测磁盘时也能跳过这些坏块不检测，可以使用fsck的-l参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fsck.ext3 -l /tmp/hda-badblock-list.final /dev/hda1</span><br></pre></td></tr></table></figure>
+<p> <strong>2、在创建文件系统前检测坏道</strong> </p>
+<p>badblocks可以随e2fsck和mke2fs的-c删除一起运行（对ext3文件系统也一样），在创建文件系统前就先检测坏道信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext3 -c /dev/hda1</span><br></pre></td></tr></table></figure>
+<p>代码表示使用-c在创建文件系统前检查坏道的硬盘。</p>
+<p>这个操作已经很清楚地告知我们可以采用<code>mkfs.ext3 -c</code>选项用<code>read-only</code>方式检查硬盘。这个命令会在格式化硬盘时检查硬盘，并标出错误的硬盘“block”。用这个方法格式化硬盘，需要有相当大的耐心，因为命令运行后，会一个个用读的方式检查硬盘。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/badblocks/" data-id="cjw4xtimq0019r4xiw4ovnlph" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/axel" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/axel/" class="article-date">
@@ -93,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/axel/" data-id="cjvp9c5nw0012j0xigf6lyjuz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/axel/" data-id="cjw4xtimr001br4xik8070fc1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -752,7 +802,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/awk/" data-id="cjvp9c62a00fuj0xi8ur09ilq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/awk/" data-id="cjw4xtiyy00fvr4xivgsrsqmg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -785,7 +835,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/atrm/" data-id="cjvp9c5nv0011j0xinx03xel2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/atrm/" data-id="cjw4xtimp0018r4xipms56m50" class="article-share-link">Share</a>
       
       
     </footer>
@@ -816,7 +866,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/atq/" data-id="cjvp9c5nu0010j0xifzws8n7x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/atq/" data-id="cjw4xtimm0015r4xi5exu9113" class="article-share-link">Share</a>
       
       
     </footer>
@@ -908,7 +958,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/atop/" data-id="cjvp9c5ns000zj0xim3rduje9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/atop/" data-id="cjw4xtimo0017r4xiz8hs19pq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -950,7 +1000,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/at/" data-id="cjvp9c5nr000yj0xicizpf3a2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/at/" data-id="cjw4xtiml0013r4xi3prsfzwq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -981,7 +1031,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/as/" data-id="cjvp9c5nq000xj0xi62pjdu3c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/as/" data-id="cjw4xtimn0016r4xi1ctda8cp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1011,7 +1061,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/arpwatch/" data-id="cjvp9c5np000wj0xim4v80nu6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/arpwatch/" data-id="cjw4xtimk0012r4xin1qnxq5w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1041,39 +1091,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/arptables/" data-id="cjvp9c5no000vj0xigv1543xk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/arping" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/arping/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.037Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="arping"><a href="#arping" class="headerlink" title="arping"></a>arping</h1><p>通过发送ARP协议报文测试网络</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>arping命令</strong> 是用于发送arp请求到一个相邻主机的工具，arping使用arp数据包，通过ping命令检查设备上的硬件地址。能够测试一个ip地址是否是在网络上已经被使用，并能够获取更多设备信息。功能类似于ping。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arping(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-b：用于发送以太网广播帧（FFFFFFFFFFFF）。arping一开始使用广播地址，在收到响应后就使用unicast地址。</span><br><span class="line">-q：quiet output不显示任何信息；</span><br><span class="line">-f：表示在收到第一个响应报文后就退出；</span><br><span class="line">-w timeout：设定一个超时时间，单位是秒。如果到了指定时间，arping还没到完全收到响应则退出；</span><br><span class="line">-c count：表示发送指定数量的ARP请求数据包后就停止。如果指定了deadline选项，则arping会等待相同数量的arp响应包，直到超时为止；</span><br><span class="line">-s source：设定arping发送的arp数据包中的SPA字段的值。如果为空，则按下面处理，如果是DAD模式（冲突地址探测），则设置为0.0.0.0，如果是Unsolicited ARP模式（Gratutious ARP）则设置为目标地址，否则从路由表得出；</span><br><span class="line">-I interface：设置ping使用的网络接口。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>目的主机：指定发送ARP报文的目的主机。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# arping www.baidu.com </span><br><span class="line">ARPING 220.181.111.147 from 173.231.43.132 eth0</span><br><span class="line">Unicast reply from 220.181.111.147 00:D0:03:[bc:48:00]  1.666ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  1.677ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  1.691ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  1.728ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  1.626ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  1.292ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  1.429ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  2.042ms</span><br><span class="line">Sent 8 probes (1 broadcast(s))</span><br><span class="line">Received 8 response(s)</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/arping/" data-id="cjvp9c5nn000uj0xigtbki2hp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/arptables/" data-id="cjw4xtiml0014r4xi7pake3sn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1133,6 +1151,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -1146,10 +1168,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

@@ -62,6 +62,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/mysqldump" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/mysqldump/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.935Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mysqldump"><a href="#mysqldump" class="headerlink" title="mysqldump"></a>mysqldump</h1><p>MySQL数据库中备份工具</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>mysqldump命令</strong> 是mysql数据库中备份工具，用于将MySQL服务器中的数据库以标准的sql语言的方式导出，并保存到文件中。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">--add-drop-table：在每个创建数据库表语句前添加删除数据库表的语句；</span><br><span class="line">--add-locks：备份数据库表时锁定数据库表；</span><br><span class="line">--all-databases：备份MySQL服务器上的所有数据库；</span><br><span class="line">--comments：添加注释信息；</span><br><span class="line">--compact：压缩模式，产生更少的输出；</span><br><span class="line">--complete-insert：输出完成的插入语句；</span><br><span class="line">--databases：指定要备份的数据库；</span><br><span class="line">--default-character-set：指定默认字符集；</span><br><span class="line">--force：当出现错误时仍然继续备份操作；</span><br><span class="line">--host：指定要备份数据库的服务器；</span><br><span class="line">--lock-tables：备份前，锁定所有数据库表；</span><br><span class="line">--no-create-db：禁止生成创建数据库语句；</span><br><span class="line">--no-create-info：禁止生成创建数据库库表语句；</span><br><span class="line">--password：连接MySQL服务器的密码；</span><br><span class="line">--port：MySQL服务器的端口号；</span><br><span class="line">--user：连接MySQL服务器的用户名。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>导出整个数据库</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u 用户名 -p 数据库名 &gt; 导出的文件名</span><br><span class="line">mysqldump -u linuxde -p smgp_apps_linuxde &gt; linuxde.sql</span><br></pre></td></tr></table></figure>
+<p> <strong>导出一个表</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u 用户名 -p 数据库名 表名&gt; 导出的文件名</span><br><span class="line">mysqldump -u linuxde -p smgp_apps_linuxde users &gt; linuxde_users.sql</span><br></pre></td></tr></table></figure>
+<p> <strong>导出一个数据库结构</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u linuxde -p -d --add-drop-table smgp_apps_linuxde &gt; linuxde_db.sql</span><br></pre></td></tr></table></figure>
+<p><code>-d</code>没有数据，<code>--add-drop-tabl</code>e每个create语句之前增加一个<code>drop table</code></p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mysqldump/" data-id="cjw4xtiu0008qr4xinc3ooquu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/mysqladmin" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/mysqladmin/" class="article-date">
@@ -85,7 +122,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mysqladmin/" data-id="cjvp9c5uj008gj0xiesmk4utd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mysqladmin/" data-id="cjw4xtiu1008rr4xi7zhttehe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -116,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mysql/" data-id="cjvp9c5uj008fj0xig4h3ncts" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mysql/" data-id="cjw4xtity008nr4xingapmoj5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mv/" data-id="cjvp9c5ui008ej0xi314ixi1f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mv/" data-id="cjw4xtitz008pr4xiagaw10k3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -214,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mtools/" data-id="cjvp9c5ui008dj0xixpxabdcg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mtools/" data-id="cjw4xtitz008or4xikmvc0cz8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -261,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mpstat/" data-id="cjvp9c5uh008cj0xienugtp4l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mpstat/" data-id="cjw4xtitx008lr4xia5exr6b6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -298,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mount/" data-id="cjvp9c5ug008bj0xi4mds5b7q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mount/" data-id="cjw4xtitx008kr4xie3r0vo1b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -342,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/more/" data-id="cjvp9c5uf008aj0xigu4zckz8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/more/" data-id="cjw4xtitv008ir4xiberrrc17" class="article-share-link">Share</a>
       
       
     </footer>
@@ -389,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/modprobe/" data-id="cjvp9c5uf0089j0xizcfxojl5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/modprobe/" data-id="cjw4xtity008mr4xi1y7lkxci" class="article-share-link">Share</a>
       
       
     </footer>
@@ -420,65 +457,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mktemp/" data-id="cjvp9c5ue0088j0xis10mela6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/mkswap" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/mkswap/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.917Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="mkswap"><a href="#mkswap" class="headerlink" title="mkswap"></a>mkswap</h1><p>建立和设置SWAP交换分区</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>mkswap命令</strong> 用于在一个文件或者设备上建立交换分区。在建立完之后要使用sawpon命令开始使用这个交换区。最后一个选择性参数指定了交换区的大小，但是这个参数是为了向后兼容设置的，没有使用的必要，一般都将整个文件或者设备作为交换区。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-c：建立交换区前，先检查是否有损坏的区块；</span><br><span class="line">-f：在SPARC电脑上建立交换区时，要加上此参数；</span><br><span class="line">-v0：建立旧式交换区，此为预设值；</span><br><span class="line">-v1：建立新式交换区。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>设备：指定交换空间对应的设备文件或者交换文件。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>查看系统swap space大小：</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">free -m</span><br><span class="line">total used free shared buffers cached</span><br><span class="line">Mem: 377 180 197 0 19 110</span><br><span class="line">-/+ buffers/cache: 50 327</span><br><span class="line">Swap: 572 0 572</span><br></pre></td></tr></table></figure>
-<p> <strong>查看当前的swap空间(file(s)/partition(s))：</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br><span class="line"></span><br><span class="line">等价于</span><br><span class="line"></span><br><span class="line">cat /proc/swaps</span><br></pre></td></tr></table></figure>
-<p> <strong>添加交换空间</strong> </p>
-<p>添加一个 <strong>交换分区</strong> 或添加一个 <strong>交换文件</strong> 。推荐你添加一个交换分区；不过，若你没有多少空闲空间可用，则添加交换文件。</p>
-<p>添加一个交换分区，步骤如下：</p>
-<p>使用fdisk来创建交换分区（假设 /dev/sdb2 是创建的交换分区），使用 mkswap 命令来设置交换分区：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap /dev/sdb2</span><br></pre></td></tr></table></figure>
-<p>启用交换分区：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /dev/sdb2</span><br></pre></td></tr></table></figure>
-<p>写入<code>/etc/fstab</code>，以便在引导时启用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/dev/sdb2 swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
-<p>添加一个交换文件，步骤如下：</p>
-<p>创建大小为512M的交换文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd if=/dev/zero of=/swapfile1 bs=1024 count=524288</span><br></pre></td></tr></table></figure>
-<p>使用mkswap命令来设置交换文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap /swapfile1</span><br></pre></td></tr></table></figure>
-<p>启用交换分区：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /swapfile1</span><br></pre></td></tr></table></figure>
-<p>写入<code>/etc/fstab</code>，以便在引导时启用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/swapfile1 swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
-<p>新添了交换分区并启用它之后，请查看<code>cat /proc/swaps</code>或free命令的输出来确保交换分区已被启用了。</p>
-<p> <strong>删除交换空间：</strong> </p>
-<p>禁用交换分区：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapoff /dev/sdb2</span><br></pre></td></tr></table></figure>
-<p>从<code>/etc/fstab</code>中删除项目，使用fdisk或yast工具删除分区。</p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkswap/" data-id="cjvp9c5ud0087j0xivy92uvlk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mktemp/" data-id="cjw4xtitw008jr4xixg0bmf03" class="article-share-link">Share</a>
       
       
     </footer>
@@ -538,6 +517,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -551,10 +534,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

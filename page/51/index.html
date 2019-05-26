@@ -62,6 +62,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/chkconfig" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/chkconfig/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.195Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="chkconfig"><a href="#chkconfig" class="headerlink" title="chkconfig"></a>chkconfig</h1><p>检查或设置系统的各种服务</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>chkconfig命令</strong> 检查、设置系统的各种服务。这是Red Hat公司遵循GPL规则所开发的程序，它可查询操作系统在每一个执行等级中会执行哪些系统服务，其中包括各类常驻服务。谨记chkconfig不是立即自动禁止或激活一个服务，它只是简单的改变了符号连接。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--add：增加所指定的系统服务，让chkconfig指令得以管理它，并同时在系统启动的叙述文件内增加相关数据；</span><br><span class="line">--del：删除所指定的系统服务，不再由chkconfig指令管理，并同时在系统启动的叙述文件内删除相关数据；</span><br><span class="line">--level&lt;等级代号&gt;：指定读系统服务要在哪一个执行等级中开启或关毕。</span><br></pre></td></tr></table></figure>
+<p>缺省的运行级，RHS用到的级别如下：</p>
+<ul>
+<li>0：关机</li>
+<li>1：单用户模式</li>
+<li>2：无网络支持的多用户模式</li>
+<li>3：有网络支持的多用户模式</li>
+<li>4：保留，未使用</li>
+<li>5：有网络支持有X-Window支持的多用户模式</li>
+<li>6：重新引导系统，即重启</li>
+</ul>
+<p>对各个运行级的详细解释：</p>
+<ul>
+<li>0 为停机，机器关闭。</li>
+<li>1 为单用户模式，就像Win9x下的安全模式类似。</li>
+<li>2  为多用户模式，但是没有NFS支持。 </li>
+<li>3  为完整的多用户模式，是标准的运行级。</li>
+<li>4 一般不用，在一些特殊情况下可以用它来做一些事情。例如在笔记本 电脑的电池用尽时，可以切换到这个模式来做一些设置。</li>
+<li>5  就是X11，进到X Window系统了。</li>
+<li>6  为重启，运行init 6机器就会重启。</li>
+</ul>
+<p>需要说明的是，level选项可以指定要查看的运行级而不一定是当前运行级。对于每个运行级，只能有一个启动脚本或者停止脚本。当切换运行级时，init不会重新启动已经启动的服务，也不会再次去停止已经停止的服务。</p>
+<p>运行级文件：</p>
+<p>每个被chkconfig管理的服务需要在对应的init.d下的脚本加上两行或者更多行的注释。第一行告诉chkconfig缺省启动的运行级以及启动和停止的优先级。如果某服务缺省不在任何运行级启动，那么使用<code>-</code>代替运行级。第二行对服务进行描述，可以用<code>\</code>跨行注释。</p>
+<p>例如random.init包含三行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># chkconfig: 2345 20 80</span></span><br><span class="line"><span class="comment"># description: Saves and restores system entropy pool for \</span></span><br><span class="line"><span class="comment"># higher quality random number generation.</span></span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">chkconfig --list             <span class="comment">#列出所有的系统服务。</span></span><br><span class="line">chkconfig --add httpd        <span class="comment">#增加httpd服务。</span></span><br><span class="line">chkconfig --del httpd        <span class="comment">#删除httpd服务。</span></span><br><span class="line">chkconfig --level httpd 2345 on        <span class="comment">#设置httpd在运行级别为2、3、4、5的情况下都是on（开启）的状态。</span></span><br><span class="line">chkconfig --list               <span class="comment"># 列出系统所有的服务启动情况。</span></span><br><span class="line">chkconfig --list mysqld        <span class="comment"># 列出mysqld服务设置情况。</span></span><br><span class="line">chkconfig --level 35 mysqld on <span class="comment"># 设定mysqld在等级3和5为开机运行服务，--level 35表示操作只在等级3和5执行，on表示启动，off表示关闭。</span></span><br><span class="line">chkconfig mysqld on            <span class="comment"># 设定mysqld在各等级为on，“各等级”包括2、3、4、5等级。</span></span><br><span class="line"></span><br><span class="line">chkconfig –level redis 2345 on <span class="comment"># 把redis在运行级别为2、3、4、5的情况下都是on（开启）的状态。</span></span><br></pre></td></tr></table></figure>
+<p>如何增加一个服务：</p>
+<ol>
+<li>服务脚本必须存放在<code>/etc/ini.d/</code>目录下；</li>
+<li><code>chkconfig --add servicename</code>在chkconfig工具服务列表中增加此服务，此时服务会被在<code>/etc/rc.d/rcN.d</code>中赋予K/S入口了；</li>
+<li><code>chkconfig --level 35 mysqld on</code>修改服务的默认启动等级。</li>
+</ol>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chkconfig/" data-id="cjw4xtinf0024r4xi2ey3fzii" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/chgrp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/chgrp/" class="article-date">
@@ -91,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/chgrp/" data-id="cjvp9c5os001xj0xiy09qez59" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chgrp/" data-id="cjw4xtine0023r4xier2mlzcj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/chfn/" data-id="cjvp9c5oq001vj0xi52v7b6ni" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chfn/" data-id="cjw4xtine0022r4xilx4zo85e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/chcon/" data-id="cjvp9c5op001uj0xi1t8m0iwv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chcon/" data-id="cjw4xtind0021r4xilunjrzts" class="article-share-link">Share</a>
       
       
     </footer>
@@ -206,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/chattr/" data-id="cjvp9c5oo001tj0xinylzmxg6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chattr/" data-id="cjw4xtinb001zr4xiandg1rzb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -248,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/chage/" data-id="cjvp9c5on001sj0xieeqy88l2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chage/" data-id="cjw4xtinc0020r4xibmhdrcl2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -291,7 +354,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cdrecord/" data-id="cjvp9c5om001rj0xis6znkyu0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/cdrecord/" data-id="cjw4xtinb001yr4xivcrrar2z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -322,7 +385,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cd/" data-id="cjvp9c5ol001qj0xig6cu3d3a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/cd/" data-id="cjw4xtina001xr4xi98qjvock" class="article-share-link">Share</a>
       
       
     </footer>
@@ -357,7 +420,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cat/" data-id="cjvp9c5ok001pj0xilfzrcnlb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/cat/" data-id="cjw4xtin9001wr4xiu8dvwtes" class="article-share-link">Share</a>
       
       
     </footer>
@@ -388,42 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cancel/" data-id="cjvp9c5oj001oj0xisayvd9u8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/cal" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/cal/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.148Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="cal"><a href="#cal" class="headerlink" title="cal"></a>cal</h1><p>显示当前日历或指定日期的日历</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>cal命令</strong> 用于显示当前日历，或者指定日期的日历。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cal(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-l：显示单月输出；</span><br><span class="line">-3：显示临近三个月的日历；</span><br><span class="line">-s：将星期日作为月的第一天；</span><br><span class="line">-m：将星期一作为月的第一天；</span><br><span class="line">-j：显示“julian”日期；</span><br><span class="line">-y：显示当前年的日历。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">月：指定月份；</span><br><span class="line">年：指定年份。</span><br></pre></td></tr></table></figure>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>单独执行cal命令会打印出日历：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cal</span><br><span class="line">    十二月 2013     </span><br><span class="line">日 一 二 三 四 五 六</span><br><span class="line"> 1  2  3  4  5  6  7</span><br><span class="line"> 8  9 10 11 12 13 14</span><br><span class="line">15 16 17 18 19 20 21</span><br><span class="line">22 23 24 25 26 27 28</span><br><span class="line">29 30 31</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cal -j</span><br><span class="line">        十二月 2013        </span><br><span class="line">  日   一   二   三   四   五   六</span><br><span class="line">335 336 337 338 339 340 341</span><br><span class="line">342 343 344 345 346 347 348</span><br><span class="line">349 350 351 352 353 354 355</span><br><span class="line">356 357 358 359 360 361 362</span><br><span class="line">363 364 365</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cal -3</span><br><span class="line">    十一月 2013           十二月 2013            一月 2014      </span><br><span class="line">日 一 二 三 四 五 六  日 一 二 三 四 五 六  日 一 二 三 四 五 六</span><br><span class="line">                1  2   1  2  3  4  5  6  7            1  2  3  4</span><br><span class="line"> 3  4  5  6  7  8  9   8  9 10 11 12 13 14   5  6  7  8  9 10 11</span><br><span class="line">10 11 12 13 14 15 16  15 16 17 18 19 20 21  12 13 14 15 16 17 18</span><br><span class="line">17 18 19 20 21 22 23  22 23 24 25 26 27 28  19 20 21 22 23 24 25</span><br><span class="line">24 25 26 27 28 29 30  29 30 31              26 27 28 29 30 31</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cal/" data-id="cjvp9c5oh001nj0xicqb9nek0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/cancel/" data-id="cjw4xtin8001ur4xig196audm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -483,6 +511,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -496,10 +528,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

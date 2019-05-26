@@ -62,6 +62,41 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/pvscan" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/pvscan/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.052Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="pvscan"><a href="#pvscan" class="headerlink" title="pvscan"></a>pvscan</h1><p>扫描系统中所有硬盘的物理卷列表</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>pvscan命令</strong> 会扫描系统中连接的所有硬盘，列出找到的物理卷列表。使用pvscan命令的<code>-n</code>选项可以显示硬盘中的不属于任何卷组的物理卷，这些物理卷是未被使用的。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pvscan(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-d：调试模式；</span><br><span class="line">-e：仅显示属于输出卷组的物理卷；</span><br><span class="line">-n：仅显示不属于任何卷组的物理卷；</span><br><span class="line">-s：短格式输出；</span><br><span class="line">-u：显示UUID。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用pvscan命令扫描当前系统中所有硬盘的物理卷，在命令行中输入下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# pvscan     #扫描所有硬盘上的物理卷</span><br></pre></td></tr></table></figure>
+<p>输出信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PV /dev/sdb1         lvm2 [101.94 MB]  </span><br><span class="line">PV /dev/sdb2         lvm2 [101.98 MB]  </span><br><span class="line">Total: 2 [203.92 MB] / in use: 0 [0   ] / in no VG: 2 [203.92  </span><br><span class="line">MB]</span><br></pre></td></tr></table></figure>
+<p>说明：本例中，输出了两个物理卷，它们不属于任何卷组，是可被利用的物理卷。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvscan/" data-id="cjw4xtiv300aer4xiwa1x022b" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/pvs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/pvs/" class="article-date">
@@ -87,7 +122,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvs/" data-id="cjvp9c5vs00a1j0xinl3cf0cw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvs/" data-id="cjw4xtiv000aar4xid9vgvu5u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -120,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvremove/" data-id="cjvp9c5vs00a0j0xic8vgb699" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvremove/" data-id="cjw4xtiv100abr4xi886aqzwc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvdisplay/" data-id="cjvp9c5vq009zj0xilbsh2oxe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvdisplay/" data-id="cjw4xtiuz00a8r4xic7jd1ec1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -200,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvcreate/" data-id="cjvp9c5vp009yj0xie9gxqfhz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvcreate/" data-id="cjw4xtiv000a9r4xia19en8on" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvck/" data-id="cjvp9c5vp009xj0xiry1fndso" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvck/" data-id="cjw4xtiuy00a6r4xiv5mdu3fs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -268,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvchange/" data-id="cjvp9c5vo009wj0xiljjxf286" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pvchange/" data-id="cjw4xtiuw00a3r4xi7npiw86g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -302,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pv/" data-id="cjvp9c5vn009vj0xirp8gxbsm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pv/" data-id="cjw4xtiuz00a7r4xijuxj2tty" class="article-share-link">Share</a>
       
       
     </footer>
@@ -335,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pushd/" data-id="cjvp9c5vm009uj0xilidd5qqf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pushd/" data-id="cjw4xtiuw00a2r4xigd3npmjc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -373,43 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pstree/" data-id="cjvp9c5vl009tj0xikczpsyx1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/pstack" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/pstack/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.030Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="pstack"><a href="#pstack" class="headerlink" title="pstack"></a>pstack</h1><p>显示每个进程的栈跟踪</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>pstack命令</strong> 可显示每个进程的栈跟踪。<kbd>pstack</kbd> 命令必须由相应进程的属主或 <tt>root</tt> 运行。可以使用 <kbd>pstack</kbd> 来确定进程挂起的位置。此命令允许使用的唯一选项是要检查的进程的 <tt>PID</tt>。</p>
-<p>命令软件包下载地址：<a href="https://packages.debian.org/sid/pstack" target="_blank" rel="noopener">https://packages.debian.org/sid/pstack</a></p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>pstree以树结构显示进程</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pstree -p work | grep ad</span><br><span class="line">sshd(22669)---bash(22670)---ad_preprocess(4551)-+-&#123;ad_preprocess&#125;(4552)</span><br><span class="line">                                                |-&#123;ad_preprocess&#125;(4553)</span><br><span class="line">                                                |-&#123;ad_preprocess&#125;(4554)</span><br><span class="line">                                                |-&#123;ad_preprocess&#125;(4555)</span><br><span class="line">                                                |-&#123;ad_preprocess&#125;(4556)</span><br><span class="line">                                                `-&#123;ad_preprocess&#125;(4557)</span><br></pre></td></tr></table></figure>
-<p>work为工作用户，-p为显示进程识别码，ad_preprocess共启动了6个子线程，加上主线程共7个线程。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ps -Lf 4551</span><br><span class="line">UID        PID  PPID   LWP  C NLWP STIME TTY      stat   time CMD</span><br><span class="line">work      4551 22670  4551  2    7 16:30 pts/2    Sl+    0:02 ./ad_preprocess</span><br><span class="line">work      4551 22670  4552  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess</span><br><span class="line">work      4551 22670  4553  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess</span><br><span class="line">work      4551 22670  4554  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess</span><br><span class="line">work      4551 22670  4555  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess</span><br><span class="line">work      4551 22670  4556  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess</span><br><span class="line">work      4551 22670  4557  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess</span><br></pre></td></tr></table></figure>
-<p>进程共启动了7个线程</p>
-<p>pstack显示每个进程的栈跟踪：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">pstack 4551</span><br><span class="line">Thread 7 (Thread 1084229984 (LWP 4552)):</span><br><span class="line">#0  0x000000302afc63dc in epoll_wait () from /lib64/tls/libc.so.6</span><br><span class="line">#1  0x00000000006f0730 in ub::EPollEx::poll ()</span><br><span class="line">#2  0x00000000006f172a in ub::NetReactor::callback ()</span><br><span class="line">#3  0x00000000006fbbbb in ub::UBTask::CALLBACK ()</span><br><span class="line">#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span><br><span class="line">#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span><br><span class="line">#6  0x0000000000000000 in ?? ()</span><br><span class="line">Thread 6 (Thread 1094719840 (LWP 4553)):</span><br><span class="line">#0  0x000000302afc63dc in epoll_wait () from /lib64/tls/libc.so.6</span><br><span class="line">#1  0x00000000006f0730 in ub::EPollEx::poll ()</span><br><span class="line">#2  0x00000000006f172a in ub::NetReactor::callback ()</span><br><span class="line">#3  0x00000000006fbbbb in ub::UBTask::CALLBACK ()</span><br><span class="line">#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span><br><span class="line">#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span><br><span class="line">#6  0x0000000000000000 in ?? ()</span><br><span class="line">Thread 5 (Thread 1105209696 (LWP 4554)):</span><br><span class="line">#0  0x000000302b80baa5 in __nanosleep_nocancel ()</span><br><span class="line">#1  0x000000000079e758 in comcm::ms_sleep ()</span><br><span class="line">#2  0x00000000006c8581 in ub::UbClientManager::healthyCheck ()</span><br><span class="line">#3  0x00000000006c8471 in ub::UbClientManager::start_healthy_check ()</span><br><span class="line">#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span><br><span class="line">#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span><br><span class="line">#6  0x0000000000000000 in ?? ()</span><br><span class="line">Thread 4 (Thread 1115699552 (LWP 4555)):</span><br><span class="line">#0  0x000000302b80baa5 in __nanosleep_nocancel ()</span><br><span class="line">#1  0x0000000000482b0e in armor::armor_check_thread ()</span><br><span class="line">#2  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span><br><span class="line">#3  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span><br><span class="line">#4  0x0000000000000000 in ?? ()</span><br><span class="line">Thread 3 (Thread 1126189408 (LWP 4556)):</span><br><span class="line">#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6</span><br><span class="line">#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6</span><br><span class="line">#2  0x000000000044c972 in Business_config_manager::run ()</span><br><span class="line">#3  0x0000000000457b83 in Thread::run_thread ()</span><br><span class="line">#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span><br><span class="line">#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span><br><span class="line">#6  0x0000000000000000 in ?? ()</span><br><span class="line">Thread 2 (Thread 1136679264 (LWP 4557)):</span><br><span class="line">#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6</span><br><span class="line">#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6</span><br><span class="line">#2  0x00000000004524bb in Process_thread::sleep_period ()</span><br><span class="line">#3  0x0000000000452641 in Process_thread::run ()</span><br><span class="line">#4  0x0000000000457b83 in Thread::run_thread ()</span><br><span class="line">#5  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span><br><span class="line">#6  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span><br><span class="line">#7  0x0000000000000000 in ?? ()</span><br><span class="line">Thread 1 (Thread 182894129792 (LWP 4551)):</span><br><span class="line">#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6</span><br><span class="line">#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6</span><br><span class="line">#2  0x0000000000420d79 in Ad_preprocess::run ()</span><br><span class="line">#3  0x0000000000450ad0 in main ()</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pstack/" data-id="cjvp9c5vl009sj0xizrqqnjdg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pstree/" data-id="cjw4xtiux00a5r4xif1oj7miv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -469,6 +468,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -482,10 +485,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

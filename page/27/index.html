@@ -62,6 +62,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/mkswap" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/mkswap/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.917Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mkswap"><a href="#mkswap" class="headerlink" title="mkswap"></a>mkswap</h1><p>建立和设置SWAP交换分区</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>mkswap命令</strong> 用于在一个文件或者设备上建立交换分区。在建立完之后要使用sawpon命令开始使用这个交换区。最后一个选择性参数指定了交换区的大小，但是这个参数是为了向后兼容设置的，没有使用的必要，一般都将整个文件或者设备作为交换区。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-c：建立交换区前，先检查是否有损坏的区块；</span><br><span class="line">-f：在SPARC电脑上建立交换区时，要加上此参数；</span><br><span class="line">-v0：建立旧式交换区，此为预设值；</span><br><span class="line">-v1：建立新式交换区。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>设备：指定交换空间对应的设备文件或者交换文件。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>查看系统swap space大小：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">free -m</span><br><span class="line">total used free shared buffers cached</span><br><span class="line">Mem: 377 180 197 0 19 110</span><br><span class="line">-/+ buffers/cache: 50 327</span><br><span class="line">Swap: 572 0 572</span><br></pre></td></tr></table></figure>
+<p> <strong>查看当前的swap空间(file(s)/partition(s))：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">swapon -s</span><br><span class="line"></span><br><span class="line">等价于</span><br><span class="line"></span><br><span class="line">cat /proc/swaps</span><br></pre></td></tr></table></figure>
+<p> <strong>添加交换空间</strong> </p>
+<p>添加一个 <strong>交换分区</strong> 或添加一个 <strong>交换文件</strong> 。推荐你添加一个交换分区；不过，若你没有多少空闲空间可用，则添加交换文件。</p>
+<p>添加一个交换分区，步骤如下：</p>
+<p>使用fdisk来创建交换分区（假设 /dev/sdb2 是创建的交换分区），使用 mkswap 命令来设置交换分区：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap /dev/sdb2</span><br></pre></td></tr></table></figure>
+<p>启用交换分区：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /dev/sdb2</span><br></pre></td></tr></table></figure>
+<p>写入<code>/etc/fstab</code>，以便在引导时启用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/dev/sdb2 swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
+<p>添加一个交换文件，步骤如下：</p>
+<p>创建大小为512M的交换文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd if=/dev/zero of=/swapfile1 bs=1024 count=524288</span><br></pre></td></tr></table></figure>
+<p>使用mkswap命令来设置交换文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap /swapfile1</span><br></pre></td></tr></table></figure>
+<p>启用交换分区：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /swapfile1</span><br></pre></td></tr></table></figure>
+<p>写入<code>/etc/fstab</code>，以便在引导时启用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/swapfile1 swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
+<p>新添了交换分区并启用它之后，请查看<code>cat /proc/swaps</code>或free命令的输出来确保交换分区已被启用了。</p>
+<p> <strong>删除交换空间：</strong> </p>
+<p>禁用交换分区：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapoff /dev/sdb2</span><br></pre></td></tr></table></figure>
+<p>从<code>/etc/fstab</code>中删除项目，使用fdisk或yast工具删除分区。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkswap/" data-id="cjw4xtitu008gr4xih60hsbta" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/mknod" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/mknod/" class="article-date">
@@ -93,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mknod/" data-id="cjvp9c5ud0086j0xibnkdab2g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mknod/" data-id="cjw4xtitv008hr4xi1rgey2r4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -137,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkisofs/" data-id="cjvp9c5uc0085j0xitcibpx6c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkisofs/" data-id="cjw4xtitt008fr4xilxkchp65" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkinitrd/" data-id="cjvp9c5ub0084j0xi19ky5jff" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkinitrd/" data-id="cjw4xtitt008er4xid8mn2rej" class="article-share-link">Share</a>
       
       
     </footer>
@@ -209,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkfs/" data-id="cjvp9c5ub0083j0xiw4ifgsx1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkfs/" data-id="cjw4xtitq008br4xig4i7cl3w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -245,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mke2fs/" data-id="cjvp9c5ua0082j0xi1scq8ec3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mke2fs/" data-id="cjw4xtits008dr4xi6t298dwe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -282,7 +340,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkdir/" data-id="cjvp9c5u90081j0xixtm0bqw8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkdir/" data-id="cjw4xtitp008ar4xiq6gpamr4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -316,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkbootdisk/" data-id="cjvp9c5u90080j0xisbsil6gd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mkbootdisk/" data-id="cjw4xtitr008cr4xi9kijygtj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -355,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mii-tool/" data-id="cjvp9c5u8007zj0xiwvcijidp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mii-tool/" data-id="cjw4xtito0087r4ximldftd0k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -386,62 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mesg/" data-id="cjvp9c5u7007yj0xiv1amak2r" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/md5sum" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/md5sum/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.896Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="md5sum"><a href="#md5sum" class="headerlink" title="md5sum"></a>md5sum</h1><p>计算和校验文件报文摘要的工具程序</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>md5sum命令</strong> 采用MD5报文摘要算法（128位）计算和检查文件的校验和。一般来说，安装了Linux后，就会有md5sum这个工具，直接在命令行终端直接运行。</p>
-<p>MD5算法常常被用来验证网络文件传输的完整性，防止文件被人篡改。MD5 全称是报文摘要算法（Message-Digest Algorithm 5），此算法对任意长度的信息逐位进行计算，产生一个二进制长度为128位（十六进制长度就是32位）的“指纹”（或称“报文摘要”），不同的文件产生相同的报文摘要的可能性是非常非常之小的。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5sum(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-b：二进制模式读取文件；</span><br><span class="line">-t或--text：把输入的文件作为文本文件看待；</span><br><span class="line">-c：从指定文件中读取MD5校验和，并进行校验；</span><br><span class="line">--status：验证成功时不输出任何信息；</span><br><span class="line">-w：当校验不正确时给出警告信息。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定保存着文件名和校验和的文本文件。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p><strong>使用 md5sum 生成密码</strong></p>
-<p>另一种获取可用作密码的随机字符串的方法是计算 MD5 校验值！校验值看起来确实像是随机字符串组合在一起，我们可以用作密码。确保你的计算源是个变量，这样的话每次运行命令时生成的校验值都不一样。比如 date ！date 命令 总会生成不同的输出。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# date | md5sum</span><br><span class="line">6a43f2c246cdc3e6a3592652f831d186  -</span><br></pre></td></tr></table></figure>
-<p><strong>生成一个文件insert.sql的md5值：</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# md5sum insert.sql</span><br><span class="line">bcda6cb5c704664f989703ac5a88f112  insert.sql</span><br></pre></td></tr></table></figure>
-<p><strong>检查文件testfile是否被修改过：</strong> </p>
-<p>首先生成md5文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5sum testfile &gt; testfile.md5</span><br></pre></td></tr></table></figure>
-<p>检查：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5sum testfile -c testfile.md5</span><br></pre></td></tr></table></figure>
-<p>如果文件没有变化，输出应该如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">forsort: OK</span><br></pre></td></tr></table></figure>
-<p>此时，md5sum命令返回0。</p>
-<p>如果文件发生了变化，输出应该如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forsort: FAILED</span><br><span class="line">md5sum: WARNING: 1 of 1 computed checksum did NOT match</span><br></pre></td></tr></table></figure>
-<p>此时，md5sum命令返回非0。</p>
-<p>这里，检查用的文件名随意。如果不想有任何输出，则<code>md5sum testfile --status -c testfile.md5</code>，这时候通过返回值来检测结果。</p>
-<p>检测的时候如果检测文件非法则输出信息的选项:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5sum -w -c testfile.md5</span><br></pre></td></tr></table></figure>
-<p>输出之后，文件异常输出类似如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">md5sum: testfile.md5: 1: improperly formatted MD5 checksum line</span><br><span class="line">md5sum: testfile.md5: no properly formatted MD5 checksum lines found</span><br></pre></td></tr></table></figure>
-<p>这里，testfile.md5只有一行信息，但是我认为地给它多加了一个字符，导致非法。如果md5文件正常那么<code>-w</code>有没有都一样。</p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/md5sum/" data-id="cjvp9c5u7007xj0xikpwf895n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mesg/" data-id="cjw4xtitl0084r4xii7bgbv1j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -501,6 +504,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -514,10 +521,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

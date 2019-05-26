@@ -62,6 +62,38 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/arping" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/arping/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.037Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="arping"><a href="#arping" class="headerlink" title="arping"></a>arping</h1><p>通过发送ARP协议报文测试网络</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>arping命令</strong> 是用于发送arp请求到一个相邻主机的工具，arping使用arp数据包，通过ping命令检查设备上的硬件地址。能够测试一个ip地址是否是在网络上已经被使用，并能够获取更多设备信息。功能类似于ping。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arping(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-b：用于发送以太网广播帧（FFFFFFFFFFFF）。arping一开始使用广播地址，在收到响应后就使用unicast地址。</span><br><span class="line">-q：quiet output不显示任何信息；</span><br><span class="line">-f：表示在收到第一个响应报文后就退出；</span><br><span class="line">-w timeout：设定一个超时时间，单位是秒。如果到了指定时间，arping还没到完全收到响应则退出；</span><br><span class="line">-c count：表示发送指定数量的ARP请求数据包后就停止。如果指定了deadline选项，则arping会等待相同数量的arp响应包，直到超时为止；</span><br><span class="line">-s source：设定arping发送的arp数据包中的SPA字段的值。如果为空，则按下面处理，如果是DAD模式（冲突地址探测），则设置为0.0.0.0，如果是Unsolicited ARP模式（Gratutious ARP）则设置为目标地址，否则从路由表得出；</span><br><span class="line">-I interface：设置ping使用的网络接口。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>目的主机：指定发送ARP报文的目的主机。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# arping www.baidu.com </span><br><span class="line">ARPING 220.181.111.147 from 173.231.43.132 eth0</span><br><span class="line">Unicast reply from 220.181.111.147 00:D0:03:[bc:48:00]  1.666ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  1.677ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  1.691ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  1.728ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  1.626ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  1.292ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  1.429ms</span><br><span class="line">Unicast reply from 220.181.111.147 [00:D0:03:BC:48:00]  2.042ms</span><br><span class="line">Sent 8 probes (1 broadcast(s))</span><br><span class="line">Received 8 response(s)</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/arping/" data-id="cjw4xtimh000zr4xihsv6lceg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/arpd" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/arpd/" class="article-date">
@@ -87,7 +119,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/arpd/" data-id="cjvp9c5nm000sj0xifgd3rtro" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/arpd/" data-id="cjw4xtimi0010r4xitq5iudvs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/arp/" data-id="cjvp9c5nm000tj0xiwiotu3ww" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/arp/" data-id="cjw4xtimj0011r4xis9hqnnr1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/arj/" data-id="cjvp9c5nl000rj0xi5f8x6l19" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/arj/" data-id="cjw4xtimf000wr4xiyo898pey" class="article-share-link">Share</a>
       
       
     </footer>
@@ -197,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/arch/" data-id="cjvp9c5nk000qj0xigjpfxsed" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/arch/" data-id="cjw4xtime000vr4xihw60g8mz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ar/" data-id="cjvp9c5ni000oj0xivxwdkgm8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ar/" data-id="cjw4xtimg000xr4xitya87mhr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -273,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/aptitude/" data-id="cjvp9c5nj000pj0xi55jur164" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/aptitude/" data-id="cjw4xtimd000ur4xifos3q2ui" class="article-share-link">Share</a>
       
       
     </footer>
@@ -304,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/apt-sortpkgs/" data-id="cjvp9c5nh000nj0xijbz5echb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/apt-sortpkgs/" data-id="cjw4xtimb000sr4xiuha8hs6z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -335,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/apt-key/" data-id="cjvp9c5nf000mj0xilyo9m0sj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/apt-key/" data-id="cjw4xtim6000nr4xi64tenq1x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -390,42 +422,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/apt-get/" data-id="cjvp9c5ne000lj0xi5cr4hick" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/apropos" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/apropos/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.006Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="apropos"><a href="#apropos" class="headerlink" title="apropos"></a>apropos</h1><p>在 whatis 数据库中查找字符串</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>apropos命令</strong> 在一些特定的包含系统命令的简短描述的数据库文件里查找关键字，然后把结果送到标准输出。 </p>
-<p>如果你不知道完成某个特定任务所需要命令的名称，可以使用一个关键字通过Linux apropos实用程序来搜索它。该实用程序可以搜索关键字并且显示所有包含匹配项的man页面的简短描述。另外，使用man实用程序和-k（关键字）选项，可以得到和用Linux apropos实用程序相同的结果（实际上是相同的命令）。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apropos [-dalhvV] -e|-[w|-r] [-s section] [-m system[,...]] [-M path] [-L locale] -C [file] keyword ...</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-d, --debug：输出调试信息。</span><br><span class="line">-v, --verbose：输出详细的警告信息。</span><br><span class="line">-r, -- regex：将每个keyword作为正则表达式解释。这是默认行为。每个keyword将匹配手册页和描述。</span><br><span class="line">-w, --wildcard：将每个keyword作为shell样式的通配符解释。</span><br><span class="line">-e, --exact：每个keyword将精确匹配手册页名字和描述。</span><br><span class="line">-a, --and：只显示匹配所有keyword的手册页和描述。默认显示匹配任何keyword的项。</span><br><span class="line">-l, --long：不根据终端宽度缩减输出。</span><br><span class="line">-s section, --section section：只查找指定的手册section。</span><br><span class="line">-m system[,...], --systems=system[,...]：用于查找其它操作系统的手册页。</span><br><span class="line">-M path, --manpath=path：指定从其它以冒号分隔的手册页层次查找。默认使用$MANPATH环境变量。这个选项覆盖$MANPATH的内容。</span><br><span class="line">-L locale, --locale=locale：apropos调用C函数setlocale来得到当前本地化信息，包括$LC_MESSAGE和$LANG。使用该选项提供一个locale字符串来临时更改本地化信息。</span><br><span class="line">-C file, --config-file=file：使用这个用户配置文件而不是默认的~/.manpath。</span><br><span class="line">-h, --help：打印帮助信息并退出。</span><br><span class="line">-V, --version：打印版本信息并退出。</span><br></pre></td></tr></table></figure>
-<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>返回0表示成功，1表示用法、语法或配置文件错误，2表示操作错误，16表示没有找到匹配的内容。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# man -k who</span><br><span class="line">at.allow [at]        (5)  - determine who can submit jobs via at or batch</span><br><span class="line">at.deny [at]         (5)  - determine who can submit jobs via at or batch</span><br><span class="line">jwhois               (1)  - client for the whois service</span><br><span class="line">jwhois              (rpm) - Internet whois/nicname client.</span><br><span class="line">Net::LDAP::Extension::whoami (3pm)  - LDAP Who am I? Operation</span><br><span class="line">w                    (1)  - Show who is logged on and what they are doing</span><br><span class="line">who                  (1p)  - display who is on the system</span><br><span class="line">who                  (1)  - show who is logged on</span><br><span class="line">whoami               (1)  - print effective userid</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# apropos who</span><br><span class="line">at.allow [at]        (5)  - determine who can submit jobs via at or batch</span><br><span class="line">at.deny [at]         (5)  - determine who can submit jobs via at or batch</span><br><span class="line">jwhois               (1)  - client for the whois service</span><br><span class="line">jwhois              (rpm) - Internet whois/nicname client.</span><br><span class="line">Net::LDAP::Extension::WhoAmI (3pm)  - LDAP Who am I? Operation</span><br><span class="line">w                    (1)  - Show who is logged on and what they are doing</span><br><span class="line">who                  (1p)  - display who is on the system</span><br><span class="line">who                  (1)  - show who is logged on</span><br><span class="line">whoami               (1)  - print effective userid</span><br></pre></td></tr></table></figure>
-<p>查找手册页名字和描述中包含emacs和vi的手册页：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apropos -a emacs vi</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/apropos/" data-id="cjvp9c5or001wj0ximeepbmwk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/apt-get/" data-id="cjw4xtima000rr4xibgq4zgb9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -485,6 +482,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -498,10 +499,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

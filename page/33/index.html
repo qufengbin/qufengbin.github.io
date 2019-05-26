@@ -62,6 +62,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/ldd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/ldd/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.760Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ldd"><a href="#ldd" class="headerlink" title="ldd"></a>ldd</h1><p>打印程序或者库文件所依赖的共享库列表</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>ldd命令</strong> 用于打印程序或者库文件所依赖的共享库列表。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldd(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--version：打印指令版本号；</span><br><span class="line">-v：详细信息模式，打印所有相关信息；</span><br><span class="line">-u：打印未使用的直接依赖；</span><br><span class="line">-d：执行重定位和报告任何丢失的对象；</span><br><span class="line">-r：执行数据对象和函数的重定位，并且报告任何丢失的对象和函数；</span><br><span class="line">--help：显示帮助信息。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定可执行程序或者文库。</p>
+<h3 id="其他介绍"><a href="#其他介绍" class="headerlink" title="其他介绍"></a>其他介绍</h3><p>首先ldd不是一个可执行程序，而只是一个shell脚本</p>
+<p>ldd能够显示可执行模块的dependency，其原理是通过设置一系列的环境变量，如下：<code>LD_TRACE_LOADED_OBJECTS、LD_WARN、LD_BIND_NOW、LD_LIBRARY_VERSION、LD_VERBOSE</code>等。当<code>LD_TRACE_LOADED_OBJECTS</code>环境变量不为空时，任何可执行程序在运行时，它都会只显示模块的dependency，而程序并不真正执行。要不你可以在shell终端测试一下，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export LD_TRACE_LOADED_OBJECTS=1</span><br></pre></td></tr></table></figure>
+<p>再执行任何的程序，如ls等，看看程序的运行结果。</p>
+<p>ldd显示可执行模块的dependency的工作原理，其实质是通过ld-linux.so（elf动态库的装载器）来实现的。我们知道，ld-linux.so模块会先于executable模块程序工作，并获得控制权，因此当上述的那些环境变量被设置时，ld-linux.so选择了显示可执行模块的dependency。</p>
+<p>实际上可以直接执行ld-linux.so模块，如：<code>/lib/ld-linux.so.2 --list program</code>（这相当于ldd program）</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ldd/" data-id="cjw4xtisl006tr4xiwfv7er0u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/ldconfig" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/ldconfig/" class="article-date">
@@ -93,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ldconfig/" data-id="cjvp9c5t1006lj0xivysutfok" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ldconfig/" data-id="cjw4xtisp006wr4xi7b3c7k9z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -127,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ld/" data-id="cjvp9c5t0006kj0xi9nmo6nfs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ld/" data-id="cjw4xtism006ur4xi3e9zr2aa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -159,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lastlog/" data-id="cjvp9c5sz006jj0xikhm8ykdl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lastlog/" data-id="cjw4xtisq006yr4xiwvo95u0z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -199,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lastb/" data-id="cjvp9c5sz006ij0xi26b9m454" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lastb/" data-id="cjw4xtisl006sr4xis8la8cry" class="article-share-link">Share</a>
       
       
     </footer>
@@ -235,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/last/" data-id="cjvp9c5sy006hj0xijitmpgs0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/last/" data-id="cjw4xtish006or4xirthgdxlm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -268,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/killall/" data-id="cjvp9c5sx006gj0xixnfyqsl5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/killall/" data-id="cjw4xtisi006pr4xi1n4yfk2p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -305,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/kill/" data-id="cjvp9c5sx006fj0xivkh98t1l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/kill/" data-id="cjw4xtisj006qr4xi8ix0ixmf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -336,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/kexec/" data-id="cjvp9c5sw006ej0xizohj0s38" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/kexec/" data-id="cjw4xtisf006lr4xihjcnthsm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -365,44 +402,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/kernelversion/" data-id="cjvp9c5su006dj0ximtaqx1um" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/jwhois" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/jwhois/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.736Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="jwhois"><a href="#jwhois" class="headerlink" title="jwhois"></a>jwhois</h1><p>whois 客户端服务</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>jwhois</strong>  searches Whois servers for the object on the command line.The host to query is taken from a global configuration file, a configuration file specified on the command line, or selected directly on the command line.</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jwhois [选项]</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">--version                  display version number and patch level</span><br><span class="line">--help                     display this help</span><br><span class="line">-v, --verbose              verbose debug output</span><br><span class="line">-c FILE, --config=FILE     use FILE as configuration file</span><br><span class="line">-h HOST, --host=HOST       explicitly query HOST</span><br><span class="line">-n, --no-redirect          disable content redirection</span><br><span class="line">-s, --no-whoisservers      disable whois-servers.net service support</span><br><span class="line">-a, --raw                  disable reformatting of the query</span><br><span class="line">-i, --display-redirections display all redirects instead of hiding them</span><br><span class="line">-p PORT, --port=PORT       use port number PORT (in conjunction with HOST)</span><br><span class="line">-r, --rwhois               force an rwhois query to be made</span><br><span class="line">--rwhois-display=DISPLAY   sets the display option in rwhois queries</span><br><span class="line">--rwhois-limit=LIMIT       sets the maximum number of matches to return</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注：以上英文部分寻求网友协助翻译，翻译结果可发送至 sa(at)linuxde.net，谢谢！</p>
-</blockquote>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>显示指定用户信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># jwhois root</span><br><span class="line"></span><br><span class="line">//查找root用户信息</span><br></pre></td></tr></table></figure>
-<p>查询域名信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# jwhois linuxde.net</span><br><span class="line">[Querying whois.verisign-grs.com]</span><br><span class="line">[Redirected to whois.west263.com]</span><br><span class="line">[Querying whois.west263.com]</span><br><span class="line">[whois.west263.com]</span><br><span class="line">Domain Name: linuxde.net                   </span><br><span class="line">Registry Domain id: whois protect</span><br><span class="line">Registrar WHOIS Server: whois.west263.com</span><br><span class="line"></span><br><span class="line">...省略部分内容</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/jwhois/" data-id="cjvp9c5su006cj0xi3e8zaodc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/kernelversion/" data-id="cjw4xtisf006mr4xijd2bfaar" class="article-share-link">Share</a>
       
       
     </footer>
@@ -462,6 +462,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -475,10 +479,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

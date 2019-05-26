@@ -62,6 +62,39 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/pkill" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/pkill/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.013Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="pkill"><a href="#pkill" class="headerlink" title="pkill"></a>pkill</h1><p>可以按照进程名杀死进程</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>pkill命令</strong> 可以按照进程名杀死进程。pkill和killall应用方法差不多，也是直接杀死运行中的程序；如果您想杀掉单个进程，请用kill来杀掉。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkill(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-o：仅向找到的最小（起始）进程号发送信号；</span><br><span class="line">-n：仅向找到的最大（结束）进程号发送信号；</span><br><span class="line">-P：指定父进程号发送信号；</span><br><span class="line">-g：指定进程组；</span><br><span class="line">-t：指定开启进程的终端。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>进程名称：指定要查找的进程名称，同时也支持类似grep指令中的匹配模式。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pgrep -l gaim</span><br><span class="line">2979 gaim</span><br><span class="line"></span><br><span class="line">pkill gaim</span><br></pre></td></tr></table></figure>
+<p>也就是说：kill对应的是PID，pkill对应的是command。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pkill/" data-id="cjw4xtiun009rr4xio6as6cui" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/ping" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/ping/" class="article-date">
@@ -84,7 +117,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ping/" data-id="cjvp9c5vd009ij0xi7ngz2q39" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ping/" data-id="cjw4xtiuo009sr4xivkhriw06" class="article-share-link">Share</a>
       
       
     </footer>
@@ -120,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pigz/" data-id="cjvp9c5vc009hj0xiiua4q49g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pigz/" data-id="cjw4xtium009qr4xi90asdgnh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -152,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pidof/" data-id="cjvp9c5vb009gj0xi0i55lgl3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pidof/" data-id="cjw4xtiul009or4xisknq6cb4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -184,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pico/" data-id="cjvp9c5va009fj0xiklp5wxs1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pico/" data-id="cjw4xtium009pr4xioter5wdt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/php/" data-id="cjvp9c5v9009ej0xikutz049t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/php/" data-id="cjw4xtiuk009mr4xixxpu66vw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -247,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pgrep/" data-id="cjvp9c5v8009dj0xiwz582uv5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pgrep/" data-id="cjw4xtiul009nr4xiid7qy7fk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -298,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pfctl/" data-id="cjvp9c5v7009cj0xigs4ykd0l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pfctl/" data-id="cjw4xtiuk009lr4ximap9pk9j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/perl/" data-id="cjvp9c5v6009bj0xi5cvf3ytk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/perl/" data-id="cjw4xtiui009ir4xizbjordqk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -363,41 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pathchk/" data-id="cjvp9c5v5009aj0xiify9l23e" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/patch" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/patch/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.995Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="patch"><a href="#patch" class="headerlink" title="patch"></a>patch</h1><p>为开放源代码软件安装补丁程序</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>patch命令</strong> 被用于为开放源代码软件安装补丁程序。让用户利用设置修补文件的方式，修改，更新原始文件。如果一次仅修改一个文件，可直接在命令列中下达指令依序执行。如果配合修补文件的方式则能一次修补大批文件，这也是Linux系统核心的升级方法之一。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">-b或--backup：备份每一个原始文件；</span><br><span class="line">-B&lt;备份字首字符串&gt;或--prefix=&lt;备份字首字符串&gt;：设置文件备份时，附加在文件名称前面的字首字符串，该字符串可以是路径名称；</span><br><span class="line">-c或--context：把修补数据解译成关联性的差异；</span><br><span class="line">-d&lt;工作目录&gt;或--directory=&lt;工作目录&gt;：设置工作目录；</span><br><span class="line">-D&lt;标示符号&gt;或--ifdef=&lt;标示符号&gt;：用指定的符号把改变的地方标示出来；</span><br><span class="line">-e或--ed：把修补数据解译成ed指令可用的叙述文件；</span><br><span class="line">-E或--remove-empty-files：若修补过后输出的文件其内容是一片空白，则移除该文件；</span><br><span class="line">-f或--force：此参数的效果和指定&quot;-t&quot;参数类似，但会假设修补数据的版本为新版本；</span><br><span class="line">-F&lt;监别列数&gt;或--fuzz&lt;监别列数&gt;：设置监别列数的最大值；</span><br><span class="line">-g&lt;控制数值&gt;或--get=&lt;控制数值&gt;：设置以RSC或SCCS控制修补作业；</span><br><span class="line">-i&lt;修补文件&gt;或--input=&lt;修补文件&gt;：读取指定的修补问家你；</span><br><span class="line">-l或--ignore-whitespace：忽略修补数据与输入数据的跳格，空格字符；</span><br><span class="line">-n或--normal：把修补数据解译成一般性的差异；</span><br><span class="line">-N或--forward：忽略修补的数据较原始文件的版本更旧，或该版本的修补数据已使 用过；</span><br><span class="line">-o&lt;输出文件&gt;或--output=&lt;输出文件&gt;：设置输出文件的名称，修补过的文件会以该名称存放；</span><br><span class="line">-p&lt;剥离层级&gt;或--strip=&lt;剥离层级&gt;：设置欲剥离几层路径名称；</span><br><span class="line">-f&lt;拒绝文件&gt;或--reject-file=&lt;拒绝文件&gt;：设置保存拒绝修补相关信息的文件名称，预设的文件名称为.rej；</span><br><span class="line">-R或--reverse：假设修补数据是由新旧文件交换位置而产生；</span><br><span class="line">-s或--quiet或--silent：不显示指令执行过程，除非发生错误；</span><br><span class="line">-t或--batch：自动略过错误，不询问任何问题；</span><br><span class="line">-T或--set-time：此参数的效果和指定&quot;-Z&quot;参数类似，但以本地时间为主；</span><br><span class="line">-u或--unified：把修补数据解译成一致化的差异；</span><br><span class="line">-v或--version：显示版本信息；</span><br><span class="line">-V&lt;备份方式&gt;或--version-control=&lt;备份方式&gt;：用&quot;-b&quot;参数备份目标文件后，备份文件的字尾会被加上一个备份字符串，这个字符串不仅可用&quot;-z&quot;参数变更，当使用&quot;-V&quot;参数指定不同备份方式时，也会产生不同字尾的备份字符串；</span><br><span class="line">-Y&lt;备份字首字符串&gt;或--basename-prefix=--&lt;备份字首字符串&gt;：设置文件备份时，附加在文件基本名称开头的字首字符串；</span><br><span class="line">-z&lt;备份字尾字符串&gt;或--suffix=&lt;备份字尾字符串&gt;：此参数的效果和指定&quot;-B&quot;参数类似，差别在于修补作业使用的路径与文件名若为src/linux/fs/super.c，加上&quot;backup/&quot;字符串后，文件super.c会备份于/src/linux/fs/backup目录里；</span><br><span class="line">-Z或--set-utc：把修补过的文件更改，存取时间设为UTC；</span><br><span class="line">--backup-if-mismatch：在修补数据不完全吻合，且没有刻意指定要备份文件时，才备份文件；</span><br><span class="line">--binary：以二进制模式读写数据，而不通过标准输出设备；</span><br><span class="line">--help：在线帮助；</span><br><span class="line">--nobackup-if-mismatch：在修补数据不完全吻合，且没有刻意指定要备份文件时，不要备份文件；</span><br><span class="line">--verbose：详细显示指令的执行过程。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
-<li>原文件：指定需要打补丁的原始文件；</li>
-<li>补丁文件：指定补丁文件。</li>
-</ul>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/patch/" data-id="cjvp9c5v50099j0xi6ued8vui" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pathchk/" data-id="cjw4xtiuj009jr4xi8q9qzc78" class="article-share-link">Share</a>
       
       
     </footer>
@@ -457,6 +456,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -470,10 +473,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

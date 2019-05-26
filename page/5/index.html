@@ -62,6 +62,41 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/vgdisplay" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/vgdisplay/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.423Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vgdisplay"><a href="#vgdisplay" class="headerlink" title="vgdisplay"></a>vgdisplay</h1><p>显示LVM卷组的信息</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>vgdisplay命令</strong> 用于显示LVM卷组的信息。如果不指定”卷组”参数，则分别显示所有卷组的属性。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vgdisplay(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-A：仅显示活动卷组的属性；</span><br><span class="line">-s：使用短格式输出的信息。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>卷组：要显示属性的卷组名称。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用vgdisplay命令显示存在的卷组”vg1000”的属性。在命令行中输入下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vgdisplay vg1000     #显示卷组&quot;vg1000&quot;的属性</span><br></pre></td></tr></table></figure>
+<p>输出信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  --- Volume group ---  </span><br><span class="line">  VG Name               vg1000  </span><br><span class="line">......省略部分输出内容......  </span><br><span class="line">  free  PE / Size       50 / 200.00 MB  </span><br><span class="line">  VG UUID  ICprwg-ZmhA-JKYF-WYuy-jNHa-AyCN-ZS5F7B</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/vgdisplay/" data-id="cjw4xtixf00ebr4xiwq8k4eua" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/vgcreate" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/vgcreate/" class="article-date">
@@ -90,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/vgcreate/" data-id="cjvp9c60o00elj0xick2ics4l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/vgcreate/" data-id="cjw4xtixb00e5r4xi0d5fzk22" class="article-share-link">Share</a>
       
       
     </footer>
@@ -127,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/vgconvert/" data-id="cjvp9c60o00ekj0xi36edngtw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/vgconvert/" data-id="cjw4xtixc00e6r4xi879dot7b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -162,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/vgchange/" data-id="cjvp9c60n00ejj0ximynti9m0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/vgchange/" data-id="cjw4xtixb00e4r4xitzg09p15" class="article-share-link">Share</a>
       
       
     </footer>
@@ -201,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/vdfuse/" data-id="cjvp9c60m00eij0xi6lmwos71" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/vdfuse/" data-id="cjw4xtixa00e3r4xig0scshlh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/uuto/" data-id="cjvp9c60m00ehj0xiifjur6hr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/uuto/" data-id="cjw4xtix700dxr4xihiricfsv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -266,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/uupick/" data-id="cjvp9c60l00egj0xiiyyrn5l5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/uupick/" data-id="cjw4xtix900e1r4xi8tz3e0cc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -299,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/uucico/" data-id="cjvp9c60k00efj0xixe7o9xfb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/uucico/" data-id="cjw4xtixa00e2r4xikt20pl18" class="article-share-link">Share</a>
       
       
     </footer>
@@ -330,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/users/" data-id="cjvp9c60k00eej0xi53lujsli" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/users/" data-id="cjw4xtix900e0r4xirh697lqz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -365,50 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/usernetctl/" data-id="cjvp9c60j00edj0xintm2hzf4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/usermod" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/usermod/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.396Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="usermod"><a href="#usermod" class="headerlink" title="usermod"></a>usermod</h1><p>用于修改用户的基本信息</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>usermod命令</strong> 用于修改用户的基本信息。usermod 命令不允许你改变正在线上的使用者帐号名称。当 usermod 命令用来改变user id，必须确认这名user没在电脑上执行任何程序。你需手动更改使用者的 crontab 档。也需手动更改使用者的 at 工作档。采用 NIS server 须在server上更动相关的NIS设定。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-c&lt;备注&gt;：修改用户帐号的备注文字；</span><br><span class="line">-d&lt;登入目录&gt;：修改用户登入时的目录；</span><br><span class="line">-e&lt;有效期限&gt;：修改帐号的有效期限；</span><br><span class="line">-f&lt;缓冲天数&gt;：修改在密码过期后多少天即关闭该帐号；</span><br><span class="line">-g&lt;群组&gt;：修改用户所属的群组；</span><br><span class="line">-G&lt;群组&gt;；修改用户所属的附加群组；</span><br><span class="line">-l&lt;帐号名称&gt;：修改用户帐号名称；</span><br><span class="line">-L：锁定用户密码，使密码无效；</span><br><span class="line">-s&lt;shell&gt;：修改用户登入后所使用的shell；</span><br><span class="line">-u&lt;uid&gt;：修改用户ID；</span><br><span class="line">-U:解除密码锁定。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>登录名：指定要修改信息的用户登录名。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>将 newuser2 添加到组 staff 中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -G staff newuser2</span><br></pre></td></tr></table></figure>
-<p>修改newuser的用户名为newuser1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -l newuser1 newuser</span><br></pre></td></tr></table></figure>
-<p>锁定账号newuser1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -L newuser1</span><br></pre></td></tr></table></figure>
-<p>解除对newuser1的锁定：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -U newuser1</span><br></pre></td></tr></table></figure>
-<p>增加用户到用户组中:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apk add shadow # 安装 shadow 包, usermod 命令包含在 usermod 中</span><br><span class="line">usermod -aG group user # 添加用户到用户组中</span><br></pre></td></tr></table></figure>
-<p><code>-a</code> 参数表示附加，只和 <code>-G</code> 参数一同使用，表示将用户增加到组中。</p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/usermod/" data-id="cjvp9c60i00ecj0xi6hxrnsqw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/usernetctl/" data-id="cjw4xtix600dwr4xit9sfxgc9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -468,6 +460,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -481,10 +477,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

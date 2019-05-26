@@ -62,6 +62,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/usermod" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/usermod/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.396Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="usermod"><a href="#usermod" class="headerlink" title="usermod"></a>usermod</h1><p>用于修改用户的基本信息</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>usermod命令</strong> 用于修改用户的基本信息。usermod 命令不允许你改变正在线上的使用者帐号名称。当 usermod 命令用来改变user id，必须确认这名user没在电脑上执行任何程序。你需手动更改使用者的 crontab 档。也需手动更改使用者的 at 工作档。采用 NIS server 须在server上更动相关的NIS设定。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-c&lt;备注&gt;：修改用户帐号的备注文字；</span><br><span class="line">-d&lt;登入目录&gt;：修改用户登入时的目录；</span><br><span class="line">-e&lt;有效期限&gt;：修改帐号的有效期限；</span><br><span class="line">-f&lt;缓冲天数&gt;：修改在密码过期后多少天即关闭该帐号；</span><br><span class="line">-g&lt;群组&gt;：修改用户所属的群组；</span><br><span class="line">-G&lt;群组&gt;；修改用户所属的附加群组；</span><br><span class="line">-l&lt;帐号名称&gt;：修改用户帐号名称；</span><br><span class="line">-L：锁定用户密码，使密码无效；</span><br><span class="line">-s&lt;shell&gt;：修改用户登入后所使用的shell；</span><br><span class="line">-u&lt;uid&gt;：修改用户ID；</span><br><span class="line">-U:解除密码锁定。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>登录名：指定要修改信息的用户登录名。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>将 newuser2 添加到组 staff 中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -G staff newuser2</span><br></pre></td></tr></table></figure>
+<p>修改newuser的用户名为newuser1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -l newuser1 newuser</span><br></pre></td></tr></table></figure>
+<p>锁定账号newuser1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -L newuser1</span><br></pre></td></tr></table></figure>
+<p>解除对newuser1的锁定：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -U newuser1</span><br></pre></td></tr></table></figure>
+<p>增加用户到用户组中:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apk add shadow # 安装 shadow 包, usermod 命令包含在 usermod 中</span><br><span class="line">usermod -aG group user # 添加用户到用户组中</span><br></pre></td></tr></table></figure>
+<p><code>-a</code> 参数表示附加，只和 <code>-G</code> 参数一同使用，表示将用户增加到组中。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/usermod/" data-id="cjw4xtix800dzr4xi9wedbau9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/userdel" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/userdel/" class="article-date">
@@ -87,7 +130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/userdel/" data-id="cjvp9c60h00ebj0xivour3qnm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/userdel/" data-id="cjw4xtix400drr4xi5umxtb00" class="article-share-link">Share</a>
       
       
     </footer>
@@ -124,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/useradd/" data-id="cjvp9c60h00eaj0ximnqa9xk4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/useradd/" data-id="cjw4xtix700dyr4xii2i8otg4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -161,7 +204,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/uptime/" data-id="cjvp9c60g00e9j0xilrq9vcw4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/uptime/" data-id="cjw4xtix400dsr4xiki38iaap" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/updatedb/" data-id="cjvp9c60f00e8j0xi04tfazxx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/updatedb/" data-id="cjw4xtix500dtr4xiywjbj9f3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,7 +276,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/unzip/" data-id="cjvp9c60f00e7j0xieng8xq5q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/unzip/" data-id="cjw4xtix500dur4xi5thufi68" class="article-share-link">Share</a>
       
       
     </footer>
@@ -267,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/unset/" data-id="cjvp9c60d00e5j0xia6y0hi4m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/unset/" data-id="cjw4xtix300dqr4xinqy5tsbe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -298,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/unprotoize/" data-id="cjvp9c60e00e6j0xitvob6if1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/unprotoize/" data-id="cjw4xtix600dvr4xi5afem93l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/unlink/" data-id="cjvp9c60c00e4j0xiatuho1j1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/unlink/" data-id="cjw4xtix200dpr4xia4t5oqj3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -371,38 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/uniq/" data-id="cjvp9c60b00e2j0xirm5pye0t" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/unexpand" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/unexpand/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.376Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="unexpand"><a href="#unexpand" class="headerlink" title="unexpand"></a>unexpand</h1><p>将文件的空白字符转换为制表符</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>unexpand命令</strong> 用于将给定文件中的空白字符（space）转换为制表符（TAB），并把转换结果显示在标准输出设备（显示终端）。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unexpand(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-a或--all：转换文件中所有的空白字符；</span><br><span class="line">--first-only：仅转换开头的空白字符；</span><br><span class="line">-t&lt;N&gt;：指定TAB所代表的N个（N为整数）字符数，默认N值是8。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定要转换空白为TAB的文件列表。</p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/unexpand/" data-id="cjvp9c60b00e1j0xido45zzvf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/uniq/" data-id="cjw4xtix100dor4xi0q3mfhtr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -462,6 +474,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -475,10 +491,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

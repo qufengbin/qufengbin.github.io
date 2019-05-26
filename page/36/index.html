@@ -62,6 +62,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/iostat" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/iostat/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.697Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="iostat"><a href="#iostat" class="headerlink" title="iostat"></a>iostat</h1><p>监视系统输入输出设备和CPU的使用情况</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>iostat命令</strong> 被用于监视系统输入输出设备和CPU的使用情况。它的特点是汇报磁盘活动统计情况，同时也会汇报出CPU使用情况。同vmstat一样，iostat也有一个弱点，就是它不能对某个进程进行深入分析，仅对系统的整体情况进行分析。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iostat(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-c：仅显示CPU使用情况；</span><br><span class="line">-d：仅显示设备利用率；</span><br><span class="line">-k：显示状态以千字节每秒为单位，而不使用块每秒；</span><br><span class="line">-m：显示状态以兆字节每秒为单位；</span><br><span class="line">-p：仅显示块设备和所有被使用的其他分区的状态；</span><br><span class="line">-t：显示每个报告产生时的时间；</span><br><span class="line">-V：显示版号并退出；</span><br><span class="line">-x：显示扩展状态。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>间隔时间：每次报告的间隔时间（秒）；</li>
+<li>次数：显示报告的次数。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>用<code>iostat -x /dev/sda1</code>来观看磁盘I/O的详细情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">iostat -x /dev/sda1 </span><br><span class="line">Linux 2.6.18-164.el5xen (localhost.localdomain)</span><br><span class="line">2010年03月26日  </span><br><span class="line"></span><br><span class="line">avg-cpu:  %user   %nice %system %iowait </span><br><span class="line">%steal   %idle  </span><br><span class="line">            0.11    0.02    0.18    0.35   </span><br><span class="line">0.03    99.31  </span><br><span class="line"></span><br><span class="line">Device:         tps   Blk_read/s    Blk_wrtn/s  </span><br><span class="line">Blk_read   Blk_wrtn  </span><br><span class="line">sda1                0.02          0.08       </span><br><span class="line">0.00          2014               4</span><br></pre></td></tr></table></figure>
+<p>详细说明：第二行是系统信息和监测时间，第三行和第四行显示CPU使用情况（具体内容和mpstat命令相同）。这里主要关注后面I/O输出的信息，如下所示：</p>
+<table><br><br><tbody><br><br><tr><br><br><th>标示</th><br><br><th>说明</th><br><br></tr><br><br><tr><br><br><td>Device</td><br><br><td>监测设备名称</td><br><br></tr><br><br><tr><br><br><td>rrqm/s</td><br><br><td>每秒需要读取需求的数量</td><br><br></tr><br><br><tr><br><br><td>wrqm/s</td><br><br><td>每秒需要写入需求的数量</td><br><br></tr><br><br><tr><br><br><td>r/s </td><br><br><td>每秒实际读取需求的数量</td><br><br></tr><br><br><tr><br><br><td>w/s</td><br><br><td>每秒实际写入需求的数量</td><br><br></tr><br><br><tr><br><br><td>rsec/s</td><br><br><td>每秒读取区段的数量</td><br><br></tr><br><br><tr><br><br><td>wsec/s</td><br><br><td>每秒写入区段的数量</td><br><br></tr><br><br><tr><br><br><td>rkB/s</td><br><br><td>每秒实际读取的大小，单位为KB</td><br><br></tr><br><br><tr><br><br><td>wkB/s</td><br><br><td>每秒实际写入的大小，单位为KB</td><br><br></tr><br><br><tr><br><br><td>avgrq-sz</td><br><br><td>需求的平均大小区段</td><br><br></tr><br><br><tr><br><br><td>avgqu-sz</td><br><br><td>需求的平均队列长度</td><br><br></tr><br><br><tr><br><br><td>await</td><br><br><td>等待I/O平均的时间（milliseconds）</td><br><br></tr><br><br><tr><br><br><td>svctm</td><br><br><td>I/O需求完成的平均时间</td><br><br></tr><br><br><tr><br><br><td>%util</td><br><br><td>被I/O需求消耗的CPU百分比</td><br><br></tr><br><br></tbody><br><br></table>
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/iostat/" data-id="cjw4xtis40065r4xitxouzom3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/install" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/install/" class="article-date">
@@ -94,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/install/" data-id="cjvp9c5sh005uj0xi5qvt86c7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/install/" data-id="cjw4xtis30064r4xiva0fbix2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/insmod/" data-id="cjvp9c5sh005tj0xi2y3zd1fo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/insmod/" data-id="cjw4xtiry0060r4xiyk5qmxsq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,7 +234,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/inotifywait/" data-id="cjvp9c5sg005sj0xifnp9paef" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/inotifywait/" data-id="cjw4xtis30063r4xiho4svxtj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -230,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/init/" data-id="cjvp9c5sf005rj0xidr6yu3r7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/init/" data-id="cjw4xtis20062r4xi9phjaz28" class="article-share-link">Share</a>
       
       
     </footer>
@@ -268,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/info/" data-id="cjvp9c5se005qj0xitqfgxnr0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/info/" data-id="cjw4xtis10061r4ximg5xsagu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -301,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/indent/" data-id="cjvp9c5sd005oj0xi2g8p8mn2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/indent/" data-id="cjw4xtirx005yr4xij8syhgwk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -332,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifup/" data-id="cjvp9c5sd005pj0xiimh5dr45" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifup/" data-id="cjw4xtirx005xr4xijty6e5ty" class="article-share-link">Share</a>
       
       
     </footer>
@@ -367,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/iftop/" data-id="cjvp9c5sc005nj0xiqjob45m4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/iftop/" data-id="cjw4xtiry005zr4xidiclisv6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -406,38 +446,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifstat/" data-id="cjvp9c5sb005mj0xicbj1o8vh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/ifdown" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/ifdown/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.664Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ifdown"><a href="#ifdown" class="headerlink" title="ifdown"></a>ifdown</h1><p>禁用指定的网络接口</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>ifdown命令</strong> 用于禁用指定的网络接口。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifdown(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>网络接口：要禁用的网络接口。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifdown eth0  #禁用eth0</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifdown/" data-id="cjvp9c5sa005lj0xiqjty9oip" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifstat/" data-id="cjw4xtirw005wr4xiwo1zfz8i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -497,6 +506,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -510,10 +523,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

@@ -62,6 +62,41 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/apropos" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/apropos/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.006Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="apropos"><a href="#apropos" class="headerlink" title="apropos"></a>apropos</h1><p>在 whatis 数据库中查找字符串</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>apropos命令</strong> 在一些特定的包含系统命令的简短描述的数据库文件里查找关键字，然后把结果送到标准输出。 </p>
+<p>如果你不知道完成某个特定任务所需要命令的名称，可以使用一个关键字通过Linux apropos实用程序来搜索它。该实用程序可以搜索关键字并且显示所有包含匹配项的man页面的简短描述。另外，使用man实用程序和-k（关键字）选项，可以得到和用Linux apropos实用程序相同的结果（实际上是相同的命令）。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apropos [-dalhvV] -e|-[w|-r] [-s section] [-m system[,...]] [-M path] [-L locale] -C [file] keyword ...</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-d, --debug：输出调试信息。</span><br><span class="line">-v, --verbose：输出详细的警告信息。</span><br><span class="line">-r, -- regex：将每个keyword作为正则表达式解释。这是默认行为。每个keyword将匹配手册页和描述。</span><br><span class="line">-w, --wildcard：将每个keyword作为shell样式的通配符解释。</span><br><span class="line">-e, --exact：每个keyword将精确匹配手册页名字和描述。</span><br><span class="line">-a, --and：只显示匹配所有keyword的手册页和描述。默认显示匹配任何keyword的项。</span><br><span class="line">-l, --long：不根据终端宽度缩减输出。</span><br><span class="line">-s section, --section section：只查找指定的手册section。</span><br><span class="line">-m system[,...], --systems=system[,...]：用于查找其它操作系统的手册页。</span><br><span class="line">-M path, --manpath=path：指定从其它以冒号分隔的手册页层次查找。默认使用$MANPATH环境变量。这个选项覆盖$MANPATH的内容。</span><br><span class="line">-L locale, --locale=locale：apropos调用C函数setlocale来得到当前本地化信息，包括$LC_MESSAGE和$LANG。使用该选项提供一个locale字符串来临时更改本地化信息。</span><br><span class="line">-C file, --config-file=file：使用这个用户配置文件而不是默认的~/.manpath。</span><br><span class="line">-h, --help：打印帮助信息并退出。</span><br><span class="line">-V, --version：打印版本信息并退出。</span><br></pre></td></tr></table></figure>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>返回0表示成功，1表示用法、语法或配置文件错误，2表示操作错误，16表示没有找到匹配的内容。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# man -k who</span><br><span class="line">at.allow [at]        (5)  - determine who can submit jobs via at or batch</span><br><span class="line">at.deny [at]         (5)  - determine who can submit jobs via at or batch</span><br><span class="line">jwhois               (1)  - client for the whois service</span><br><span class="line">jwhois              (rpm) - Internet whois/nicname client.</span><br><span class="line">Net::LDAP::Extension::whoami (3pm)  - LDAP Who am I? Operation</span><br><span class="line">w                    (1)  - Show who is logged on and what they are doing</span><br><span class="line">who                  (1p)  - display who is on the system</span><br><span class="line">who                  (1)  - show who is logged on</span><br><span class="line">whoami               (1)  - print effective userid</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# apropos who</span><br><span class="line">at.allow [at]        (5)  - determine who can submit jobs via at or batch</span><br><span class="line">at.deny [at]         (5)  - determine who can submit jobs via at or batch</span><br><span class="line">jwhois               (1)  - client for the whois service</span><br><span class="line">jwhois              (rpm) - Internet whois/nicname client.</span><br><span class="line">Net::LDAP::Extension::WhoAmI (3pm)  - LDAP Who am I? Operation</span><br><span class="line">w                    (1)  - Show who is logged on and what they are doing</span><br><span class="line">who                  (1p)  - display who is on the system</span><br><span class="line">who                  (1)  - show who is logged on</span><br><span class="line">whoami               (1)  - print effective userid</span><br></pre></td></tr></table></figure>
+<p>查找手册页名字和描述中包含emacs和vi的手册页：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apropos -a emacs vi</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/apropos/" data-id="cjw4xtimc000tr4ximjtn8egp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/apk" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/apk/" class="article-date">
@@ -86,7 +121,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/apk/" data-id="cjvp9c5nc000kj0xiih5f2i8n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/apk/" data-id="cjw4xtinx002lr4xiljelfnpt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -125,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/apachectl/" data-id="cjvp9c5nb000jj0xiulahapl1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/apachectl/" data-id="cjw4xtim5000mr4xiklvc2mkb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/alias/" data-id="cjvp9c5n9000ij0xiroxjdqai" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/alias/" data-id="cjw4xtimg000yr4xiw8jozwlb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -237,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ack/" data-id="cjvp9c5n8000hj0xiywo345jo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ack/" data-id="cjw4xtim7000or4xineymz6ra" class="article-share-link">Share</a>
       
       
     </footer>
@@ -268,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/accept/" data-id="cjvp9c5n6000gj0xil3i3engu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/accept/" data-id="cjw4xtim3000kr4xibcqnerv3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -299,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ab/" data-id="cjvp9c5n0000fj0xiiyw0c5dz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ab/" data-id="cjw4xtim8000qr4xi9i555jjw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -311,13 +346,23 @@
   
     <article id="post-ARTS第六周" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/05/12/ARTS第六周/" class="article-date">
-  <time datetime="2019-05-12T14:46:47.970Z" itemprop="datePublished">2019-05-12</time>
+    <a href="/2019/05/11/ARTS第六周/" class="article-date">
+  <time datetime="2019-05-10T16:00:00.000Z" itemprop="datePublished">2019-05-11</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/11/ARTS第六周/">ARTS第六周</a>
+    </h1>
+  
+
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -329,9 +374,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/12/ARTS第六周/" data-id="cjvp9c5l80003j0xikm4jvu6b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/11/ARTS第六周/" data-id="cjw4xtild000ar4xiio0xgcsh" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARTS/">ARTS</a></li></ul>
+
     </footer>
   </div>
   
@@ -369,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/28/ARTS第五周/" data-id="cjvp9c5l90004j0xi6mw706m9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/28/ARTS第五周/" data-id="cjw4xtiks0003r4xikxuc5wte" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARTS/">ARTS</a></li></ul>
@@ -411,50 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/14/ARTS第四周/" data-id="cjvp9c5mw000cj0xijkuq17w0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARTS/">ARTS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ARTS第三周" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/07/ARTS第三周/" class="article-date">
-  <time datetime="2019-04-06T16:00:00.000Z" itemprop="datePublished">2019-04-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/07/ARTS第三周/">ARTS第三周</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="ARTS是什么？"><a href="#ARTS是什么？" class="headerlink" title="ARTS是什么？"></a>ARTS是什么？</h2><p><strong>Algorithm：每周至少做一个leetcode的算法题；<br>Review：阅读并点评至少一篇英文技术文章；<br>Tip/Techni：学习至少一个技术技巧；<br>Share：分享一篇有观点和思考的技术文章。</strong></p>
-<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p><strong>题目</strong>：<br>给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。<br>示例 1:输入: “abcabcbb”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。<br>示例 2:输入: “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。<br>示例 3:输入: “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br>     请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。<br><strong>题解</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int lengthOfLongestSubstring(String s) &#123;</span><br><span class="line">        if (s == null || s.length() == 0)&#123;return 0;&#125;</span><br><span class="line">        int start=0,length = 1;</span><br><span class="line">        char[] str = s.toCharArray();</span><br><span class="line">        for(int i=1;i&lt;= s.length()-1;i++)&#123;</span><br><span class="line">            for(int j=start;j&lt; i;j++)&#123;</span><br><span class="line">                if(str[i] == str[j])&#123;</span><br><span class="line">                    start=j+1;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(i-start+1 &gt; length)&#123;</span><br><span class="line">                length = i-start+1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p>Hadoop官网关于<a href="https://app.yinxiang.com/shard/s59/nl/20503510/949df970-c569-4a46-8222-60e5d605cb89" target="_blank" rel="noopener">HDFS</a>和<a href="https://app.yinxiang.com/shard/s59/nl/20503510/560c4e46-fd09-4132-af10-d6be916df036" target="_blank" rel="noopener">YARN</a>的命令行操作（基于Hadoop 2.6.5）。</p>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>关于<a href="https://app.yinxiang.com/shard/s59/nl/20503510/bcf7aa98-eccc-4f22-a6ff-22d582505010" target="_blank" rel="noopener">Hive metastore的三种方式</a></p>
-<h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><p>关于<a href="https://app.yinxiang.com/shard/s59/nl/20503510/516ff3e6-60d1-4655-b00a-5fb870d729a6" target="_blank" rel="noopener">Hive 窗口函数</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/ARTS第三周/" data-id="cjvp9c5l30001j0xisd9fz2oy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/14/ARTS第四周/" data-id="cjw4xtiln000fr4xiz5794778" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ARTS/">ARTS</a></li></ul>
@@ -516,6 +520,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -529,10 +537,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

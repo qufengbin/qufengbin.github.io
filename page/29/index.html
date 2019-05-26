@@ -62,6 +62,41 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/lvreduce" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/lvreduce/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.876Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="lvreduce"><a href="#lvreduce" class="headerlink" title="lvreduce"></a>lvreduce</h1><p>收缩逻辑卷空间</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>lvreduce命令</strong> 用于减少LVM逻辑卷占用的空间大小。使用lvreduce命令收缩逻辑卷的空间大小有可能会删除逻辑卷上已有的数据，所以在操作前必须进行确认。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lvreduce(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-L：指定逻辑卷的大小，单位为“kKmMgGtT”字节；</span><br><span class="line">-l：指定逻辑卷的大小（LE数）。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>逻辑卷：指定要操作的逻辑卷对应的设备文件。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用lvreduce命令减少指定的逻辑卷的空间大小。在命令行中输入下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# lvreduce -L -50M /dev/vg1000/lvol0     #将逻辑卷的空间大小减少50M</span><br></pre></td></tr></table></figure>
+<p>输出信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">......省略部分输出内容......  </span><br><span class="line">Do you really want to reduce lvol0? [y/n]: y  #确认操作  </span><br><span class="line">  Reducing logical volume lvol0 to 252.00 MB  </span><br><span class="line">  Logical volume lvol0 successfully resized</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvreduce/" data-id="cjw4xtitf007vr4xiq5ta2xbr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/lvextend" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/lvextend/" class="article-date">
@@ -87,7 +122,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvextend/" data-id="cjvp9c5u0007mj0xiv8viitrv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvextend/" data-id="cjw4xtite007ur4xiie8x29yl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -121,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvdisplay/" data-id="cjvp9c5tz007lj0xi2uih2fb6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvdisplay/" data-id="cjw4xtitd007sr4xi2dc9ml89" class="article-share-link">Share</a>
       
       
     </footer>
@@ -157,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvcreate/" data-id="cjvp9c5tz007kj0xibbbc2hua" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvcreate/" data-id="cjw4xtith007yr4xijuumdgb9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -193,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ltrace/" data-id="cjvp9c5tw007jj0xip5a7mf4w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ltrace/" data-id="cjw4xtitc007qr4xilh1pgzt4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -241,7 +276,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsusb/" data-id="cjvp9c5tv007ij0xi5m3qahsr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsusb/" data-id="cjw4xtite007tr4xihximp95i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -272,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lspci/" data-id="cjvp9c5tu007hj0xi55dncw8h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lspci/" data-id="cjw4xtitb007pr4xilm5l5cvx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -372,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsof/" data-id="cjvp9c5tt007gj0xik4df8scn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsof/" data-id="cjw4xtitb007or4xibm0sgfvp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -409,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsmod/" data-id="cjvp9c5ts007fj0xiba8prdpi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsmod/" data-id="cjw4xtitc007rr4xic7fqskxo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -442,41 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lscpu/" data-id="cjvp9c5tr007ej0xixlbt0usl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/lsb_release" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/lsb_release/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.855Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="lsb-release"><a href="#lsb-release" class="headerlink" title="lsb_release"></a>lsb_release</h1><p>显示发行版本信息</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p>LSB是Linux Standard Base的缩写， <strong>lsb_release命令</strong> 用来显示LSB和特定版本的相关信息。如果使用该命令时不带参数，则默认加上-v参数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-v 显示版本信息。</span><br><span class="line">-i 显示发行版的id。</span><br><span class="line">-d 显示该发行版的描述信息。</span><br><span class="line">-r 显示当前系统是发行版的具体版本号。</span><br><span class="line">-c 发行版代号。</span><br><span class="line">-a 显示上面的所有信息。</span><br><span class="line">-h 显示帮助信息。</span><br></pre></td></tr></table></figure>
-<p>如果当前发行版是LSB兼容的，那么<code>/etc/lsb_release</code>文件中会包含LSB_VERSION域。这个域的值可以是用冒号隔开的一系列支持的模块。这些模块名是当前版本支持的LSB的模块名。如果当前版本不是LSB兼容的，就不要包含这个域。</p>
-<p>可选的域包括DISTRIB_ID, DISTRIB_RELEASE, DISTRIB_CODENAME,DISTRIB_DESCRIPTION，它们可以覆盖<code>/etc/distrib-release</code>文件中的内容。注：这里的distrib要替换为当前的发行版的名字。如果存在<code>/etc/lsb-release.d</code>目录，会在该目录中查找文件名并作为附加的模块版本加在LSB_VERSION前面。文件<code>/etc/distrib-release</code>中包含了一些描述信息，用来说明应该分析哪些文件名。</p>
-<p> 一般的格式是<code>Distributor release x.x (Codename)</code>  注意：Debian系统中缺乏相应的描述信息（见<code>/etc/debian-version</code>），为了支持Debian系统，大部分信息都被加在了lsb-release文件中。</p>
-<p>redhat和fedora系统中，还支持一个参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-s, --short  输出简短的描述信息。</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsb_release/" data-id="cjvp9c5tp007cj0xizdrg0jg4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lscpu/" data-id="cjw4xtit9007mr4xi7lkb8fgt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -536,6 +537,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -549,10 +554,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>

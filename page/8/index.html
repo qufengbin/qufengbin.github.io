@@ -62,6 +62,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/tree" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/tree/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.354Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h1><p>树状图列出目录的内容</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>tree命令</strong> 以树状图列出目录的内容。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">------- 列表选项 -------</span><br><span class="line">-a            <span class="comment"># 显示所有文件和目录。</span></span><br><span class="line">-d            <span class="comment"># 先是目录名称而非文件。</span></span><br><span class="line">-l            <span class="comment"># 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录。</span></span><br><span class="line">-f            <span class="comment"># 在每个文件或目录之前，显示完整的相对路径名称。</span></span><br><span class="line">-x            <span class="comment"># 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该目录予以排除在寻找范围外。</span></span><br><span class="line">-L level      <span class="comment"># 限制目录显示层级。</span></span><br><span class="line">-R            <span class="comment"># Rerun tree when max dir level reached.</span></span><br><span class="line">-P pattern    <span class="comment"># &lt;范本样式&gt; 只显示符合范本样式的文件和目录名称。</span></span><br><span class="line">-I pattern    <span class="comment"># Do not list files that match the given pattern.</span></span><br><span class="line">--ignore-case <span class="comment"># Ignore case when pattern matching.</span></span><br><span class="line">--matchdirs   <span class="comment"># Include directory names in -P pattern matching.</span></span><br><span class="line">--noreport    <span class="comment"># Turn off file/directory count at end of tree listing.</span></span><br><span class="line">--charset X   <span class="comment"># Use charset X for terminal/HTML and indentation line output.</span></span><br><span class="line">--filelimit <span class="comment"># # Do not descend dirs with more than # files in them.</span></span><br><span class="line">--timefmt &lt;f&gt; <span class="comment"># Print and format time according to the format &lt;f&gt;.</span></span><br><span class="line">-o filename   <span class="comment"># Output to file instead of stdout.</span></span><br><span class="line">-------- 文件选项 ---------</span><br><span class="line">-q            <span class="comment"># 用“？”号取代控制字符，列出文件和目录名称。</span></span><br><span class="line">-N            <span class="comment"># 直接列出文件和目录名称，包括控制字符。</span></span><br><span class="line">-Q            <span class="comment"># Quote filenames with double quotes.</span></span><br><span class="line">-p            <span class="comment"># 列出权限标示。</span></span><br><span class="line">-u            <span class="comment"># 列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码。</span></span><br><span class="line">-g            <span class="comment"># 列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码。</span></span><br><span class="line">-s            <span class="comment"># 列出文件和目录大小。</span></span><br><span class="line">-h            <span class="comment"># Print the size in a more human readable way.</span></span><br><span class="line">--si          <span class="comment"># Like -h, but use in SI units (powers of 1000).</span></span><br><span class="line">-D            <span class="comment"># 列出文件或目录的更改时间。</span></span><br><span class="line">-F            <span class="comment"># 在执行文件，目录，Socket，符号连接，管道名称名称，各自加上"*"，"/"，"@"，"|"号。</span></span><br><span class="line">--inodes      <span class="comment"># Print inode number of each file.</span></span><br><span class="line">--device      <span class="comment"># Print device ID number to which each file belongs.</span></span><br><span class="line">------- 排序选项 -------</span><br><span class="line">-v            <span class="comment"># Sort files alphanumerically by version.</span></span><br><span class="line">-t            <span class="comment"># 用文件和目录的更改时间排序。</span></span><br><span class="line">-c            <span class="comment"># Sort files by last status change time.</span></span><br><span class="line">-U            <span class="comment"># Leave files unsorted.</span></span><br><span class="line">-r            <span class="comment"># Reverse the order of the sort.</span></span><br><span class="line">--dirsfirst   <span class="comment"># List directories before files (-U disables).</span></span><br><span class="line">--sort X      <span class="comment"># Select sort: name,version,size,mtime,ctime.</span></span><br><span class="line">------- 图形选项 ------</span><br><span class="line">-i            <span class="comment"># 不以阶梯状列出文件和目录名称。</span></span><br><span class="line">-A            <span class="comment"># 使用ASNI绘图字符显示树状图而非以ASCII字符组合。</span></span><br><span class="line">-S            <span class="comment"># Print with CP437 (console) graphics indentation lines.</span></span><br><span class="line">-n            <span class="comment"># Turn colorization off always (-C overrides).</span></span><br><span class="line">-C            <span class="comment"># 在文件和目录清单加上色彩，便于区分各种类型。</span></span><br><span class="line">------- XML / HTML / JSON选项 -------</span><br><span class="line">-X            <span class="comment"># Prints out an XML representation of the tree.</span></span><br><span class="line">-J            <span class="comment"># Prints out an JSON representation of the tree.</span></span><br><span class="line">-H baseHREF   <span class="comment"># Prints out HTML format with baseHREF as top directory.</span></span><br><span class="line">-T string     <span class="comment"># Replace the default HTML title and H1 header with string.</span></span><br><span class="line">--nolinks     <span class="comment"># Turn off hyperlinks in HTML output.</span></span><br><span class="line">---- 杂项选项 ----</span><br><span class="line">--version     <span class="comment"># 输入版本信息。</span></span><br><span class="line">--<span class="built_in">help</span>        <span class="comment"># 打印使用帮助信息。</span></span><br><span class="line">--            <span class="comment"># Options processing terminator.</span></span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>目录：执行tree指令，它会列出指定目录下的所有文件，包括子目录里的文件。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>列出目录<code>/private/</code> 第一级文件名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tree  /private/ -L 1</span><br><span class="line">/private/</span><br><span class="line">├── etc</span><br><span class="line">├── tftpboot</span><br><span class="line">├── tmp</span><br><span class="line">└── var</span><br></pre></td></tr></table></figure>
+<p>忽略文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tree -I node_modules <span class="comment"># 忽略当前目录文件夹node_modules</span></span><br><span class="line">tree -P node_modules <span class="comment"># 列出当前目录文件夹node_modules的目录结构</span></span><br><span class="line">tree -P node_modules -L 2 <span class="comment"># 显示目录node_modules两层的目录树结构</span></span><br><span class="line">tree -L 2 &gt; /home/www/tree.txt <span class="comment"># 当前目录结果存到 tree.txt 文件中</span></span><br></pre></td></tr></table></figure>
+<p>忽略多个文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree -I <span class="string">'node_modules|icon|font'</span> -L 2</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tree/" data-id="cjw4xtiww00dfr4xig32pb9wc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/trap" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/trap/" class="article-date">
@@ -137,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/trap/" data-id="cjvp9c62200fsj0xi7m69tuev" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/trap/" data-id="cjw4xtiyk00ftr4xiwi2qhjcw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/traceroute/" data-id="cjvp9c60100dqj0xi71y9t6pi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/traceroute/" data-id="cjw4xtiwu00dbr4xigh8rli76" class="article-share-link">Share</a>
       
       
     </footer>
@@ -214,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/tracepath/" data-id="cjvp9c60200drj0xiahj9c3o6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tracepath/" data-id="cjw4xtiwt00d9r4xir8mzhuyz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -268,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/tr/" data-id="cjvp9c60100dpj0xiz7lal8mh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tr/" data-id="cjw4xtiws00d8r4xi2tsauc6z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -343,7 +381,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/tput/" data-id="cjvp9c60000doj0xi3s4819tp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tput/" data-id="cjw4xtiwt00dar4xias2gwmes" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/touch/" data-id="cjvp9c5yk00cyj0xigt7k3t8c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/touch/" data-id="cjw4xtiws00d7r4xiiaamycys" class="article-share-link">Share</a>
       
       
     </footer>
@@ -435,7 +473,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/top/" data-id="cjvp9c5yj00cxj0xitia61p6g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/top/" data-id="cjw4xtiwr00d6r4xi64ueqfo6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -481,7 +519,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/tmux/" data-id="cjvp9c5yi00cwj0xijvbj581z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tmux/" data-id="cjw4xtiwv00dcr4xikrf95v31" class="article-share-link">Share</a>
       
       
     </footer>
@@ -514,56 +552,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/tload/" data-id="cjvp9c5yh00cvj0xiudgj3t6w" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/time" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/time/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.334Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="time"><a href="#time" class="headerlink" title="time"></a>time</h1><p>统计给定命令所花费的总时间</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>time命令</strong> 用于统计给定命令所花费的总时间。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">time(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>指令：指定需要运行的额指令及其参数。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>当测试一个程序或比较不同算法时，执行时间是非常重要的，一个好的算法应该是用时最短的。所有类UNIX系统都包含time命令，使用这个命令可以统计时间消耗。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# time ls</span><br><span class="line">anaconda-ks.cfg  install.log  install.log.syslog  satools  text</span><br><span class="line"></span><br><span class="line">real    0m0.009s</span><br><span class="line">user    0m0.002s</span><br><span class="line">sys     0m0.007s</span><br></pre></td></tr></table></figure>
-<p>输出的信息分别显示了该命令所花费的real时间、user时间和sys时间。</p>
-<ul>
-<li>real时间是指挂钟时间，也就是命令开始执行到结束的时间。这个短时间包括其他进程所占用的时间片，和进程被阻塞时所花费的时间。</li>
-<li>user时间是指进程花费在用户模式中的CPU时间，这是唯一真正用于执行进程所花费的时间，其他进程和花费阻塞状态中的时间没有计算在内。</li>
-<li>sys时间是指花费在内核模式中的CPU时间，代表在内核中执系统调用所花费的时间，这也是真正由进程使用的CPU时间。</li>
-</ul>
-<p>shell内建也有一个time命令，当运行time时候是调用的系统内建命令，应为系统内建的功能有限，所以需要时间其他功能需要使用time命令可执行二进制文件<code>/usr/bin/time</code>。</p>
-<p>使用<code>-o</code>选项将执行时间写入到文件中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/time -o outfile.txt ls</span><br></pre></td></tr></table></figure>
-<p>使用<code>-a</code>选项追加信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/time -a -o outfile.txt ls</span><br></pre></td></tr></table></figure>
-<p>使用<code>-f</code>选项格式化时间输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/time -f &quot;time: %U&quot; ls</span><br></pre></td></tr></table></figure>
-<p><code>-f</code>选项后的参数：</p>
-<table border="1" cellpadding="0" cellspacing="0"><br><br><tbody><br><br><tr><br><br><th>参数</th><br><br><th>描述</th><br><br></tr><br><br><tr><br><br><td>%E</td><br><br><td>real时间，显示格式为[小时:]分钟:秒</td><br><br></tr><br><br><tr><br><br><td>%U</td><br><br><td>user时间。</td><br><br></tr><br><br><tr><br><br><td>%S</td><br><br><td>sys时间。</td><br><br></tr><br><br><tr><br><br><td>%C</td><br><br><td>进行计时的命令名称和命令行参数。</td><br><br></tr><br><br><tr><br><br><td>%D</td><br><br><td>进程非共享数据区域，以KB为单位。</td><br><br></tr><br><br><tr><br><br><td>%x</td><br><br><td>命令退出状态。</td><br><br></tr><br><br><tr><br><br><td>%k</td><br><br><td>进程接收到的信号数量。</td><br><br></tr><br><br><tr><br><br><td>%w</td><br><br><td>进程被交换出主存的次数。</td><br><br></tr><br><br><tr><br><br><td>%Z</td><br><br><td>系统的页面大小，这是一个系统常量，不用系统中常量值也不同。</td><br><br></tr><br><br><tr><br><br><td>%P</td><br><br><td>进程所获取的CPU时间百分百，这个值等于user+system时间除以总共的运行时间。</td><br><br></tr><br><br><tr><br><br><td>%K</td><br><br><td>进程的平均总内存使用量（data+stack+text），单位是KB。</td><br><br></tr><br><br><tr><br><br><td>%w</td><br><br><td>进程主动进行上下文切换的次数，例如等待I/O操作完成。</td><br><br></tr><br><br><tr><br><br><td>%c</td><br><br><td>进程被迫进行上下文切换的次数（由于时间片到期）。</td><br><br></tr><br><br></tbody><br><br></table>
-
-
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/time/" data-id="cjvp9c5yg00cuj0xi19i7lx30" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tload/" data-id="cjw4xtiwq00d4r4xi66i464uw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -623,6 +612,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/15/linux_command/znew/">(no title)</a>
           </li>
         
@@ -636,10 +629,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zip/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zfore/">(no title)</a>
           </li>
         
       </ul>
