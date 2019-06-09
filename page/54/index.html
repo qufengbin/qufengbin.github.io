@@ -62,6 +62,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/basename" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/basename/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.089Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="basename"><a href="#basename" class="headerlink" title="basename"></a>basename</h1><p>打印目录或者文件的基本名称</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>basename命令</strong> 用于打印目录或者文件的基本名称。basename和dirname命令通常用于shell脚本中的命令替换来指定和指定的输入文件名称有所差异的输出文件名称。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">basename(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">--help：显示帮助；</span><br><span class="line">--version：显示版本号。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>文件：带路径信息的文件；</li>
+<li>后缀：可选参数，指定要去除的文件后缀字符串。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>1、要显示一个shell变量的基本名称，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">basename $WORKFILE</span><br></pre></td></tr></table></figure>
+<p>此命令显示指定给shell变量WORKFILE的值的基本名称。如果WORKFILE变量的值是<code>/home/jim/program.c</code>文件，则此命令显示program.c。</p>
+<p>要构造一个和另一个文件名称相同（除了后缀）的文件名称，请输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OFILE=`basename $1 .c`.o</span><br></pre></td></tr></table></figure>
+<p>此命令指定给 OFILE 文件第一个位置上的参数（$1）的值，但它的 .c 后缀更改至 .o。如果 $1 是 /home/jim/program.c 文件，则 OFILE 成为 program.o。因为 program.o 仅是一个基本文件名称，它标识在当前目录中的文件。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/basename/" data-id="cjwp05e1z001c5gxie71y8l9g" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/badblocks" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/badblocks/" class="article-date">
@@ -102,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/badblocks/" data-id="cjw4xtimq0019r4xiw4ovnlph" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/badblocks/" data-id="cjwp05e1v00185gxim3kvtnic" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/axel/" data-id="cjw4xtimr001br4xik8070fc1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/axel/" data-id="cjwp05e1x001a5gxikefrypbd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -802,7 +842,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/awk/" data-id="cjw4xtiyy00fvr4xivgsrsqmg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/awk/" data-id="cjwp05ecw00fz5gxi4zv1dbi1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -835,7 +875,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/atrm/" data-id="cjw4xtimp0018r4xipms56m50" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/atrm/" data-id="cjwp05e25001j5gxilc6blemr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -866,7 +906,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/atq/" data-id="cjw4xtimm0015r4xi5exu9113" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/atq/" data-id="cjwp05e1t00155gxiyjbv74us" class="article-share-link">Share</a>
       
       
     </footer>
@@ -958,7 +998,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/atop/" data-id="cjw4xtimo0017r4xiz8hs19pq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/atop/" data-id="cjwp05e1u00175gxix6xuwu3z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1000,7 +1040,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/at/" data-id="cjw4xtiml0013r4xi3prsfzwq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/at/" data-id="cjwp05e1s00145gxiq4t95uow" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1031,7 +1071,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/as/" data-id="cjw4xtimn0016r4xi1ctda8cp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/as/" data-id="cjwp05e20001e5gxipq7mi32h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1061,37 +1101,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/arpwatch/" data-id="cjw4xtimk0012r4xin1qnxq5w" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/arptables" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/arptables/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.040Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="arptables"><a href="#arptables" class="headerlink" title="arptables"></a>arptables</h1><p>管理ARP包过滤规则表</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>arptables命令</strong> 用来设置、维护和检查Linux内核中的arp包过滤规则表。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arptables(选项)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-A：向规则链中追加规则；</span><br><span class="line">-D：从指定的链中删除规则；</span><br><span class="line">-l：向规则链中插入一条新的规则；</span><br><span class="line">-R：替换指定规则；</span><br><span class="line">-P：设置规则链的默认策略；</span><br><span class="line">-F：刷新指定规则链，将其中的所有规则链删除，但是不改变规则链的默认策略；</span><br><span class="line">-Z：将规则链计数器清零；</span><br><span class="line">-L：显示规则链中的规则列表；</span><br><span class="line">-X：删除指定的空用户自定义规则链；</span><br><span class="line">-h：显示指令帮助信息；</span><br><span class="line">-j：指定满足规则的添加时的目标；</span><br><span class="line">-s：指定要匹配ARP包的源ip地址；</span><br><span class="line">-d：指定要匹配ARP包的目的IP地址。</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/arptables/" data-id="cjw4xtiml0014r4xi7pake3sn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/arpwatch/" data-id="cjwp05e1w00195gxiubh8pko5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1138,7 +1148,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -1149,6 +1159,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -1164,10 +1178,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>

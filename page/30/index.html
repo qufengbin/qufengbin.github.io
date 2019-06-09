@@ -62,6 +62,39 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/lscpu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/lscpu/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.857Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="lscpu"><a href="#lscpu" class="headerlink" title="lscpu"></a>lscpu</h1><p>显示有关CPU架构的信息</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>lscpu命令</strong> 是显示有关CPU架构的信息。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lscpu [选项]</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-a, --all               打印在线和离线CPU（默认为-e）</span><br><span class="line">-b, --online            仅打印在线CPU（-p的默认值）</span><br><span class="line">-c, --offline           打印离线CPU</span><br><span class="line">-e, --extended[=&lt;list&gt;] 打印出一个扩展的可读格式</span><br><span class="line">-p, --parse[=&lt;list&gt;]    打印出可解析的格式</span><br><span class="line">-s, --sysroot &lt;dir&gt;     将指定的目录用作系统根目录</span><br><span class="line">-x, --hex               打印十六进制掩码，而不是CPU列表</span><br><span class="line"></span><br><span class="line">-h, --help     显示此帮助并退出</span><br><span class="line">-V, --version  输出版本信息并退出</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">可用列：</span><br><span class="line">           CPU  逻辑CPU编号</span><br><span class="line">          CORE  逻辑核心号码</span><br><span class="line">        SOCKET  逻辑套接字号</span><br><span class="line">          NODE  逻辑NUMA节点号</span><br><span class="line">          BOOK  逻辑书号</span><br><span class="line">         CACHE  显示了如何在CPU之间共享高速缓存</span><br><span class="line">  POLARIZATION  虚拟硬件上的CPU调度模式</span><br><span class="line">       ADDRESS  CPU的物理地址</span><br><span class="line">    CONFIGURED  显示管理程序是否分配了CPU</span><br><span class="line">        ONLINE  显示Linux是否正在使用CPU</span><br></pre></td></tr></table></figure>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># lscpu</span></span><br><span class="line">Architecture:          x86_64</span><br><span class="line">CPU op-mode(s):        32-bit, 64-bit</span><br><span class="line">Byte Order:            Little Endian</span><br><span class="line">CPU(s):                4</span><br><span class="line">On-line CPU(s) list:   0-3</span><br><span class="line">Thread(s) per core:    1</span><br><span class="line">Core(s) per socket:    4</span><br><span class="line">Socket(s):             1</span><br><span class="line">NUMA node(s):          1</span><br><span class="line">Vendor ID:             GenuineIntel</span><br><span class="line">CPU family:            6</span><br><span class="line">Model:                 30</span><br><span class="line">Model name:            Intel(R) Xeon(R) CPU           X3430  @ 2.40GHz</span><br><span class="line">Stepping:              5</span><br><span class="line">CPU MHz:               2394.055</span><br><span class="line">BogoMIPS:              4788.11</span><br><span class="line">Virtualization:        VT-x</span><br><span class="line">L1d cache:             32K</span><br><span class="line">L1i cache:             32K</span><br><span class="line">L2 cache:              256K</span><br><span class="line">L3 cache:              8192K</span><br><span class="line">NUMA node0 CPU(s):     0-3</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lscpu/" data-id="cjwp05e75007n5gxik9epktwg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/lsb_release" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/lsb_release/" class="article-date">
@@ -86,7 +119,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsb_release/" data-id="cjw4xtit8007kr4xi2tyvd4vi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsb_release/" data-id="cjwp05e73007k5gxir2yjtjsa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsblk/" data-id="cjw4xtita007nr4xiyqds1gs2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsblk/" data-id="cjwp05e74007l5gximk0vt01v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -172,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsattr/" data-id="cjw4xtit8007lr4xi7h1xhoaf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsattr/" data-id="cjwp05e73007j5gxi98fwhbwm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -235,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ls/" data-id="cjw4xtiyd00fir4xiwlkxmhyp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ls/" data-id="cjwp05ecf00fj5gxicxyvtysu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -265,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lpstat/" data-id="cjw4xtit6007hr4xiard8awp0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lpstat/" data-id="cjwp05e70007f5gxi9q5j3zl9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -300,7 +333,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lprm/" data-id="cjw4xtit7007jr4xiz1hd0d6x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lprm/" data-id="cjwp05e72007i5gxiaens84wf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -333,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lpr/" data-id="cjw4xtit6007ir4xi6pnktlpu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lpr/" data-id="cjwp05e71007h5gxi869a235i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -363,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lpq/" data-id="cjw4xtit4007fr4xi1bi0es5s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lpq/" data-id="cjwp05e70007e5gxirojzfy7k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -393,38 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lpc/" data-id="cjw4xtit2007cr4xiv8561wey" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/lpadmin" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/lpadmin/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.831Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="lpadmin"><a href="#lpadmin" class="headerlink" title="lpadmin"></a>lpadmin</h1><p>配置CUPS套件中的打印机和类</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>lpadmin命令</strong> 用于配置CUPS套件中的打印机和类，也被用来设置打印服务器默认打印机。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lpadmin(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-c：将打印机加入类；</span><br><span class="line">-i：为打印机设置“system V”风格的接口脚本；</span><br><span class="line">-m：从mode目录设置一个标准的“system V”接口脚本或“PPD”文件；</span><br><span class="line">-o：为“PPD”或服务器设置选项；</span><br><span class="line">-r：从类中删除打印机；</span><br><span class="line">-u：设置打印机用户级的访问控制；</span><br><span class="line">-D：为打印机提供一个文字描述；</span><br><span class="line">-E：允许打印机接受打印任务；</span><br><span class="line">-L：为打印机位置提供一个文字描述；</span><br><span class="line">-P：为打印机指定一个ppd描述文件；</span><br><span class="line">-p：指定要配置的打印机名称；</span><br><span class="line">-d：设置默认打印机。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>打印机：指定要配置的打印机的名称。</p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lpadmin/" data-id="cjw4xtit5007gr4xio9unbjku" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lpc/" data-id="cjwp05e6z007d5gxilm3ap8fr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -471,7 +473,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -482,6 +484,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -497,10 +503,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>

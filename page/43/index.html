@@ -62,6 +62,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/fc" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/fc/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.482Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="fc"><a href="#fc" class="headerlink" title="fc"></a>fc</h1><p>修改历史命令并执行</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>fc命令</strong> 自动掉用vi编辑器修改已有历史命令，当保存时立即执行修改后的命令，也可以用来显示历史命令。fc命令编辑历史命令时，会自动调用vi编辑器。fc保存文件后，会自动执行所编辑过的命令。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fc [-e 编辑器名] [-lnr] [起始] [终结]</span><br><span class="line">fc -s [模式=替换串] [命令]</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-l：显示历史命令；</span><br><span class="line">-n：显示历史命令时，不显示编号；</span><br><span class="line">-r：反序显示历史命令。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>起始指令编号：指定要编辑的起始指令编号；</li>
+<li>结尾指令编号：指定要编辑的结尾指令编号。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用该指令显示最近使用的10条历史命令，输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# fc -l -10     #显示10条历史命令</span><br><span class="line">1039     type -a grep</span><br><span class="line">1040     export</span><br><span class="line">1041     history 10</span><br><span class="line">1042     ulimit -a</span><br><span class="line">1043     shopt</span><br><span class="line">1044     help ls</span><br><span class="line">1045     help env</span><br><span class="line">1046     help short</span><br><span class="line">1047     help shopt</span><br><span class="line">1048     showkey -a</span><br></pre></td></tr></table></figure>
+<p>第一列信息是历史命令的编号，第二列信息是历史命令的具体格式。若用户需要编辑第1040条历史命令时，则输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fc 1040                    #编辑第1040条历史命令</span><br></pre></td></tr></table></figure>
+<p>命令执行成功后，将自动调用vi编辑器编辑指定的命令，编辑完成后保存，会自动执行修改后的命令。当用户在vi编辑器中修改指令并保存后，被修改的命令会被自动调用并执行。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/fc/" data-id="cjwp05e4h004c5gxih9l9c8qy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/expr" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/expr/" class="article-date">
@@ -92,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/expr/" data-id="cjw4xtiqp0049r4xikkprvks5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/expr/" data-id="cjwp05e4i004d5gxiz3x1kvlb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -122,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/exportfs/" data-id="cjw4xtiqq004br4xijph7re2l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/exportfs/" data-id="cjwp05e4f004a5gxi8ccg50lj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -156,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/export/" data-id="cjw4xtiqr004cr4xiffgdd58i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/export/" data-id="cjwp05e4d00485gxit9is5vn6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -187,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/expand/" data-id="cjw4xtiqo0048r4xi1nl5w08w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/expand/" data-id="cjwp05e4b00455gxihhtu3w34" class="article-share-link">Share</a>
       
       
     </footer>
@@ -227,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/exit/" data-id="cjw4xtiqt004er4xiubglot86" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/exit/" data-id="cjwp05e4c00465gxihriludeg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -267,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/exec/" data-id="cjw4xtiqn0047r4xiznfy8krq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/exec/" data-id="cjwp05e4c00475gxi1vu32h4p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -297,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ex/" data-id="cjw4xtiqn0046r4xi5bxly8yc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ex/" data-id="cjwp05e4900415gxil8gzc1eq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -347,7 +387,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ethtool/" data-id="cjw4xtiqq004ar4xi96xgb3mg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ethtool/" data-id="cjwp05e4b00445gxij2vdedir" class="article-share-link">Share</a>
       
       
     </footer>
@@ -383,41 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/env/" data-id="cjw4xtiql0043r4xihttpe8w1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/enable" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/enable/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.463Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="enable"><a href="#enable" class="headerlink" title="enable"></a>enable</h1><p>启动或关闭shell内建命令</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>enable命令</strong> 用于临时关闭或者激活指定的shell内部命令。若要执行的文件名称与shell内建命令相同，可用<code>enable -n</code>来关闭shell内建命令。若不加<code>-n</code>选项，enable可重新启动关闭的命令。</p>
-<p>linux shell命令执行时，shell总是先在自己的shell builtin中查找该命令，如果找到则执行该命令；如果找不到该命令，则会从环境变量$PATH指定的路径中依次去查找待执行的命令。因为了解了这一点，所以看起来好像没有办法编写用户自己的命令来替代shell builtin命令。幸运的是，有了enable命令我们就能做到了。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enable(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-n：关闭指定的内部命令；</span><br><span class="line">-a：显示所有激活的内部命令；</span><br><span class="line">-f：从指定文件中读取内部命令。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>内部命令：指定要关闭或激活的内部命令。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用enable命令显示所有激活的内部命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# enable -a</span><br><span class="line">enable .</span><br><span class="line">enable :</span><br><span class="line">enable alias</span><br><span class="line">enable bg</span><br><span class="line">enable bind</span><br><span class="line">enable break</span><br><span class="line">enable builtin</span><br><span class="line">enable caller</span><br><span class="line">enable cd</span><br><span class="line">enable command</span><br><span class="line">enable compgen</span><br><span class="line">enable complete</span><br><span class="line">enable continue</span><br><span class="line">enable declare</span><br><span class="line">enable dirs</span><br><span class="line">enable disown</span><br><span class="line">enable echo</span><br><span class="line">enable enable</span><br><span class="line">enable eval</span><br><span class="line">enable exec</span><br><span class="line">enable exit</span><br><span class="line">enable export</span><br><span class="line">enable false</span><br><span class="line">enable fc</span><br><span class="line">enable fg</span><br><span class="line">enable getopts</span><br><span class="line">enable hash</span><br><span class="line">enable help</span><br><span class="line">enable history</span><br><span class="line">enable jobs</span><br><span class="line">enable kill</span><br><span class="line">enable let</span><br><span class="line">enable local</span><br><span class="line">enable logout</span><br><span class="line">enable popd</span><br><span class="line">enable printf</span><br><span class="line">enable pushd</span><br><span class="line">enable pwd</span><br><span class="line">enable read</span><br><span class="line">enable readonly</span><br><span class="line">enable return</span><br><span class="line">enable set</span><br><span class="line">enable shift</span><br><span class="line">enable shopt</span><br><span class="line">enable source</span><br><span class="line">enable suspend</span><br><span class="line">enable test</span><br><span class="line">enable times</span><br><span class="line">enable trap</span><br><span class="line">enable true</span><br><span class="line">enable type</span><br><span class="line">enable typeset</span><br><span class="line">enable ulimit</span><br><span class="line">enable umask</span><br><span class="line">enable unalias</span><br><span class="line">enable unset</span><br><span class="line">enable wait</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/enable/" data-id="cjw4xtiql0044r4xiy7owknhv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/env/" data-id="cjwp05e4a00435gxif4ck5x9q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -464,7 +470,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -475,6 +481,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -490,10 +500,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>

@@ -62,6 +62,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/uniq" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/uniq/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.377Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="uniq"><a href="#uniq" class="headerlink" title="uniq"></a>uniq</h1><p>报告或忽略文件中的重复行</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>uniq命令</strong> 用于报告或忽略文件中的重复行，一般与sort命令结合使用。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uniq(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-c或——count：在每列旁边显示该行重复出现的次数；</span><br><span class="line">-d或--repeated：仅显示重复出现的行列；</span><br><span class="line">-f&lt;栏位&gt;或--skip-fields=&lt;栏位&gt;：忽略比较指定的栏位；</span><br><span class="line">-s&lt;字符位置&gt;或--skip-chars=&lt;字符位置&gt;：忽略比较指定的字符；</span><br><span class="line">-u或——unique：仅显示出一次的行列；</span><br><span class="line">-w&lt;字符位置&gt;或--check-chars=&lt;字符位置&gt;：指定要比较的字符。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>输入文件：指定要去除的重复行文件。如果不指定此项，则从标准读取数据；</li>
+<li>输出文件：指定要去除重复行后的内容要写入的输出文件。如果不指定此选项，则将内容显示到标准输出设备（显示终端）。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>删除重复行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uniq file.txt</span><br><span class="line">sort file.txt | uniq</span><br><span class="line">sort -u file.txt</span><br></pre></td></tr></table></figure>
+<p>只显示单一行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uniq -u file.txt</span><br><span class="line">sort file.txt | uniq -u</span><br></pre></td></tr></table></figure>
+<p>统计各行在文件中出现的次数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort file.txt | uniq -c</span><br></pre></td></tr></table></figure>
+<p>在文件中找出重复的行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort file.txt | uniq -d</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/uniq/" data-id="cjwp05eb100dm5gxig3a0cl35" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/unexpand" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/unexpand/" class="article-date">
@@ -83,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/unexpand/" data-id="cjw4xtix000dnr4xi5gxo1ooy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/unexpand/" data-id="cjwp05eaz00di5gxiorb8vy94" class="article-share-link">Share</a>
       
       
     </footer>
@@ -118,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/uncompress/" data-id="cjw4xtiwy00dir4xiiq78jd0t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/uncompress/" data-id="cjwp05eb000dk5gxislv1sdh0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/unarj/" data-id="cjw4xtiwz00dlr4xike47is08" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/unarj/" data-id="cjwp05eay00dh5gxio08d97t9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/uname/" data-id="cjw4xtiwz00dkr4xiy5rzbeje" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/uname/" data-id="cjwp05eb200do5gxiuxfek7vr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/unalias/" data-id="cjw4xtix000dmr4xiv65o307y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/unalias/" data-id="cjwp05eaz00dj5gxi6sjr56nv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -262,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/umount/" data-id="cjw4xtiwy00djr4xi2czxodye" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/umount/" data-id="cjwp05eax00dg5gxixk2xxi3x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -303,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/umask/" data-id="cjw4xtiwx00dhr4xi9n3rm7r7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/umask/" data-id="cjwp05eaw00de5gxi9lgghz03" class="article-share-link">Share</a>
       
       
     </footer>
@@ -338,7 +380,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ulimit/" data-id="cjw4xtiwx00dgr4xi72q2z8mz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ulimit/" data-id="cjwp05eax00df5gxiecfsilen" class="article-share-link">Share</a>
       
       
     </footer>
@@ -379,40 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/type/" data-id="cjw4xtiww00der4xid6065nla" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/tty" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/tty/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.356Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="tty"><a href="#tty" class="headerlink" title="tty"></a>tty</h1><p>显示连接到当前标准输入的终端设备文件名。</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>tty命令</strong> 可以显示连接到当前标准输入的终端设备文件名。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tty [选项]</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-s 什么也不显示，只返回退出状态值</span><br></pre></td></tr></table></figure>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>显示连接到当前标准输入的终端设备文件名。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># tty</span></span><br><span class="line">/dev/pts/0</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/tty/" data-id="cjw4xtiwv00ddr4xipzoblehf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/type/" data-id="cjwp05eav00dd5gxix1mva1pi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -459,7 +468,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -470,6 +479,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -485,10 +498,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>

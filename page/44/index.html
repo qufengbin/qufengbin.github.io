@@ -62,6 +62,40 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/enable" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/enable/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.463Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="enable"><a href="#enable" class="headerlink" title="enable"></a>enable</h1><p>启动或关闭shell内建命令</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>enable命令</strong> 用于临时关闭或者激活指定的shell内部命令。若要执行的文件名称与shell内建命令相同，可用<code>enable -n</code>来关闭shell内建命令。若不加<code>-n</code>选项，enable可重新启动关闭的命令。</p>
+<p>linux shell命令执行时，shell总是先在自己的shell builtin中查找该命令，如果找到则执行该命令；如果找不到该命令，则会从环境变量$PATH指定的路径中依次去查找待执行的命令。因为了解了这一点，所以看起来好像没有办法编写用户自己的命令来替代shell builtin命令。幸运的是，有了enable命令我们就能做到了。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enable(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-n：关闭指定的内部命令；</span><br><span class="line">-a：显示所有激活的内部命令；</span><br><span class="line">-f：从指定文件中读取内部命令。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>内部命令：指定要关闭或激活的内部命令。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用enable命令显示所有激活的内部命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# enable -a</span><br><span class="line">enable .</span><br><span class="line">enable :</span><br><span class="line">enable alias</span><br><span class="line">enable bg</span><br><span class="line">enable bind</span><br><span class="line">enable break</span><br><span class="line">enable builtin</span><br><span class="line">enable caller</span><br><span class="line">enable cd</span><br><span class="line">enable command</span><br><span class="line">enable compgen</span><br><span class="line">enable complete</span><br><span class="line">enable continue</span><br><span class="line">enable declare</span><br><span class="line">enable dirs</span><br><span class="line">enable disown</span><br><span class="line">enable echo</span><br><span class="line">enable enable</span><br><span class="line">enable eval</span><br><span class="line">enable exec</span><br><span class="line">enable exit</span><br><span class="line">enable export</span><br><span class="line">enable false</span><br><span class="line">enable fc</span><br><span class="line">enable fg</span><br><span class="line">enable getopts</span><br><span class="line">enable hash</span><br><span class="line">enable help</span><br><span class="line">enable history</span><br><span class="line">enable jobs</span><br><span class="line">enable kill</span><br><span class="line">enable let</span><br><span class="line">enable local</span><br><span class="line">enable logout</span><br><span class="line">enable popd</span><br><span class="line">enable printf</span><br><span class="line">enable pushd</span><br><span class="line">enable pwd</span><br><span class="line">enable read</span><br><span class="line">enable readonly</span><br><span class="line">enable return</span><br><span class="line">enable set</span><br><span class="line">enable shift</span><br><span class="line">enable shopt</span><br><span class="line">enable source</span><br><span class="line">enable suspend</span><br><span class="line">enable test</span><br><span class="line">enable times</span><br><span class="line">enable trap</span><br><span class="line">enable true</span><br><span class="line">enable type</span><br><span class="line">enable typeset</span><br><span class="line">enable ulimit</span><br><span class="line">enable umask</span><br><span class="line">enable unalias</span><br><span class="line">enable unset</span><br><span class="line">enable wait</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/enable/" data-id="cjwp05e4800405gxi1zvcltu7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/emacs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/emacs/" class="article-date">
@@ -104,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/emacs/" data-id="cjw4xtiqm0045r4xif79vvlaq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/emacs/" data-id="cjwp05e4900425gxi5sfpu6rf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/elm/" data-id="cjw4xtipa003xr4xih40v5tor" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/elm/" data-id="cjwp05e47003z5gxi87r010pm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -165,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/elinks/" data-id="cjw4xtiqj0041r4xiibnp6fcf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/elinks/" data-id="cjwp05e47003y5gxicakzrttu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -198,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/eject/" data-id="cjw4xtiqk0042r4xicovc3rvb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/eject/" data-id="cjwp05e46003w5gxi7yqa5b24" class="article-share-link">Share</a>
       
       
     </footer>
@@ -231,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/egrep/" data-id="cjw4xtip7003ur4xiivwvuiq5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/egrep/" data-id="cjwp05e45003v5gxidkh2dgky" class="article-share-link">Share</a>
       
       
     </footer>
@@ -333,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/edquota/" data-id="cjw4xtip9003wr4xi02s9xlb2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/edquota/" data-id="cjwp05e46003x5gxiqhxwyxbv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -365,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ed/" data-id="cjw4xtip8003vr4xi8smfhqg3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ed/" data-id="cjwp05e44003u5gxiwkwzfyfj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -424,7 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/echo/" data-id="cjw4xtip6003tr4xi7g36z5dq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/echo/" data-id="cjwp05e43003s5gxigxju2ctb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -464,51 +498,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/e2label/" data-id="cjw4xtip5003rr4xifrcx01h2" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/e2fsck" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/e2fsck/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.420Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="e2fsck"><a href="#e2fsck" class="headerlink" title="e2fsck"></a>e2fsck</h1><p>用于检查第二扩展文件系统的完整性</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>e2fsck命令</strong> 用于检查第二扩展文件系统的完整性，通过适当的选项可以尝试修复出现的错误。</p>
-<p>e2fsck执行后的传回值及代表意义如下：</p>
-<ul>
-<li>0 没有任何错误发生。</li>
-<li>1 文件系统发生错误，并且已经修正。</li>
-<li>2 文件系统发生错误，并且已经修正。</li>
-<li>4 文件系统发生错误，但没有修正。</li>
-<li>8 运作时发生错误。</li>
-<li>16 使用的语法发生错误。</li>
-<li>128 共享的函数库发生错误。</li>
-</ul>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e2fsck(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">-a：不询问使用者意见，便自动修复文件系统；</span><br><span class="line">-b&lt;superblock&gt;：指定superblock，而不使用预设的superblock；</span><br><span class="line">-B&lt;区块大小&gt;：指定区块的大小，单位为字节；</span><br><span class="line">-c：一并执行badblocks，以标示损坏的区块；</span><br><span class="line">-C：将检查过程的信息完整记录在file descriptor中，使得整个检查过程都能完整监控；</span><br><span class="line">-d：显示排错信息；</span><br><span class="line">-f：即使文件系统没有错误迹象，仍强制地检查正确性；</span><br><span class="line">-F：执行前先清除设备的缓冲区；</span><br><span class="line">-l&lt;文件&gt;：将文件中指定的区块加到损坏区块列表；</span><br><span class="line">-L&lt;文件&gt;：先清除损坏区块列表，再将文件中指定的区块加到损坏区块列表。因此损坏区块列表的区块跟文件中指定的区块是一样的；</span><br><span class="line">-n：以只读模式开启文件系统，并采取非互动方式执行，所有的问题对话均设置以&quot;no&quot;回答；</span><br><span class="line">-p：不询问使用者意见，便自动修复文件系统；</span><br><span class="line">-r：此参数只为了兼容性而存在，并无实际作用；</span><br><span class="line">-s：如果文件系统的字节顺序不适当，就交换字节顺序，否则不做任何动作；</span><br><span class="line">-S：不管文件系统的字节顺序，一律交换字节顺序；</span><br><span class="line">-t：显示时间信息；</span><br><span class="line">-v：执行时显示详细的信息；</span><br><span class="line">-V：显示版本信息；</span><br><span class="line">-y：采取非互动方式执行，所有的问题均设置以&quot;yes&quot;回答。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件系统或者分区：指定文件系统或者分区所对应的设备文件名。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>检查<code>/dev/sda1</code>是否有问题，如发现问题便自动修复：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e2fsck -a -y /dev/sda1</span><br></pre></td></tr></table></figure>
-<p>执行e2fsck或fsck前请先umount partition，否则有机会令档案系统毁损。如果需要对根目录<code>/</code>进行检查及修复，便需要进入singal user mode执行。</p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/e2fsck/" data-id="cjw4xtip4003pr4xigguqcvyb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/e2label/" data-id="cjwp05e44003t5gxi2o9q374v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -555,7 +545,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -566,6 +556,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -581,10 +575,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>

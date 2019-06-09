@@ -62,6 +62,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/dpkg-query" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dpkg-query/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.377Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dpkg-query"><a href="#dpkg-query" class="headerlink" title="dpkg-query"></a>dpkg-query</h1><p>Debian Linux中软件包的查询工具</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dpkg-query命令</strong> 是Debian Linux中软件包的查询工具，它从dpkg软件包数据库中查询并辨识软件包的信息。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-query(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-l：列出符合匹配模式的软件包；</span><br><span class="line">-s：查询软件包的状态信息；</span><br><span class="line">-L：显示软件包所安装的文件列表；</span><br><span class="line">-S：从安装的软件包中查询文件；</span><br><span class="line">-w：显示软件包信息；</span><br><span class="line">-c：显示软件包的控制文件路径；</span><br><span class="line">-p：显示软件包的细节。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>软件包名称：指定需要查询的软件包。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>查找文件file1在哪个包里安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-query -S file1</span><br></pre></td></tr></table></figure>
+<p>列出ubuntu下所安装软件列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-query -W --showformat=&apos;$&#123;Package&#125; $&#123;Version&#125;\n&apos; &gt; filename</span><br></pre></td></tr></table></figure>
+<p>查看软件包详细信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-query -s capistrano</span><br></pre></td></tr></table></figure>
+<p>查看软件包安装时安装到系统的文件列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-query -L capistrano</span><br></pre></td></tr></table></figure>
+<p>列出所有安装的包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-query -l</span><br></pre></td></tr></table></figure>
+<p>查看软件包的确切状态（是否安装）以及版本号：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg-query -W -f=&apos;$&#123;Status&#125; $&#123;Version&#125;\n&apos; apache-perl</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dpkg-query/" data-id="cjwp05e3t003g5gxi7ebb93u6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/dpkg-preconfigure" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/dpkg-preconfigure/" class="article-date">
@@ -85,7 +128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dpkg-preconfigure/" data-id="cjw4xtiov003er4xis5jzkh7v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dpkg-preconfigure/" data-id="cjwp05e3q003c5gxi5r234lp5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -124,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dpkg-divert/" data-id="cjw4xtiow003gr4xidllaiv7c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dpkg-divert/" data-id="cjwp05e3u003h5gxi72mrl8ma" class="article-share-link">Share</a>
       
       
     </footer>
@@ -163,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dpkg-deb/" data-id="cjw4xtiou003dr4xif54jciel" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dpkg-deb/" data-id="cjwp05e3s003f5gxiqtb20x8u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dos2unix/" data-id="cjw4xtiow003fr4xi2onbkv4j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dos2unix/" data-id="cjwp05e3s003e5gxiqopgec9l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -236,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/domainname/" data-id="cjw4xtiou003cr4xixfw2t6od" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/domainname/" data-id="cjwp05e3r003d5gxijvst0lzo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -267,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dnsdomainname/" data-id="cjw4xtiot003br4xi1jqxdw1f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dnsdomainname/" data-id="cjwp05e3p003b5gxisnk4mj0d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -422,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dnf/" data-id="cjw4xtiqi003zr4xiq1m2uwtw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dnf/" data-id="cjwp05eca00fa5gxi2tuu8y79" class="article-share-link">Share</a>
       
       
     </footer>
@@ -547,7 +590,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dmidecode/" data-id="cjw4xtiqj0040r4xikztwysux" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dmidecode/" data-id="cjwp05ec900f95gxitdk8373w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -581,39 +624,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dmesg/" data-id="cjw4xtios003ar4xikgx3cnxh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/dirs" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/dirs/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.349Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="dirs"><a href="#dirs" class="headerlink" title="dirs"></a>dirs</h1><p>显示目录记录</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dirs命令</strong> 显示当前目录栈中的所有记录（不带参数的dirs命令显示当前目录栈中的记录）。dirs始终显示当然目录, 再是堆栈中的内容；即使目录堆栈为空, dirs命令仍然只显示当然目录。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dirs(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-c：删除目录栈中的所有记录</span><br><span class="line">-l：以完整格式显示</span><br><span class="line">-p：一个目录一行的方式显示</span><br><span class="line">-v：每行一个目录来显示目录栈的内容，每个目录前加上的编号</span><br><span class="line">+N：显示从左到右的第n个目录，数字从0开始</span><br><span class="line">-N：显示从右到左的第n个日录，数字从0开始</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>目录：显示目录堆叠中的记录。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost etc]# dirs</span><br><span class="line">/etc</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dirs/" data-id="cjw4xtior0039r4xib66c26l6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dmesg/" data-id="cjwp05e3n00395gxin68g1k5p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -660,7 +671,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -671,6 +682,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -686,10 +701,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>

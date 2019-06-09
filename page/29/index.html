@@ -62,6 +62,41 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/lvremove" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/lvremove/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.878Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="lvremove"><a href="#lvremove" class="headerlink" title="lvremove"></a>lvremove</h1><p>删除指定LVM逻辑卷</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>lvremove命令</strong> 用于删除指定LVM逻辑卷。如果逻辑卷已经使用mount命令加载，则不能使用lvremove命令删除。必须使用umount命令卸载后，逻辑卷方可被删除。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lvremove(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-f：强制删除。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>逻辑卷：指定要删除的逻辑卷。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用lvremove命令删除指定的逻辑卷。在命令行中输入下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# lvremove /dev/vg1000/lvol0    #删除逻辑卷&quot;lvol0&quot;</span><br></pre></td></tr></table></figure>
+<p>输出信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Do you really want to remove active logical </span><br><span class="line">volume &quot;lvol0&quot;? [y/n]: y    #确认删除</span><br><span class="line">  Logical volume &quot;lvol0&quot; successfully removed</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvremove/" data-id="cjwp05e7a007t5gxiiglv3s42" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/lvreduce" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/lvreduce/" class="article-date">
@@ -87,7 +122,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvreduce/" data-id="cjw4xtitf007vr4xiq5ta2xbr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvreduce/" data-id="cjwp05e7c007x5gxideh3jjxk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -122,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvextend/" data-id="cjw4xtite007ur4xiie8x29yl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvextend/" data-id="cjwp05e7b007v5gxinxbrjwxv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -156,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvdisplay/" data-id="cjw4xtitd007sr4xi2dc9ml89" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvdisplay/" data-id="cjwp05e7a007u5gxij54vcxd5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -192,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvcreate/" data-id="cjw4xtith007yr4xijuumdgb9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvcreate/" data-id="cjwp05e79007r5gximdjubov8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -228,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ltrace/" data-id="cjw4xtitc007qr4xilh1pgzt4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ltrace/" data-id="cjwp05e79007s5gxizzmrls8r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -276,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsusb/" data-id="cjw4xtite007tr4xihximp95i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsusb/" data-id="cjwp05e78007q5gxizv2igq6t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -307,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lspci/" data-id="cjw4xtitb007pr4xilm5l5cvx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lspci/" data-id="cjwp05e77007p5gxivfmapc9z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -407,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsof/" data-id="cjw4xtitb007or4xibm0sgfvp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsof/" data-id="cjwp05e76007o5gxinufxpgun" class="article-share-link">Share</a>
       
       
     </footer>
@@ -444,40 +479,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsmod/" data-id="cjw4xtitc007rr4xic7fqskxo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/lscpu" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/lscpu/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.857Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="lscpu"><a href="#lscpu" class="headerlink" title="lscpu"></a>lscpu</h1><p>显示有关CPU架构的信息</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>lscpu命令</strong> 是显示有关CPU架构的信息。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lscpu [选项]</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-a, --all               打印在线和离线CPU（默认为-e）</span><br><span class="line">-b, --online            仅打印在线CPU（-p的默认值）</span><br><span class="line">-c, --offline           打印离线CPU</span><br><span class="line">-e, --extended[=&lt;list&gt;] 打印出一个扩展的可读格式</span><br><span class="line">-p, --parse[=&lt;list&gt;]    打印出可解析的格式</span><br><span class="line">-s, --sysroot &lt;dir&gt;     将指定的目录用作系统根目录</span><br><span class="line">-x, --hex               打印十六进制掩码，而不是CPU列表</span><br><span class="line"></span><br><span class="line">-h, --help     显示此帮助并退出</span><br><span class="line">-V, --version  输出版本信息并退出</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">可用列：</span><br><span class="line">           CPU  逻辑CPU编号</span><br><span class="line">          CORE  逻辑核心号码</span><br><span class="line">        SOCKET  逻辑套接字号</span><br><span class="line">          NODE  逻辑NUMA节点号</span><br><span class="line">          BOOK  逻辑书号</span><br><span class="line">         CACHE  显示了如何在CPU之间共享高速缓存</span><br><span class="line">  POLARIZATION  虚拟硬件上的CPU调度模式</span><br><span class="line">       ADDRESS  CPU的物理地址</span><br><span class="line">    CONFIGURED  显示管理程序是否分配了CPU</span><br><span class="line">        ONLINE  显示Linux是否正在使用CPU</span><br></pre></td></tr></table></figure>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># lscpu</span></span><br><span class="line">Architecture:          x86_64</span><br><span class="line">CPU op-mode(s):        32-bit, 64-bit</span><br><span class="line">Byte Order:            Little Endian</span><br><span class="line">CPU(s):                4</span><br><span class="line">On-line CPU(s) list:   0-3</span><br><span class="line">Thread(s) per core:    1</span><br><span class="line">Core(s) per socket:    4</span><br><span class="line">Socket(s):             1</span><br><span class="line">NUMA node(s):          1</span><br><span class="line">Vendor ID:             GenuineIntel</span><br><span class="line">CPU family:            6</span><br><span class="line">Model:                 30</span><br><span class="line">Model name:            Intel(R) Xeon(R) CPU           X3430  @ 2.40GHz</span><br><span class="line">Stepping:              5</span><br><span class="line">CPU MHz:               2394.055</span><br><span class="line">BogoMIPS:              4788.11</span><br><span class="line">Virtualization:        VT-x</span><br><span class="line">L1d cache:             32K</span><br><span class="line">L1i cache:             32K</span><br><span class="line">L2 cache:              256K</span><br><span class="line">L3 cache:              8192K</span><br><span class="line">NUMA node0 CPU(s):     0-3</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lscpu/" data-id="cjw4xtit9007mr4xi7lkb8fgt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lsmod/" data-id="cjwp05e74007m5gxiy4q2huuz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -524,7 +526,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -535,6 +537,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -550,10 +556,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>

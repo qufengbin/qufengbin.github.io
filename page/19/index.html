@@ -62,6 +62,72 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/read" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/read/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.072Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="read"><a href="#read" class="headerlink" title="read"></a>read</h1><p>从键盘读取变量值</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>read命令</strong> 从键盘读取变量的值，通常用在shell脚本中与用户进行交互的场合。该命令可以一次读取多个变量的值，变量和输入的值都需要使用空格隔开。在read命令后面，如果没有指定变量名，读取的数据将被自动赋值给特定的变量REPLY</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">read(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-p：指定读取值时的提示符；</span><br><span class="line">-t：指定读取值时等待的时间（秒）。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>变量：指定读取值的变量名。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>下面的列表给出了read命令的常用方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read 1987name</span><br><span class="line">从标准输入读取输入并赋值给变量1987name。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read first last</span><br><span class="line">从标准输入读取输入到第一个空格或者回车，将输入的第一个单词放到变量first中，并将该行其他的输入放在变量last中。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read</span><br><span class="line">从标准输入读取一行并赋值给特定变量REPLY。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read -a arrayname</span><br><span class="line">把单词清单读入arrayname的数组里。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read -p &quot;text&quot;</span><br><span class="line">打印提示（text），等待输入，并将输入存储在REPLY中。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read -r line</span><br><span class="line">允许输入包含反斜杠。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read -t 3</span><br><span class="line">指定读取等待时间为3秒。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read -n 2 var</span><br><span class="line">从输入中读取两个字符并存入变量var，不需要按回车读取。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read -d &quot;:&quot; var</span><br><span class="line">用定界符“:”结束输入行。</span><br></pre></td></tr></table></figure>
+<h2 id="read命令示例"><a href="#read命令示例" class="headerlink" title="read命令示例"></a>read命令示例</h2><p>从标准输入读取输入并赋值给变量1987name。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#read 1987name        #等待读取输入，直到回车后表示输入完毕，并将输入赋值给变量answer</span><br><span class="line">HelloWorld            #控制台输入Hello</span><br><span class="line"></span><br><span class="line">#echo $1987name       #打印变量</span><br><span class="line">HelloWorld</span><br></pre></td></tr></table></figure>
+<p>等待一组输入，每个单词之间使用空格隔开，直到回车结束，并分别将单词依次赋值给这三个读入变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#read one two three</span><br><span class="line">1 2 3                   #在控制台输入1 2 3，它们之间用空格隔开。</span><br><span class="line"></span><br><span class="line">#echo &quot;one = $one, two = $two, three = $three&quot;</span><br><span class="line">one = 1, two = 2, three = 3</span><br></pre></td></tr></table></figure>
+<p>REPLY示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#read                  #等待控制台输入，并将结果赋值给特定内置变量REPLY。</span><br><span class="line">This is REPLY          #在控制台输入该行。 </span><br><span class="line"></span><br><span class="line">#echo $REPLY           #打印输出特定内置变量REPLY，以确认是否被正确赋值。</span><br><span class="line"></span><br><span class="line">This is REPLY</span><br></pre></td></tr></table></figure>
+<p>-p选项示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#read -p &quot;Enter your name: &quot;            #输出文本提示，同时等待输入，并将结果赋值给REPLY。</span><br><span class="line">Enter you name: stephen                 #在提示文本之后输入stephen</span><br><span class="line"></span><br><span class="line">#echo $REPLY</span><br><span class="line">stephen</span><br></pre></td></tr></table></figure>
+<p>等待控制台输入，并将输入信息视为数组，赋值给数组变量friends，输入信息用空格隔开数组的每个元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#read -a friends</span><br><span class="line">Tim Tom Helen</span><br><span class="line"></span><br><span class="line">#echo &quot;They are $&#123;friends[0]&#125;, $&#123;friends[1]&#125; and $&#123;friends[2]&#125;.&quot;</span><br><span class="line">They are Tim, Tom and Helen.</span><br></pre></td></tr></table></figure>
+<p> <strong>补充一个终端输入密码时候，不让密码显示出来的例子。</strong> </p>
+<p>方法1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">read -p &quot;输入密码：&quot; -s pwd</span><br><span class="line">echo</span><br><span class="line">echo password read, is &quot;$pwd&quot;</span><br></pre></td></tr></table></figure>
+<p>方法2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">stty -echo</span><br><span class="line">read -p &quot;输入密码：&quot; pwd</span><br><span class="line">stty echo</span><br><span class="line">echo</span><br><span class="line">echo 输入完毕。</span><br></pre></td></tr></table></figure>
+<p>其中，选项<code>-echo</code>禁止将输出发送到终端，而选项<code>echo</code>则允许发送输出。</p>
+<p>使用read命令从键盘读取变量值，并且将值赋给指定的变量，输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">read v1 v3          #读取变量值</span><br></pre></td></tr></table></figure>
+<p>执行上面的指令以后，要求键入两个数据，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux c+            #输入数据</span><br></pre></td></tr></table></figure>
+<p>完成之后，可以使用echo命令将指定的变量值输出查看，输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $v1 $v3       #输出变量的值</span><br></pre></td></tr></table></figure>
+<p>执行输出变量值的命令以后，将显示用户所输入的数据值，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux c+           #输出变量值</span><br></pre></td></tr></table></figure>
+<p>注意：使用echo命令输出变量值时，必须在变量名前添加符号<code>$</code>。否则，echo将直接输出变量名。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/read/" data-id="cjwp05e9200al5gxiumm96gfy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/rcp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/rcp/" class="article-date">
@@ -119,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rcp/" data-id="cjw4xtiv800amr4xid87ti8xb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rcp/" data-id="cjwp05e9100ai5gxi75bx2ccv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rcconf/" data-id="cjw4xtiv600ajr4xi49erym83" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rcconf/" data-id="cjwp05e8z00ag5gxixtrsrkdy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/quotaon/" data-id="cjw4xtiv700alr4xigb9v8hs7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/quotaon/" data-id="cjwp05e9100aj5gxiq7udezvz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -211,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/quotaoff/" data-id="cjw4xtiv700akr4xi92uub6a3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/quotaoff/" data-id="cjwp05e8y00ae5gxideer1v2s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -246,7 +312,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/quotacheck/" data-id="cjw4xtiv500air4xikw05l2ko" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/quotacheck/" data-id="cjwp05e9200ak5gxi43zojyfc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -301,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/quota/" data-id="cjw4xtiv400agr4xik8cr5umd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/quota/" data-id="cjwp05e9000ah5gxij8zfsbq6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -331,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pwunconv/" data-id="cjw4xtiv500ahr4xis263loy6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pwunconv/" data-id="cjwp05e8z00af5gxin7klvv4j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -362,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pwd/" data-id="cjw4xtiv400afr4xisn2qq11y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pwd/" data-id="cjwp05e8w00aa5gxivu17r7zr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -394,42 +460,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pwconv/" data-id="cjw4xtiv300adr4xiv4yddfod" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/pwck" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/pwck/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.054Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="pwck"><a href="#pwck" class="headerlink" title="pwck"></a>pwck</h1><p>用来验证系统认证文件内容和格式的完整性</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>pwck命令</strong> 用来验证系统认证文件<code>/etc/passwd</code>和<code>/etc/shadow</code>的内容和格式的完整性。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwck(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-q：仅报告错误信息；</span><br><span class="line">-s：以用户id排序文件“/etc/passwd”和“/etc/shadow”;</span><br><span class="line">-r：只读方式运行指令。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
-<li>密码文件：指定密码文件的路径；</li>
-<li>影子文件：指定影子文件的路径。</li>
-</ul>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">pwck /etc/passwd</span><br><span class="line">user &apos;lp&apos;: directory &apos;/var/spool/lpd&apos; does not exist</span><br><span class="line">user &apos;news&apos;: directory &apos;/var/spool/news&apos; does not exist</span><br><span class="line">user &apos;uucp&apos;: directory &apos;/var/spool/uucp&apos; does not exist</span><br><span class="line">user &apos;www-data&apos;: directory &apos;/var/www&apos; does not exist</span><br><span class="line">user &apos;list&apos;: directory &apos;/var/list&apos; does not exist</span><br><span class="line">user &apos;irc&apos;: directory &apos;/var/run/ircd&apos; does not exist</span><br><span class="line">user &apos;gnats&apos;: directory &apos;/var/lib/gnats&apos; does not exist</span><br><span class="line">user &apos;nobody&apos;: directory &apos;/nonexistent&apos; does not exist</span><br><span class="line">user &apos;syslog&apos;: directory &apos;/home/syslog&apos; does not exist</span><br><span class="line">user &apos;couchdb&apos;: directory &apos;/var/lib/couchdb&apos; does not exist</span><br><span class="line">user &apos;speech-dispatcher&apos;: directory &apos;/var/run/speech-dispatcher&apos; does not exist</span><br><span class="line">user &apos;usbmux&apos;: directory &apos;/home/usbmux&apos; does not exist</span><br><span class="line">user &apos;haldaemon&apos;: directory &apos;/var/run/hald&apos; does not exist</span><br><span class="line">user &apos;pulse&apos;: directory &apos;/var/run/pulse&apos; does not exist</span><br><span class="line">user &apos;saned&apos;: directory &apos;/home/saned&apos; does not exist</span><br><span class="line">user &apos;hplip&apos;: directory &apos;/var/run/hplip&apos; does not exist</span><br><span class="line">pwck：无改变</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pwck/" data-id="cjw4xtiv200acr4xixmunth7o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pwconv/" data-id="cjwp05e8x00ac5gxiscptzcy8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -476,7 +507,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -487,6 +518,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -502,10 +537,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>

@@ -62,6 +62,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/iotop" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/iotop/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.699Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="iotop"><a href="#iotop" class="headerlink" title="iotop"></a>iotop</h1><p>用来监视磁盘I/O使用状况的工具</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>iotop命令</strong> 是一个用来监视磁盘I/O使用状况的top类工具。iotop具有与top相似的UI，其中包括PID、用户、I/O、进程等相关信息。Linux下的IO统计工具如iostat，nmon等大多数是只能统计到per设备的读写情况，如果你想知道每个进程是如何使用IO的就比较麻烦，使用iotop命令可以很方便的查看。</p>
+<p>iotop使用Python语言编写而成，要求Python2.5（及以上版本）和Linux kernel2.6.20（及以上版本）。iotop提供有源代码及rpm包，可从其官方主页下载。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p> <strong>Ubuntu</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install iotop</span><br></pre></td></tr></table></figure>
+<p> <strong>CentOS</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install iotop</span><br></pre></td></tr></table></figure>
+<p> <strong>编译安装</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http://guichaz.free.fr/iotop/files/iotop-0.4.4.tar.gz    </span><br><span class="line">tar zxf iotop-0.4.4.tar.gz    </span><br><span class="line">python setup.py build    </span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iotop（选项）</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-o：只显示有io操作的进程</span><br><span class="line">-b：批量显示，无交互，主要用作记录到文件。</span><br><span class="line">-n NUM：显示NUM次，主要用于非交互式模式。</span><br><span class="line">-d SEC：间隔SEC秒显示一次。</span><br><span class="line">-p PID：监控的进程pid。</span><br><span class="line">-u USER：监控的进程用户。</span><br></pre></td></tr></table></figure>
+<p> <strong>iotop常用快捷键：</strong> </p>
+<ol>
+<li>左右箭头：改变排序方式，默认是按IO排序。</li>
+<li>r：改变排序顺序。</li>
+<li>o：只显示有IO输出的进程。</li>
+<li>p：进程/线程的显示方式的切换。</li>
+<li>a：显示累积使用量。</li>
+<li>q：退出。</li>
+</ol>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>直接执行iotop就可以看到效果了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Total DISK read:       0.00 B/s | Total DISK write:       0.00 B/s</span><br><span class="line">  TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN     IO&gt;    command</span><br><span class="line">    1 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % init [3]</span><br><span class="line">    2 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [kthreadd]</span><br><span class="line">    3 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [migration/0]</span><br><span class="line">    4 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [ksoftirqd/0]</span><br><span class="line">    5 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [watchdog/0]</span><br><span class="line">    6 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [migration/1]</span><br><span class="line">    7 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [ksoftirqd/1]</span><br><span class="line">    8 rt/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [watchdog/1]</span><br><span class="line">    9 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [events/0]</span><br><span class="line">   10 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [events/1]</span><br><span class="line">   11 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [khelper]</span><br><span class="line">2572 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % [bluetooth]</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/iotop/" data-id="cjwp05e5y00645gxiz6a00hcu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/iostat" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/iostat/" class="article-date">
@@ -92,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/iostat/" data-id="cjw4xtis40065r4xitxouzom3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/iostat/" data-id="cjwp05e5w00615gxivp6ys4h3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/install/" data-id="cjw4xtis30064r4xiva0fbix2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/install/" data-id="cjwp05e5x00625gxibvbxn80h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -168,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/insmod/" data-id="cjw4xtiry0060r4xiyk5qmxsq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/insmod/" data-id="cjwp05e5w00605gxioghunbvo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -234,7 +282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/inotifywait/" data-id="cjw4xtis30063r4xiho4svxtj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/inotifywait/" data-id="cjwp05e5u005x5gxi814jszsm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,7 +318,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/init/" data-id="cjw4xtis20062r4xi9phjaz28" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/init/" data-id="cjwp05e5v005z5gxityucuzf3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -308,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/info/" data-id="cjw4xtis10061r4ximg5xsagu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/info/" data-id="cjwp05e5t005w5gxihbubo8vv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -341,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/indent/" data-id="cjw4xtirx005yr4xij8syhgwk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/indent/" data-id="cjwp05e5r005u5gxih1mv8d8t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -372,7 +420,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifup/" data-id="cjw4xtirx005xr4xijty6e5ty" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifup/" data-id="cjwp05e5q005t5gxi732g78dp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -407,46 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/iftop/" data-id="cjw4xtiry005zr4xidiclisv6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/ifstat" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/ifstat/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.665Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ifstat"><a href="#ifstat" class="headerlink" title="ifstat"></a>ifstat</h1><p>统计网络接口流量状态</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>ifstat命令</strong> 就像iostat/vmstat描述其它的系统状况一样，是一个统计网络接口活动状态的工具。ifstat工具系统中并不默认安装，需要自己下载源码包，重新编译安装，使用过程相对比较简单。</p>
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://gael.roualland.free.fr/ifstat/  （官网）</span><br><span class="line">wget http://gael.roualland.free.fr/ifstat/ifstat-1.1.tar.gz</span><br></pre></td></tr></table></figure>
-<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf ifstat-1.1.tar.gz</span><br><span class="line">cd ifstat-1.1</span><br><span class="line">./configure            </span><br><span class="line">make</span><br><span class="line">make install # 默认会安装到/usr/local/bin/目录中</span><br></pre></td></tr></table></figure>
-<p>注释：执行<code>which ifstat</code>输出<code>/usr/local/bin/ifstat</code></p>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-l 监测环路网络接口（lo）。缺省情况下，ifstat监测活动的所有非环路网络接口。经使用发现，加上-l参数能监测所有的网络接口的信息，而不是只监测 lo的接口信息，也就是说，加上-l参数比不加-l参数会多一个lo接口的状态信息。</span><br><span class="line">-a 监测能检测到的所有网络接口的状态信息。使用发现，比加上-l参数还多一个plip0的接口信息，搜索一下发现这是并口（网络设备中有一 个叫PLIP (Parallel Line Internet Protocol). 它提供了并口...）</span><br><span class="line">-z 隐藏流量是无的接口，例如那些接口虽然启动了但是未用的</span><br><span class="line">-i 指定要监测的接口,后面跟网络接口名</span><br><span class="line">-s 等于加-d snmp:[comm@][#]host[/nn]] 参数，通过SNMP查询一个远程主机</span><br><span class="line">-h 显示简短的帮助信息</span><br><span class="line">-n 关闭显示周期性出现的头部信息（也就是说，不加-n参数运行ifstat时最顶部会出现网络接口的名称，当一屏显示不下时，会再一次出现接口的名称，提示我们显示的流量信息具体是哪个网络接口的。加上-n参数把周期性的显示接口名称关闭，只显示一次）</span><br><span class="line">-t 在每一行的开头加一个时间 戳（能告诉我们具体的时间）</span><br><span class="line">-T 报告所有监测接口的全部带宽（最后一列有个total，显示所有的接口的in流量和所有接口的out流量，简单的把所有接口的in流量相加,out流量相 加）</span><br><span class="line">-w  用指定的列宽，而不是为了适应接口名称的长度而去自动放大列宽</span><br><span class="line">-W 如果内容比终端窗口的宽度还要宽就自动换行</span><br><span class="line">-S 在同一行保持状态更新（不滚动不换行）注：如果不喜欢屏幕滚动则此项非常方便，与bmon的显示方式类似</span><br><span class="line">-b 用kbits/s显示带宽而不是kbytes/s</span><br><span class="line">-q 安静模式，警告信息不出现</span><br><span class="line">-v 显示版本信息</span><br><span class="line">-d 指定一个驱动来收集状态信息</span><br></pre></td></tr></table></figure>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>默认使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ifstat-1.1] #ifstat</span><br><span class="line">       eth0                eth1       </span><br><span class="line"> KB/s in  KB/s out   KB/s in  KB/s out</span><br><span class="line">    0.07      0.20      0.00      0.00</span><br><span class="line">    0.07      0.15      0.58      0.00</span><br></pre></td></tr></table></figure>
-<p>默认ifstat不监控回环接口，显示的流量单位是KB。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ifstat-1.1]# ifstat -tT</span><br><span class="line">  time           eth0                eth1                eth2                eth3               Total      </span><br><span class="line">HH:MM:ss   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out</span><br><span class="line">16:53:04      0.84      0.62   1256.27   1173.05      0.12      0.18      0.00      0.00   1257.22   1173.86</span><br><span class="line">16:53:05      0.57      0.40      0.57      0.76      0.00      0.00      0.00      0.00      1.14      1.17</span><br><span class="line">16:53:06      1.58      0.71      0.42      0.78      0.00      0.00      0.00      0.00      2.01      1.48</span><br><span class="line">16:53:07      0.57      0.40      1.91      2.61      0.00      0.00      0.00      0.00      2.48      3.01</span><br><span class="line">16:53:08      0.73      0.40    924.02   1248.91      0.00      0.00      0.00      0.00    924.76   1249.31</span><br></pre></td></tr></table></figure>
-<p>监控所有网络接口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ifstat-1.1] # ifstat -a</span><br><span class="line">        lo                 eth0                eth1       </span><br><span class="line"> KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out</span><br><span class="line">    0.00      0.00      0.28      0.58      0.06      0.06</span><br><span class="line">    0.00      0.00      1.41      1.13      0.00      0.00</span><br><span class="line">    0.61      0.61      0.26      0.23      0.00      0.00</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifstat/" data-id="cjw4xtirw005wr4xiwo1zfz8i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/iftop/" data-id="cjwp05e5s005v5gxixojqj3t0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -493,7 +502,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -504,6 +513,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -519,10 +532,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>

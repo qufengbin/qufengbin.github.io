@@ -62,6 +62,38 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/rpmbuild" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/rpmbuild/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.127Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="rpmbuild"><a href="#rpmbuild" class="headerlink" title="rpmbuild"></a>rpmbuild</h1><p>创建RPM的二进制软件包和源码软件包</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>rpmbuild命令</strong> 被用于创建rpm的二进制软件包和源码软件包。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpmbuild(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--initdb：初始化RPM数据库；</span><br><span class="line">--rebuilddb：从已安装的包头文件，方向重建RPM数据库；</span><br><span class="line">-ba：创建二进制和源代码包；</span><br><span class="line">-bb：创建二进制代码包；</span><br><span class="line">-bs：创建源代码包。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpmbuild -ba &apos;spec文件路径&apos;</span><br></pre></td></tr></table></figure>
+<p>build完后，可以在<code>/usr/src/redhat/RPMS/</code>下找到二进制rpm包，rpm包按照其对应的cpu体系结构分类，通常在<code>/usr/src/redhat/RPMS/i386</code>目录下。<code>/usr/src/redhat/SRPMS/</code>下找到源码rpm包，此时由于是源代码，所以无须按体系结构分类。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpmbuild/" data-id="cjwp05e9h00b85gxiknhi8rzh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/rpm2cpio" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/rpm2cpio/" class="article-date">
@@ -83,7 +115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpm2cpio/" data-id="cjw4xtivj00b4r4xixvmp8lmx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpm2cpio/" data-id="cjwp05e9e00b35gxile96vc8u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpm/" data-id="cjw4xtivj00b5r4xi42uh3tvs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rpm/" data-id="cjwp05ea200c25gxiu4h8s1b5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -234,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/route/" data-id="cjw4xtivi00b3r4xihbirn2ia" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/route/" data-id="cjwp05e9d00b15gxi6s1j6pxn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -267,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rmmod/" data-id="cjw4xtivg00azr4xis1kojl68" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rmmod/" data-id="cjwp05e9c00b05gxi1cwfnu59" class="article-share-link">Share</a>
       
       
     </footer>
@@ -307,7 +339,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rmdir/" data-id="cjw4xtivh00b1r4xih7tlzk1s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rmdir/" data-id="cjwp05e9c00az5gxiax9m7qth" class="article-share-link">Share</a>
       
       
     </footer>
@@ -374,7 +406,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rm/" data-id="cjw4xtivi00b2r4xi23winpwm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rm/" data-id="cjwp05e9b00ay5gxi8ptyg6qs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -405,7 +437,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rlogin/" data-id="cjw4xtivf00ayr4xivmgvrddn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rlogin/" data-id="cjwp05e9900av5gxivkuncemv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -450,7 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rexec/" data-id="cjw4xtivh00b0r4xifbfa85yp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rexec/" data-id="cjwp05e9a00ax5gxi0byh9j04" class="article-share-link">Share</a>
       
       
     </footer>
@@ -481,54 +513,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/rev/" data-id="cjw4xtivf00axr4xiy2liiope" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/restorecon" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/restorecon/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.107Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="restorecon"><a href="#restorecon" class="headerlink" title="restorecon"></a>restorecon</h1><p>恢复文件的安全上下文</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>restorecon命令</strong> 用来恢复SELinux文件属性即恢复文件的安全上下文。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">restorecon [-iFnrRv] [-e excludedir ] [-o filename ] [-f filename | pathname...]</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-i：忽略不存在的文件。</span><br><span class="line">-f：infilename 文件 infilename 中记录要处理的文件。</span><br><span class="line">-e：directory 排除目录。</span><br><span class="line">-R/-r：递归处理目录。</span><br><span class="line">-n：不改变文件标签。</span><br><span class="line">-o/outfilename：保存文件列表到 outfilename，在文件不正确情况下。</span><br><span class="line">-v：将过程显示到屏幕上。</span><br><span class="line">-F：强制恢复文件安全语境。</span><br></pre></td></tr></table></figure>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>假设CentOS安装了apache，网页默认的主目录是<code>/var/www/html</code>，我们经常遇到这样的问题，在其他目录中创建了一个网页文件，然后用mv移动到网页默认目录<code>/var/www/html</code>中，但是在浏览器中却打不开这个文件，这很可能是因为这个文件的SELinux配置信息是继承原来那个目录的，与<code>/var/www/html</code>目录不同，使用mv移动的时候，这个SELinux配置信息也一起移动过来了，从而导致无法打开页面，具体请看下面的实例：</p>
-<p><pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;">/<em>使用CentOS举例,如果默认没有安装apache，确保网络连接，使用下面的命令安装</em>/<br>[<a href="mailto:root@jsdig.com" target="_blank" rel="noopener">root@jsdig.com</a> ~]# yum install httpd<br> /<em>我们在root的家目录新建一个html文件</em>/<br>[<a href="mailto:root@jsdig.com" target="_blank" rel="noopener">root@jsdig.com</a> ~]# pwd<br>/root</pre></p>
-<p>[<a href="mailto:root@jsdig.com" target="_blank" rel="noopener">root@jsdig.com</a> ~]# vi index.html</p>
-<p>/<em>随便输入一段文字，保存退出</em>/<br>welcome to <a href="http://www.jsdig.com" target="_blank" rel="noopener">www.jsdig.com</a></p>
-<p>/<em>将这个文件mv到网页默认目录下</em>/<br>[<a href="mailto:root@jsdig.com" target="_blank" rel="noopener">root@jsdig.com</a> ~]# mv index.html /var/www/html/</p>
-<p>/*</p>
-<ul>
-<li>这个时候我们使用firefox浏览器输入127.0.0.1/index.html发现打不开，</li>
-<li>查看一下SELinux的日志文件，发现了下面这一段报错信息，从这个报错信息不难看出，</li>
-<li>进程httpd访问网页主目录中的index.html时被SELinux阻止，原因是因为，SELinux配置信息不正确,</li>
-<li>正确的SELinux配置信息应该是scontext=后面的部分，</li>
-<li>而index.html文件的SELinux配置信息却是tcontext=后面的部分，</li>
-<li>从tcontext=的第三段“admin_home_t”不难看出，这个文件的SELinux配置信息是root用户家目录的。<br>*/<br>type=AVC msg=audit(1378974214.610:465): avc:  denied  { open } for  pid=2359 comm=”httpd” path=”/var/www/html/index.html” dev=”sda1” ino=1317685 scontext=system_u:system_r:httpd_t:s0 tcontext=unconfined_u:object_r:admin_home_t:s0 tclass=file</li>
-</ul>
-<p>/<em>使用ls -Z也可以看出,文件和目录的SELinux信息不匹配</em>/<br>[<a href="mailto:root@jsdig.com" target="_blank" rel="noopener">root@jsdig.com</a> html]# ls -Z /var/www/html/<br>…. unconfined_u:object_r:admin_home_t:s0 index.html</p>
-<p>[<a href="mailto:root@jsdig.com" target="_blank" rel="noopener">root@jsdig.com</a> html]# ls -Zd /var/www/html/<br>…. system_u:object_r:httpd_sys_content_t:s0 /var/www/html/</p>
-<p>/<em>使用restorecon来恢复网页主目录中所有文件的SELinux配置信息(如果目标为一个目录，可以添加-R参数递归)</em>/<br>[<a href="mailto:root@jsdig.com" target="_blank" rel="noopener">root@jsdig.com</a> html]# restorecon -R /var/www/html/<br><code>`</code></p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/restorecon/" data-id="cjw4xtive00awr4xiw6395d6a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/rev/" data-id="cjwp05e9a00aw5gxit1l556mo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -575,7 +560,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -586,6 +571,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -601,10 +590,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>

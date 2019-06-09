@@ -62,6 +62,38 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/logger" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/logger/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.810Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="logger"><a href="#logger" class="headerlink" title="logger"></a>logger</h1><p>在系统日志中记录相应条目</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>logger命令</strong> 是用于往系统中写入日志，他提供一个shell命令接口到syslog系统模块</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logger [options] [message]</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-T, --tcp             使用流连接(TCP)</span><br><span class="line">-d, --udp             使用数据报(UDP)</span><br><span class="line">-i, --id              逐行记录每一次logger的进程ID</span><br><span class="line">-f, --file &lt;file&gt;     记录特定的文件</span><br><span class="line">-h, --help            显示帮助文本并退出</span><br><span class="line">-n, --server &lt;name&gt;   写入指定的远程syslog服务器，使用UDP代替内装式syslog的例程</span><br><span class="line">-P, --port &lt;port&gt;     使用指定的UDP端口。默认的端口号是514</span><br><span class="line">-p, --priority &lt;prio&gt; 指定输入消息的优先级，优先级可以是数字或者指定为 &quot; facility.level&quot; 的格式。</span><br><span class="line">                      比如：&quot; -p local3.info &quot; local3 这个设备的消息级别为 info。</span><br><span class="line">                      默认级别是 &quot;user.notice&quot;</span><br><span class="line">-s, --stderr          输出标准错误到系统日志。</span><br><span class="line">-t, --tag &lt;tag&gt;       指定标记记录</span><br><span class="line">-u, --socket &lt;socket&gt; 写入指定的socket，而不是到内置系统日志例程。</span><br><span class="line">-V, --version         输出版本信息并退出</span><br></pre></td></tr></table></figure>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logger -p syslog.info &quot;backup.sh is starting&quot;</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/logger/" data-id="cjwp05e6u00745gxin4lwbse1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/locate" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/locate/" class="article-date">
@@ -92,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/locate/" data-id="cjw4xtisv0075r4xik79h4z1b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/locate/" data-id="cjwp05e6w00775gxi7c54b7vl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -118,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/locale/" data-id="cjw4xtilp000hr4xi9hencckn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/locale/" data-id="cjwp05e0i000m5gxiexfgopkr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -148,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lnstat/" data-id="cjw4xtiss0071r4xi1gb04xh4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lnstat/" data-id="cjwp05e6n006z5gxifj9awqja" class="article-share-link">Share</a>
       
       
     </footer>
@@ -213,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ln/" data-id="cjw4xtisr006zr4xi5b0jx29e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ln/" data-id="cjwp05e6n00705gxib36abe6s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -288,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lilo/" data-id="cjw4xtiyd00fhr4xiv42qwszz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lilo/" data-id="cjwp05ecf00fi5gxi88p37zkr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -318,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lha/" data-id="cjw4xtist0072r4xi5noreoa4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lha/" data-id="cjwp05e6m006y5gxiua5d9ewv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -349,7 +381,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lftpget/" data-id="cjw4xtisn006vr4xii11ew3x3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lftpget/" data-id="cjwp05e6k006v5gxis8bxhe1s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -410,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lftp/" data-id="cjw4xtisu0073r4xihvtl6erq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lftp/" data-id="cjwp05e6l006x5gxisao5o4l9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -442,40 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/let/" data-id="cjw4xtitp0089r4xifq6r4mt2" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/less" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/less/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.767Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="less"><a href="#less" class="headerlink" title="less"></a>less</h1><p>分屏上下翻页浏览文件内容</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>less命令</strong> 的作用与more十分相似，都可以用来浏览文字档案的内容，不同的是less命令允许用户向前或向后浏览文件，而more命令只能向前浏览。用less命令显示文件时，用PageUp键向上翻页，用PageDown键向下翻页。要退出less程序，应按Q键。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">less(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-e：文件内容显示完毕后，自动退出；</span><br><span class="line">-f：强制显示文件；</span><br><span class="line">-g：不加亮显示搜索到的所有关键词，仅显示当前显示的关键字，以提高显示速度；</span><br><span class="line">-l：搜索时忽略大小写的差异；</span><br><span class="line">-N：每一行行首显示行号；</span><br><span class="line">-s：将连续多个空行压缩成一行显示；</span><br><span class="line">-S：在单行显示较长的内容，而不换行显示；</span><br><span class="line">-x&lt;数字&gt;：将TAB字符显示为指定个数的空格字符。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定要分屏显示内容的文件。</p>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo less /var/<span class="built_in">log</span>/shadowsocks.log</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/less/" data-id="cjw4xtisp006xr4xiu4rwfqyu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/let/" data-id="cjwp05e6l006w5gxi1yoiymd2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -522,7 +521,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -533,6 +532,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -548,10 +551,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>

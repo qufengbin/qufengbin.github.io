@@ -62,6 +62,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/gcc" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/gcc/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.551Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h1><p>基于C/C++的编译器</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>gcc命令</strong> 使用GNU推出的基于C/C++的编译器，是开放源代码领域应用最广泛的编译器，具有功能强大，编译代码支持性能优化等特点。现在很多程序员都应用GCC，怎样才能更好的应用GCC。目前，GCC可以用来编译C/C++、FORTRAN、JAVA、OBJC、ADA等语言的程序，可根据需要选择安装支持的语言。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-o：指定生成的输出文件；</span><br><span class="line">-E：仅执行编译预处理；</span><br><span class="line">-S：将C代码转换为汇编代码；</span><br><span class="line">-wall：显示警告信息；</span><br><span class="line">-c：仅执行编译操作，不进行连接操作。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>C源文件：指定C语言源代码文件。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p> <strong>常用编译命令选项</strong> </p>
+<p>假设源程序文件名为test.c</p>
+<p> <strong>无选项编译链接</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc test.c</span><br></pre></td></tr></table></figure>
+<p>将test.c预处理、汇编、编译并链接形成可执行文件。这里未指定输出文件，默认输出为a.out。</p>
+<p> <strong>选项 -o</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc test.c -o test</span><br></pre></td></tr></table></figure>
+<p>将test.c预处理、汇编、编译并链接形成可执行文件test。-o选项用来指定输出文件的文件名。</p>
+<p> <strong>选项 -E</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -E test.c -o test.i</span><br></pre></td></tr></table></figure>
+<p>将test.c预处理输出test.i文件。</p>
+<p> <strong>选项 -S</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -S test.i</span><br></pre></td></tr></table></figure>
+<p>将预处理输出文件test.i汇编成test.s文件。</p>
+<p> <strong>选项 -c</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -c test.s</span><br></pre></td></tr></table></figure>
+<p>将汇编输出文件test.s编译输出test.o文件。</p>
+<p> <strong>无选项链接</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc test.o -o test</span><br></pre></td></tr></table></figure>
+<p>将编译输出文件test.o链接成最终可执行文件test。</p>
+<p> <strong>选项 -O</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -O1 test.c -o test</span><br></pre></td></tr></table></figure>
+<p>使用编译优化级别1编译程序。级别为1~3，级别越大优化效果越好，但编译时间越长。</p>
+<p> <strong>多源文件的编译方法</strong> </p>
+<p>如果有多个源文件，基本上有两种编译方法：</p>
+<p>假设有两个源文件为test.c和testfun.c</p>
+<p> <strong>多个文件一起编译</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc testfun.c test.c -o test</span><br></pre></td></tr></table></figure>
+<p>将testfun.c和test.c分别编译后链接成test可执行文件。</p>
+<p> <strong>分别编译各个源文件，之后对编译后输出的目标文件链接。</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gcc -c testfun.c    #将testfun.c编译成testfun.o</span><br><span class="line">gcc -c test.c       #将test.c编译成test.o</span><br><span class="line">gcc -o testfun.o test.o -o test    #将testfun.o和test.o链接成test</span><br></pre></td></tr></table></figure>
+<p>以上两种方法相比较，第一中方法编译时需要所有文件重新编译，而第二种方法可以只重新编译修改的文件，未修改的文件不用重新编译。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/gcc/" data-id="cjwp05e51004u5gxiqtz76m81" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/fuser" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/fuser/" class="article-date">
@@ -102,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/fuser/" data-id="cjw4xtir8004xr4xiptzh4vk3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/fuser/" data-id="cjwp05e4u004r5gxi5nr41umh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftpwho/" data-id="cjw4xtir3004rr4xik4d6zt66" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftpwho/" data-id="cjwp05e4r004m5gxibvjv8ra1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -162,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftptop/" data-id="cjw4xtir2004pr4xi1h4mczac" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftptop/" data-id="cjwp05e4t004p5gxi8jk4e4oe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftpshut/" data-id="cjw4xtir3004sr4xi3ne6ohd2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftpshut/" data-id="cjwp05e4s004n5gxi8bbgsiup" class="article-share-link">Share</a>
       
       
     </footer>
@@ -224,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftpcount/" data-id="cjw4xtir0004nr4xix1k5h0m8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftpcount/" data-id="cjwp05e4o004j5gxi40okmv5i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -263,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftp/" data-id="cjw4xtir2004qr4xi3ogt2xkx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ftp/" data-id="cjwp05e4s004o5gxi0x3alm10" class="article-share-link">Share</a>
       
       
     </footer>
@@ -301,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/fsck/" data-id="cjw4xtir4004tr4xiqotvzwsd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/fsck/" data-id="cjwp05e4u004q5gxioh31qt08" class="article-share-link">Share</a>
       
       
     </footer>
@@ -364,7 +427,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/free/" data-id="cjw4xtiqz004mr4xiqruus3y3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/free/" data-id="cjwp05e4p004k5gxi9pjbvy8k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -395,38 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/fold/" data-id="cjw4xtiqw004jr4xih2sqhu1v" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/fmt" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/fmt/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.509Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="fmt"><a href="#fmt" class="headerlink" title="fmt"></a>fmt</h1><p>读取文件后优化处理并输出</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>fmt命令</strong> 读取文件的内容，根据选项的设置对文件格式进行简单的优化处理，并将结果送到标准输出设备。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fmt(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-c或--crown-margin：每段前两列缩排；</span><br><span class="line">-p&lt;列起始字符串&gt;或-prefix=&lt;列起始字符串&gt;：仅合并含有指定字符串的列，通常运用在程序语言的注解方面；</span><br><span class="line">-s或--split-only：只拆开字数超出每列字符数的列，但不合并字数不足每列字符数的列；</span><br><span class="line">-t或--tagged-paragraph：每列前两列缩排，但第1列和第2列的缩排格式不同；</span><br><span class="line">-u或--uniform-spacing：每列字符之间都以一个空格字符间隔，每个句子之间则两个空格字符分隔；</span><br><span class="line">-w&lt;每列字符数&gt;或--width=&lt;每列字符数&gt;或-&lt;每列字符数&gt;：设置每列的最大字符数。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>指定要优化格式的文件。</p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/fmt/" data-id="cjw4xtiqx004kr4xigbsif3o0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/fold/" data-id="cjwp05e4m004h5gxi3xqdv8vk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -473,7 +505,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -484,6 +516,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -499,10 +535,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>

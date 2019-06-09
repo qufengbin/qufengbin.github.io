@@ -62,6 +62,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/slabtop" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/slabtop/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.185Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="slabtop"><a href="#slabtop" class="headerlink" title="slabtop"></a>slabtop</h1><p>实时显示内核slab内存缓存信息</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>slabtop命令</strong> 以实时的方式显示内核“slab”缓冲区的细节信息。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slabtop(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--delay=n, -d n：每n秒更新一次显示的信息，默认是每3秒；</span><br><span class="line">--sort=S, -s S：指定排序标准进行排序（排序标准，参照下面或者man手册）；</span><br><span class="line">--once, -o：显示一次后退出；</span><br><span class="line">--version, -V：显示版本；</span><br><span class="line">--help：显示帮助信息。</span><br></pre></td></tr></table></figure>
+<p>排序标准：</p>
+<ul>
+<li>a: sort by number of active objects</li>
+<li>b: sort by objects per slab</li>
+<li>c: sort by cache size</li>
+<li>l: sort by number of slabs</li>
+<li>v：sort by number of active slabs</li>
+<li>n: sort by name</li>
+<li>o: sort by number of objects</li>
+<li>p: sort by pages per slab</li>
+<li>s: sort by object size</li>
+<li>u: sort by cache utilization</li>
+</ul>
+<h3 id="知识扩展"><a href="#知识扩展" class="headerlink" title="知识扩展"></a>知识扩展</h3><p>内核的模块在分配资源的时候，为了提高效率和资源的利用率，都是透过slab来分配的。通过slab的信息，再配合源码能粗粗了解系统的运行情况，比如说什么资源有没有不正常的多，或者什么资源有没有泄漏。linux系统透过/proc/slabinfo来向用户暴露slab的使用情况。</p>
+<p>Linux 所使用的 slab 分配器的基础是 Jeff Bonwick 为 SunOS 操作系统首次引入的一种算法。Jeff 的分配器是围绕对象缓存进行的。在内核中，会为有限的对象集（例如文件描述符和其他常见结构）分配大量内存。Jeff 发现对内核中普通对象进行初始化所需的时间超过了对其进行分配和释放所需的时间。因此他的结论是不应该将内存释放回一个全局的内存池，而是将内存保持为针对特定目而初始化的状态。Linux slab 分配器使用了这种思想和其他一些思想来构建一个在空间和时间上都具有高效性的内存分配器。</p>
+<p>保存着监视系统中所有活动的 slab 缓存的信息的文件为/proc/slabinfo。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">slabtop</span><br><span class="line"></span><br><span class="line"> Active / Total Objects (% used)    : 897519 / 1245930 (72.0%)</span><br><span class="line"> Active / Total Slabs (% used)      : 38605 / 38605 (100.0%)</span><br><span class="line"> Active / Total Caches (% used)     : 94 / 145 (64.8%)</span><br><span class="line"> Active / Total Size (% used)       : 129558.22K / 153432.58K (84.4%)</span><br><span class="line"> Minimum / Average / Maximum Object : 0.01K / 0.12K / 128.00K</span><br><span class="line"></span><br><span class="line">  OBJS ACTIVE  USE OBJ SIZE  SLABS OBJ/SLAB CACHE SIZE NAME                   </span><br><span class="line">440136 171471  38%    0.05K   6113       72     24452K buffer_head</span><br><span class="line">190086 148576  78%    0.05K   2437       78      9748K selinux_inode_security</span><br><span class="line">151840 146366  96%    0.48K  18980        8     75920K ext3_inode_cache</span><br><span class="line">144333 144143  99%    0.02K    711      203      2844K avtab_node</span><br><span class="line">130529 128488  98%    0.13K   4501       29     18004K dentry_cache</span><br><span class="line"> 99214  99071  99%    0.03K    878      113      3512K size-32</span><br><span class="line"> 43834  28475  64%    0.27K   3131       14     12524K radix_tree_node</span><br><span class="line"> 17818   9450  53%    0.06K    302       59      1208K size-64</span><br><span class="line">  4602   4562  99%    0.05K     59       78       236K sysfs_dir_cache</span><br><span class="line">  3220   2855  88%    0.08K     70       46       280K vm_area_struct</span><br><span class="line">  2460   2114  85%    0.12K     82       30       328K size-128</span><br><span class="line">  1564   1461  93%    0.04K     17       92        68K Acpi-Operand</span><br><span class="line">  1540   1540 100%    0.33K    140       11       560K inode_cache</span><br><span class="line">  1524    466  30%    0.01K      6      254        24K anon_vma</span><br><span class="line">  1440    515  35%    0.05K     20       72        80K avc_node</span><br><span class="line">  1440   1154  80%    0.19K     72       20       288K filp</span><br><span class="line">  1170   1023  87%    0.05K     15       78        60K ext3_xattr</span><br><span class="line">   845    724  85%    0.02K      5      169        20K Acpi-Namespace</span><br><span class="line">   638    315  49%    0.35K     58       11       232K proc_inode_cache</span><br><span class="line">   450    434  96%    0.25K     30       15       120K size-256</span><br><span class="line">   424    386  91%    0.50K     53        8       212K size-512</span><br><span class="line">   312    107  34%    0.05K      4       78        16K delayacct_cache</span><br><span class="line">   306    284  92%    0.43K     34        9       136K shmem_inode_cache</span><br><span class="line">   303    108  35%    0.04K      3      101        12K pid</span><br><span class="line">   300    261  87%    0.19K     15       20        60K skbuff_head_cache</span><br><span class="line">   300    300 100%    0.12K     10       30        40K bio</span><br><span class="line">   260    260 100%   32.00K    260        1      8320K size-32768</span><br><span class="line">   254      6   2%    0.01K      1      254         4K revoke_table</span><br><span class="line">   236     55  23%    0.06K      4       59        16K fs_cache</span><br><span class="line">   216    203  93%    1.00K     54        4       216K size-1024</span><br><span class="line">   214    214 100%    2.00K    107        2       428K size-2048</span><br><span class="line">   203     83  40%    0.02K      1      203         4K biovec-1</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/slabtop/" data-id="cjwp05e9w00bu5gxiapurltyz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/skill" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/skill/" class="article-date">
@@ -104,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/skill/" data-id="cjw4xtivy00bur4xitkys39o9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/skill/" data-id="cjwp05e9u00bt5gxitk7yu35o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/shutdown/" data-id="cjw4xtivz00bwr4xi8f8u3ci0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/shutdown/" data-id="cjwp05e9t00br5gxifc4kqp60" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/showmount/" data-id="cjw4xtivx00btr4xifv7etdms" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/showmount/" data-id="cjwp05e9r00bo5gxivfr02akh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -211,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/shopt/" data-id="cjw4xtivx00bsr4xiecpfxz5x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/shopt/" data-id="cjwp05e9s00bp5gxipkxfusg4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -243,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/sh/" data-id="cjw4xtivw00brr4xi2ul8wahh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/sh/" data-id="cjwp05e9s00bq5gxi78bzy1w6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -274,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/sftp/" data-id="cjw4xtivv00bqr4xiea83295v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/sftp/" data-id="cjwp05e9r00bn5gxih91n78eo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -303,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/sftp-server/" data-id="cjw4xtivu00bor4xikjcugb06" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/sftp-server/" data-id="cjwp05e9q00bl5gxit2gru15s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -336,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/setsid/" data-id="cjw4xtivv00bpr4xio1yoism7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/setsid/" data-id="cjwp05e9q00bm5gxin32mh8ah" class="article-share-link">Share</a>
       
       
     </footer>
@@ -408,57 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/setsebool/" data-id="cjw4xtivu00bnr4xisebyiwfz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/setpci" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/setpci/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.166Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="setpci"><a href="#setpci" class="headerlink" title="setpci"></a>setpci</h1><p>查询和配置PCI设备的使用工具</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>setpci命令</strong> 是一个查询和配置PCI设备的使用工具。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setpci(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-v：显示指令执行的细节信息；</span><br><span class="line">-f：当没有任何操作需要完成时，不显示任何信息；</span><br><span class="line">-D：测试模式，并不真正将配置信息写入寄存器；</span><br><span class="line">-d：仅显示给定厂商和设备的信息；</span><br><span class="line">-s：仅显示指定总线、插槽上的设备或设备上的功能块信息。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
-<li>PCI设备：指定要配置的PCI设备；</li>
-<li>操作：指定要完成的配置操作。</li>
-</ul>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>Linux下调节笔记本屏幕亮度方法：</p>
-<p>首先进入终端输入lspci命令，列出各种设备的地址：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lspci</span><br><span class="line">00:00.0 host bridge: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express Memory Controller Hub (rev 03)</span><br><span class="line">00:02.0 VGA compatible controller: Intel Corporation Mobile 945GM/GMS, 943/940GML Express Integrated Graphics Controller (rev 03)</span><br><span class="line">00:02.1 Display controller: Intel Corporation Mobile 945GM/GMS/GME, 943/940GML Express Integrated Graphics Controller (rev 03)</span><br><span class="line">00:1b.0 Audio device: Intel Corporation N10/ICH 7 Family High Definition Audio Controller (rev 02)</span><br><span class="line">00:1c.0 PCI bridge: Intel Corporation N10/ICH 7 Family PCI Express Port 1 (rev 02)</span><br><span class="line">00:1c.1 PCI bridge: Intel Corporation N10/ICH 7 Family PCI Express Port 2 (rev 02)</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-<p>发现00:02.0是VGA设备，于是我们修改它的属性：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo setpci -s 00:02.0 F4.B=FF</span><br></pre></td></tr></table></figure>
-<p>解释一下：</p>
-<ul>
-<li><strong>setpci</strong>  是修改设备属性的命令。</li>
-<li><strong>-s</strong>  表示接下来输入的是设备的地址。</li>
-<li><strong>00:02.0</strong>  VGA设备地址（&lt;总线&gt;:&lt;接口&gt;.&lt;功能&gt;）。</li>
-<li><strong>F4</strong>  要修改的属性的地址，这里应该表示“亮度”。</li>
-<li><strong>.B</strong>  修改的长度（B应该是字节（Byte），还有w（应该是Word，两个字节）、L（应该是Long，4个字节））。</li>
-<li><strong>=FF</strong>  要修改的值（可以改）。</li>
-</ul>
-<p>我这里00是最暗，FF是最亮，不同的电脑可能不一样。比如说我嫌FF太闪眼了，我就可以：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo setpci -s 00:02.0 F4.B=CC</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/setpci/" data-id="cjw4xtivt00bmr4xigiqsits6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/setsebool/" data-id="cjwp05e9p00bj5gxit97ed5fb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -505,7 +502,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -516,6 +513,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
+          </li>
         
           <li>
             <a href="/2019/05/25/ARTS第七周/">ARTS第七周</a>
@@ -531,10 +532,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zip/">(no title)</a>
           </li>
         
       </ul>
