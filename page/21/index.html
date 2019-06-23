@@ -62,6 +62,39 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/pushd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/pushd/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.034Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="pushd"><a href="#pushd" class="headerlink" title="pushd"></a>pushd</h1><p>将目录加入命令堆叠中</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>pushd命令</strong> 是将目录加入命令堆叠中。如果指令没有指定目录名称，则会将当前的工作目录置入目录堆叠的最顶端。置入目录如果没有指定堆叠的位置，也会置入目录堆叠的最顶端，同时工作目录会自动切换到目录堆叠最顶端的目录去。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pushd(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-n：只加入目录到堆叠中，不进行cd操作；</span><br><span class="line">+n：删除从左到右的第n个目录，数字从0开始；</span><br><span class="line">-n：删除从右到左的第n个目录，数字从0开始；</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>目录：需要压入堆栈的目录。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@Mylinux:/tmp/dir4# pushd /tmp/dir3</span><br><span class="line">/tmp/dir3 /tmp/dir4 /tmp/dir1 ~</span><br><span class="line"></span><br><span class="line">root@Mylinux:/tmp/dir3# pushd /tmp/dir2</span><br><span class="line">/tmp/dir2 /tmp/dir3 /tmp/dir4 /tmp/dir1 ~</span><br><span class="line"></span><br><span class="line">root@Mylinux:/tmp/dir2# pushd -1</span><br><span class="line">/tmp/dir1 ~ /tmp/dir2 /tmp/dir3 /tmp/dir4</span><br></pre></td></tr></table></figure>
+<p>注意：最左边表示栈顶，最右边表示栈底。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pushd/" data-id="cjx8t587700a610xilvoe0ljj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/pstree" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/pstree/" class="article-date">
@@ -90,7 +123,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pstree/" data-id="cjwp0a8v900a2gcxicxkk1a1k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pstree/" data-id="cjx8t587600a410xipojjqo2v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -126,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pstack/" data-id="cjwp0a8v900a1gcxi6lxbje8y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pstack/" data-id="cjx8t587500a310xiuk0hbkrd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -169,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pssh/" data-id="cjwp0a8v800a0gcxitknx0r2m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pssh/" data-id="cjx8t587400a210xibckiogda" class="article-share-link">Share</a>
       
       
     </footer>
@@ -249,7 +282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ps/" data-id="cjwp0a8yy00fmgcxiff82wsl6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ps/" data-id="cjx8t58bx00fo10xi3vhdmgut" class="article-share-link">Share</a>
       
       
     </footer>
@@ -280,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/protoize/" data-id="cjwp0a8v7009zgcxijrvst7i9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/protoize/" data-id="cjx8t5872009z10xixgm0nig6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,7 +381,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/printf/" data-id="cjwp0a8v6009ygcxi7d53hv7h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/printf/" data-id="cjx8t587300a110xiksu6bliv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -379,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pr/" data-id="cjwp0a8v6009xgcxi8tc7612e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pr/" data-id="cjx8t586z009w10xirkwr2srl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -408,7 +441,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ppp-off/" data-id="cjwp0a8v5009wgcxiutvadjvu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ppp-off/" data-id="cjx8t5870009x10xiaa0t99te" class="article-share-link">Share</a>
       
       
     </footer>
@@ -441,38 +474,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/poweroff/" data-id="cjwp0a8v2009vgcxiatttjdsy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/popd" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/popd/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.016Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="popd"><a href="#popd" class="headerlink" title="popd"></a>popd</h1><p>用于删除目录栈中的记录</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>popd命令</strong> 用于删除目录栈中的记录；如果popd命令不加任何参数，则会先删除目录栈最上面的记录，然后切换到删除过后的目录栈中的最上面的目录。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pushd(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+N：将第N个目录删除（从左边数起，数字从0开始）；</span><br><span class="line">-N：将第N个目录删除（从右边数起，数字从0开始）；</span><br><span class="line">-n：将目录出栈时，不切换目录。</span><br></pre></td></tr></table></figure>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">root@Mylinux:/tmp/dir4# popd（相当于popd +0）</span><br><span class="line">/tmp/dir3 /tmp/dir2 /tmp/dir1 ~</span><br><span class="line"></span><br><span class="line">root@Mylinux:/tmp/dir3# pushd /tmp/dir4</span><br><span class="line">/tmp/dir4 /tmp/dir3 /tmp/dir2 /tmp/dir1 ~</span><br><span class="line"></span><br><span class="line">root@Mylinux:/tmp/dir4# popd +1</span><br><span class="line">/tmp/dir4 /tmp/dir2 /tmp/dir1 ~</span><br><span class="line"></span><br><span class="line">root@Mylinux:/tmp/dir4# popd -2</span><br><span class="line">/tmp/dir4 /tmp/dir1 ~</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/popd/" data-id="cjwp0a8v1009ugcximl44xi57" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/poweroff/" data-id="cjx8t586z009v10xigojmisxl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -532,6 +534,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/20/ARTS第九周/">ARTS第九周</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
           </li>
         
@@ -545,10 +551,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
           </li>
         
       </ul>

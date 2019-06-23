@@ -62,6 +62,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/sync" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/sync/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.298Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="sync"><a href="#sync" class="headerlink" title="sync"></a>sync</h1><p>用于强制被改变的内容立刻写入磁盘</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>sync命令</strong> 用于强制被改变的内容立刻写入磁盘，更新超块信息。</p>
+<p>在Linux/Unix系统中，在文件或数据处理过程中一般先放到内存缓冲区中，等到适当的时候再写入磁盘，以提高系统的运行效率。sync命令则可用来强制将内存缓冲区中的数据立即写入磁盘中。用户通常不需执行sync命令，系统会自动执行update或bdflush操作，将缓冲区的数据写 入磁盘。只有在update或bdflush无法执行或用户需要非正常关机时，才需手动执行sync命令。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sync(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">--help：显示帮助；</span><br><span class="line"> --version：显示版本信息。</span><br></pre></td></tr></table></figure>
+<h3 id="buffer与cache"><a href="#buffer与cache" class="headerlink" title="buffer与cache"></a>buffer与cache</h3><ul>
+<li>buffer：为了解决写磁盘的效率</li>
+<li>cache：为了解决读磁盘的效率</li>
+</ul>
+<p>linux系统为了提高读写磁盘的效率，会先将数据放在一块buffer中。在写磁盘时并不是立即将数据写到磁盘中，而是先写入这块buffer中了。此时如果重启系统，就可能造成数据丢失。</p>
+<p>sync命令用来flush文件系统buffer，这样数据才会真正的写到磁盘中，并且buffer才能够释放出来，flush就是用来清空buffer。sync命令会强制将数据写入磁盘中，并释放该数据对应的buffer，所以常常会在写磁盘后输入sync命令来将数据真正的写入磁盘。</p>
+<p>如果不去手动的输入sync命令来真正的去写磁盘，linux系统也会周期性的去sync数据。</p>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/sync/" data-id="cjx8t588y00cm10xij61sysbc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/swapon" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/swapon/" class="article-date">
@@ -84,7 +122,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/swapon/" data-id="cjwp0a8wu00clgcxis9417hp8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/swapon/" data-id="cjx8t588z00cn10xii22vc44f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -117,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/swapoff/" data-id="cjwp0a8wt00ckgcxi4ku4xtyi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/swapoff/" data-id="cjx8t588x00ck10xiq3opeubd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -150,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/supervisord/" data-id="cjwp0a8ws00cjgcxi0q00mz8z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/supervisord/" data-id="cjx8t588v00ci10xiksvvwaxa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -183,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/sum/" data-id="cjwp0a8ws00cigcxi1qeu62eg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/sum/" data-id="cjx8t588w00cj10xib08tr87n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -262,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/sudo/" data-id="cjwp0a8z200ftgcxiuz5ros0n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/sudo/" data-id="cjx8t58c200fv10xi53rgvps7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -299,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/su/" data-id="cjwp0a8wr00chgcxi3lgsdned" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/su/" data-id="cjx8t588u00cg10xir7mkqzhy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -349,7 +387,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/stty/" data-id="cjwp0a8wr00cggcxipr6mnn9x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/stty/" data-id="cjx8t588x00cl10xisky5qo0s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -385,7 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/strings/" data-id="cjwp0a8wq00cfgcxiax8ml8re" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/strings/" data-id="cjx8t588t00cf10xi3f42jzo7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -472,39 +510,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/strace/" data-id="cjwp0a8za00fzgcxieainvxvx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/stat" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/stat/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.274Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="stat"><a href="#stat" class="headerlink" title="stat"></a>stat</h1><p>用于显示文件的状态信息</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>stat命令</strong> 用于显示文件的状态信息。stat命令的输出信息比ls命令的输出信息要更详细。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stat(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-L：支持符号连接；</span><br><span class="line">-f：显示文件系统状态而非文件状态；</span><br><span class="line">-t：以简洁方式输出信息；</span><br><span class="line">--help：显示指令的帮助信息；</span><br><span class="line">--version：显示指令的版本信息。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：指定要显示信息的普通文件或者文件系统对应的设备文件名。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# ls -l myfile</span><br><span class="line">-rw-r--r-- 1 root root 0 2010-10-09 myfile</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# stat myfile</span><br><span class="line">file: “myfile”</span><br><span class="line">Size: 0               Blocks: 8          IO Block: 4096   一般空文件</span><br><span class="line">Device: fd00h/64768d    Inode: 194805815   Links: 1</span><br><span class="line">Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2010-12-12 12:22:35.000000000 +0800</span><br><span class="line">Modify: 2010-10-09 20:44:21.000000000 +0800</span><br><span class="line">Change: 2010-10-09 20:44:21.000000000 +0800</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# stat -f myfile</span><br><span class="line">File: &quot;myfile&quot;</span><br><span class="line">id: 0        Namelen: 255     type: ext2/ext3</span><br><span class="line">Block size: 4096       Fundamental block size: 4096</span><br><span class="line">Blocks: Total: 241555461  free: 232910771  Available: 220442547</span><br><span class="line">Inodes: Total: 249364480  Free: 249139691</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# stat -t myfile</span><br><span class="line">myfile 0 8 81a4 0 0 fd00 194805815 1 0 0 1292127755 1286628261 1286628261 4096</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/stat/" data-id="cjwp0a8wp00cegcxi08gb2hhe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/strace/" data-id="cjx8t58cb00g110xirb8w60qx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -564,6 +570,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/20/ARTS第九周/">ARTS第九周</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
           </li>
         
@@ -577,10 +587,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
           </li>
         
       </ul>

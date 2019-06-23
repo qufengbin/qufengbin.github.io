@@ -62,6 +62,37 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/popd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/popd/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.016Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="popd"><a href="#popd" class="headerlink" title="popd"></a>popd</h1><p>用于删除目录栈中的记录</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>popd命令</strong> 用于删除目录栈中的记录；如果popd命令不加任何参数，则会先删除目录栈最上面的记录，然后切换到删除过后的目录栈中的最上面的目录。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pushd(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+N：将第N个目录删除（从左边数起，数字从0开始）；</span><br><span class="line">-N：将第N个目录删除（从右边数起，数字从0开始）；</span><br><span class="line">-n：将目录出栈时，不切换目录。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">root@Mylinux:/tmp/dir4# popd（相当于popd +0）</span><br><span class="line">/tmp/dir3 /tmp/dir2 /tmp/dir1 ~</span><br><span class="line"></span><br><span class="line">root@Mylinux:/tmp/dir3# pushd /tmp/dir4</span><br><span class="line">/tmp/dir4 /tmp/dir3 /tmp/dir2 /tmp/dir1 ~</span><br><span class="line"></span><br><span class="line">root@Mylinux:/tmp/dir4# popd +1</span><br><span class="line">/tmp/dir4 /tmp/dir2 /tmp/dir1 ~</span><br><span class="line"></span><br><span class="line">root@Mylinux:/tmp/dir4# popd -2</span><br><span class="line">/tmp/dir4 /tmp/dir1 ~</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/popd/" data-id="cjx8t587200a010xiwalak4iv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/pmap" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/pmap/" class="article-date">
@@ -84,7 +115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pmap/" data-id="cjwp0a8v0009tgcxivzzkene5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pmap/" data-id="cjx8t586y009u10xie11btlit" class="article-share-link">Share</a>
       
       
     </footer>
@@ -117,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pkill/" data-id="cjwp0a8v0009sgcxi52yo9gmo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pkill/" data-id="cjx8t5871009y10xiodz1sx12" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ping/" data-id="cjwp0a8uz009rgcxil45f1mjj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ping/" data-id="cjx8t586x009s10xifwb1l15z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -185,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pigz/" data-id="cjwp0a8uz009qgcxiungrqckt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pigz/" data-id="cjx8t586x009t10xira804bx8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pidof/" data-id="cjwp0a8uy009pgcxis7uawb4z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pidof/" data-id="cjx8t586v009p10xiwlrybrmm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -249,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pico/" data-id="cjwp0a8uy009ogcxi0m99b3fe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pico/" data-id="cjx8t586w009r10xibrslq2mo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -280,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/php/" data-id="cjwp0a8ux009ngcxibl2qpimc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/php/" data-id="cjx8t586u009o10xij6jiqzh8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -312,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pgrep/" data-id="cjwp0a8uw009lgcxijzs1ha8k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pgrep/" data-id="cjx8t586v009q10xip4zz4y9m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -363,38 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/pfctl/" data-id="cjwp0a8uw009mgcxiorski5fh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/perl" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/perl/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.999Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="perl"><a href="#perl" class="headerlink" title="perl"></a>perl</h1><p>perl语言解释器</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>perl命令</strong> 是perl语言解释器，负责解释执行perl语言程序。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">perl(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-w：输出有用的警告信息；</span><br><span class="line">-U：允许不安全的操作；</span><br><span class="line">-c：仅检查文件的语法；</span><br><span class="line">-d：在调试下运行脚本程序。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件：要运行的perl脚本程序。</p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/perl/" data-id="cjwp0a8uv009kgcxishk3ier6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/pfctl/" data-id="cjx8t586t009n10xicu3xmmf3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -454,6 +454,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/20/ARTS第九周/">ARTS第九周</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
           </li>
         
@@ -467,10 +471,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
           </li>
         
       </ul>

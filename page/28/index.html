@@ -62,6 +62,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/mii-tool" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/mii-tool/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.900Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mii-tool"><a href="#mii-tool" class="headerlink" title="mii-tool"></a>mii-tool</h1><p>配置网络设备协商方式的工具</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>mii-tool命令</strong> 是用于查看、管理介质的网络接口的状态，有时网卡需要配置协商方式，比如10/100/1000M的网卡半双工、全双工、自动协商的配置。但大多数的网络设备是不用我们来修改协商，因为大多数网络设置接入的时候，都采用自动协商来解决相互通信的问题。不过自动协商也不是万能的，有时也会出现错误，比如丢包率比较高，这时就要我们来指定网卡的协商方式。mii-tool就是能指定网卡的协商方式。下面我们说一说mii-tool的用法。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usage: mii-tool [-VvRrwl] [-A media,... | -F media] [interface ...]</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-V 显示版本信息；</span><br><span class="line">-v 显示网络接口的信息；</span><br><span class="line">-R 重设MII到开启状态；</span><br><span class="line">-r 重启自动协商模式；</span><br><span class="line">-w 查看网络接口连接的状态变化；</span><br><span class="line">-l 写入事件到系统日志；</span><br><span class="line">-A 指令特定的网络接口；</span><br><span class="line">-F 更改网络接口协商方式；</span><br><span class="line"></span><br><span class="line">media: 100baseT4, 100baseTx-FD, 100baseTx-HD, 10baseT-FD, 10baseT-HD,</span><br><span class="line">        (to advertise both HD and FD) 100baseTx, 10baseT</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>查看网络接口的协商状态：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# mii-tool -v eth0</span><br><span class="line">eth0: negotiated 100baseTx-FD, link ok</span><br><span class="line">  product info: vendor 00:50:ef, model 60 rev 8</span><br><span class="line">  basic mode:   autonegotiation enabled</span><br><span class="line">  basic status: autonegotiation complete, link ok</span><br><span class="line">  capabilities: 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD</span><br><span class="line">  advertising:  100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD flow-control</span><br><span class="line">  link partner: 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD</span><br></pre></td></tr></table></figure>
+<p>注：上面的例子，我们可以看得到是自动协商，注意红字的部份。</p>
+<p>更改网络接口协商方式：</p>
+<p>更改网络接口的协商方式，我们要用到<code>-F</code>选项，后面可以接100baseT4, 100baseTx-FD, 100baseTx-HD, 10baseT-FD, 10baseT-HD等参数；</p>
+<p>如果我们想把网络接口eth0改为1000Mb/s全双工的模式应该怎么办呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# mii-tool -F 100baseTx-FD</span><br><span class="line">[root@localhost ~]# mii-tool -v eth0</span><br><span class="line">eth0: 100 Mbit, full duplex, link ok</span><br><span class="line">  product info: vendor 00:00:00, model 0 rev 0</span><br><span class="line">  basic mode:   100 Mbit, full duplex</span><br><span class="line">  basic status: link ok</span><br><span class="line">  capabilities: 100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD</span><br><span class="line">  advertising:  100baseTx-FD 100baseTx-HD 10baseT-FD 10baseT-HD</span><br></pre></td></tr></table></figure>
+<p>注：是不是已经改过来了？当然，我们也一样用ethtool工具来更改，比如执行下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# ethtool -s eth0 speed 100 duplex full</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mii-tool/" data-id="cjx8t585w008810xitlglow2p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/mesg" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/mesg/" class="article-date">
@@ -83,7 +122,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mesg/" data-id="cjwp0a8ty0087gcxir7jhmeg5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mesg/" data-id="cjx8t585u008610xi7jrkhrey" class="article-share-link">Share</a>
       
       
     </footer>
@@ -138,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/md5sum/" data-id="cjwp0a8tx0086gcxi5pfkbzpz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/md5sum/" data-id="cjx8t585x008a10ximc74nrag" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/man/" data-id="cjwp0a8tx0085gcxic5sqjk15" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/man/" data-id="cjx8t585v008710xi779wxk4m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/make/" data-id="cjwp0a8tw0084gcxi79ijuy2a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/make/" data-id="cjx8t585u008510xixw9rqu6o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -246,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mailstat/" data-id="cjwp0a8tw0083gcxicdnv9jqq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mailstat/" data-id="cjx8t585s008210xib8iem3gy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -277,7 +316,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mailq/" data-id="cjwp0a8tv0082gcxiff6vo6ye" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mailq/" data-id="cjx8t5864008k10xivrbxrk2c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -327,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/mail/" data-id="cjwp0a8tu0081gcxif5t8fbh7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/mail/" data-id="cjx8t585s008310xikgyx558w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -366,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lynx/" data-id="cjwp0a8tt0080gcxifpars4sn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lynx/" data-id="cjx8t585t008410xi0zqdlijs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -400,42 +439,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvscan/" data-id="cjwp0a8tt007zgcxit20mp5e9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/lvresize" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/lvresize/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.879Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="lvresize"><a href="#lvresize" class="headerlink" title="lvresize"></a>lvresize</h1><p>调整逻辑卷空间大小</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>lvresize命令</strong> 用于调整LVM逻辑卷的空间大小，可以增大空间和缩小空间。使用lvresize命令调整逻辑卷空间大小和缩小空间时需要谨慎，因为它有可能导致数据丢失。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lvresize(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-L：指定逻辑卷的大小，单位为“kKmMgGtT”字节；</span><br><span class="line">-l：指定逻辑卷的大小（LE数）。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>逻辑卷：指定要删除的逻辑卷。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>使用lvresize命令调整最大的逻辑卷大小。在命令行中输入下面的命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# lvresize -L +200M /dev/vg1000/lvol0     #将逻辑卷空间增加200M</span><br></pre></td></tr></table></figure>
-<p>输出信息如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Extending logical volume lvol0 to 280.00 MB</span><br><span class="line">Logical volume lvol0 successfully resized</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvresize/" data-id="cjwp0a8ts007ygcxi14nnoyhn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/lvscan/" data-id="cjx8t585q007z10xiwx8832fo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -495,6 +499,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/20/ARTS第九周/">ARTS第九周</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
           </li>
         
@@ -508,10 +516,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
           </li>
         
       </ul>

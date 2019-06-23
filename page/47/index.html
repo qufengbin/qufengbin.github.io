@@ -62,6 +62,40 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/dmesg" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/dmesg/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.351Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="dmesg"><a href="#dmesg" class="headerlink" title="dmesg"></a>dmesg</h1><p>显示Linux系统启动信息</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dmesg命令</strong> 被用于检查和控制内核的环形缓冲区。kernel会将开机信息存储在ring buffer中。您若是开机时来不及查看信息，可利用dmesg来查看。开机信息保存在<code>/var/log/dmesg</code>文件里。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dmesg(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-c：显示信息后，清除ring buffer中的内容；</span><br><span class="line">-s&lt;缓冲区大小&gt;：预设置为8196，刚好等于ring buffer的大小；</span><br><span class="line">-n：设置记录信息的层级。</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# dmesg | head</span><br><span class="line">Linux version 2.6.18-348.6.1.el5 (mockbuild@builder17.centos.org) (gcc version 4.1.2 20080704 (Red Hat 4.1.2-54)) #1 SMP Tue May 21 15:34:22 EDT 2013</span><br><span class="line">BIOS-provided physical RAM map:</span><br><span class="line"> BIOS-e820: 0000000000010000 - 000000000009f400 (usable)</span><br><span class="line"> BIOS-e820: 000000000009f400 - 00000000000a0000 (reserved)</span><br><span class="line"> BIOS-e820: 00000000000f0000 - 0000000000100000 (reserved)</span><br><span class="line"> BIOS-e820: 0000000000100000 - 000000007f590000 (usable)</span><br><span class="line"> BIOS-e820: 000000007f590000 - 000000007f5e3000 (ACPI NVS)</span><br><span class="line"> BIOS-e820: 000000007f5e3000 - 000000007f5f0000 (ACPI data)</span><br><span class="line"> BIOS-e820: 000000007f5f0000 - 000000007f600000 (reserved)</span><br><span class="line"> BIOS-e820: 00000000e0000000 - 00000000e8000000 (reserved)</span><br></pre></td></tr></table></figure>
+<p>查看硬盘基础信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dmesg | grep sda</span><br><span class="line"></span><br><span class="line">[    2.442555] sd 0:0:0:0: [sda] 488281250 512-byte logical blocks: (250 GB/232 GiB)</span><br><span class="line">[    2.442590] sd 0:0:0:0: [sda] Write Protect is off</span><br><span class="line">[    2.442592] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00</span><br><span class="line">[    2.442607] sd 0:0:0:0: [sda] Write cache: enabled, <span class="built_in">read</span> cache: enabled, doesn<span class="string">'t support DPO or FUA</span></span><br><span class="line"><span class="string">[    2.447533]  sda: sda1</span></span><br><span class="line"><span class="string">[    2.448503] sd 0:0:0:0: [sda] Attached SCSI disk</span></span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dmesg/" data-id="cjx8t57zs003g10xizm3atfto" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/dirs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/dirs/" class="article-date">
@@ -84,7 +118,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dirs/" data-id="cjwp0a8pw003bgcxizk72f1lr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dirs/" data-id="cjx8t57zp003d10xij8en4atm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -115,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dirname/" data-id="cjwp0a8pv003agcxivgtgl0vk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dirname/" data-id="cjx8t57zo003c10xig55nf32k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -147,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dircolors/" data-id="cjwp0a8pu0039gcxi3vtyy6zw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dircolors/" data-id="cjx8t57zn003b10ximytety31" class="article-share-link">Share</a>
       
       
     </footer>
@@ -184,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dig/" data-id="cjwp0a8pu0038gcxiilwpa89g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dig/" data-id="cjx8t57zk003810xiiu8wws4q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -222,7 +256,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/diffstat/" data-id="cjwp0a8pt0037gcxizo7qqfn6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/diffstat/" data-id="cjx8t57zm003a10xi12lty7yx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/diff3/" data-id="cjwp0a8ps0036gcxiid1o7auc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/diff3/" data-id="cjx8t57zh003610xis8yzheu4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -297,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/diff/" data-id="cjwp0a8pr0035gcxin0n7fth7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/diff/" data-id="cjx8t57ze003410xifwrxto32" class="article-share-link">Share</a>
       
       
     </footer>
@@ -330,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dhcrelay/" data-id="cjwp0a8pq0034gcxi9y0cegv5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dhcrelay/" data-id="cjx8t57zj003710xi187rdzs9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -362,39 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dhcpd/" data-id="cjwp0a8po0033gcxiyyewkupj" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/dhclient" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/dhclient/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.319Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="dhclient"><a href="#dhclient" class="headerlink" title="dhclient"></a>dhclient</h1><p>动态获取或释放IP地址</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>dhclient命令</strong> 使用动态主机配置协议动态的配置网络接口的网络参数。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dhclient(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0：指定dhcp客户端监听的端口号；</span><br><span class="line">-d：总是以前台方式运行程序；</span><br><span class="line">-q：安静模式，不打印任何错误的提示信息；</span><br><span class="line">-r：释放ip地址。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>网络接口：操作的网络接口。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dhclient -r     #释放IP</span><br><span class="line">dhclient        #获取IP</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/dhclient/" data-id="cjwp0a8pn0032gcxi143b1t4l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/dhcpd/" data-id="cjx8t57zl003910xijavldtlg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -454,6 +456,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/20/ARTS第九周/">ARTS第九周</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
           </li>
         
@@ -467,10 +473,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
           </li>
         
       </ul>

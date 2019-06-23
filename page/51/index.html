@@ -62,6 +62,40 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/chown" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/chown/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.211Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h1><p>用来变更文件或目录的拥有者或所属群组</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>chown命令</strong> 改变某个文件或目录的所有者和所属的组，该命令可以向某个用户授权，使该用户变成指定文件的所有者或者改变文件所属的组。用户可以是用户或者是用户D，用户组可以是组名或组id。文件名可以使由空格分开的文件列表，在文件名中可以包含通配符。</p>
+<p>只有文件主和超级用户才可以便用该命令。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-c或——changes：效果类似“-v”参数，但仅回报更改的部分；</span><br><span class="line">-f或--quite或——silent：不显示错误信息；</span><br><span class="line">-h或--no-dereference：只对符号连接的文件作修改，而不更改其他任何相关文件；</span><br><span class="line">-R或——recursive：递归处理，将指定目录下的所有文件及子目录一并处理；</span><br><span class="line">-v或——version：显示指令执行过程；</span><br><span class="line">--dereference：效果和“-h”参数相同；</span><br><span class="line">--help：在线帮助；</span><br><span class="line">--reference=&lt;参考文件或目录&gt;：把指定文件或目录的拥有者与所属群组全部设成和参考文件或目录的拥有者与所属群组相同；</span><br><span class="line">--version：显示版本信息。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>用户：组：指定所有者和所属工作组。当省略“：组”，仅改变文件所有者；<br>文件：指定要改变所有者和工作组的文件列表。支持多个文件和目标，支持shell通配符。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>将目录<code>/usr/meng</code>及其下面的所有文件、子目录的文件主改成 liu：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R liu /usr/meng</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chown/" data-id="cjx8t57w1002a10xire0elirg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/chmod" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/chmod/" class="article-date">
@@ -99,7 +133,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/chmod/" data-id="cjwp0a8ox0028gcxi3gy2d62a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chmod/" data-id="cjx8t57ys002s10xiucx89jok" class="article-share-link">Share</a>
       
       
     </footer>
@@ -162,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/chkconfig/" data-id="cjwp0a8ow0027gcxiqkcnqpc2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chkconfig/" data-id="cjx8t57vy002810xicxzis6ph" class="article-share-link">Share</a>
       
       
     </footer>
@@ -201,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/chgrp/" data-id="cjwp0a8ov0026gcxib5isw67l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chgrp/" data-id="cjx8t57vx002710ximjja7kj9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -238,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/chfn/" data-id="cjwp0a8ov0025gcxijdggmwiz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chfn/" data-id="cjx8t57vz002910xix4t445l1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -280,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/chcon/" data-id="cjwp0a8ou0024gcxikauymu2o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chcon/" data-id="cjx8t57vv002510xie1x0ei0t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -316,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/chattr/" data-id="cjwp0a8ot0023gcxi94v1bk87" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chattr/" data-id="cjx8t57vu002410xitsofngqt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -358,7 +392,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/chage/" data-id="cjwp0a8os0022gcxiumaosuoa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/chage/" data-id="cjx8t57vs002310xi56nf3xby" class="article-share-link">Share</a>
       
       
     </footer>
@@ -401,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cdrecord/" data-id="cjwp0a8or0021gcximmzg4hkt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/cdrecord/" data-id="cjx8t57vr002210xibp444udw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -432,42 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cd/" data-id="cjwp0a8oq0020gcxie4u4tll9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/cat" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/cat/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.151Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h1><p>连接文件并打印到标准输出设备上</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>cat命令</strong> 连接文件并打印到标准输出设备上，cat经常用来显示文件的内容，类似于下的type命令。</p>
-<p>注意：当文件较大时，文本在屏幕上迅速闪过（滚屏），用户往往看不清所显示的内容。因此，一般用more等命令分屏显示。为了控制滚屏，可以按Ctrl+S键，停止滚屏；按Ctrl+Q键可以恢复滚屏。按Ctrl+C（中断）键可以终止该命令的执行，并且返回Shell提示符状态。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-n或--number：从1开始对所有输出的行数编号；</span><br><span class="line">-b或--number-nonblank：和-n相似，只不过对于空白行不编号；</span><br><span class="line">-s或--squeeze-blank：当遇到有连续两行以上的空白行，就代换为一行的空白行；</span><br><span class="line">-A：显示不可打印字符，行尾显示“$”；</span><br><span class="line">-e：等价于&quot;-vE&quot;选项；</span><br><span class="line">-t：等价于&quot;-vT&quot;选项；</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件列表：指定要连接的文件列表。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>设m1和m2是当前目录下的两个文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat m1 （在屏幕上显示文件m1的内容）</span><br><span class="line">cat m1 m2 （同时显示文件m1和m2的内容）</span><br><span class="line">cat m1 m2 &gt; file （将文件m1和m2合并后放入文件file中）</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cat/" data-id="cjwp0a8oo001xgcxijwbjy51l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/cd/" data-id="cjx8t57vp002110xijy3d2chy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -527,6 +526,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/20/ARTS第九周/">ARTS第九周</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
           </li>
         
@@ -540,10 +543,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
           </li>
         
       </ul>

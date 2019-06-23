@@ -62,6 +62,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/type" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/type/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.358Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="type"><a href="#type" class="headerlink" title="type"></a>type</h1><p>显示指定命令的类型</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>type命令</strong> 用来显示指定命令的类型，判断给出的指令是内部指令还是外部指令。</p>
+<p>命令类型：</p>
+<ul>
+<li>alias：别名。</li>
+<li>keyword：关键字，Shell保留字。</li>
+<li>function：函数，Shell函数。</li>
+<li>builtin：内建命令，Shell内建命令。</li>
+<li>file：文件，磁盘文件，外部命令。</li>
+<li>unfound：没有找到。</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-t：输出“file”、“alias”或者“builtin”，分别表示给定的指令为“外部指令”、“命令别名”或者“内部指令”；</span><br><span class="line">-p：如果给出的指令为外部指令，则显示其绝对路径；</span><br><span class="line">-a：在环境变量“PATH”指定的路径中，显示给定指令的信息，包括命令别名。</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>指令：要显示类型的指令。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# type ls</span><br><span class="line">ls is aliased to `ls --color=tty&apos;</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# type cd</span><br><span class="line">cd is a shell builtin</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# type date</span><br><span class="line">date is /bin/date</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# type mysql</span><br><span class="line">mysql is /usr/bin/mysql</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# type nginx</span><br><span class="line">-bash: type: nginx: not found</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# type if</span><br><span class="line">if is a shell keyword</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# type which</span><br><span class="line">which is aliased to `alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde&apos;</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# type -a cd</span><br><span class="line">cd is a shell builtin</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# type -a grep</span><br><span class="line">grep is /bin/grep</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/type/" data-id="cjx8t58a800df10xil48agb38" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/tty" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/tty/" class="article-date">
@@ -85,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/tty/" data-id="cjwp0a8xb00ddgcxi43znpoau" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tty/" data-id="cjx8t58a700dd10xihmyk8tyo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -123,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/tree/" data-id="cjwp0a8xa00dcgcxiyws9sain" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tree/" data-id="cjx8t58a900dg10xid5wnwz9m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -208,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/trap/" data-id="cjwp0a8z300fvgcxi8tnm2n9h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/trap/" data-id="cjx8t58c800fx10xi1k9ili4q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -251,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/traceroute/" data-id="cjwp0a8x900dbgcxit7uqobef" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/traceroute/" data-id="cjx8t58a600dc10xircvgppwx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/tracepath/" data-id="cjwp0a8x900dagcxig2vhnoi8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tracepath/" data-id="cjx8t58a500db10xiprkcxc0k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -339,7 +380,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/tr/" data-id="cjwp0a8x800d9gcxizpl570bv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tr/" data-id="cjx8t58a500da10xi8i0i0ut2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -414,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/tput/" data-id="cjwp0a8x800d8gcxi9u9we9nr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/tput/" data-id="cjx8t58a800de10xiqsh3p76a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -447,7 +488,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/touch/" data-id="cjwp0a8x700d7gcxichhzfb68" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/touch/" data-id="cjx8t58a300d810xirg18b9bv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -506,53 +547,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/top/" data-id="cjwp0a8x600d5gcxicsbcjkea" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/tmux" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/tmux/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.338Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h1><p>Tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权。</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p>使用它最直观的好处就是，通过一个终端登录远程主机并运行tmux后，在其中可以开启多个控制台而无需再“浪费”多余的终端来连接这台远程主机；</p>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
-<li>提供了强劲的、易于使用的命令行界面。</li>
-<li>可横向和纵向分割窗口。</li>
-<li>窗格可以自由移动和调整大小，或直接利用四个预设布局之一。</li>
-<li>支持 UTF-8 编码及 256 色终端。</li>
-<li>可在多个缓冲区进行复制和粘贴。</li>
-<li>可通过交互式菜单来选择窗口、会话及客户端。</li>
-<li>支持跨窗口搜索。</li>
-<li>支持自动及手动锁定窗口。</li>
-</ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 Mac OS 中，通过 brew 安装</span></span><br><span class="line">brew install tmux</span><br><span class="line"><span class="comment"># ubuntu版本下直接apt-get安装</span></span><br><span class="line">sudo apt-get install tmux</span><br><span class="line"><span class="comment"># centos7版本下直接yum安装</span></span><br><span class="line">yum install -y tmux</span><br><span class="line"></span><br><span class="line"><span class="comment"># centos6版本需要编译安装</span></span><br><span class="line">yum install libevent libevent-devel ncurses-devel</span><br><span class="line">tar -zvxf tmux-2.3.tar.gz <span class="comment"># (提前下载：wget https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz)</span></span><br><span class="line"><span class="built_in">cd</span> tmux-2.3</span><br><span class="line">./configure</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-<h2 id="快捷键使用说明"><a href="#快捷键使用说明" class="headerlink" title="快捷键使用说明"></a>快捷键使用说明</h2><table class="table-view log-set-param"><br><tbody><br><tr><br><td colspan="2" align="left" valign="center" width="0"><br>  <div>Ctrl+b</div><br></td><br><td><br>  <div>激活控制台；此时以下按键生效</div><br></td><br></tr><br><tr><br><td rowspan="9" align="left" valign="center" width="0"><br>  <div>系统操作</div><br></td><br><td><br>  <div>?</div><br></td><br><td><br>  <div>列出所有快捷键；按q返回</div><br></td><br></tr><br><tr><br><td><br>  <div>d</div><br></td><br><td><br>  <div>脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话</div><br></td><br></tr><br><tr><br><td><br>  <div>D</div><br></td><br><td><br>  <div>选择要脱离的会话；在同时开启了多个会话时使用</div><br></td><br></tr><br><tr><br><td><br>  <div>Ctrl+z</div><br></td><br><td><br>  <div>挂起当前会话</div><br></td><br></tr><br><tr><br><td><br>  <div>r</div><br></td><br><td><br>  <div>强制重绘未脱离的会话</div><br></td><br></tr><br><tr><br><td><br>  <div>s</div><br></td><br><td><br>  <div>选择并切换会话；在同时开启了多个会话时使用</div><br></td><br></tr><br><tr><br><td><br>  <div>:</div><br></td><br><td><br>  <div>进入命令行模式；此时可以输入支持的命令，例如kill-server可以关闭服务器</div><br></td><br></tr><br><tr><br><td><br>  <div>[</div><br></td><br><td><br>  <div>进入复制模式；此时的操作与vi/emacs相同，按q/Esc退出</div><br></td><br></tr><br><tr><br><td><br>  <div>~</div><br></td><br><td><br>  <div>列出提示信息缓存；其中包含了之前tmux返回的各种提示信息</div><br></td><br></tr><br><tr><br><td rowspan="10" align="left" valign="center" width="0"><br>  <div>窗口操作</div><br></td><br><td><br>  <div>c</div><br></td><br><td><br>  <div>创建新窗口</div><br></td><br></tr><br><tr><br><td><br>  <div>&amp;</div><br></td><br><td><br>  <div>关闭当前窗口</div><br></td><br></tr><br><tr><br><td><br>  <div>数字键</div><br></td><br><td><br>  <div>切换至指定窗口</div><br></td><br></tr><br><tr><br><td><br>  <div>p</div><br></td><br><td><br>  <div>切换至上一窗口</div><br></td><br></tr><br><tr><br><td><br>  <div>n</div><br></td><br><td><br>  <div>切换至下一窗口</div><br></td><br></tr><br><tr><br><td><br>  <div>l</div><br></td><br><td><br>  <div>在前后两个窗口间互相切换</div><br></td><br></tr><br><tr><br><td><br>  <div>w</div><br></td><br><td><br>  <div>通过窗口列表切换窗口</div><br></td><br></tr><br><tr><br><td><br>  <div>,</div><br></td><br><td><br>  <div>重命名当前窗口；这样便于识别</div><br></td><br></tr><br><tr><br><td><br>  <div>.</div><br></td><br><td><br>  <div>修改当前窗口编号；相当于窗口重新排序</div><br></td><br></tr><br><tr><br><td><br>  <div>f</div><br></td><br><td><br>  <div>在所有窗口中查找指定文本</div><br></td><br></tr><br><tr><br><td rowspan="14" align="left" valign="center" width="0"><br>  <div>面板操作</div><br></td><br><td><br>  <div>”</div><br></td><br><td><br>  <div>将当前面板平分为上下两块</div><br></td><br></tr><br><tr><br><td><br>  <div>%</div><br></td><br><td><br>  <div>将当前面板平分为左右两块</div><br></td><br></tr><br><tr><br><td><br>  <div>x</div><br></td><br><td><br>  <div>关闭当前面板</div><br></td><br></tr><br><tr><br><td><br>  <div>!</div><br></td><br><td><br>  <div>将当前面板置于新窗口；即新建一个窗口，其中仅包含当前面板</div><br></td><br></tr><br><tr><br><td><br>  <div>Ctrl+方向键</div><br></td><br><td><br>  <div>以1个单元格为单位移动边缘以调整当前面板大小</div><br></td><br></tr><br><tr><br><td><br>  <div>Alt+方向键</div><br></td><br><td><br>  <div>以5个单元格为单位移动边缘以调整当前面板大小</div><br></td><br></tr><br><tr><br><td><br>  <div>Space</div><br></td><br><td><br>  <div>在预置的面板布局中循环切换；依次包括even-horizontal、even-vertical、main-horizontal、main-vertical、tiled</div><br></td><br></tr><br><tr><br><td><br>  <div>q</div><br></td><br><td><br>  <div>显示面板编号</div><br></td><br></tr><br><tr><br><td><br>  <div>o</div><br></td><br><td><br>  <div>在当前窗口中选择下一面板</div><br></td><br></tr><br><tr><br><td><br>  <div>方向键</div><br></td><br><td><br>  <div>移动光标以选择面板</div><br></td><br></tr><br><tr><br><td><br>  <div>{</div><br></td><br><td><br>  <div>向前置换当前面板</div><br></td><br></tr><br><tr><br><td><br>  <div>}</div><br></td><br><td><br>  <div>向后置换当前面板</div><br></td><br></tr><br><tr><br><td><br>  <div>Alt+o</div><br></td><br><td><br>  <div>逆时针旋转当前窗口的面板</div><br></td><br></tr><br><tr><br><td><br>  <div>Ctrl+o</div><br></td><br><td><br>  <div>顺时针旋转当前窗口的面板</div><br></td><br></tr><br></tbody><br></table>
-
-<p>1）进入tmux面板后，一定要先按ctrl+b，然后松开，再按其他的组合键才生效。<br>2）常用到的几个组合键：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ctrl+b ?            显示快捷键帮助</span><br><span class="line">ctrl+b 空格键       采用下一个内置布局，这个很有意思，在多屏时，用这个就会将多有屏幕竖着展示</span><br><span class="line">ctrl+b !            把当前窗口变为新窗口</span><br><span class="line">ctrl+b  &quot;           模向分隔窗口</span><br><span class="line">ctrl+b %            纵向分隔窗口</span><br><span class="line">ctrl+b q            显示分隔窗口的编号</span><br><span class="line">ctrl+b o            跳到下一个分隔窗口。多屏之间的切换</span><br><span class="line">ctrl+b 上下键      上一个及下一个分隔窗口</span><br><span class="line">ctrl+b C-方向键    调整分隔窗口大小</span><br><span class="line">ctrl+b &amp;           确认后退出当前tmux</span><br><span class="line">ctrl+b [           复制模式，即将当前屏幕移到上一个的位置上，其他所有窗口都向前移动一个。</span><br><span class="line">ctrl+b c           创建新窗口</span><br><span class="line">ctrl+b n           选择下一个窗口</span><br><span class="line">ctrl+b l           最后使用的窗口</span><br><span class="line">ctrl+b p           选择前一个窗口</span><br><span class="line">ctrl+b w           以菜单方式显示及选择窗口</span><br><span class="line">ctrl+b s           以菜单方式显示和选择会话。这个常用到，可以选择进入哪个tmux</span><br><span class="line">ctrl+b t           显示时钟。然后按enter键后就会恢复到shell终端状态</span><br><span class="line">ctrl+b d           脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话</span><br></pre></td></tr></table></figure>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li>tmux 官网下载地址：<a href="http://tmux.github.io/" target="_blank" rel="noopener">http://tmux.github.io/</a> </li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/tmux/" data-id="cjwp0a8x700d6gcxiycpfik8d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/top/" data-id="cjx8t58a400d910xivkvpachu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -612,6 +607,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/20/ARTS第九周/">ARTS第九周</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
           </li>
         
@@ -625,10 +624,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
           </li>
         
       </ul>

@@ -62,6 +62,41 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/iftop" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/iftop/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.680Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="iftop"><a href="#iftop" class="headerlink" title="iftop"></a>iftop</h1><p>一款实时流量监控工具</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>iftop命令</strong> 是一款实时流量监控工具，监控TCP/IP连接等，缺点就是无报表功能。必须以root身份才能运行。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iftop(选项)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">iftop: display bandwidth usage on an interface by host</span><br><span class="line"></span><br><span class="line">Synopsis: iftop -h | [-npblNBP] [-i interface] [-f filter code]</span><br><span class="line">    [-F net/mask] [-G net6/mask6]</span><br><span class="line"></span><br><span class="line">   -h                  display this message</span><br><span class="line">   -n                  don&apos;t do hostname lookups</span><br><span class="line">   -N                  don&apos;t convert port numbers to services</span><br><span class="line">   -p                  run in promiscuous mode (show traffic between other</span><br><span class="line">                       hosts on the same network segment)</span><br><span class="line">   -b                  don&apos;t display a bar graph of traffic</span><br><span class="line">   -B                  Display bandwidth in bytes</span><br><span class="line">   -i interface        listen on named interface</span><br><span class="line">   -f filter code      use filter code to select packets to count</span><br><span class="line">                      (default: none, but only IP packets are counted)</span><br><span class="line">   -F net/mask         show traffic flows in/out of IPv4 network</span><br><span class="line">   -G net6/mask6       show traffic flows in/out of IPv6 network</span><br><span class="line">   -l                  display and count link-local IPv6 traffic (default: off)</span><br><span class="line">   -P                  show ports as well as hosts</span><br><span class="line">   -m limit            sets the upper limit for the bandwidth scale</span><br><span class="line">   -c config file      specifies an alternative configuration file</span><br><span class="line">   -t                  use text interface without ncurses</span><br><span class="line">   </span><br><span class="line">   Sorting orders:</span><br><span class="line">   -o 2s                Sort by first column (2s traffic average)</span><br><span class="line">   -o 10s               Sort by second column (10s traffic average) [default]</span><br><span class="line">   -o 40s               Sort by third column (40s traffic average)</span><br><span class="line">   -o source            Sort by source address</span><br><span class="line">   -o destination       Sort by destination address</span><br><span class="line">   </span><br><span class="line">   The following options are only available in combination with -t</span><br><span class="line">   -s num              print one single text output afer num seconds, then quit</span><br><span class="line">   -L num              number of lines to print</span><br></pre></td></tr></table></figure>
+<h3 id="界面说明"><a href="#界面说明" class="headerlink" title="界面说明"></a>界面说明</h3><blockquote>
+<p>第一行为带宽，这里为1Mbit,不是字节哦.<br>连接列表，最后三列分别是2秒，10秒和40秒的平均流量<br><code>=&gt;</code> 代表发送<br><code>&lt;=</code> 代表接收<br>最后三行表示发送，接收和全部的流量，<br>第二列为你运行iftop到目前流量，第三列为高峰值，第四列为平均值。</p>
+</blockquote>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">iftop           <span class="comment"># 默认是监控第一块网卡的流量</span></span><br><span class="line">iftop -i eth1   <span class="comment"># 监控eth1</span></span><br><span class="line">iftop -n        <span class="comment"># 直接显示IP, 不进行DNS反解析</span></span><br><span class="line">iftop -N        <span class="comment"># 直接显示连接埠编号, 不显示服务名称</span></span><br><span class="line">iftop -F 192.168.1.0/24 or 192.168.1.0/255.255.255.0  <span class="comment"># 显示某个网段进出封包流量</span></span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/iftop/" data-id="cjx8t583v005z10xiwwdilnx5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/ifstat" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/ifstat/" class="article-date">
@@ -91,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifstat/" data-id="cjwp0a8s6005vgcxi606bu8o9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifstat/" data-id="cjx8t583s005x10xivuvgp9k4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -122,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifdown/" data-id="cjwp0a8s5005ugcxi0lsd786v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifdown/" data-id="cjx8t583r005v10xiq2z3yqch" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifconfig/" data-id="cjwp0a8s4005tgcxiy3ld90dn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifconfig/" data-id="cjx8t583r005w10xi77tq1h05" class="article-share-link">Share</a>
       
       
     </footer>
@@ -211,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifcfg/" data-id="cjwp0a8s4005sgcxiqfmj87yn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/ifcfg/" data-id="cjx8t583p005t10xibkgdxszo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -262,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/id/" data-id="cjwp0a8s3005rgcxij6qbso3p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/id/" data-id="cjx8t583o005s10xitqyjedpk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -297,7 +332,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/iconv/" data-id="cjwp0a8s2005qgcxi34kbmtfa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/iconv/" data-id="cjx8t583q005u10xivpsr716a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -336,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/hwclock/" data-id="cjwp0a8s2005pgcxi3rh6opot" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/hwclock/" data-id="cjx8t583n005r10xiuseqwroc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -383,7 +418,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/htpasswd/" data-id="cjwp0a8s1005ogcxiejuu67o2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/htpasswd/" data-id="cjx8t583l005p10xig0rfr9vx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -446,42 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/htop/" data-id="cjwp0a8s0005ngcxi6oa79awn" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/htdigest" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/htdigest/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.647Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="htdigest"><a href="#htdigest" class="headerlink" title="htdigest"></a>htdigest</h1><p>Apache服务器内置工具</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>htdigest命令</strong> 是Apache的Web服务器内置工具，用于创建和更新储存用户名、域和用于摘要认证的密码文件。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htdigest(选项)(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-c：创建密码文件。</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
-<li>密码文件：指定要创建或更新的密码文件；</li>
-<li>域：指定用户名所属的域；</li>
-<li>用户名：要创建或者更新的用户名。</li>
-</ul>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/htdigest/" data-id="cjwp0a8s0005mgcxilks9j2gd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/htop/" data-id="cjx8t583m005q10xiny4hn89s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -541,6 +541,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/20/ARTS第九周/">ARTS第九周</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
           </li>
         
@@ -554,10 +558,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
           </li>
         
       </ul>

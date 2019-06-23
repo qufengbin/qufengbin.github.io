@@ -62,6 +62,39 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/sleep" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/sleep/" class="article-date">
+  <time datetime="2019-05-15T13:24:15.187Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="sleep"><a href="#sleep" class="headerlink" title="sleep"></a>sleep</h1><p>将目前动作延迟一段时间</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>sleep命令</strong> 暂停指定的时间。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sleep(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>时间：指定要暂停时间的长度。</p>
+<p>时间长度，后面可接 s、m、h 或 d，其中 s 为秒，m 为 分钟，h 为小时，d 为日数。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>有时在写一些以循环方式运行的监控脚本，设置时间间隔是必不可少的，下面是一个Shell进度条的脚本演示在脚本中生成延时。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">b=&apos;&apos;</span><br><span class="line">for ((i=0;$i&lt;=100;i++))</span><br><span class="line"> do</span><br><span class="line"> printf &quot;Progress:[%-100s]%d%%\r&quot; $b $i</span><br><span class="line"> sleep 0.1</span><br><span class="line"> b=#$b</span><br><span class="line"> done</span><br><span class="line">echo</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/sleep/" data-id="cjx8t588f00bw10xi8jqgb678" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/slabtop" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/slabtop/" class="article-date">
@@ -99,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/slabtop/" data-id="cjwp0a8wd00bvgcxi3h3mt9fb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/slabtop/" data-id="cjx8t588m00c410xiwrsi4d8o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/skill/" data-id="cjwp0a8wc00bugcxiqchaq8jq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/skill/" data-id="cjx8t588f00bv10xifjjugvg7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -189,7 +222,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/shutdown/" data-id="cjwp0a8wc00btgcxim1281242" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/shutdown/" data-id="cjx8t588d00bt10xifg12c2ol" class="article-share-link">Share</a>
       
       
     </footer>
@@ -220,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/showmount/" data-id="cjwp0a8wb00bsgcxinqm3kajd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/showmount/" data-id="cjx8t588b00bq10xijqcmpujk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -258,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/shopt/" data-id="cjwp0a8wb00brgcxipvnpv354" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/shopt/" data-id="cjx8t588d00bs10xi4m842jxc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -290,7 +323,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/sh/" data-id="cjwp0a8wa00bqgcxi8y2fplk9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/sh/" data-id="cjx8t588e00bu10xi0fm4z5i2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -321,7 +354,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/sftp/" data-id="cjwp0a8w900bpgcxinquyslym" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/sftp/" data-id="cjx8t588c00br10xio8p26xb5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -350,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/sftp-server/" data-id="cjwp0a8w900bogcxi36gt8cai" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/sftp-server/" data-id="cjx8t588900bn10xihw232zqk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -383,79 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/setsid/" data-id="cjwp0a8w800bngcxin71949ga" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/setsebool" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/setsebool/" class="article-date">
-  <time datetime="2019-05-15T13:24:15.168Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="setsebool"><a href="#setsebool" class="headerlink" title="setsebool"></a>setsebool</h1><p>修改SElinux策略内各项规则的布尔值</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>setsebool命令</strong> 是用来修改SElinux策略内各项规则的布尔值。setsebool命令和getsebool命令是SELinux修改和查询布尔值的一套工具组。SELinux的策略与规则管理相关命令：seinfo命令、sesearch命令、getsebool命令、setsebool命令、semanage命令。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool [-P] 布尔值=[0|1]</span><br></pre></td></tr></table></figure>
-<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-P:直接将设置值写入配置文件，该设置数据将来会生效的。</span><br></pre></td></tr></table></figure>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>允许vsvtp匿名用户写入权限：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P allow_ftpd_anon_write=1</span><br></pre></td></tr></table></figure>
-<p>如果你希望你的ftp用户可以访问自己的家目录的话，需要开启：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P ftp_home_dir 1</span><br></pre></td></tr></table></figure>
-<p>如果你希望将vsftpd以daemon的方式运行的话，需要开启：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P ftpd_is_daemon 1</span><br></pre></td></tr></table></figure>
-<p>你可以让SElinux停止保护vsftpd的daemon方式动行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P ftpd_disable_trans 1</span><br></pre></td></tr></table></figure>
-<p>HTTP被设置允许cgi的设置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P httpd_enable_cgi 1</span><br></pre></td></tr></table></figure>
-<p>允许用户HHTP访问其家目录，该设定限仅于用户的家目录主页：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P httpd_enable_homedirs 1</span><br><span class="line">chcon -R -t httpd_sys_content_t ~user/public_html</span><br></pre></td></tr></table></figure>
-<p>允许httpd访问终端：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P httpd_tty_comm 1</span><br></pre></td></tr></table></figure>
-<p>关闭Selinux的关于httpd进程守护的保护：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P httpd_disable_trans 1</span><br><span class="line">service httpd restart</span><br></pre></td></tr></table></figure>
-<p>关于named、master更新selinux设定：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P named_write_master_zones 1</span><br></pre></td></tr></table></figure>
-<p>关闭named的进程守护保护：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P named_disable_trans 1</span><br><span class="line">service named restart</span><br></pre></td></tr></table></figure>
-<p>Selinux将本机的NFS共享设置成只读：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P nfs_export_all_ro 1</span><br></pre></td></tr></table></figure>
-<p>SElinux将本机的NFS共享设置成可读可写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P nfs_export_all_rw 1</span><br></pre></td></tr></table></figure>
-<p>如果你想要将远程NFS的家目录共享到本机，需要开启：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P use_nfs_home_dirs 1</span><br></pre></td></tr></table></figure>
-<p>如果samba服务器共享目录给多个域，则需要：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P allow_smbd_anon_write=1</span><br></pre></td></tr></table></figure>
-<p>samba服务器要共享家目录时：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P samba_enable_home_dirs 1</span><br></pre></td></tr></table></figure>
-<p>如果你需在本机上使用远程samba服务器的家目录：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P use_samba_home_dirs 1</span><br></pre></td></tr></table></figure>
-<p>关闭selinux关于samba的进程守护的保护：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P smbd_disable_trans 1</span><br><span class="line">service smb restart</span><br></pre></td></tr></table></figure>
-<p>允许rsync其他用户写入时：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P allow_rsync_anon_write=1</span><br></pre></td></tr></table></figure>
-<p>停止rsync的进程保护</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P rsync_disable_trans 1</span><br></pre></td></tr></table></figure>
-<p>允许系统使用kerberos：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P allow_kerberos 1</span><br></pre></td></tr></table></figure>
-<p>系统工作在nis环境时：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsebool -P allow_ypbind 1</span><br></pre></td></tr></table></figure>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/setsebool/" data-id="cjwp0a8w800bmgcxi4rt9seu8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/setsid/" data-id="cjx8t588a00bo10xi1rrh3k5m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -515,6 +476,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/20/ARTS第九周/">ARTS第九周</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
           </li>
         
@@ -528,10 +493,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
           </li>
         
       </ul>

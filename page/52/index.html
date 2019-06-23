@@ -62,6 +62,41 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux_command/cat" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/15/linux_command/cat/" class="article-date">
+  <time datetime="2019-05-15T13:24:14.151Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h1><p>连接文件并打印到标准输出设备上</p>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>cat命令</strong> 连接文件并打印到标准输出设备上，cat经常用来显示文件的内容，类似于下的type命令。</p>
+<p>注意：当文件较大时，文本在屏幕上迅速闪过（滚屏），用户往往看不清所显示的内容。因此，一般用more等命令分屏显示。为了控制滚屏，可以按Ctrl+S键，停止滚屏；按Ctrl+Q键可以恢复滚屏。按Ctrl+C（中断）键可以终止该命令的执行，并且返回Shell提示符状态。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat(选项)(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-n或--number：从1开始对所有输出的行数编号；</span><br><span class="line">-b或--number-nonblank：和-n相似，只不过对于空白行不编号；</span><br><span class="line">-s或--squeeze-blank：当遇到有连续两行以上的空白行，就代换为一行的空白行；</span><br><span class="line">-A：显示不可打印字符，行尾显示“$”；</span><br><span class="line">-e：等价于&quot;-vE&quot;选项；</span><br><span class="line">-t：等价于&quot;-vT&quot;选项；</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>文件列表：指定要连接的文件列表。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>设m1和m2是当前目录下的两个文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat m1 （在屏幕上显示文件m1的内容）</span><br><span class="line">cat m1 m2 （同时显示文件m1和m2的内容）</span><br><span class="line">cat m1 m2 &gt; file （将文件m1和m2合并后放入文件file中）</span><br></pre></td></tr></table></figure>
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/cat/" data-id="cjx8t57vn002010xicowtjvvr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux_command/cancel" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/15/linux_command/cancel/" class="article-date">
@@ -83,7 +118,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cancel/" data-id="cjwp0a8oq001zgcxippu48dh4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/cancel/" data-id="cjx8t57vk001y10xiyi95h8pf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -118,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/cal/" data-id="cjwp0a8on001wgcximg1917zl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/cal/" data-id="cjx8t57vl001z10xijbhq4j8m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -148,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzmore/" data-id="cjwp0a8op001ygcxictteo9cp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzmore/" data-id="cjx8t57vj001x10xian4kpvyv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -178,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzless/" data-id="cjwp0a8on001vgcxiwysc5jgt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzless/" data-id="cjx8t57vh001v10xize9dn9v4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -209,7 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzip2recover/" data-id="cjwp0a8om001ugcxi9h0z56h8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzip2recover/" data-id="cjx8t57vf001u10xi68p7mv51" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzip2/" data-id="cjwp0a8ol001tgcxihe9lshl2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzip2/" data-id="cjx8t57vi001w10xiiu56dn7v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -303,7 +338,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzgrep/" data-id="cjwp0a8ok001sgcxiki9mtyb4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzgrep/" data-id="cjx8t57ve001t10xim4tv5jc4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -336,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzdiff/" data-id="cjwp0a8oi001rgcxi0281xixz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzdiff/" data-id="cjx8t57vb001r10xizlzv3jxb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -369,43 +404,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzcmp/" data-id="cjwp0a8oh001qgcxikpk12461" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux_command/bzcat" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/15/linux_command/bzcat/" class="article-date">
-  <time datetime="2019-05-15T13:24:14.120Z" itemprop="datePublished">2019-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="bzcat"><a href="#bzcat" class="headerlink" title="bzcat"></a>bzcat</h1><p>解压缩指定的.bz2文件</p>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p><strong>bzcat命令</strong> 解压缩指定的.bz2文件，并显示解压缩后的文件内容。保留原压缩文件，并且不生成解压缩后的文件。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bzcat(参数)</span><br></pre></td></tr></table></figure>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>.bz2压缩文件：指定要显示内容的.bz2压缩文件。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>将<code>/tmp/man.config</code>以bzip2格式压缩：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bzip2 -z man.config</span><br></pre></td></tr></table></figure>
-<p>此时man.config会变成man.config.bz2</p>
-<p>将上面的压缩文件内容读出来：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bzcat man.config.bz2</span><br></pre></td></tr></table></figure>
-<p>此时屏幕上会显示 man.config.bz2 解压缩之后的文件内容。</p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzcat/" data-id="cjwp0a8of001pgcxih1ujuoov" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/15/linux_command/bzcmp/" data-id="cjx8t57vd001s10xigwragd53" class="article-share-link">Share</a>
       
       
     </footer>
@@ -465,6 +464,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/20/ARTS第九周/">ARTS第九周</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/08/ARTS第八周/">ARTS第八周</a>
           </li>
         
@@ -478,10 +481,6 @@
         
           <li>
             <a href="/2019/05/15/linux_command/zipsplit/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/15/linux_command/zipinfo/">(no title)</a>
           </li>
         
       </ul>
